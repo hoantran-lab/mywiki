@@ -2,7 +2,10 @@
 
 ## Mô tả
 Skill này thực hiện quy trình publish bài viết đã được user review xong lên GitHub, 
-kích hoạt GitHub Actions tự động build, và cập nhật website + roadmap.
+kích hoạt GitHub Actions tự động build, và cập nhật toàn bộ website bao gồm:
+- Bài viết mới
+- Trang chủ (index.md) — tự động cập nhật 15 bài mới nhất
+- Roadmap — tự động cập nhật ma trận kiến thức
 
 ## Khi nào kích hoạt
 - Khi user yêu cầu "publish", "push", "deploy", "đăng bài", "xuất bản", "push lên github", 
@@ -13,6 +16,17 @@ kích hoạt GitHub Actions tự động build, và cập nhật website + roadm
 - Đã có bài viết mới trong `docs/blog/posts/` (đã tạo bởi skill `write_blog_post`).
 - User đã xác nhận OK hoặc đã chỉnh sửa xong.
 - Repo đã được init Git và có remote `origin` trỏ đến GitHub.
+
+## Kiến trúc auto-generate
+
+Các trang sau được **tự động generate tại build time** bởi `mkdocs-gen-files` plugin:
+
+| Trang | Script | Mô tả |
+|-------|--------|--------|
+| `index.md` | `scripts/generate_index.py` | Giới thiệu + 15 bài viết mới nhất |
+| `roadmap.md` | `scripts/generate_roadmap.py` | Ma trận kiến thức + timeline |
+
+→ **KHÔNG cần cập nhật index.md hay roadmap.md thủ công.** Chỉ cần push bài viết mới, GitHub Actions sẽ chạy `mkdocs build` và tất cả tự cập nhật.
 
 ## Quy trình thực hiện
 
@@ -44,11 +58,15 @@ Trước khi push, kiểm tra nhanh bài viết mới:
 4. Nếu phát hiện lỗi, thông báo user và **dừng lại**, không push.
 
 ### Bước 3: Stage và Commit
-1. Stage tất cả file mới/thay đổi:
+1. Stage tất cả file thay đổi:
 
 ```bash
-git add docs/blog/posts/
-git add docs/assets/  # Nếu có hình ảnh mới
+git add docs/blog/posts/        # Bài viết mới
+git add docs/assets/             # Hình ảnh mới (nếu có)
+git add docs/index.md            # Trang chủ (nếu có thay đổi)
+git add scripts/                 # Scripts generate (nếu có thay đổi)
+git add mkdocs.yml               # Config (nếu có thay đổi)
+git add .gemini/                 # Skills (nếu có thay đổi)
 ```
 
 2. Tạo commit message theo format chuẩn:
@@ -79,11 +97,13 @@ git push origin main
 2. Giải thích rằng GitHub Actions workflow `deploy.yml` sẽ tự động:
    - Checkout code mới
    - Cài Python dependencies
-   - Chạy `mkdocs build` (bao gồm generate roadmap tự động)
+   - Chạy `mkdocs build` — bao gồm:
+     - ✅ Generate `index.md` (15 bài mới nhất) qua `generate_index.py`
+     - ✅ Generate `roadmap.md` (ma trận kiến thức) qua `generate_roadmap.py`
    - Deploy lên GitHub Pages
 3. Cung cấp link để user theo dõi:
-   - **GitHub Actions**: `https://github.com/tranvanhoan/MyWiki/actions`
-   - **Website**: `https://tranvanhoan.github.io/MyWiki/`
+   - **GitHub Actions**: `https://github.com/hoantran-lab/mywiki/actions`
+   - **Website**: `https://hoantran-lab.github.io/mywiki/`
 
 ### Bước 6: Tóm tắt kết quả
 Hiển thị tóm tắt sau khi hoàn tất:
@@ -97,12 +117,13 @@ Hiển thị tóm tắt sau khi hoàn tất:
 🔖 Tags: <tags>
 
 🔄 GitHub Actions đang build...
-   → Theo dõi: https://github.com/tranvanhoan/MyWiki/actions
+   → Theo dõi: https://github.com/hoantran-lab/mywiki/actions
 
 🌐 Website sẽ tự cập nhật sau 2-3 phút:
-   → https://tranvanhoan.github.io/MyWiki/
+   → https://hoantran-lab.github.io/mywiki/
 
-📊 Roadmap sẽ tự cập nhật (do mkdocs-gen-files plugin)
+🏠 Trang chủ sẽ tự cập nhật (15 bài mới nhất)
+📊 Roadmap sẽ tự cập nhật (ma trận kiến thức)
 ```
 
 ## Xử lý nhiều bài viết cùng lúc
@@ -135,6 +156,7 @@ Nếu user muốn chỉnh sửa bài đã publish trước đó:
 - **KHÔNG push nếu chưa có xác nhận** từ user rằng đã review bài viết.
 - **Kiểm tra kỹ trước khi push** — một khi đã push lên main, website sẽ tự động cập nhật.
 - Nếu user muốn thử local trước, hướng dẫn chạy `mkdocs serve` trong thư mục MyWiki.
+- **index.md và roadmap.md được auto-generate** — không cần sửa thủ công. Nếu muốn thay đổi layout, sửa scripts trong `scripts/`.
 
 ## Troubleshooting
 
@@ -148,11 +170,12 @@ Hướng dẫn user:
 
 ### Lỗi GitHub Actions build
 ```
-1. Kiểm tra Actions log: https://github.com/tranvanhoan/MyWiki/actions
+1. Kiểm tra Actions log: https://github.com/hoantran-lab/mywiki/actions
 2. Lỗi phổ biến:
    - Category không nằm trong danh sách cho phép → sửa frontmatter
    - Thiếu dependency → kiểm tra requirements.txt
    - Syntax error trong Mermaid → kiểm tra lại sơ đồ
+   - generate_index.py hoặc generate_roadmap.py lỗi → kiểm tra script
 ```
 
 ### Muốn preview local trước khi push

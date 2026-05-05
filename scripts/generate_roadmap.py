@@ -58,7 +58,7 @@ def generate_roadmap():
                 'date': frontmatter.get('date'),
                 'categories': frontmatter.get('categories', []),
                 'level': frontmatter.get('level', 'beginner'),
-                'url': f"blog/{filename.replace('.md', '/')}"
+                'url': f"blog/posts/{filename}"
             })
             
     # Sắp xếp bài viết theo thời gian giảm dần
