@@ -1,0 +1,85 @@
+site_name: AI Wiki - My Knowledge Base
+site_description: Nơi lưu trữ, chia sẻ kiến thức và hành trình tự học AI.
+site_author: tranvanhoan
+site_url: https://tranvanhoan.github.io/MyWiki/
+
+repo_name: tranvanhoan/MyWiki
+repo_url: https://github.com/tranvanhoan/MyWiki
+
+theme:
+  name: material
+  language: vi
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+
+plugins:
+  - search
+  - tags
+  - blog:
+      blog_dir: blog
+      post_date_format: "dd/MM/yyyy"
+      archive_date_format: "yyyy"
+      categories_allowed:
+        - LLM
+        - Prompt Engineering
+        - RAG
+        - Agent
+        - MLOps
+        - Computer Vision
+        - NLP
+        - Kỹ năng AI
+        - AI Cơ bản
+        - Case Study
+  - gen-files:
+      scripts:
+        - scripts/generate_roadmap.py
+  - literate-nav:
+      nav_file: SUMMARY.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - toc:
+      permalink: true
+
+nav:
+  - Trang chủ: index.md
+  - Blog: blog/index.md
+  - Roadmap: roadmap.md
+  - Chủ đề (Tags): tags.md
+  - Về tác giả: about.md
