@@ -135,5 +135,4 @@ def generate_roadmap():
                 f.write(f"- {icon} [{post['title']}]({post['url']}) - *{cats}*\n")
             f.write("\n")
 
-if __name__ == "__main__":
-    generate_roadmap()
+generate_roadmap()
