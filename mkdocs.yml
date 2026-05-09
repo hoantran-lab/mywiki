@@ -53,6 +53,8 @@ plugins:
         - Kỹ năng AI
         - AI Cơ bản
         - Case Study
+        - BMAD
+        - Best Practices
   - gen-files:
       scripts:
         - scripts/generate_roadmap.py
