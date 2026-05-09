@@ -10,7 +10,8 @@ POSTS_DIR = "docs/blog/posts"
 ROADMAP_FILE = "roadmap.md"
 CATEGORIES = [
     "LLM", "Prompt Engineering", "RAG", "Agent", "MLOps", 
-    "Computer Vision", "NLP", "Kỹ năng AI", "AI Cơ bản", "Case Study"
+    "Computer Vision", "NLP", "Kỹ năng AI", "AI Cơ bản", "Case Study",
+    "BMAD", "Best Practices", "Microsoft 365"
 ]
 LEVELS = ["beginner", "intermediate", "advanced"]
 LEVEL_ICONS = {"beginner": "🟢", "intermediate": "🟡", "advanced": "🔴"}
