@@ -55,6 +55,7 @@ plugins:
         - Case Study
         - BMAD
         - Best Practices
+        - Microsoft 365
   - gen-files:
       scripts:
         - scripts/generate_roadmap.py
