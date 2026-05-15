@@ -1,0 +1,988 @@
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Khám phá Creative Intelligence Suite (CIS) - module mở rộng của BMad Method giúp biến quá trình sáng tạo, brainstorming và giải quyết vấn đề thành một hệ thống có cấu trúc với các AI Agent chuyên biệt.">
+      
+      
+        <meta name="author" content="tranvanhoan">
+      
+      
+        <link rel="canonical" href="https://tranvanhoan.github.io/MyWiki/blog/2026/05/06/creative-intelligence-suite-cis--gi%E1%BA%A3i-quy%E1%BA%BFt-v%E1%BA%A5n-%C4%91%E1%BB%81-v%C3%A0-s%C3%A1ng-t%E1%BA%A1o-c%C3%B3-c%E1%BA%A5u-tr%C3%BAc-c%C3%B9ng-ai-agent/">
+      
+      
+        <link rel="prev" href="../../05/claude-code-c%C6%A1-b%E1%BA%A3n-ph%E1%BA%A7n-1-agent-sub-agent-v%C3%A0-skill--kh%C3%A1c-nhau-%E1%BB%9F-%C4%91%C3%A2u/">
+      
+      
+        <link rel="next" href="../bmad-method--framework-ph%C3%A1t-tri%E1%BB%83n-ph%E1%BA%A7n-m%E1%BB%81m-b%E1%BA%B1ng-ai-agent-chuy%C3%AAn-bi%E1%BB%87t/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Creative Intelligence Suite (CIS) — Giải Quyết Vấn Đề Và Sáng Tạo Có Cấu Trúc Cùng AI Agent - AI Wiki - My Knowledge Base</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#creative-intelligence-suite-cis-giai-quyet-van-e-va-sang-tao-co-cau-truc-cung-ai-agent" class="md-skip">
+          Bỏ qua
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Đầu trang">
+    <a href="../../../../.." title="AI Wiki - My Knowledge Base" class="md-header__button md-logo" aria-label="AI Wiki - My Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Wiki - My Knowledge Base
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Creative Intelligence Suite (CIS) — Giải Quyết Vấn Đề Và Sáng Tạo Có Cấu Trúc Cùng AI Agent
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Tìm kiếm" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Tìm kiếm">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Chia sẻ" aria-label="Chia sẻ" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Xoá" aria-label="Xoá" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tranvanhoan/MyWiki" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tranvanhoan/MyWiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Trang chủ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../roadmap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Chủ đề (Tags)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Về tác giả
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Thanh điều hướng" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="AI Wiki - My Knowledge Base" class="md-nav__button md-logo" aria-label="AI Wiki - My Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Wiki - My Knowledge Base
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tranvanhoan/MyWiki" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tranvanhoan/MyWiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trang chủ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chủ đề (Tags)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Về tác giả
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Mục lục">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Mục lục
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mo-au-sang-tao-khong-phai-la-phep-mau-sang-tao-la-phuong-phap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mở đầu: Sáng tạo không phải là phép màu, sáng tạo là phương pháp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-creative-intelligence-suite-cis-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Creative Intelligence Suite (CIS) là gì?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-oi-ngu-6-ai-agent-sang-tao-trong-cis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Đội ngũ 6 AI Agent Sáng Tạo Trong CIS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-vi-du-thuc-tien-giai-quyet-bai-toan-ty-le-roi-bo-churn-rate-tang-cao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ví dụ thực tiễn: Giải quyết bài toán "Tỷ lệ Rời bỏ (Churn Rate) tăng cao"
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Ví dụ thực tiễn: Giải quyết bài toán &#34;Tỷ lệ Rời bỏ (Churn Rate) tăng cao&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buoc-1-tim-nguyen-nhan-goc-re-voi-dr-quinn-problem-solving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 1: Tìm nguyên nhân gốc rễ với Dr. Quinn (Problem Solving)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-2-tim-y-tuong-khac-phuc-voi-carson-brainstorming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 2: Tìm ý tưởng khắc phục với Carson (Brainstorming)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-3-hoan-thien-trai-nghiem-nguoi-dung-voi-maya-design-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 3: Hoàn thiện trải nghiệm người dùng với Maya (Design Thinking)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-4-ban-y-tuong-cho-team-voi-sophia-storytelling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 4: "Bán" ý tưởng cho team với Sophia (Storytelling)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cach-cai-at-va-bat-au-nhanh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Cách cài đặt và Bắt đầu nhanh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ket-luan-thay-oi-cach-chung-ta-nghi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kết luận: Thay Đổi Cách Chúng Ta Nghĩ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Quay lại
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/tranvanhoan" alt="Hoàn Trần">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Hoàn Trần
+                        
+                      </strong>
+                      <br>
+                      Người viết và tìm tòi về AI
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-05-06 00:00:00+00:00" class="md-ellipsis">06/05/2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            Trong
+                            
+                              <a href="../../../../category/agent/">Agent</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              6 phút đọc
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:ai-agent" class="md-tag">ai-agent</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:bmad-method" class="md-tag">bmad-method</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:creative-intelligence-suite" class="md-tag">creative-intelligence-suite</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:design-thinking" class="md-tag">design-thinking</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:innovation" class="md-tag">innovation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:problem-solving" class="md-tag">problem-solving</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<h1 id="creative-intelligence-suite-cis-giai-quyet-van-e-va-sang-tao-co-cau-truc-cung-ai-agent">Creative Intelligence Suite (CIS) — Giải Quyết Vấn Đề Và Sáng Tạo Có Cấu Trúc Cùng AI Agent<a class="headerlink" href="#creative-intelligence-suite-cis-giai-quyet-van-e-va-sang-tao-co-cau-truc-cung-ai-agent" title="Permanent link">&para;</a></h1>
+<h2 id="mo-au-sang-tao-khong-phai-la-phep-mau-sang-tao-la-phuong-phap">Mở đầu: Sáng tạo không phải là phép màu, sáng tạo là phương pháp<a class="headerlink" href="#mo-au-sang-tao-khong-phai-la-phep-mau-sang-tao-la-phuong-phap" title="Permanent link">&para;</a></h2>
+<p>Khi gặp một bài toán hóc búa hay cần một ý tưởng đột phá (ví dụ: "Làm sao để giữ chân người dùng?", "Sản phẩm tiếp theo nên là gì?"), chúng ta thường có xu hướng gõ một dòng prompt chung chung vào ChatGPT hoặc Claude: <em>"Hãy cho tôi 10 ý tưởng để..."</em> </p>
+<p>Kết quả trả về thường là những ý tưởng sáo rỗng, rập khuôn và thiếu chiều sâu. Tại sao? Vì <strong>sự sáng tạo thực sự hiếm khi đến từ một câu hỏi đơn giản</strong>. Những bộ óc sáng tạo nhất không ngồi chờ cảm hứng rơi xuống; họ sử dụng các phương pháp có hệ thống (Structured Creativity) để tạo ra các góc nhìn mới.</p>
+<p>Đó chính là lý do <strong>Creative Intelligence Suite (CIS)</strong> ra đời. Là một module mở rộng mạnh mẽ trong hệ sinh thái của <a href="https://cis-docs.bmad-method.org/">BMad Method</a>, CIS không làm hộ bạn công việc sáng tạo. Thay vào đó, nó đóng vai trò là những <strong>người điều phối (Facilitators) và Huấn luyện viên (Coaches)</strong>, dẫn dắt bạn qua các quy trình sáng tạo chuyên nghiệp bằng AI Agents.</p>
+<hr />
+<h2 id="1-creative-intelligence-suite-cis-la-gi">1. Creative Intelligence Suite (CIS) là gì?<a class="headerlink" href="#1-creative-intelligence-suite-cis-la-gi" title="Permanent link">&para;</a></h2>
+<p>Nếu như BMad Method cốt lõi tập trung vào việc <strong>xây dựng phần mềm</strong> (Planning, Architecture, Implementation), thì CIS tập trung vào giai đoạn <strong>"Fuzzy Front-End"</strong> (Giai đoạn đầu vào mơ hồ). Đây là lúc ý tưởng mới được sinh ra, vấn đề được định nghĩa lại, và các giải pháp sáng tạo bắt đầu thành hình.</p>
+<p>CIS tiếp cận sự sáng tạo dựa trên 4 nguyên tắc thiết kế cốt lõi:</p>
+<ol>
+<li><strong>Specialized Agents</strong>: Thay vì một AI làm mọi thứ, CIS có 6 Agent chuyên biệt cho từng loại tư duy sáng tạo (Brainstorming, Design Thinking, Chiến lược...).</li>
+<li><strong>Curated Technique Libraries</strong>: CIS không bịa ra cách làm. Các Agents được tích hợp sẵn những thư viện kỹ thuật đã được thế giới công nhận (ví dụ: SCAMPER, TRIZ, Jobs-to-be-Done, Hero's Journey).</li>
+<li><strong>Interactive Facilitation</strong>: Agent của CIS hoạt động bằng cách <strong>đặt câu hỏi</strong> thay vì nhả ra một đống text. Nó ép bạn phải mở rộng suy nghĩ, giữ lại được bối cảnh (context) và quyền quyết định của bạn.</li>
+<li><strong>Diverge-Converge Structure</strong>: Nhịp điệu kinh điển của thiết kế: <strong>Mở rộng (Diverge)</strong> để tìm ra vô số lựa chọn → <strong>Thu hẹp (Converge)</strong> để chọn ra giải pháp khả thi nhất. Rất nhiều sự thất bại trong sáng tạo đến từ việc "chốt" ý tưởng đầu tiên xuất hiện quá sớm.</li>
+</ol>
+<hr />
+<h2 id="2-oi-ngu-6-ai-agent-sang-tao-trong-cis">2. Đội ngũ 6 AI Agent Sáng Tạo Trong CIS<a class="headerlink" href="#2-oi-ngu-6-ai-agent-sang-tao-trong-cis" title="Permanent link">&para;</a></h2>
+<p>Để giải quyết đa dạng các bài toán, CIS cung cấp 6 chuyên gia. Bạn gọi họ bằng các lệnh (commands) bắt đầu bằng <code>/cis-</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Vai trò &amp; Điểm mạnh</th>
+<th>Lệnh kích hoạt</th>
+<th>Output tạo ra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>💡 <strong>Carson</strong></td>
+<td><strong>Brainstorming Coach:</strong> Sở hữu 36 kỹ thuật tư duy phân kỳ. Chuyên môn tạo ra nhiều ý tưởng đa dạng bằng nguyên tắc "Yes, and...".</td>
+<td><code>/cis-brainstorm</code></td>
+<td><code>brainstorming-{date}.md</code></td>
+</tr>
+<tr>
+<td>🎨 <strong>Maya</strong></td>
+<td><strong>Design Thinking Coach:</strong> Dẫn dắt quy trình 5 bước (Empathize → Define → Ideate → Prototype → Test) tập trung vào con người.</td>
+<td><code>/cis-design-thinking</code></td>
+<td><code>design-thinking-{date}.md</code></td>
+</tr>
+<tr>
+<td>♟️ <strong>Victor</strong></td>
+<td><strong>Innovation Strategist:</strong> Khám phá cơ hội đột phá (Disruption), phân tích Blue Ocean Strategy và Jobs-to-be-Done.</td>
+<td><code>/cis-innovation-strategy</code></td>
+<td><code>innovation-strategy-{date}.md</code></td>
+</tr>
+<tr>
+<td>🔬 <strong>Dr. Quinn</strong></td>
+<td><strong>Creative Problem Solver:</strong> Chẩn đoán gốc rễ vấn đề (Root-cause analysis) thay vì chữa triệu chứng. Áp dụng TRIZ, 5 Whys.</td>
+<td><code>/cis-problem-solving</code></td>
+<td><code>problem-solution-{date}.md</code></td>
+</tr>
+<tr>
+<td>📖 <strong>Sophia</strong></td>
+<td><strong>Storyteller:</strong> Biến ý tưởng thô cứng thành câu chuyện hấp dẫn (Narrative) bằng 25 cấu trúc kịch bản chuyên nghiệp.</td>
+<td><code>/cis-storytelling</code></td>
+<td><code>story-{date}.md</code></td>
+</tr>
+<tr>
+<td>📊 <strong>Caravaggio</strong></td>
+<td><strong>Presentation Master:</strong> (Đang phát triển) Thiết kế các bản thuyết trình, Pitch deck, trực quan hoá dữ liệu thông minh.</td>
+<td>TBD</td>
+<td>Slide, Pitch deck</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-vi-du-thuc-tien-giai-quyet-bai-toan-ty-le-roi-bo-churn-rate-tang-cao">3. Ví dụ thực tiễn: Giải quyết bài toán "Tỷ lệ Rời bỏ (Churn Rate) tăng cao"<a class="headerlink" href="#3-vi-du-thuc-tien-giai-quyet-bai-toan-ty-le-roi-bo-churn-rate-tang-cao" title="Permanent link">&para;</a></h2>
+<p>Hãy xem cách bạn có thể ứng dụng CIS để giải quyết một bài toán thực tế của doanh nghiệp: <strong>Ứng dụng SaaS của bạn đang có tỷ lệ User Churn tăng cao trong tháng qua</strong>. Thay vì hoảng loạn và vội vã thêm tính năng, hãy để CIS dẫn dắt bạn.</p>
+<h3 id="buoc-1-tim-nguyen-nhan-goc-re-voi-dr-quinn-problem-solving">Bước 1: Tìm nguyên nhân gốc rễ với Dr. Quinn (Problem Solving)<a class="headerlink" href="#buoc-1-tim-nguyen-nhan-goc-re-voi-dr-quinn-problem-solving" title="Permanent link">&para;</a></h3>
+<p>Bạn mở một chat mới và gọi: <code>/cis-problem-solving</code>
+- <strong>Dr. Quinn</strong> sẽ không cho bạn giải pháp ngay. Agent này sẽ yêu cầu bạn mô tả tình trạng. Sau đó, nó áp dụng kỹ thuật <strong>5 Whys</strong> hoặc <strong>Systems Thinking</strong> để lật ngược vấn đề.
+- <em>Kết quả:</em> Dr. Quinn giúp bạn nhận ra vấn đề không phải do "sản phẩm thiếu tính năng" (triệu chứng), mà do "quá trình Onboarding quá phức tạp khiến user mới bỏ cuộc ở bước tích hợp hệ thống" (nguyên nhân gốc).
+- <em>Artifact lưu tại:</em> <code>_bmad-output/problem-solution-20260506.md</code></p>
+<h3 id="buoc-2-tim-y-tuong-khac-phuc-voi-carson-brainstorming">Bước 2: Tìm ý tưởng khắc phục với Carson (Brainstorming)<a class="headerlink" href="#buoc-2-tim-y-tuong-khac-phuc-voi-carson-brainstorming" title="Permanent link">&para;</a></h3>
+<p>Trong một chat mới, bạn gọi: <code>/cis-brainstorm</code> và nạp context từ file của Dr. Quinn.
+- <strong>Carson</strong> phân tích và đề xuất dùng kỹ thuật <strong>SCAMPER</strong> (Substitute, Combine, Adapt, Modify, Put to another use, Eliminate, Reverse) để giải quyết quy trình Onboarding.
+- <em>Carson hỏi:</em> "Nếu chúng ta <strong>Eliminate</strong> (Loại bỏ) hoàn toàn bước tạo tài khoản trong 5 phút đầu, user có thể trải nghiệm 'aha moment' như thế nào?"
+- Qua quá trình "ping-pong", bạn và Carson chốt được ý tưởng: Tạo ra một môi trường Sandbox dùng thử không cần đăng nhập, tích hợp sẵn dữ liệu mẫu.</p>
+<h3 id="buoc-3-hoan-thien-trai-nghiem-nguoi-dung-voi-maya-design-thinking">Bước 3: Hoàn thiện trải nghiệm người dùng với Maya (Design Thinking)<a class="headerlink" href="#buoc-3-hoan-thien-trai-nghiem-nguoi-dung-voi-maya-design-thinking" title="Permanent link">&para;</a></h3>
+<p>Sử dụng <code>/cis-design-thinking</code> để phát triển ý tưởng Sandbox.
+- <strong>Maya</strong> sẽ đưa bạn qua bước <strong>Empathize</strong>: "Cảm xúc của một CTO bận rộn khi phải mất 1 tiếng config chỉ để xem ứng dụng có chạy không là gì?".
+- Maya giúp vẽ ra Journey Map của tính năng Sandbox, xác định những điểm mù mà bạn không ngờ tới (vd: dữ liệu mẫu phải đúng với ngành nghề của khách hàng).
+- <em>Artifact:</em> <code>design-thinking-20260506.md</code> chứa đầy đủ User Insights và Prototype outline.</p>
+<h3 id="buoc-4-ban-y-tuong-cho-team-voi-sophia-storytelling">Bước 4: "Bán" ý tưởng cho team với Sophia (Storytelling)<a class="headerlink" href="#buoc-4-ban-y-tuong-cho-team-voi-sophia-storytelling" title="Permanent link">&para;</a></h3>
+<p>Bạn có ý tưởng hay, nhưng cần thuyết phục sếp và team Dev làm nó. Bạn gọi <code>/cis-storytelling</code>.
+- <strong>Sophia</strong> áp dụng cấu trúc <strong>Hero's Journey</strong>.
+- <em>Người hùng</em> là người dùng mới, <em>Quái vật</em> là sự phức tạp của hệ thống, và <em>Vũ khí</em> chính là tính năng Sandbox. Sophia viết ra một câu chuyện sống động, nhấn mạnh vào cảm xúc và động lực, giúp toàn đội ngũ hiểu rõ TẠI SAO họ cần xây dựng tính năng này.</p>
+<p>=&gt; Chỉ trong 1-2 giờ làm việc sâu sắc với CIS, bạn đã đi từ một "chỉ số xấu" đến một "chiến lược sản phẩm rõ ràng, có căn cứ, có thiết kế trải nghiệm và câu chuyện thuyết phục".</p>
+<hr />
+<h2 id="4-cach-cai-at-va-bat-au-nhanh">4. Cách cài đặt và Bắt đầu nhanh<a class="headerlink" href="#4-cach-cai-at-va-bat-au-nhanh" title="Permanent link">&para;</a></h2>
+<p>Vì CIS là một module của BMad Method, việc cài đặt vô cùng đơn giản, yêu cầu bạn đã có Node.js.</p>
+<p><strong>Cài đặt:</strong>
+Mở terminal trong thư mục dự án của bạn:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npx<span class="w"> </span>bmad-method<span class="w"> </span>install
+</span></code></pre></div>
+Khi được trình cài đặt hỏi, hãy chắc chắn bạn chọn module <strong>Creative Intelligence Suite</strong>. Installer sẽ tự động thêm các agents và workflows vào thư mục <code>_bmad/</code> trong dự án của bạn.</p>
+<p><strong>Bắt đầu phiên làm việc:</strong>
+Sử dụng Claude Code hoặc Cursor, gõ lệnh trực tiếp để gọi Agent. <em>Lưu ý quan trọng: Luôn mở một phiên Chat mới (Fresh Chat) cho mỗi workflow để AI không bị lẫn lộn context.</em></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Thử ngay session đầu tiên với Carson</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/cis-brainstorm
+</span></code></pre></div>
+<p>Bạn cũng có thể cung cấp tài liệu đầu vào (context) cho workflow bằng cờ <code>--data</code>:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>workflow<span class="w"> </span>cis-design-thinking<span class="w"> </span>--data<span class="w"> </span>/path/to/user-research-report.md
+</span></code></pre></div></p>
+<hr />
+<h2 id="ket-luan-thay-oi-cach-chung-ta-nghi">Kết luận: Thay Đổi Cách Chúng Ta Nghĩ<a class="headerlink" href="#ket-luan-thay-oi-cach-chung-ta-nghi" title="Permanent link">&para;</a></h2>
+<p>Sự thật là AI không thể tự sáng tạo theo nghĩa con người vẫn hiểu, nhưng AI sở hữu khối lượng kiến thức khổng lồ về <strong>các phương pháp sáng tạo</strong>. </p>
+<p><strong>Creative Intelligence Suite (CIS)</strong> đóng vai trò như một người dẫn đường tận tụy, buộc chúng ta chậm lại, mở rộng góc nhìn, phân tích tận gốc vấn đề trước khi vội vã đưa ra giải pháp. Nếu bạn là Product Manager, Tech Lead, Marketer hay bất kỳ ai thường xuyên phải giải quyết các vấn đề phức tạp, CIS chắc chắn là một công cụ giúp nhân chuỗi giá trị và "chất xám" của bạn lên nhiều lần.</p>
+<blockquote>
+<p><strong>Khám phá thêm về CIS tại:</strong>
+- <a href="https://cis-docs.bmad-method.org/">Trang tài liệu chính thức của CIS</a>
+- <a href="https://discord.gg/gk8jAdXWmj">Cộng đồng Discord BMad</a></p>
+</blockquote>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Trở lại mục lục
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0110\u00e3 sao ch\u00e9p", "clipboard.copy": "Sao ch\u00e9p v\u00e0o b\u1ed9 nh\u1edb t\u1ea1m", "search.result.more.one": "1 t\u1eeb kh\u00e1c trong trang", "search.result.more.other": "# t\u1eeb kh\u00e1c trong trang", "search.result.none": "Kh\u00f4ng t\u00ecm th\u1ea5y t\u00e0i li\u1ec7u li\u00ean quan", "search.result.one": "1 t\u00e0i li\u1ec7u li\u00ean quan", "search.result.other": "# t\u00e0i li\u1ec7u li\u00ean quan", "search.result.placeholder": "Nh\u1eadp \u0111\u1ec3 b\u1eaft \u0111\u1ea7u t\u00ecm ki\u1ebfm", "search.result.term.missing": "Kh\u00f4ng", "select.version": "Ch\u1ecdn phi\u00ean b\u1ea3n"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

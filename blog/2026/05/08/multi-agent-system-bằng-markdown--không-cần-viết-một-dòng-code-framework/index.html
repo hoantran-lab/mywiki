@@ -1,0 +1,1462 @@
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hướng dẫn xây dựng hệ thống Multi-Agent hoàn toàn bằng file Markdown — không cần viết code framework. Chạy trực tiếp trên Claude Code, GitHub Copilot, Cursor.">
+      
+      
+        <meta name="author" content="tranvanhoan">
+      
+      
+        <link rel="canonical" href="https://tranvanhoan.github.io/MyWiki/blog/2026/05/08/multi-agent-system-b%E1%BA%B1ng-markdown--kh%C3%B4ng-c%E1%BA%A7n-vi%E1%BA%BFt-m%E1%BB%99t-d%C3%B2ng-code-framework/">
+      
+      
+        <link rel="prev" href="../multi-agent-system--khi-ai-kh%C3%B4ng-c%C3%B2n-%C4%91%C6%A1n-th%C6%B0%C6%A1ng-%C4%91%E1%BB%99c-m%C3%A3/">
+      
+      
+        <link rel="next" href="../agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Multi-Agent System Bằng Markdown — Không Cần Viết Một Dòng Code Framework - AI Wiki - My Knowledge Base</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#multi-agent-system-bang-markdown-khong-can-viet-mot-dong-code-framework" class="md-skip">
+          Bỏ qua
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Đầu trang">
+    <a href="../../../../.." title="AI Wiki - My Knowledge Base" class="md-header__button md-logo" aria-label="AI Wiki - My Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Wiki - My Knowledge Base
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Multi-Agent System Bằng Markdown — Không Cần Viết Một Dòng Code Framework
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Tìm kiếm" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Tìm kiếm">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Chia sẻ" aria-label="Chia sẻ" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Xoá" aria-label="Xoá" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tranvanhoan/MyWiki" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tranvanhoan/MyWiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Trang chủ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../roadmap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Chủ đề (Tags)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Về tác giả
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Thanh điều hướng" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="AI Wiki - My Knowledge Base" class="md-nav__button md-logo" aria-label="AI Wiki - My Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Wiki - My Knowledge Base
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tranvanhoan/MyWiki" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tranvanhoan/MyWiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trang chủ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chủ đề (Tags)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Về tác giả
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Mục lục">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Mục lục
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mo-au" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mở đầu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-tai-sao-markdown-based-agent-hoat-ong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Tại Sao Markdown-Based Agent Hoạt Động?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Tại Sao Markdown-Based Agent Hoạt Động?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nguyen-ly-cot-loi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nguyên lý cốt lõi
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cau-truc-thu-muc-chuan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Cấu Trúc Thư Mục Chuẩn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-xay-dung-tung-agent-bang-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Xây Dựng Từng Agent Bằng Markdown
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Xây Dựng Từng Agent Bằng Markdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agent-1-requirements-agent-pm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent 1: Requirements Agent (PM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-2-basic-design-agent-architect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent 2: Basic Design Agent (Architect)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-3-detailed-design-agent-se" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent 3: Detailed Design Agent (SE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-4-programmer-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent 4: Programmer Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-5-tester-agent-qa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent 5: Tester Agent (QA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-xay-dung-orchestrator-workflow-bang-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Xây Dựng Orchestrator &amp; Workflow Bằng Text
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Xây Dựng Orchestrator &amp; Workflow Bằng Text">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-agentsmd-bo-nao-ieu-phoi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File AGENTS.md — Bộ não điều phối
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-review-agent-nguoi-gac-cong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Review Agent — Người gác cổng
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cach-su-dung-tren-tung-nen-tang" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cách Sử Dụng Trên Từng Nền Tảng
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Cách Sử Dụng Trên Từng Nền Tảng">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-copilot-agent-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Copilot (Agent Mode)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cursor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-so-sanh-markdown-based-vs-code-based-mas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. So Sánh: Markdown-Based vs Code-Based MAS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ket-luan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kết luận
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tham-khao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tham khảo
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Quay lại
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/tranvanhoan" alt="Hoàn Trần">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Hoàn Trần
+                        
+                      </strong>
+                      <br>
+                      Người viết và tìm tòi về AI
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-05-08 00:00:00+00:00" class="md-ellipsis">08/05/2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            Trong
+                            
+                              <a href="../../../../category/agent/">Agent</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              10 phút đọc
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:claude-code" class="md-tag">claude-code</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:github-copilot" class="md-tag">github-copilot</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:markdown-agents" class="md-tag">markdown-agents</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:multi-agent-system" class="md-tag">multi-agent-system</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:no-code" class="md-tag">no-code</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<h1 id="multi-agent-system-bang-markdown-khong-can-viet-mot-dong-code-framework">Multi-Agent System Bằng Markdown — Không Cần Viết Một Dòng Code Framework<a class="headerlink" href="#multi-agent-system-bang-markdown-khong-can-viet-mot-dong-code-framework" title="Permanent link">&para;</a></h1>
+<h2 id="mo-au">Mở đầu<a class="headerlink" href="#mo-au" title="Permanent link">&para;</a></h2>
+<p>Ở <a href="../th%E1%BB%B1c-chi%E1%BA%BFn-multi-agent-system-mas-x%C3%A2y-d%E1%BB%B1ng-%C4%91%E1%BB%99i-d%E1%BB%B1-%C3%A1n-ph%E1%BA%A7n-m%E1%BB%81m-%E1%BA%A3o-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/">bài trước</a>, chúng ta đã thiết kế hệ thống MAS bằng code Python với LangGraph — một cách tiếp cận mạnh mẽ nhưng đòi hỏi phải viết code infrastructure. Câu hỏi đặt ra: <strong>Nếu tôi chỉ muốn dùng Claude Code, GitHub Copilot hoặc Cursor — những công cụ đã có sẵn — thì sao?</strong></p>
+<p>Câu trả lời: <strong>Hoàn toàn được.</strong> Bạn có thể xây dựng một hệ thống Multi-Agent hoàn chỉnh chỉ bằng <strong>file Markdown</strong>, không cần cài thêm framework, không cần viết code orchestration. Các AI coding agent hiện đại đều hỗ trợ cơ chế đọc file hướng dẫn (instruction files) để thay đổi hành vi — và đó chính là nền tảng để xây dựng "agent" và "skill" dưới dạng text.</p>
+<p><strong>Nội dung chính:</strong></p>
+<ul>
+<li>Tại sao Markdown-based Agent hoạt động được</li>
+<li>Cấu trúc thư mục chuẩn cho Multi-Agent project</li>
+<li>Xây dựng từng Agent bằng file Markdown</li>
+<li>Thiết kế Orchestrator Workflow bằng text</li>
+<li>Cơ chế Review &amp; Self-Healing hoàn toàn bằng prompt</li>
+<li>Tương thích đa nền tảng: Claude Code, GitHub Copilot, Cursor</li>
+</ul>
+<hr />
+<h2 id="1-tai-sao-markdown-based-agent-hoat-ong">1. Tại Sao Markdown-Based Agent Hoạt Động?<a class="headerlink" href="#1-tai-sao-markdown-based-agent-hoat-ong" title="Permanent link">&para;</a></h2>
+<h3 id="nguyen-ly-cot-loi">Nguyên lý cốt lõi<a class="headerlink" href="#nguyen-ly-cot-loi" title="Permanent link">&para;</a></h3>
+<p>Các AI coding agent (Claude Code, Copilot, Cursor) đều có cơ chế <strong>đọc file hướng dẫn</strong> khi khởi động hoặc khi thực hiện task:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Công cụ</th>
+<th style="text-align: left;">File hướng dẫn chính</th>
+<th style="text-align: left;">Cơ chế load</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Claude Code</strong></td>
+<td style="text-align: left;"><code>CLAUDE.md</code>, <code>AGENTS.md</code>, <code>.gemini/skills/*.md</code></td>
+<td style="text-align: left;">Load tự động khi bắt đầu session</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>GitHub Copilot</strong></td>
+<td style="text-align: left;"><code>.github/copilot-instructions.md</code></td>
+<td style="text-align: left;">Load tự động trong mọi chat/agent interaction</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cursor</strong></td>
+<td style="text-align: left;"><code>.cursorrules</code>, <code>.cursor/rules/*.mdc</code></td>
+<td style="text-align: left;">Load tự động</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Gemini CLI</strong></td>
+<td style="text-align: left;"><code>GEMINI.md</code>, <code>.gemini/skills/*.md</code></td>
+<td style="text-align: left;">Load tự động</td>
+</tr>
+</tbody>
+</table>
+<p>Khi bạn viết một file Markdown với nội dung: <em>"Bạn là System Architect. Nhiệm vụ của bạn là thiết kế kiến trúc hệ thống..."</em>, AI sẽ <strong>đóng vai trò đó</strong> trong suốt quá trình thực thi. Đây chính là "Agent" — không cần code Python, không cần import framework.</p>
+<div class="admonition info">
+<p class="admonition-title">Agent = Prompt + Context + Rules</p>
+<p>Trong thế giới Markdown-based, một "Agent" đơn giản là một file <code>.md</code> chứa: <strong>(1)</strong> Vai trò (Role), <strong>(2)</strong> Kiến thức chuyên môn (Expertise), <strong>(3)</strong> Quy tắc hành vi (Rules), và <strong>(4)</strong> Format output mong muốn.</p>
+</div>
+<hr />
+<h2 id="2-cau-truc-thu-muc-chuan">2. Cấu Trúc Thư Mục Chuẩn<a class="headerlink" href="#2-cau-truc-thu-muc-chuan" title="Permanent link">&para;</a></h2>
+<p>Dưới đây là cấu trúc thư mục được thiết kế để <strong>tương thích đa nền tảng</strong> (Claude Code, Copilot, Cursor, Gemini):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>my-project/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── AGENTS.md                          # Hướng dẫn tổng thể (cross-tool standard)
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── CLAUDE.md -&gt; AGENTS.md             # Symlink cho Claude Code
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── .github/
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   └── copilot-instructions.md        # Copy hoặc symlink cho Copilot
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── .cursor/
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   └── rules/
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│       └── project.mdc                # Copy hoặc symlink cho Cursor
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── .gemini/
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   └── skills/                        # Skills cho Gemini/Claude
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│       ├── 01-requirements.md
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│       ├── 02-basic-design.md
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│       ├── 03-detailed-design.md
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│       ├── 04-implementation.md
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│       ├── 05-testing.md
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│       └── 06-review.md
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>├── docs/
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│   └── specs/                         # Output của các Agent
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│       ├── requirements.md
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│       ├── basic-design.md
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>│       ├── detailed-design.md
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>│       └── test-report.md
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>└── logs/
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    ├── temp_error.log                 # Log lỗi tạm (AI tự sửa)
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    └── final_error.log                # Log lỗi cuối (cần người can thiệp)
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Symlink để dùng chung 1 nguồn</p>
+<p>Thay vì copy nội dung sang nhiều file, dùng symlink:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ln<span class="w"> </span>-s<span class="w"> </span>AGENTS.md<span class="w"> </span>CLAUDE.md
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ln<span class="w"> </span>-s<span class="w"> </span>AGENTS.md<span class="w"> </span>.github/copilot-instructions.md
+</span></code></pre></div>
+Khi sửa <code>AGENTS.md</code>, tất cả công cụ đều nhận được cập nhật.</p>
+</div>
+<hr />
+<h2 id="3-xay-dung-tung-agent-bang-markdown">3. Xây Dựng Từng Agent Bằng Markdown<a class="headerlink" href="#3-xay-dung-tung-agent-bang-markdown" title="Permanent link">&para;</a></h2>
+<h3 id="agent-1-requirements-agent-pm">Agent 1: Requirements Agent (PM)<a class="headerlink" href="#agent-1-requirements-agent-pm" title="Permanent link">&para;</a></h3>
+<p>Tạo file <code>.gemini/skills/01-requirements.md</code>:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gh"># Skill: Requirements Definition (要件定義)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="gu">## Khi nào kích hoạt</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">-</span><span class="w"> </span>Khi user yêu cầu &quot;phân tích yêu cầu&quot;, &quot;viết SRS&quot;, &quot;requirements&quot;, hoặc 
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  khi Orchestrator chỉ định Phase 1.
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="gu">## Vai trò</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>Bạn là Business Analyst chuẩn IPA Nhật Bản. Nhiệm vụ: 
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>biến yêu cầu thô của khách hàng thành tài liệu Yêu cầu có cấu trúc.
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="gu">## Quy trình</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="k">1.</span> Đọc yêu cầu từ user hoặc từ file được chỉ định
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="k">2.</span> Phân tích và liệt kê:
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>Functional Requirements (FR-001, FR-002...)
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>Non-Functional Requirements (NFR-001...)
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>Use Cases cho chức năng chính
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>Assumptions &amp; Constraints
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="k">3.</span> Lưu kết quả vào <span class="sb">`docs/specs/requirements.md`</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="gu">## Format output</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>Tài liệu phải theo format sau:
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="k">-</span><span class="w"> </span>Mỗi FR có ID, mô tả, priority (High/Medium/Low)
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="k">-</span><span class="w"> </span>Mỗi NFR có ID, metric đo lường cụ thể
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="k">-</span><span class="w"> </span>Mỗi Use Case có: Actor, Precondition, Main Flow, Alternative Flow
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="gu">## Quy tắc</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="k">-</span><span class="w"> </span>KHÔNG được bịa thêm chức năng user không yêu cầu
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="k">-</span><span class="w"> </span>KHÔNG được bỏ qua yêu cầu phi chức năng
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="k">-</span><span class="w"> </span>Nếu yêu cầu mơ hồ, hãy HỎI user trước khi giả định
+</span></code></pre></div>
+<h3 id="agent-2-basic-design-agent-architect">Agent 2: Basic Design Agent (Architect)<a class="headerlink" href="#agent-2-basic-design-agent-architect" title="Permanent link">&para;</a></h3>
+<p>Tạo file <code>.gemini/skills/02-basic-design.md</code>:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gh"># Skill: Basic Design (基本設計)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="gu">## Khi nào kích hoạt</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">-</span><span class="w"> </span>Khi user yêu cầu &quot;thiết kế kiến trúc&quot;, &quot;basic design&quot;,
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  hoặc khi Orchestrator chỉ định Phase 2.
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="gu">## Điều kiện tiên quyết</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">-</span><span class="w"> </span>File <span class="sb">`docs/specs/requirements.md`</span> phải tồn tại và đã được review PASS.
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="gu">## Vai trò</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>Bạn là System Architect. Nhiệm vụ: thiết kế kiến trúc tổng thể
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>dựa trên tài liệu Yêu cầu.
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="gu">## Quy trình</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="k">1.</span> Đọc <span class="sb">`docs/specs/requirements.md`</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="k">2.</span> Thiết kế và viết ra:
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>Tech stack (với lý do chọn)
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>System architecture (layers, modules, components)
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>API endpoints (method, path, request/response schema)
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>Database schema (ERD dạng Mermaid hoặc text)
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>Sequence diagrams cho các flow chính
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="k">3.</span> Lưu kết quả vào <span class="sb">`docs/specs/basic-design.md`</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="gu">## Quy tắc</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="k">-</span><span class="w"> </span>Mọi API endpoint phải map với ít nhất 1 FR trong requirements
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="k">-</span><span class="w"> </span>Database schema phải cover tất cả entities trong requirements
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="k">-</span><span class="w"> </span>PHẢI sử dụng Mermaid syntax cho diagrams
+</span></code></pre></div>
+<h3 id="agent-3-detailed-design-agent-se">Agent 3: Detailed Design Agent (SE)<a class="headerlink" href="#agent-3-detailed-design-agent-se" title="Permanent link">&para;</a></h3>
+<p>Tạo file <code>.gemini/skills/03-detailed-design.md</code>:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gh"># Skill: Detailed Design (詳細設計)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="gu">## Khi nào kích hoạt</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">-</span><span class="w"> </span>Khi user yêu cầu &quot;thiết kế chi tiết&quot;, &quot;detailed design&quot;,
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  hoặc khi Orchestrator chỉ định Phase 3.
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="gu">## Điều kiện tiên quyết</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="k">-</span><span class="w"> </span>File <span class="sb">`docs/specs/basic-design.md`</span> phải tồn tại và đã được review PASS.
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="gu">## Vai trò</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>Bạn là System Engineer. Nhiệm vụ: chi tiết hóa thiết kế cơ bản
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>đến mức class, function, và pseudocode.
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="gu">## Quy trình</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="k">1.</span> Đọc <span class="sb">`docs/specs/basic-design.md`</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="k">2.</span> Cho MỖI module/component, viết:
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>Class diagram (attributes, methods, visibility)
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>Function signatures: tên hàm, input types, output types
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>Pseudocode cho mỗi hàm có logic phức tạp
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>Error handling strategy cho mỗi hàm
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="k">3.</span> Lưu kết quả vào <span class="sb">`docs/specs/detailed-design.md`</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="gu">## Quy tắc</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="k">-</span><span class="w"> </span>Mỗi class phải có docstring mô tả mục đích
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="k">-</span><span class="w"> </span>Mỗi hàm phải có: input types, output types, exceptions
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="k">-</span><span class="w"> </span>KHÔNG được viết &quot;implement later&quot; hoặc &quot;TODO&quot; — phải viết pseudocode cụ thể
+</span></code></pre></div>
+<h3 id="agent-4-programmer-agent">Agent 4: Programmer Agent<a class="headerlink" href="#agent-4-programmer-agent" title="Permanent link">&para;</a></h3>
+<p>Tạo file <code>.gemini/skills/04-implementation.md</code>:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gh"># Skill: Implementation (製造)</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="gu">## Khi nào kích hoạt</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">-</span><span class="w"> </span>Khi user yêu cầu &quot;viết code&quot;, &quot;implement&quot;, &quot;coding&quot;,
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  hoặc khi Orchestrator chỉ định Phase 4.
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="gu">## Điều kiện tiên quyết</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="k">-</span><span class="w"> </span>File <span class="sb">`docs/specs/detailed-design.md`</span> phải tồn tại và đã được review PASS.
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="gu">## Vai trò</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>Bạn là Senior Programmer. Nhiệm vụ: dịch thiết kế chi tiết thành 
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>source code hoàn chỉnh, chạy được.
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="gu">## Quy trình</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="k">1.</span> Đọc <span class="sb">`docs/specs/detailed-design.md`</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="k">2.</span> Tạo cấu trúc thư mục source code theo kiến trúc đã thiết kế
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="k">3.</span> Implement từng class/function theo đúng signatures trong thiết kế
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="k">4.</span> Viết docstrings cho mỗi class và function
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="k">5.</span> Implement error handling theo strategy đã định nghĩa
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="gu">## Quy tắc</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="k">-</span><span class="w"> </span>Code PHẢI tuân thủ 100% function signatures trong detailed design
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="k">-</span><span class="w"> </span>KHÔNG được thêm function hoặc class không có trong thiết kế
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="k">-</span><span class="w"> </span>KHÔNG được dùng placeholder (&quot;pass&quot;, &quot;# TODO&quot;, &quot;...&quot;)
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="k">-</span><span class="w"> </span>Mỗi file phải có header comment với tên module và mục đích
+</span></code></pre></div>
+<h3 id="agent-5-tester-agent-qa">Agent 5: Tester Agent (QA)<a class="headerlink" href="#agent-5-tester-agent-qa" title="Permanent link">&para;</a></h3>
+<p>Tạo file <code>.gemini/skills/05-testing.md</code>:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="gh"># Skill: Testing (テスト)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="gu">## Khi nào kích hoạt</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">-</span><span class="w"> </span>Khi user yêu cầu &quot;viết test&quot;, &quot;testing&quot;, &quot;QA&quot;,
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>  hoặc khi Orchestrator chỉ định Phase 5.
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="gu">## Điều kiện tiên quyết</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="k">-</span><span class="w"> </span>Source code đã được implement và review PASS.
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="k">-</span><span class="w"> </span>File <span class="sb">`docs/specs/requirements.md`</span> tồn tại (để map test cases với FR).
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="gu">## Vai trò</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>Bạn là QA Engineer. Nhiệm vụ: viết và chạy test cases để đảm bảo 
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>source code đáp ứng đúng yêu cầu.
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="gu">## Quy trình</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="k">1.</span> Đọc <span class="sb">`docs/specs/requirements.md`</span> (để biết test cái gì)
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="k">2.</span> Đọc source code (để biết test ở đâu)
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="k">3.</span> Viết test cases:
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>Mỗi FR phải có ít nhất 1 test case
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>Thêm edge cases: input rỗng, giá trị biên, duplicate
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">   </span><span class="k">-</span><span class="w"> </span>Thêm negative cases: input sai type, unauthorized access
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="k">4.</span> Chạy tests và ghi kết quả
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="k">5.</span> Lưu báo cáo vào <span class="sb">`docs/specs/test-report.md`</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="gu">## Format test report</span>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>| Test ID | Mô tả | FR liên quan | Kết quả | Ghi chú |
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>|---------|--------|-------------|---------|---------|
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>| TC-001  | ...    | FR-001      | PASS ✅ |         |
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>| TC-002  | ...    | FR-003      | FAIL ❌ | Expected: ... Actual: ... |
+</span></code></pre></div>
+<hr />
+<h2 id="4-xay-dung-orchestrator-workflow-bang-text">4. Xây Dựng Orchestrator &amp; Workflow Bằng Text<a class="headerlink" href="#4-xay-dung-orchestrator-workflow-bang-text" title="Permanent link">&para;</a></h2>
+<h3 id="file-agentsmd-bo-nao-ieu-phoi">File AGENTS.md — Bộ não điều phối<a class="headerlink" href="#file-agentsmd-bo-nao-ieu-phoi" title="Permanent link">&para;</a></h3>
+<p>Đây là file quan trọng nhất. Nó định nghĩa <strong>toàn bộ quy trình</strong> và là thứ đầu tiên AI đọc khi bắt đầu session:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gh"># AGENTS.md — Orchestrator Workflow</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="gu">## Tổng quan</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Dự án này sử dụng quy trình Waterfall chuẩn IPA Nhật Bản.
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>AI PHẢI tuân theo 5 giai đoạn theo đúng thứ tự. 
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>KHÔNG được nhảy cóc giai đoạn.
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="gu">## Pipeline bắt buộc</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="gu">### Phase 1: Requirements Definition (要件定義)</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="k">-</span><span class="w"> </span>Skill: <span class="sb">`.gemini/skills/01-requirements.md`</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="k">-</span><span class="w"> </span>Input: Yêu cầu từ user
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="k">-</span><span class="w"> </span>Output: <span class="sb">`docs/specs/requirements.md`</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Sau khi hoàn thành → Chạy Review (xem mục Review bên dưới)**</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="gu">### Phase 2: Basic Design (基本設計)</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="k">-</span><span class="w"> </span>Skill: <span class="sb">`.gemini/skills/02-basic-design.md`</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="k">-</span><span class="w"> </span>Input: <span class="sb">`docs/specs/requirements.md`</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="k">-</span><span class="w"> </span>Output: <span class="sb">`docs/specs/basic-design.md`</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Sau khi hoàn thành → Chạy Review**</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="gu">### Phase 3: Detailed Design (詳細設計)</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="k">-</span><span class="w"> </span>Skill: <span class="sb">`.gemini/skills/03-detailed-design.md`</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="k">-</span><span class="w"> </span>Input: <span class="sb">`docs/specs/basic-design.md`</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="k">-</span><span class="w"> </span>Output: <span class="sb">`docs/specs/detailed-design.md`</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Sau khi hoàn thành → Chạy Review**</span>
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="gu">### Phase 4: Implementation (製造)</span>
+</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="k">-</span><span class="w"> </span>Skill: <span class="sb">`.gemini/skills/04-implementation.md`</span>
+</span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="k">-</span><span class="w"> </span>Input: <span class="sb">`docs/specs/detailed-design.md`</span>
+</span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="k">-</span><span class="w"> </span>Output: Source code trong <span class="sb">`src/`</span>
+</span><span id="__span-7-32"><a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Sau khi hoàn thành → Chạy Review**</span>
+</span><span id="__span-7-33"><a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>
+</span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="gu">### Phase 5: Testing (テスト)</span>
+</span><span id="__span-7-35"><a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a><span class="k">-</span><span class="w"> </span>Skill: <span class="sb">`.gemini/skills/05-testing.md`</span>
+</span><span id="__span-7-36"><a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="k">-</span><span class="w"> </span>Input: Source code + <span class="sb">`docs/specs/requirements.md`</span>
+</span><span id="__span-7-37"><a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="k">-</span><span class="w"> </span>Output: <span class="sb">`docs/specs/test-report.md`</span>
+</span><span id="__span-7-38"><a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Sau khi hoàn thành → Chạy Review**</span>
+</span><span id="__span-7-39"><a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>
+</span><span id="__span-7-40"><a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a><span class="gu">## Quy trình Review &amp; Self-Healing (BẮT BUỘC)</span>
+</span><span id="__span-7-41"><a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>
+</span><span id="__span-7-42"><a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>Sau MỖI phase, PHẢI chạy review theo skill <span class="sb">`.gemini/skills/06-review.md`</span>.
+</span><span id="__span-7-43"><a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a>
+</span><span id="__span-7-44"><a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a><span class="gu">### Logic xử lý:</span>
+</span><span id="__span-7-45"><a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a><span class="k">1.</span> Nếu Review = PASS → Chuyển sang Phase tiếp theo
+</span><span id="__span-7-46"><a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a><span class="k">2.</span> Nếu Review = FAIL:
+</span><span id="__span-7-47"><a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a>   a. Ghi lỗi vào <span class="sb">`logs/temp_error.log`</span> (append)
+</span><span id="__span-7-48"><a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a>   b. Đếm retry_count cho phase hiện tại
+</span><span id="__span-7-49"><a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a>   c. Nếu retry_count &lt; 3: Tự đọc lại lỗi và sửa output
+</span><span id="__span-7-50"><a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a>   d. Nếu retry_count &gt;= 3: Ghi vào <span class="sb">`logs/final_error.log`</span> 
+</span><span id="__span-7-51"><a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a>      và DỪNG LẠI, thông báo user
+</span><span id="__span-7-52"><a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a>
+</span><span id="__span-7-53"><a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a><span class="gu">## Quy tắc tổng thể</span>
+</span><span id="__span-7-54"><a id="__codelineno-7-54" name="__codelineno-7-54" href="#__codelineno-7-54"></a><span class="k">-</span><span class="w"> </span>KHÔNG BAO GIỜ bắt đầu Phase N+1 nếu Phase N chưa PASS review
+</span><span id="__span-7-55"><a id="__codelineno-7-55" name="__codelineno-7-55" href="#__codelineno-7-55"></a><span class="k">-</span><span class="w"> </span>Mọi output phải được lưu vào file, không chỉ hiển thị trên chat
+</span><span id="__span-7-56"><a id="__codelineno-7-56" name="__codelineno-7-56" href="#__codelineno-7-56"></a><span class="k">-</span><span class="w"> </span>Khi bắt đầu mỗi Phase, thông báo cho user: &quot;Bắt đầu Phase X: ...&quot;
+</span><span id="__span-7-57"><a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a><span class="k">-</span><span class="w"> </span>Khi kết thúc mỗi Phase, thông báo: &quot;Phase X hoàn thành. Đang review...&quot;
+</span></code></pre></div>
+<h3 id="file-review-agent-nguoi-gac-cong">File Review Agent — Người gác cổng<a class="headerlink" href="#file-review-agent-nguoi-gac-cong" title="Permanent link">&para;</a></h3>
+<p>Tạo file <code>.gemini/skills/06-review.md</code>:</p>
+<p><div class="language-markdown highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gh"># Skill: Review Agent (品質レビュー)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="gu">## Khi nào kích hoạt</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">-</span><span class="w"> </span>Tự động sau mỗi Phase trong pipeline.
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="gu">## Vai trò</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>Bạn là Senior Reviewer chuẩn IPA. Nhiệm vụ: kiểm tra sản phẩm 
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>của Phase vừa hoàn thành, so sánh với tài liệu giai đoạn trước.
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="gu">## Quy trình Review</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="gu">### Bước 1: Xác định Phase đang review</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="k">-</span><span class="w"> </span>Phase 1 (Requirements): So sánh output với yêu cầu gốc của user
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="k">-</span><span class="w"> </span>Phase 2 (Basic Design): So sánh với <span class="sb">`docs/specs/requirements.md`</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="k">-</span><span class="w"> </span>Phase 3 (Detailed Design): So sánh với <span class="sb">`docs/specs/basic-design.md`</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="k">-</span><span class="w"> </span>Phase 4 (Implementation): So sánh với <span class="sb">`docs/specs/detailed-design.md`</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="k">-</span><span class="w"> </span>Phase 5 (Testing): So sánh test results với <span class="sb">`docs/specs/requirements.md`</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="gu">### Bước 2: Checklist kiểm tra</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="k">- [ ]</span> Output có đầy đủ tất cả items từ input không?
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="k">- [ ]</span> Có mâu thuẫn logic nào không?
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="k">- [ ]</span> Có placeholder/TODO chưa hoàn thành không?
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="k">- [ ]</span> Format có đúng chuẩn không?
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="k">- [ ]</span> Có item nào bị &quot;bịa&quot; thêm (không có trong input) không?
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="gu">### Bước 3: Đưa ra kết quả</span>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>Trả về kết quả theo format:
+</span></code></pre></div>
+REVIEW RESULT: [PASS/FAIL]
+Phase: [Tên phase]
+Retry: [Lần thứ mấy] / 3</p>
+<p>Nếu FAIL:
+- Lỗi 1: [Mô tả chi tiết]
+- Lỗi 2: [Mô tả chi tiết]</p>
+<p>Hành động tiếp theo: [Tự sửa / Báo user]
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>### Bước 4: Xử lý kết quả
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>- Nếu PASS: Thông báo &quot;✅ Phase X PASSED. Chuyển sang Phase X+1&quot;
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>- Nếu FAIL và retry &lt; 3:
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  1. Ghi lỗi vào `logs/temp_error.log`
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>  2. Thông báo &quot;❌ Phase X FAILED (lần Y/3). Đang tự sửa...&quot;
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>  3. Đọc lại lỗi và sửa output
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>  4. Chạy review lại
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>- Nếu FAIL và retry &gt;= 3:
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>  1. Ghi toàn bộ lỗi vào `logs/final_error.log`
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>  2. Thông báo &quot;🚨 Phase X FAILED sau 3 lần. Cần can thiệp.&quot;
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>  3. DỪNG pipeline
+</span></code></pre></div></p>
+<hr />
+<h2 id="5-cach-su-dung-tren-tung-nen-tang">5. Cách Sử Dụng Trên Từng Nền Tảng<a class="headerlink" href="#5-cach-su-dung-tren-tung-nen-tang" title="Permanent link">&para;</a></h2>
+<h3 id="claude-code">Claude Code<a class="headerlink" href="#claude-code" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Bắt đầu dự án</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>claude
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># Prompt khởi động pipeline</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>&gt;<span class="w"> </span>Hãy<span class="w"> </span>đọc<span class="w"> </span>AGENTS.md<span class="w"> </span>và<span class="w"> </span>bắt<span class="w"> </span>đầu<span class="w"> </span>Phase<span class="w"> </span><span class="m">1</span>:<span class="w"> </span>Requirements<span class="w"> </span>Definition.
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>&gt;<span class="w"> </span>Yêu<span class="w"> </span>cầu<span class="w"> </span>dự<span class="w"> </span>án:<span class="w"> </span><span class="s2">&quot;Xây REST API quản lý sách cho thư viện&quot;</span>
+</span></code></pre></div>
+<p>Claude sẽ tự động:</p>
+<ol>
+<li>Đọc <code>AGENTS.md</code> → hiểu pipeline</li>
+<li>Load skill <code>01-requirements.md</code> → đóng vai BA</li>
+<li>Sinh <code>docs/specs/requirements.md</code></li>
+<li>Tự chạy review theo <code>06-review.md</code></li>
+<li>Nếu PASS → tự chuyển sang Phase 2 và load <code>02-basic-design.md</code></li>
+</ol>
+<h3 id="github-copilot-agent-mode">GitHub Copilot (Agent Mode)<a class="headerlink" href="#github-copilot-agent-mode" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Copy nội dung <code>AGENTS.md</code> vào <code>.github/copilot-instructions.md</code></li>
+<li>Mở VS Code, chọn <strong>Agent Mode</strong> trong Copilot Chat</li>
+<li>Prompt tương tự:</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Hãy bắt đầu Phase 1 theo quy trình trong copilot-instructions.md.
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Yêu cầu dự án: &quot;Xây REST API quản lý sách cho thư viện&quot;
+</span></code></pre></div>
+<h3 id="cursor">Cursor<a class="headerlink" href="#cursor" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Tạo <code>.cursorrules</code> với nội dung tương tự <code>AGENTS.md</code></li>
+<li>Hoặc tạo từng file rule trong <code>.cursor/rules/</code></li>
+<li>Sử dụng Composer mode để chạy từng phase</li>
+</ol>
+<hr />
+<h2 id="6-so-sanh-markdown-based-vs-code-based-mas">6. So Sánh: Markdown-Based vs Code-Based MAS<a class="headerlink" href="#6-so-sanh-markdown-based-vs-code-based-mas" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tiêu chí</th>
+<th style="text-align: left;">Markdown-Based (Bài này)</th>
+<th style="text-align: left;">Code-Based (LangGraph/AutoGen)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Setup</strong></td>
+<td style="text-align: left;">0 dependencies, chỉ cần tạo file <code>.md</code></td>
+<td style="text-align: left;">Cần Python, pip install, viết code</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Nền tảng</strong></td>
+<td style="text-align: left;">Claude Code, Copilot, Cursor, Gemini</td>
+<td style="text-align: left;">Chỉ chạy trên Python runtime</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Learning curve</strong></td>
+<td style="text-align: left;">Thấp — ai biết viết Markdown đều dùng được</td>
+<td style="text-align: left;">Cao — cần hiểu StateGraph, edges, nodes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Deterministic</strong></td>
+<td style="text-align: left;">Thấp — AI tự quyết định có tuân thủ không</td>
+<td style="text-align: left;">Cao — code enforce luồng chạy</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Retry control</strong></td>
+<td style="text-align: left;">Dựa vào prompt instruction</td>
+<td style="text-align: left;">Dựa vào code logic (biến đếm, conditions)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Customization</strong></td>
+<td style="text-align: left;">Rất dễ — sửa file text</td>
+<td style="text-align: left;">Cần sửa code, test lại</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Phù hợp cho</strong></td>
+<td style="text-align: left;">Dự án cá nhân, team nhỏ, prototyping</td>
+<td style="text-align: left;">Dự án enterprise, production pipeline</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Traceability</strong></td>
+<td style="text-align: left;">Trung bình — phụ thuộc AI có ghi log không</td>
+<td style="text-align: left;">Cao — state persistence, checkpointing</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Hạn chế quan trọng</p>
+<p>Markdown-based agent <strong>không đảm bảo 100%</strong> AI sẽ tuân thủ. AI có thể "quên" đọc skill, bỏ qua review, hoặc nhảy cóc phase. Để giảm rủi ro:</p>
+<ul>
+<li>Viết instruction <strong>rõ ràng, ngắn gọn</strong> — AI tuân thủ tốt hơn khi prompt dưới 500 từ</li>
+<li>Dùng <strong>từ khóa mạnh</strong>: "BẮT BUỘC", "KHÔNG BAO GIỜ", "PHẢI"</li>
+<li>Kiểm tra output sau mỗi phase — đừng tin tưởng 100%</li>
+</ul>
+</div>
+<hr />
+<h2 id="ket-luan">Kết luận<a class="headerlink" href="#ket-luan" title="Permanent link">&para;</a></h2>
+<p>Bạn không cần là Python developer để xây dựng Multi-Agent System. Với những file Markdown được thiết kế cẩn thận, bạn có thể biến bất kỳ AI coding agent nào thành một <strong>đội dự án ảo</strong> có kỷ luật:</p>
+<ol>
+<li><strong><code>AGENTS.md</code></strong> — Orchestrator: định nghĩa pipeline và quy tắc tổng thể</li>
+<li><strong>Skill files</strong> — Specialized Agents: mỗi file một vai trò (PM, Architect, SE, Dev, QA)</li>
+<li><strong>Review skill</strong> — Quality Gate: cơ chế tự kiểm tra và self-healing</li>
+<li><strong>Log files</strong> — Audit trail: lưu vết lỗi và quá trình sửa chữa</li>
+</ol>
+<p>Cách tiếp cận này đặc biệt phù hợp nếu bạn đang làm việc với Claude Code, GitHub Copilot, hoặc Cursor và muốn có <strong>quy trình phát triển phần mềm có cấu trúc</strong> mà không cần đầu tư vào code infrastructure phức tạp.</p>
+<h2 id="tham-khao">Tham khảo<a class="headerlink" href="#tham-khao" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/anthropics/agents-md">AGENTS.md Standard</a> — Chuẩn cross-tool cho AI agent instructions</li>
+<li><a href="https://docs.anthropic.com/en/docs/claude-code">Claude Code Skills Documentation</a> — Hướng dẫn Skills và CLAUDE.md</li>
+<li><a href="https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot">GitHub Copilot Custom Instructions</a> — Hướng dẫn copilot-instructions.md</li>
+<li><a href="https://github.com/bmad-code-org/BMAD-METHOD">BMAD Method</a> — Framework prompt-based multi-agent cho phát triển phần mềm</li>
+<li>Bài viết liên quan: <a href="../th%E1%BB%B1c-chi%E1%BA%BFn-multi-agent-system-mas-x%C3%A2y-d%E1%BB%B1ng-%C4%91%E1%BB%99i-d%E1%BB%B1-%C3%A1n-ph%E1%BA%A7n-m%E1%BB%81m-%E1%BA%A3o-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/">Thực chiến MAS: Waterfall chuẩn IPA bằng Code</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Trở lại mục lục
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0110\u00e3 sao ch\u00e9p", "clipboard.copy": "Sao ch\u00e9p v\u00e0o b\u1ed9 nh\u1edb t\u1ea1m", "search.result.more.one": "1 t\u1eeb kh\u00e1c trong trang", "search.result.more.other": "# t\u1eeb kh\u00e1c trong trang", "search.result.none": "Kh\u00f4ng t\u00ecm th\u1ea5y t\u00e0i li\u1ec7u li\u00ean quan", "search.result.one": "1 t\u00e0i li\u1ec7u li\u00ean quan", "search.result.other": "# t\u00e0i li\u1ec7u li\u00ean quan", "search.result.placeholder": "Nh\u1eadp \u0111\u1ec3 b\u1eaft \u0111\u1ea7u t\u00ecm ki\u1ebfm", "search.result.term.missing": "Kh\u00f4ng", "select.version": "Ch\u1ecdn phi\u00ean b\u1ea3n"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

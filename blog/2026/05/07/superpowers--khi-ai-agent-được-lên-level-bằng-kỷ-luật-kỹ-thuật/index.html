@@ -1,0 +1,1621 @@
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Giới thiệu Superpowers - framework agentic skills với 181K stars đang thay đổi cách AI Agent viết code, từ kiến trúc, triết lý đến cách kết hợp với BMAD và SDD.">
+      
+      
+        <meta name="author" content="tranvanhoan">
+      
+      
+        <link rel="canonical" href="https://tranvanhoan.github.io/MyWiki/blog/2026/05/07/superpowers--khi-ai-agent-%C4%91%C6%B0%E1%BB%A3c-l%C3%AAn-level-b%E1%BA%B1ng-k%E1%BB%B7-lu%E1%BA%ADt-k%E1%BB%B9-thu%E1%BA%ADt/">
+      
+      
+        <link rel="prev" href="../../06/bmad-builder--c%C3%B4ng-c%E1%BB%A5-%C4%91%C3%BAc-ai-agent-c%C3%B3-tr%C3%AD-nh%E1%BB%9B-v%C3%A0-c%C3%A1-t%C3%ADnh-ri%C3%AAng/">
+      
+      
+        <link rel="next" href="../t%E1%BA%A1m-bi%E1%BB%87t-vibe-coding---ch%C3%A0o-%C4%91%C3%B3n-k%E1%BB%B7-nguy%C3%AAn-spec-driven-development-v%E1%BB%9Bi-github-spec-kit/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Superpowers — Khi AI Agent Được "Lên Level" Bằng Kỷ Luật Kỹ Thuật - AI Wiki - My Knowledge Base</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#superpowers-khi-ai-agent-uoc-len-level-bang-ky-luat-ky-thuat" class="md-skip">
+          Bỏ qua
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Đầu trang">
+    <a href="../../../../.." title="AI Wiki - My Knowledge Base" class="md-header__button md-logo" aria-label="AI Wiki - My Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Wiki - My Knowledge Base
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Superpowers — Khi AI Agent Được "Lên Level" Bằng Kỷ Luật Kỹ Thuật
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Tìm kiếm" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Tìm kiếm">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Chia sẻ" aria-label="Chia sẻ" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Xoá" aria-label="Xoá" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tranvanhoan/MyWiki" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tranvanhoan/MyWiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Trang chủ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../roadmap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Chủ đề (Tags)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Về tác giả
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Thanh điều hướng" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="AI Wiki - My Knowledge Base" class="md-nav__button md-logo" aria-label="AI Wiki - My Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Wiki - My Knowledge Base
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tranvanhoan/MyWiki" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tranvanhoan/MyWiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trang chủ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chủ đề (Tags)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Về tác giả
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Mục lục">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Mục lục
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mo-au" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mở đầu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-superpowers-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Superpowers là gì?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Superpowers là gì?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#triet-ly-cot-loi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Triết lý cốt lõi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tai-sao-lai-la-skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tại sao lại là "Skills"?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-kien-truc-7-phase-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Kiến trúc: 7-Phase Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Kiến trúc: 7-Phase Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-brainstorming-hoi-truoc-khi-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Brainstorming — Hỏi trước khi code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-git-worktree-cach-ly-khong-gian-lam-viec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Git Worktree — Cách ly không gian làm việc
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-writing-plans-chia-nho-en-cuc-han" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Writing Plans — Chia nhỏ đến cực hạn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-subagent-driven-development-moi-task-mot-agent-moi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Subagent-Driven Development — Mỗi task một agent mới
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-test-driven-development-luat-sat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Test-Driven Development — Luật Sắt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-6-7-code-review-finish-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 6 &amp; 7: Code Review → Finish Branch
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-superpowers-giai-quyet-iem-au-nao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Superpowers giải quyết điểm đau nào?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Superpowers giải quyết điểm đau nào?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#van-e-1-ai-viet-code-nhanh-nhung-bua-bai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vấn đề 1: AI viết code nhanh nhưng bừa bãi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#van-e-2-context-rot-thoi-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vấn đề 2: Context rot (thối context)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#van-e-3-khong-co-test-khong-co-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vấn đề 3: Không có test, không có review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#van-e-4-architectural-drift" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vấn đề 4: Architectural drift
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-phu-hop-voi-loai-du-an-nao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Phù hợp với loại dự án nào?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cai-at-va-trien-khai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cài đặt và Triển khai
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Cài đặt và Triển khai">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#claude-code-pho-bien-nhat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude Code (phổ biến nhất)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cursor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gemini-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemini CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openai-codex-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAI Codex CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ket-hop-superpowers-voi-bmad-va-sdd-xay-dung-pipeline-hoan-hao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Kết hợp Superpowers với BMAD và SDD — Xây dựng Pipeline hoàn hảo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Kết hợp Superpowers với BMAD và SDD — Xây dựng Pipeline hoàn hảo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hieu-vi-tri-cua-tung-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hiểu vị trí của từng framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-1-bmad-superpowers-pho-bien-nhat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline 1: BMAD → Superpowers (Phổ biến nhất)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-2-sdd-spec-kit-superpowers-documentation-heavy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline 2: SDD (Spec Kit) → Superpowers (Documentation-heavy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-3-bmad-spec-kit-superpowers-full-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline 3: BMAD → Spec Kit → Superpowers (Full Stack)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-tuy-bien-theo-phong-cach-khach-hang-au-my-va-nhat-ban" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Tùy biến theo phong cách khách hàng Âu Mỹ và Nhật Bản
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Tùy biến theo phong cách khách hàng Âu Mỹ và Nhật Bản">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phong-cach-au-my-move-fast-ship-often" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phong cách Âu Mỹ: "Move Fast, Ship Often"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phong-cach-nhat-ban-build-to-last-chat-luong-la-so-mot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phong cách Nhật Bản: "Build to Last" (品質第一 — Chất lượng là số một)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-uu-iem-va-han-che" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Ưu điểm và Hạn chế
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Ưu điểm và Hạn chế">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uu-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ưu điểm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#han-che" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hạn chế
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ket-luan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kết luận
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tham-khao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tham khảo
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Quay lại
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/tranvanhoan" alt="Hoàn Trần">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Hoàn Trần
+                        
+                      </strong>
+                      <br>
+                      Người viết và tìm tòi về AI
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-05-07 00:00:00+00:00" class="md-ellipsis">07/05/2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            Trong
+                            
+                              <a href="../../../../category/agent/">Agent</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              11 phút đọc
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:agentic-workflow" class="md-tag">agentic-workflow</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:ai-coding-agent" class="md-tag">ai-coding-agent</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:spec-driven-development" class="md-tag">spec-driven-development</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:superpowers" class="md-tag">superpowers</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:tdd" class="md-tag">tdd</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<h1 id="superpowers-khi-ai-agent-uoc-len-level-bang-ky-luat-ky-thuat">Superpowers — Khi AI Agent Được "Lên Level" Bằng Kỷ Luật Kỹ Thuật<a class="headerlink" href="#superpowers-khi-ai-agent-uoc-len-level-bang-ky-luat-ky-thuat" title="Permanent link">&para;</a></h1>
+<h2 id="mo-au">Mở đầu<a class="headerlink" href="#mo-au" title="Permanent link">&para;</a></h2>
+<p>Bạn đã bao giờ để AI coding agent chạy tự do trong 30 phút, rồi quay lại thấy nó đã "refactor" toàn bộ kiến trúc dự án theo ý riêng, bỏ qua mọi test, và commit thẳng vào <code>main</code>? Đó chính là thực trạng <strong>"Vibe Coding"</strong> — AI viết code cực nhanh nhưng không có kỷ luật, không có quy trình, và không có ai kiểm soát.</p>
+<p><strong>Superpowers</strong> (181K ⭐ trên GitHub) ra đời để chấm dứt tình trạng này. Đây không phải là một AI model mới hay một IDE mới — mà là một <strong>phương pháp luận phát triển phần mềm hoàn chỉnh</strong> được đóng gói thành bộ "kỹ năng" (skills) bắt buộc cho AI coding agent của bạn. Khi được cài đặt, agent của bạn sẽ tự động tuân theo quy trình nghiêm ngặt: brainstorm trước khi code, viết test trước khi implement, và review trước khi merge.</p>
+<p><strong>Nội dung chính:</strong></p>
+<ul>
+<li>Superpowers là gì và triết lý cốt lõi</li>
+<li>Kiến trúc 7-Phase Pipeline và các skills quan trọng</li>
+<li>Điểm đau mà Superpowers giải quyết và dự án phù hợp</li>
+<li>Hướng dẫn cài đặt và triển khai thực tế</li>
+<li>Kết hợp Superpowers với BMAD và SDD tạo Pipeline hoàn hảo</li>
+<li>Tùy biến workflow theo phong cách Âu Mỹ và Nhật Bản</li>
+</ul>
+<hr />
+<h2 id="1-superpowers-la-gi">1. Superpowers là gì?<a class="headerlink" href="#1-superpowers-la-gi" title="Permanent link">&para;</a></h2>
+<p><strong>Superpowers</strong> là một <strong>agentic skills framework</strong> (bộ khung kỹ năng cho AI agent) kết hợp với <strong>software development methodology</strong> (phương pháp luận phát triển phần mềm). Được tạo bởi <strong>Jesse Vincent</strong> và đội ngũ tại <strong>Prime Radiant</strong>, Superpowers biến AI coding agent từ "một junior developer viết code bừa bãi" thành "một kỹ sư có kỷ luật, tuân thủ quy trình từ A đến Z".</p>
+<div class="admonition info">
+<p class="admonition-title">Định nghĩa chính thức</p>
+<p><em>"An agentic skills framework &amp; software development methodology that works."</em> — Superpowers README</p>
+</div>
+<h3 id="triet-ly-cot-loi">Triết lý cốt lõi<a class="headerlink" href="#triet-ly-cot-loi" title="Permanent link">&para;</a></h3>
+<p>Superpowers được xây dựng trên 4 trụ cột:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Nguyên tắc</th>
+<th style="text-align: left;">Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Test-Driven Development</strong></td>
+<td style="text-align: left;">Viết test trước, luôn luôn. Code viết trước test? Xóa đi, viết lại.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Systematic over ad-hoc</strong></td>
+<td style="text-align: left;">Quy trình có hệ thống thay vì đoán mò</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Complexity reduction</strong></td>
+<td style="text-align: left;">Đơn giản là mục tiêu hàng đầu (YAGNI, DRY)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Evidence over claims</strong></td>
+<td style="text-align: left;">Chứng minh bằng bằng chứng, không phải lời nói</td>
+</tr>
+</tbody>
+</table>
+<p>Điều quan trọng nhất: <strong>Skills là bắt buộc, không phải gợi ý.</strong> Agent phải kiểm tra và tuân theo skill tương ứng trước mỗi nhiệm vụ. Nếu có skill cho việc đó, agent PHẢI sử dụng nó.</p>
+<h3 id="tai-sao-lai-la-skills">Tại sao lại là "Skills"?<a class="headerlink" href="#tai-sao-lai-la-skills" title="Permanent link">&para;</a></h3>
+<p>Jesse Vincent lấy cảm hứng từ cách Anthropic thiết kế "skills" cho Claude — những file Markdown dạng SKILL.md chứa hướng dẫn chi tiết mà AI đọc và tuân theo. Ông nhận ra rằng vấn đề của AI coding không phải là thiếu năng lực, mà là <strong>thiếu quy trình nhất quán</strong>. Giải pháp không phải làm model "thông minh hơn", mà là ép nó phải tuân theo workflow của một senior engineer.</p>
+<blockquote>
+<p><em>"Bạn có thể đưa cho model một cuốn sách, một tài liệu, hay một codebase và nói: 'Đọc đi. Suy nghĩ về nó. Viết lại những điều mới học được.' Và nó cực kỳ mạnh mẽ."</em> — Jesse Vincent</p>
+</blockquote>
+<hr />
+<h2 id="2-kien-truc-7-phase-pipeline">2. Kiến trúc: 7-Phase Pipeline<a class="headerlink" href="#2-kien-truc-7-phase-pipeline" title="Permanent link">&para;</a></h2>
+<p>Đây là trái tim của Superpowers. Mỗi dự án, dù đơn giản hay phức tạp, đều phải đi qua 7 giai đoạn bắt buộc:</p>
+<pre class="mermaid"><code>graph LR
+    A["🧠 Brainstorming"] --&gt; B["🌿 Git Worktree"]
+    B --&gt; C["📋 Writing Plans"]
+    C --&gt; D["🤖 Subagent-Driven Dev"]
+    D --&gt; E["🔴🟢 TDD"]
+    E --&gt; F["🔍 Code Review"]
+    F --&gt; G["✅ Finish Branch"]</code></pre>
+<h3 id="phase-1-brainstorming-hoi-truoc-khi-code">Phase 1: Brainstorming — Hỏi trước khi code<a class="headerlink" href="#phase-1-brainstorming-hoi-truoc-khi-code" title="Permanent link">&para;</a></h3>
+<p>Đây là skill quan trọng nhất và khác biệt lớn nhất so với "vibe coding". Khi agent nhận yêu cầu, nó <strong>KHÔNG được viết code ngay</strong>. Thay vào đó:</p>
+<ol>
+<li><strong>Khám phá context dự án</strong> — đọc files, docs, commits gần đây</li>
+<li><strong>Hỏi từng câu một</strong> — ưu tiên multiple choice, mỗi message chỉ 1 câu hỏi</li>
+<li><strong>Đề xuất 2-3 phương án</strong> — với trade-offs và recommendation</li>
+<li><strong>Trình bày design</strong> — chia thành sections, xin approval từng phần</li>
+<li><strong>Viết design doc</strong> — lưu vào <code>docs/superpowers/specs/</code></li>
+<li><strong>Self-review spec</strong> — kiểm tra placeholder, mâu thuẫn, mơ hồ</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Hard Gate</p>
+<p><em>"Do NOT invoke any implementation skill, write any code, scaffold any project, or take any implementation action until you have presented a design and the user has approved it. This applies to EVERY project regardless of perceived simplicity."</em></p>
+</div>
+<blockquote>
+<p><strong>Ví dụ thực tế:</strong> Khi bạn nói "Xây dựng todo app", agent Superpowers sẽ KHÔNG chạy <code>npx create-react-app</code>. Thay vào đó, nó hỏi: <em>"Bạn cần persist data ở đâu? LocalStorage, SQLite, hay cloud? Có cần authentication không? Multi-user hay single-user?"</em> — từng câu một, cho đến khi hiểu rõ 100% yêu cầu.</p>
+</blockquote>
+<h3 id="phase-2-git-worktree-cach-ly-khong-gian-lam-viec">Phase 2: Git Worktree — Cách ly không gian làm việc<a class="headerlink" href="#phase-2-git-worktree-cach-ly-khong-gian-lam-viec" title="Permanent link">&para;</a></h3>
+<p>Sau khi design được duyệt, agent tự động tạo <strong>git worktree</strong> trên branch mới. Điều này đảm bảo:</p>
+<ul>
+<li>Branch <code>main</code> luôn sạch</li>
+<li>Có thể chạy nhiều task song song mà không xung đột</li>
+<li>Rollback dễ dàng nếu cần</li>
+</ul>
+<h3 id="phase-3-writing-plans-chia-nho-en-cuc-han">Phase 3: Writing Plans — Chia nhỏ đến cực hạn<a class="headerlink" href="#phase-3-writing-plans-chia-nho-en-cuc-han" title="Permanent link">&para;</a></h3>
+<p>Agent tạo implementation plan với các task <strong>2-5 phút mỗi task</strong>. Mỗi task phải có:</p>
+<ul>
+<li><strong>Exact file paths</strong> — không được viết "file tương ứng"</li>
+<li><strong>Complete code</strong> — không được viết "implement logic here"</li>
+<li><strong>Verification steps</strong> — lệnh chạy test cụ thể với expected output</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Ví dụ một task trong plan</p>
+<p><div class="language-markdown highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gu">### Task 3: Validate email input</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gs">**Files:**</span> Create: <span class="sb">`src/validators/email.ts`</span>, Test: <span class="sb">`tests/validators/email.test.ts`</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">- [ ]</span> Step 1: Write failing test
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>```typescript
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>test(&#39;rejects empty email&#39;, () =&gt; {
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  expect(validateEmail(&#39;&#39;)).toBe(false);
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>});
+</span></code></pre></div>
+- [ ] Step 2: Run test → Expected: FAIL
+- [ ] Step 3: Write minimal implementation
+- [ ] Step 4: Run test → Expected: PASS
+- [ ] Step 5: Commit
+```</p>
+</div>
+<h3 id="phase-4-subagent-driven-development-moi-task-mot-agent-moi">Phase 4: Subagent-Driven Development — Mỗi task một agent mới<a class="headerlink" href="#phase-4-subagent-driven-development-moi-task-mot-agent-moi" title="Permanent link">&para;</a></h3>
+<p>Đây là innovation quan trọng nhất: <strong>mỗi task được giao cho một subagent hoàn toàn mới</strong>, với context sạch. Tại sao?</p>
+<ul>
+<li><strong>Tránh context pollution</strong> — sau nhiều task, context window bị "ô nhiễm" bởi code cũ, khiến agent mắc lỗi</li>
+<li><strong>Tối ưu chi phí</strong> — task đơn giản dùng model rẻ, task phức tạp dùng model mạnh</li>
+<li><strong>Review 2 giai đoạn</strong> — sau mỗi task: (1) Spec compliance review, (2) Code quality review</li>
+</ul>
+<pre class="mermaid"><code>graph TD
+    A[Dispatch Implementer] --&gt; B{Hoi gi khong?}
+    B --&gt;|Co| C[Tra loi + Dispatch lai]
+    B --&gt;|Khong| D[Implement + Test + Commit]
+    D --&gt; E[Spec Reviewer]
+    E --&gt;|FAIL| F[Fix va Re-review]
+    E --&gt;|PASS| G[Code Quality Reviewer]
+    G --&gt;|Issues| H[Fix va Re-review]
+    G --&gt;|Approved| I[Task Complete]</code></pre>
+<h3 id="phase-5-test-driven-development-luat-sat">Phase 5: Test-Driven Development — Luật Sắt<a class="headerlink" href="#phase-5-test-driven-development-luat-sat" title="Permanent link">&para;</a></h3>
+<p>TDD trong Superpowers không phải "best practice" — nó là <strong>Iron Law</strong> (Luật Sắt):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>NO PRODUCTION CODE WITHOUT A FAILING TEST FIRST
+</span></code></pre></div>
+<p>Quy trình RED-GREEN-REFACTOR:</p>
+<ol>
+<li><strong>RED</strong>: Viết test → chạy → phải FAIL</li>
+<li><strong>GREEN</strong>: Viết code tối thiểu → chạy → phải PASS</li>
+<li><strong>REFACTOR</strong>: Cải thiện code → test vẫn PASS</li>
+</ol>
+<p><strong>Viết code trước test?</strong> Xóa hết. Viết lại từ đầu. Không giữ làm "reference". Không "adapt" từ code cũ. <strong>Delete means delete.</strong></p>
+<h3 id="phase-6-7-code-review-finish-branch">Phase 6 &amp; 7: Code Review → Finish Branch<a class="headerlink" href="#phase-6-7-code-review-finish-branch" title="Permanent link">&para;</a></h3>
+<p>Sau tất cả tasks, agent chạy final code review toàn bộ implementation, rồi đưa ra lựa chọn: merge vào main, tạo PR, giữ branch, hoặc discard.</p>
+<hr />
+<h2 id="3-superpowers-giai-quyet-iem-au-nao">3. Superpowers giải quyết điểm đau nào?<a class="headerlink" href="#3-superpowers-giai-quyet-iem-au-nao" title="Permanent link">&para;</a></h2>
+<h3 id="van-e-1-ai-viet-code-nhanh-nhung-bua-bai">Vấn đề 1: AI viết code nhanh nhưng bừa bãi<a class="headerlink" href="#van-e-1-ai-viet-code-nhanh-nhung-bua-bai" title="Permanent link">&para;</a></h3>
+<p>Khi bạn prompt "build me a REST API", AI thường nhảy thẳng vào viết hàng trăm dòng code mà không hỏi: API cho ai dùng? Authentication thế nào? Error handling ra sao? → Superpowers ép agent phải brainstorm trước.</p>
+<h3 id="van-e-2-context-rot-thoi-context">Vấn đề 2: Context rot (thối context)<a class="headerlink" href="#van-e-2-context-rot-thoi-context" title="Permanent link">&para;</a></h3>
+<p>Sau 30 phút làm việc liên tục, context window của AI đầy chật thông tin cũ, dẫn đến hallucination và lỗi logic. → Superpowers dùng subagent mới cho mỗi task, đảm bảo context luôn sạch.</p>
+<h3 id="van-e-3-khong-co-test-khong-co-review">Vấn đề 3: Không có test, không có review<a class="headerlink" href="#van-e-3-khong-co-test-khong-co-review" title="Permanent link">&para;</a></h3>
+<p>AI thường tuyên bố "done" mà không chạy test. → Superpowers ép TDD nghiêm ngặt và 2-stage review tự động.</p>
+<h3 id="van-e-4-architectural-drift">Vấn đề 4: Architectural drift<a class="headerlink" href="#van-e-4-architectural-drift" title="Permanent link">&para;</a></h3>
+<p>Qua nhiều session, AI dần "quên" kiến trúc ban đầu và bắt đầu viết code không nhất quán. → Superpowers lưu design doc và plan, mỗi subagent đều nhận đầy đủ context từ spec.</p>
+<hr />
+<h2 id="4-phu-hop-voi-loai-du-an-nao">4. Phù hợp với loại dự án nào?<a class="headerlink" href="#4-phu-hop-voi-loai-du-an-nao" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Loại dự án</th>
+<th style="text-align: left;">Mức độ phù hợp</th>
+<th style="text-align: left;">Lý do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>MVP / Side project</strong></td>
+<td style="text-align: left;">⭐⭐⭐⭐</td>
+<td style="text-align: left;">TDD và brainstorming giúp tránh technical debt ngay từ đầu</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SaaS product</strong></td>
+<td style="text-align: left;">⭐⭐⭐⭐⭐</td>
+<td style="text-align: left;">Code quality cao, regression testing tự động</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Enterprise backend</strong></td>
+<td style="text-align: left;">⭐⭐⭐⭐⭐</td>
+<td style="text-align: left;">Quy trình nghiêm ngặt, audit trail qua git commits</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Open source library</strong></td>
+<td style="text-align: left;">⭐⭐⭐⭐⭐</td>
+<td style="text-align: left;">TDD + code review đảm bảo chất lượng contribution</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Quick prototype</strong></td>
+<td style="text-align: left;">⭐⭐</td>
+<td style="text-align: left;">Overhead của brainstorming + TDD có thể quá nặng</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Data science / ML</strong></td>
+<td style="text-align: left;">⭐⭐⭐</td>
+<td style="text-align: left;">TDD khó áp dụng cho exploration, nhưng tốt cho pipeline code</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-cai-at-va-trien-khai">5. Cài đặt và Triển khai<a class="headerlink" href="#5-cai-at-va-trien-khai" title="Permanent link">&para;</a></h2>
+<p>Superpowers hỗ trợ hầu hết các coding agent phổ biến:</p>
+<h3 id="claude-code-pho-bien-nhat">Claude Code (phổ biến nhất)<a class="headerlink" href="#claude-code-pho-bien-nhat" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Cài từ Official Marketplace</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>/plugin<span class="w"> </span>install<span class="w"> </span>superpowers@claude-plugins-official
+</span></code></pre></div>
+<h3 id="cursor">Cursor<a class="headerlink" href="#cursor" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>/add-plugin superpowers
+</span></code></pre></div>
+<h3 id="gemini-cli">Gemini CLI<a class="headerlink" href="#gemini-cli" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>gemini<span class="w"> </span>extensions<span class="w"> </span>install<span class="w"> </span>https://github.com/obra/superpowers
+</span></code></pre></div>
+<h3 id="openai-codex-cli">OpenAI Codex CLI<a class="headerlink" href="#openai-codex-cli" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>/plugins
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># Tìm &quot;superpowers&quot; → Install Plugin</span>
+</span></code></pre></div>
+<p>Sau khi cài đặt, <strong>khởi động lại agent</strong>. Superpowers sẽ tự kích hoạt — bạn không cần làm gì thêm. Khi bắt đầu một task mới, agent tự động đọc skill tương ứng và tuân theo quy trình.</p>
+<blockquote>
+<p><strong>Ví dụ thực tế:</strong> Sau khi cài Superpowers cho Claude Code, bạn nói: <em>"Thêm tính năng dark mode cho app"</em>. Claude sẽ KHÔNG viết CSS ngay. Nó sẽ hỏi: <em>"Dark mode áp dụng cho toàn bộ app hay từng component? Dùng CSS variables hay class toggle? Có cần persist preference vào localStorage không?"</em> — đúng quy trình brainstorming.</p>
+</blockquote>
+<hr />
+<h2 id="6-ket-hop-superpowers-voi-bmad-va-sdd-xay-dung-pipeline-hoan-hao">6. Kết hợp Superpowers với BMAD và SDD — Xây dựng Pipeline hoàn hảo<a class="headerlink" href="#6-ket-hop-superpowers-voi-bmad-va-sdd-xay-dung-pipeline-hoan-hao" title="Permanent link">&para;</a></h2>
+<p>Đây là phần thú vị nhất: Superpowers, BMAD Method, và Spec-Driven Development (SDD) không cạnh tranh — chúng <strong>bổ trợ lẫn nhau</strong> ở các tầng khác nhau.</p>
+<h3 id="hieu-vi-tri-cua-tung-framework">Hiểu vị trí của từng framework<a class="headerlink" href="#hieu-vi-tri-cua-tung-framework" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>graph TD
+    subgraph BMAD ["Tang Chien luoc - BMAD"]
+        A1[Business Analyst]
+        A2[Product Manager]
+        A3[System Architect]
+    end
+    subgraph SDD ["Tang Dac ta - SDD / Spec Kit"]
+        B1[Constitution]
+        B2[Specification]
+        B3[Plan]
+    end
+    subgraph SP ["Tang Thuc thi - Superpowers"]
+        C1[Subagent Implementation]
+        C2[TDD Enforcement]
+        C3[2-Stage Review]
+    end
+    A1 --&gt; A2 --&gt; A3
+    A3 --&gt; B1 --&gt; B2 --&gt; B3
+    B3 --&gt; C1 --&gt; C2 --&gt; C3</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tầng</th>
+<th style="text-align: left;">Framework</th>
+<th style="text-align: left;">Vai trò</th>
+<th style="text-align: left;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Chiến lược</strong></td>
+<td style="text-align: left;">BMAD</td>
+<td style="text-align: left;">Ai? Cái gì? Tại sao?</td>
+<td style="text-align: left;">PRD, User Stories, Architecture</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Đặc tả</strong></td>
+<td style="text-align: left;">SDD/Spec Kit</td>
+<td style="text-align: left;">Spec chi tiết, kế hoạch</td>
+<td style="text-align: left;">Constitution, Spec, Plan</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Thực thi</strong></td>
+<td style="text-align: left;">Superpowers</td>
+<td style="text-align: left;">Viết code, test, review</td>
+<td style="text-align: left;">Production-ready code</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pipeline-1-bmad-superpowers-pho-bien-nhat">Pipeline 1: BMAD → Superpowers (Phổ biến nhất)<a class="headerlink" href="#pipeline-1-bmad-superpowers-pho-bien-nhat" title="Permanent link">&para;</a></h3>
+<p>Kịch bản: Team startup 5 người xây SaaS product.</p>
+<p><strong>Giai đoạn 1 — BMAD Planning (1-2 ngày):</strong></p>
+<ol>
+<li><strong>Business Analyst Agent</strong> phân tích thị trường, xác định user persona</li>
+<li><strong>Product Manager Agent</strong> viết PRD với user stories chi tiết</li>
+<li><strong>System Architect Agent</strong> thiết kế system architecture, chọn tech stack</li>
+</ol>
+<p><strong>Giai đoạn 2 — Superpowers Execution (liên tục):</strong></p>
+<ol>
+<li>Chuyển PRD + Architecture từ BMAD thành <strong>design doc</strong> của Superpowers</li>
+<li>Agent tự động brainstorm bổ sung (hỏi thêm technical details)</li>
+<li>Writing Plans chia thành micro-tasks</li>
+<li>Subagent-Driven Development thực thi từng task với TDD</li>
+<li>2-stage review đảm bảo code khớp spec và đạt quality</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Ví dụ: Xây dựng hệ thống Booking cho khách sạn</p>
+<p><strong>BMAD output:</strong>
+- PRD: Hệ thống booking real-time, hỗ trợ multi-property, tích hợp thanh toán VNPay/Stripe
+- Architecture: Microservices (Booking Service, Payment Service, Notification Service)
+- User Stories: "Là khách hàng, tôi muốn đặt phòng và nhận xác nhận qua email trong 30 giây"</p>
+<p><strong>Superpowers execution:</strong>
+- Brainstorming: Agent hỏi thêm — "Database cho booking dùng PostgreSQL hay MongoDB? Concurrency handling thế nào khi 2 người đặt cùng phòng?"
+- Plan: 45 micro-tasks, mỗi task 2-5 phút
+- TDD: <code>test('prevents double booking for same room and date')</code> → FAIL → Implement pessimistic locking → PASS
+- Review: Spec reviewer xác nhận đúng requirement "30 giây confirmation"</p>
+</div>
+<h3 id="pipeline-2-sdd-spec-kit-superpowers-documentation-heavy">Pipeline 2: SDD (Spec Kit) → Superpowers (Documentation-heavy)<a class="headerlink" href="#pipeline-2-sdd-spec-kit-superpowers-documentation-heavy" title="Permanent link">&para;</a></h3>
+<p>Kịch bản: Enterprise bank cần audit trail và compliance.</p>
+<ol>
+<li><strong>Spec Kit</strong> tạo Constitution (quy chuẩn bảo mật OWASP, coding standards)</li>
+<li><strong>Spec Kit</strong> tạo Specification chi tiết cho từng module</li>
+<li><strong>Superpowers</strong> nhận Plan từ Spec Kit và thực thi với TDD nghiêm ngặt</li>
+</ol>
+<p>Ưu điểm: Mọi thứ được document hóa — từ requirements đến test cases — phục vụ audit.</p>
+<h3 id="pipeline-3-bmad-spec-kit-superpowers-full-stack">Pipeline 3: BMAD → Spec Kit → Superpowers (Full Stack)<a class="headerlink" href="#pipeline-3-bmad-spec-kit-superpowers-full-stack" title="Permanent link">&para;</a></h3>
+<p>Kịch bản: Dự án enterprise lớn, 50+ developers, cần cả governance lẫn execution discipline.</p>
+<pre class="mermaid"><code>graph LR
+    A[BMAD - Strategy] --&gt;|PRD + Architecture| B[Spec Kit - Specification]
+    B --&gt;|Constitution + Plan| C[Superpowers - Execution + TDD]
+    C --&gt;|Code + Tests| D[Production]</code></pre>
+<ol>
+<li><strong>BMAD</strong> (Tầng chiến lược): BA phân tích, PM viết PRD, Architect thiết kế — mỗi role là một AI persona chuyên biệt</li>
+<li><strong>Spec Kit</strong> (Tầng đặc tả): Chuyển output BMAD thành Constitution + Specs có cấu trúc, machine-readable</li>
+<li><strong>Superpowers</strong> (Tầng thực thi): Subagent nhận plan, ép TDD, review 2 giai đoạn</li>
+</ol>
+<hr />
+<h2 id="7-tuy-bien-theo-phong-cach-khach-hang-au-my-va-nhat-ban">7. Tùy biến theo phong cách khách hàng Âu Mỹ và Nhật Bản<a class="headerlink" href="#7-tuy-bien-theo-phong-cach-khach-hang-au-my-va-nhat-ban" title="Permanent link">&para;</a></h2>
+<p>Superpowers linh hoạt đến mức bạn có thể viết custom skills để phù hợp với văn hóa phát triển phần mềm khác nhau.</p>
+<h3 id="phong-cach-au-my-move-fast-ship-often">Phong cách Âu Mỹ: "Move Fast, Ship Often"<a class="headerlink" href="#phong-cach-au-my-move-fast-ship-often" title="Permanent link">&para;</a></h3>
+<p>Khách hàng Âu Mỹ thường ưu tiên <strong>tốc độ delivery</strong> và <strong>iteration nhanh</strong>. Pipeline phù hợp:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>BMAD (Lean mode) → Superpowers (Subagent-Driven + TDD)
+</span></code></pre></div>
+<ul>
+<li><strong>Brainstorming</strong>: Ngắn gọn, tập trung vào MVP features</li>
+<li><strong>Plan</strong>: Tasks lớn hơn (5-10 phút), ít ceremony hơn</li>
+<li><strong>Review</strong>: Tập trung code quality, ít documentation</li>
+<li><strong>Delivery</strong>: CI/CD tự động, deploy liên tục</li>
+</ul>
+<p>Custom skill gợi ý:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>---
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>name: lean-delivery
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="gu">description: &quot;Streamlined delivery for fast-paced Western clients&quot;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="gu">---</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="gu">## Principles</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="k">-</span><span class="w"> </span>Ship MVP first, iterate based on user feedback
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="k">-</span><span class="w"> </span>Documentation: README + API docs only
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="k">-</span><span class="w"> </span>Sprint-based delivery (2-week cycles)
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="k">-</span><span class="w"> </span>Prefer working software over comprehensive documentation
+</span></code></pre></div>
+<h3 id="phong-cach-nhat-ban-build-to-last-chat-luong-la-so-mot">Phong cách Nhật Bản: "Build to Last" (品質第一 — Chất lượng là số một)<a class="headerlink" href="#phong-cach-nhat-ban-build-to-last-chat-luong-la-so-mot" title="Permanent link">&para;</a></h3>
+<p>Khách hàng Nhật Bản thường yêu cầu <strong>chất lượng cực cao</strong>, <strong>tài liệu chi tiết</strong>, và <strong>quy trình nghiêm ngặt</strong>. Triết lý Kaizen (改善 — cải tiến liên tục) và Monozukuri (ものづくり — nghệ thuật chế tạo) ảnh hưởng sâu sắc đến cách họ đánh giá phần mềm.</p>
+<p>Pipeline phù hợp:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>BMAD (Full mode) → Spec Kit (Hierarchical) → Superpowers (Strict TDD + Extended Review)
+</span></code></pre></div>
+<ul>
+<li><strong>Brainstorming</strong>: Kỹ lưỡng, hỏi đến từng edge case</li>
+<li><strong>Specification</strong>: Chi tiết đến cấp field-level, có bảng mapping requirement ↔ test case</li>
+<li><strong>TDD</strong>: Nghiêm ngặt tuyệt đối, coverage &gt; 90%</li>
+<li><strong>Review</strong>: 3 giai đoạn (spec compliance → code quality → security audit)</li>
+<li><strong>Documentation</strong>: Đầy đủ API spec, sequence diagrams, deployment guide</li>
+</ul>
+<p>Custom skill gợi ý:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>---
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>name: japanese-quality-gate
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="gu">description: &quot;Extended quality gates for Japanese enterprise clients&quot;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="gu">---</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="gu">## Kaizen Integration</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="k">-</span><span class="w"> </span>After each sprint: review và cải tiến quy trình
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="k">-</span><span class="w"> </span>Defect tracking: mỗi bug phải có root cause analysis
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="k">-</span><span class="w"> </span>Documentation: mỗi API endpoint phải có sequence diagram
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="gu">## Additional Review Stage</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>After code quality review, dispatch security-reviewer subagent:
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="k">-</span><span class="w"> </span>Check OWASP Top 10
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="k">-</span><span class="w"> </span>Verify input validation on all endpoints
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="k">-</span><span class="w"> </span>Ensure proper error handling (no stack traces leaked)
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="gu">## Delivery Checklist</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="k">- [ ]</span> Test coverage &gt; 90%
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="k">- [ ]</span> All edge cases documented
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="k">- [ ]</span> API documentation bilingual (EN/JP)
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="k">- [ ]</span> Performance benchmark report attached
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">So sánh nhanh</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tiêu chí</th>
+<th style="text-align: left;">Phong cách Âu Mỹ</th>
+<th style="text-align: left;">Phong cách Nhật Bản</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ưu tiên</td>
+<td style="text-align: left;">Tốc độ, iteration</td>
+<td style="text-align: left;">Chất lượng, độ tin cậy</td>
+</tr>
+<tr>
+<td style="text-align: left;">Documentation</td>
+<td style="text-align: left;">Tối thiểu đủ dùng</td>
+<td style="text-align: left;">Toàn diện, chi tiết</td>
+</tr>
+<tr>
+<td style="text-align: left;">Test coverage</td>
+<td style="text-align: left;">70-80%</td>
+<td style="text-align: left;">90%+</td>
+</tr>
+<tr>
+<td style="text-align: left;">Review rounds</td>
+<td style="text-align: left;">1-2</td>
+<td style="text-align: left;">2-3</td>
+</tr>
+<tr>
+<td style="text-align: left;">Delivery</td>
+<td style="text-align: left;">Continuous, weekly</td>
+<td style="text-align: left;">Milestone-based, monthly</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr />
+<h2 id="8-uu-iem-va-han-che">8. Ưu điểm và Hạn chế<a class="headerlink" href="#8-uu-iem-va-han-che" title="Permanent link">&para;</a></h2>
+<h3 id="uu-iem">Ưu điểm<a class="headerlink" href="#uu-iem" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>181K stars</strong> — cộng đồng lớn nhất trong các agentic framework</li>
+<li><strong>Host-agnostic</strong> — hoạt động trên Claude Code, Cursor, Gemini CLI, Codex, Copilot CLI</li>
+<li><strong>TDD nghiêm ngặt</strong> — code quality cao nhất trong các framework tương tự</li>
+<li><strong>Subagent architecture</strong> — tránh context rot, cho phép agent chạy tự động hàng giờ</li>
+<li><strong>Composable skills</strong> — dễ mở rộng, viết skill mới chỉ cần tạo file Markdown</li>
+<li><strong>Self-improving</strong> — có skill <code>writing-skills</code> giúp agent tự tạo skill mới</li>
+</ul>
+<h3 id="han-che">Hạn chế<a class="headerlink" href="#han-che" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Overhead cho dự án nhỏ</strong> — brainstorming + TDD cho một script 20 dòng có thể quá nặng</li>
+<li><strong>Ít tập trung nghiệp vụ</strong> — không có persona BA/PM như BMAD</li>
+<li><strong>Đường cong học tập</strong> — cần hiểu TDD và git worktree để tận dụng tối đa</li>
+<li><strong>Token consumption</strong> — subagent mới cho mỗi task tốn nhiều token hơn single-session</li>
+</ul>
+<hr />
+<h2 id="ket-luan">Kết luận<a class="headerlink" href="#ket-luan" title="Permanent link">&para;</a></h2>
+<p><strong>Superpowers</strong> đại diện cho một bước tiến quan trọng trong kỷ nguyên AI-assisted development: thay vì cố gắng làm AI "thông minh hơn", nó tập trung vào việc cho AI <strong>kỷ luật hơn</strong>. Triết lý "mandatory skills, not suggestions" đảm bảo rằng mọi dòng code đều đi qua quy trình brainstorm → plan → TDD → review.</p>
+<p>Điều thực sự mạnh mẽ là khả năng kết hợp: dùng <strong>BMAD</strong> cho tầng chiến lược (phân tích nghiệp vụ, thiết kế kiến trúc), <strong>Spec Kit/SDD</strong> cho tầng đặc tả (specification chi tiết), và <strong>Superpowers</strong> cho tầng thực thi (code chất lượng cao với TDD). Pipeline này có thể tùy biến để phục vụ cả khách hàng "move fast" phong cách Âu Mỹ lẫn khách hàng "build to last" phong cách Nhật Bản.</p>
+<p>Nếu bạn đang dùng AI coding agent mà chưa có Superpowers, hãy thử cài đặt ngay — chỉ một dòng lệnh, và agent của bạn sẽ ngay lập tức "lên level".</p>
+<h2 id="tham-khao">Tham khảo<a class="headerlink" href="#tham-khao" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/obra/superpowers">Superpowers GitHub</a> — Repository chính thức (181K stars, MIT License)</li>
+<li><a href="https://blog.fsck.com/2025/10/09/superpowers/">Superpowers: How I'm using coding agents in October 2025</a> — Bài viết gốc của Jesse Vincent giới thiệu Superpowers</li>
+<li><a href="https://github.com/bmad-code-org/BMAD-METHOD">BMAD Method</a> — Framework Agile AI-Driven Development với multi-agent personas</li>
+<li><a href="https://github.com/github/spec-kit">GitHub Spec Kit</a> — Toolkit Spec-Driven Development từ GitHub</li>
+<li><a href="https://gail.wharton.upenn.edu/research-and-insights/call-me-a-jerk-persuading-ai/">Persuading AI - Wharton Research</a> — Nghiên cứu về nguyên tắc thuyết phục Cialdini áp dụng cho LLMs, được Jesse Vincent tham khảo khi thiết kế Superpowers skills</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Trở lại mục lục
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0110\u00e3 sao ch\u00e9p", "clipboard.copy": "Sao ch\u00e9p v\u00e0o b\u1ed9 nh\u1edb t\u1ea1m", "search.result.more.one": "1 t\u1eeb kh\u00e1c trong trang", "search.result.more.other": "# t\u1eeb kh\u00e1c trong trang", "search.result.none": "Kh\u00f4ng t\u00ecm th\u1ea5y t\u00e0i li\u1ec7u li\u00ean quan", "search.result.one": "1 t\u00e0i li\u1ec7u li\u00ean quan", "search.result.other": "# t\u00e0i li\u1ec7u li\u00ean quan", "search.result.placeholder": "Nh\u1eadp \u0111\u1ec3 b\u1eaft \u0111\u1ea7u t\u00ecm ki\u1ebfm", "search.result.term.missing": "Kh\u00f4ng", "select.version": "Ch\u1ecdn phi\u00ean b\u1ea3n"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

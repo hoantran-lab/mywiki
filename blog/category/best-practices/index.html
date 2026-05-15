@@ -1,0 +1,1930 @@
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Nơi lưu trữ, chia sẻ kiến thức và hành trình tự học AI.">
+      
+      
+        <meta name="author" content="tranvanhoan">
+      
+      
+        <link rel="canonical" href="https://tranvanhoan.github.io/MyWiki/blog/category/best-practices/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Best Practices - AI Wiki - My Knowledge Base</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#best-practices" class="md-skip">
+          Bỏ qua
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Đầu trang">
+    <a href="../../.." title="AI Wiki - My Knowledge Base" class="md-header__button md-logo" aria-label="AI Wiki - My Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Wiki - My Knowledge Base
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Best Practices
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Tìm kiếm" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Tìm kiếm">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Chia sẻ" aria-label="Chia sẻ" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Xoá" aria-label="Xoá" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tranvanhoan/MyWiki" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tranvanhoan/MyWiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Trang chủ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../roadmap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Chủ đề (Tags)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Về tác giả
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Thanh điều hướng" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="AI Wiki - My Knowledge Base" class="md-nav__button md-logo" aria-label="AI Wiki - My Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Wiki - My Knowledge Base
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tranvanhoan/MyWiki" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tranvanhoan/MyWiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trang chủ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chủ đề (Tags)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Về tác giả
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Mục lục">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        <h1 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h1>
+      </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/tranvanhoan" alt="Hoàn Trần">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-05-09 00:00:00+00:00">09/05/2026</time></li>
+        
+          <li class="md-meta__item">
+            Trong
+            
+              <a href="../bmad/" class="md-meta__link">BMAD</a>, 
+              <a href="./" class="md-meta__link">Best Practices</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              10 phút đọc
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="bmad-method-thuc-chien-giai-quyet-bai-toan-ton-qua-nhieu-token-trong-sdlc"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/">BMAD Method Thực Chiến: Giải Quyết Bài Toán Tốn Quá Nhiều Token Trong SDLC</a></h2>
+<h3 id="mo-au-con-au-thuc-su-cua-nguoi-dung-bmad"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#mo-au-con-au-thuc-su-cua-nguoi-dung-bmad">Mở đầu: Cơn Đau Thực Sự Của Người Dùng BMAD</a></h3>
+<p>Bạn đã áp dụng BMAD Method vào quy trình phát triển phần mềm và cảm thấy nó rất mạnh mẽ — nhưng cuối tháng nhìn vào bill API lại giật mình. Hoặc bạn đang chạy pipeline 5 phases thì đến phase 3 agent bắt đầu "quên" context, hallucinate, làm lại từ đầu mất cả buổi.</p>
+<p>Đây không phải vấn đề của riêng bạn. Đây là <strong>điểm đau số 1</strong> mà cộng đồng BMAD và người dùng AI agents trong SDLC gặp phải:</p>
+<blockquote>
+<p><strong>"Token consumption quá cao khiến chi phí vận hành tăng vọt và chất lượng output giảm dần theo thời gian session."</strong></p>
+</blockquote>
+<p>Bài viết này sẽ đi sâu vào:</p>
+<ol>
+<li><strong>Tại sao</strong> BMAD pipelines ngốn token nhiều hơn bạn nghĩ</li>
+<li><strong>Cách phát hiện</strong> chính xác điểm nào đang "rò rỉ" token</li>
+<li><strong>Best practices</strong> thực chiến từ Anthropic, cộng đồng BMAD, và production teams</li>
+<li><strong>Checklist</strong> để audit và tối ưu ngay hôm nay</li>
+</ol>
+<hr />
+<h3 id="phan-1-hieu-ban-chat-van-e-tai-sao-bmad-ngon-token"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#phan-1-hieu-ban-chat-van-e-tai-sao-bmad-ngon-token">Phần 1: Hiểu Bản Chất Vấn Đề — Tại Sao BMAD Ngốn Token</a></h3>
+<h4 id="11-bmad-la-framework-a-agent-a-phase-va-o-la-nguon-goc-van-e"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#11-bmad-la-framework-a-agent-a-phase-va-o-la-nguon-goc-van-e">1.1 BMAD là framework đa agent, đa phase — và đó là nguồn gốc vấn đề</a></h4>
+<p>BMAD Method tổ chức SDLC thành các phases tuần tự với nhiều specialized agents:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>User Request → PM Agent → Architect Agent → SE Agent → Programmer Agent → QA Agent
+</span></code></pre></div>
+<p>Mỗi agent cần <strong>context đầy đủ</strong> để hoạt động hiệu quả. Vấn đề xảy ra khi:</p>
+<ul>
+<li><strong>Context tích lũy qua phases:</strong> Programmer Agent nhận toàn bộ SRS + Basic Design + Detailed Design thay vì chỉ cần Detailed Design</li>
+<li><strong>Retry không kiểm soát:</strong> Mỗi lần retry gửi lại toàn bộ conversation history</li>
+<li><strong>System prompt phình to:</strong> Agent personas, rules, examples — tất cả load vào mỗi lần gọi</li>
+</ul>
+<h4 id="12-ba-nguyen-nhan-goc-re"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#12-ba-nguyen-nhan-goc-re">1.2 Ba nguyên nhân gốc rễ</a></h4>
+<p><strong>Nguyên nhân 1: Context Flooding (Lũ lụt context)</strong></p>
+<p>Thay vì "Just-in-Time Context", nhiều team làm theo kiểu "Just-in-Case Context" — gửi mọi thứ phòng hờ agent cần. Kết quả: một Programmer Agent nhận 15,000 tokens dù chỉ cần 3,000.</p>
+<p><strong>Nguyên nhân 2: Stateless Sessions (Session không có trạng thái)</strong></p>
+<p>Mỗi lần bắt đầu session mới, agent phải re-read toàn bộ tài liệu để "biết mình đang ở đâu". Không có checkpoint → không có memory → token waste.</p>
+<p><strong>Nguyên nhân 3: Monolithic Agents (Agent đơn khối)</strong></p>
+<p>Một agent được giao quá nhiều nhiệm vụ → system prompt dài → token overhead cao trong mỗi lần gọi.</p>
+<h4 id="13-con-so-thuc-te"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#13-con-so-thuc-te">1.3 Con số thực tế</a></h4>
+<p>Theo nghiên cứu từ cộng đồng BMAD và Anthropic documentation:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Scenario</th>
+<th style="text-align: left;">Tokens/Phase</th>
+<th style="text-align: left;">5-Phase Pipeline</th>
+<th style="text-align: left;">Chi phí ước tính</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Naive (không tối ưu)</strong></td>
+<td style="text-align: left;">~15,000</td>
+<td style="text-align: left;">~75,000 tokens</td>
+<td style="text-align: left;">~$0.225 (Sonnet)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Optimized</strong></td>
+<td style="text-align: left;">~4,000</td>
+<td style="text-align: left;">~20,000 tokens</td>
+<td style="text-align: left;">~$0.060 (Sonnet)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tiết kiệm</strong></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><strong>73% ít hơn</strong></td>
+<td style="text-align: left;"><strong>~$0.165/pipeline</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Nhân với 50 pipelines/tháng → tiết kiệm ~$8.25/tháng chỉ từ việc tối ưu context cho <em>một user/agent</em>. Với dự án lớn có hàng trăm runs mỗi ngày, con số này có thể lên tới hàng ngàn USD/tháng.</p>
+<hr />
+<h3 id="phan-2-phat-hien-iem-ro-ri-token"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#phan-2-phat-hien-iem-ro-ri-token">Phần 2: Phát Hiện Điểm Rò Rỉ Token</a></h3>
+<h4 id="21-token-audit-buoc-au-tien-khong-the-bo-qua"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#21-token-audit-buoc-au-tien-khong-the-bo-qua">2.1 Token Audit — Bước đầu tiên không thể bỏ qua</a></h4>
+<p>Bạn không thể tối ưu những gì bạn không đo. Hãy bắt đầu bằng <strong>Token Audit</strong>:</p>
+<p><strong>Với Claude Code:</strong> Chạy <code>/cost</code> sau mỗi session để xem token breakdown.</p>
+<p><strong>Với API:</strong> Log token usage mỗi call:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</span><span id="__span-70-2"><a id="__codelineno-70-2" name="__codelineno-70-2" href="#__codelineno-70-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">input_tokens</span><span class="si">}</span><span class="s2"> | Output: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">usage</span><span class="o">.</span><span class="n">output_tokens</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Với BMAD pipeline:</strong> Tạo file <code>logs/token-audit.log</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>[2026-05-09T10:00:00] Phase: Requirements | Input: 1,200 | Output: 800
+</span><span id="__span-71-2"><a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a>[2026-05-09T10:05:00] Phase: Basic Design | Input: 8,500 | Output: 2,100  ← ĐÂY RỒI!
+</span><span id="__span-71-3"><a id="__codelineno-71-3" name="__codelineno-71-3" href="#__codelineno-71-3"></a>[2026-05-09T10:15:00] Phase: Review #1   | Input: 11,200 | Output: 500
+</span></code></pre></div>
+<p>Phase nào có input tokens cao bất thường → đó là điểm cần tối ưu.</p>
+<h4 id="22-nam-dau-hieu-canh-bao-red-flags"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#22-nam-dau-hieu-canh-bao-red-flags">2.2 Năm dấu hiệu cảnh báo (Red Flags)</a></h4>
+<p>Nhận biết ngay khi BMAD pipeline đang lãng phí token:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dấu hiệu</th>
+<th style="text-align: left;">Nguyên nhân</th>
+<th style="text-align: left;">Mức độ nghiêm trọng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Agent "quên" instruction sau 20+ turns</td>
+<td style="text-align: left;">Context window đầy, đẩy system prompt ra ngoài</td>
+<td style="text-align: left;">🔴 Cao</td>
+</tr>
+<tr>
+<td style="text-align: left;">Input tokens tăng theo cấp số nhân qua phases</td>
+<td style="text-align: left;">Không sharding, tích lũy history</td>
+<td style="text-align: left;">🔴 Cao</td>
+</tr>
+<tr>
+<td style="text-align: left;">Reviewer agent thường xuyên hallucinate</td>
+<td style="text-align: left;">Nhận quá nhiều context không liên quan</td>
+<td style="text-align: left;">🟡 Trung bình</td>
+</tr>
+<tr>
+<td style="text-align: left;">Retry lần 2-3 tốn tokens hơn lần 1</td>
+<td style="text-align: left;">Gửi toàn bộ error history không cần thiết</td>
+<td style="text-align: left;">🟡 Trung bình</td>
+</tr>
+<tr>
+<td style="text-align: left;">CLAUDE.md &gt; 1,000 tokens</td>
+<td style="text-align: left;">System prompt quá nặng, load mọi session</td>
+<td style="text-align: left;">🟠 Chú ý</td>
+</tr>
+</tbody>
+</table>
+<h4 id="23-checklist-tu-kiem-tra"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#23-checklist-tu-kiem-tra">2.3 Checklist Tự Kiểm Tra</a></h4>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="gu">## BMAD Token Audit Checklist</span>
+</span><span id="__span-72-2"><a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a>
+</span><span id="__span-72-3"><a id="__codelineno-72-3" name="__codelineno-72-3" href="#__codelineno-72-3"></a><span class="gu">### Context Management</span>
+</span><span id="__span-72-4"><a id="__codelineno-72-4" name="__codelineno-72-4" href="#__codelineno-72-4"></a><span class="k">- [ ]</span> Mỗi agent CHỈ nhận context của phase mình cần?
+</span><span id="__span-72-5"><a id="__codelineno-72-5" name="__codelineno-72-5" href="#__codelineno-72-5"></a><span class="k">- [ ]</span> CLAUDE.md &lt; 500 tokens?
+</span><span id="__span-72-6"><a id="__codelineno-72-6" name="__codelineno-72-6" href="#__codelineno-72-6"></a><span class="k">- [ ]</span> Có .claudeignore để loại build artifacts, logs, node_modules?
+</span><span id="__span-72-7"><a id="__codelineno-72-7" name="__codelineno-72-7" href="#__codelineno-72-7"></a><span class="k">- [ ]</span> Tài liệu lớn đã được shard thành story files?
+</span><span id="__span-72-8"><a id="__codelineno-72-8" name="__codelineno-72-8" href="#__codelineno-72-8"></a>
+</span><span id="__span-72-9"><a id="__codelineno-72-9" name="__codelineno-72-9" href="#__codelineno-72-9"></a><span class="gu">### Session Management  </span>
+</span><span id="__span-72-10"><a id="__codelineno-72-10" name="__codelineno-72-10" href="#__codelineno-72-10"></a><span class="k">- [ ]</span> Dùng /compact sau mỗi 15-20 turns?
+</span><span id="__span-72-11"><a id="__codelineno-72-11" name="__codelineno-72-11" href="#__codelineno-72-11"></a><span class="k">- [ ]</span> Có checkpoint system để resume thay vì restart?
+</span><span id="__span-72-12"><a id="__codelineno-72-12" name="__codelineno-72-12" href="#__codelineno-72-12"></a><span class="k">- [ ]</span> Retry context chỉ gửi error ngắn gọn, không gửi cả history?
+</span><span id="__span-72-13"><a id="__codelineno-72-13" name="__codelineno-72-13" href="#__codelineno-72-13"></a>
+</span><span id="__span-72-14"><a id="__codelineno-72-14" name="__codelineno-72-14" href="#__codelineno-72-14"></a><span class="gu">### Agent Design</span>
+</span><span id="__span-72-15"><a id="__codelineno-72-15" name="__codelineno-72-15" href="#__codelineno-72-15"></a><span class="k">- [ ]</span> Mỗi agent có scope hẹp, không làm quá nhiều việc?
+</span><span id="__span-72-16"><a id="__codelineno-72-16" name="__codelineno-72-16" href="#__codelineno-72-16"></a><span class="k">- [ ]</span> System prompt dưới 2,000 tokens mỗi agent?
+</span><span id="__span-72-17"><a id="__codelineno-72-17" name="__codelineno-72-17" href="#__codelineno-72-17"></a><span class="k">- [ ]</span> Tool schemas chỉ include tools cần thiết cho task hiện tại?
+</span></code></pre></div>
+<hr />
+<h3 id="phan-3-best-practices-thuc-chien"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#phan-3-best-practices-thuc-chien">Phần 3: Best Practices Thực Chiến</a></h3>
+<h4 id="practice-1-document-sharding-nguyen-ly-cot-loi-cua-bmad"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#practice-1-document-sharding-nguyen-ly-cot-loi-cua-bmad">Practice #1: Document Sharding — Nguyên Lý Cốt Lõi Của BMAD</a></h4>
+<p><strong>Vấn đề:</strong> Gửi nguyên file PRD 10,000 tokens cho mọi agent.</p>
+<p><strong>Giải pháp:</strong> Break tài liệu thành <strong>atomic story files</strong>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>docs/
+</span><span id="__span-73-2"><a id="__codelineno-73-2" name="__codelineno-73-2" href="#__codelineno-73-2"></a>├── specs/
+</span><span id="__span-73-3"><a id="__codelineno-73-3" name="__codelineno-73-3" href="#__codelineno-73-3"></a>│   ├── prd.md                    # Master PRD (dùng để reference)
+</span><span id="__span-73-4"><a id="__codelineno-73-4" name="__codelineno-73-4" href="#__codelineno-73-4"></a>│   └── stories/
+</span><span id="__span-73-5"><a id="__codelineno-73-5" name="__codelineno-73-5" href="#__codelineno-73-5"></a>│       ├── story-001-auth.md     # ~500 tokens — Auth feature
+</span><span id="__span-73-6"><a id="__codelineno-73-6" name="__codelineno-73-6" href="#__codelineno-73-6"></a>│       ├── story-002-payment.md  # ~400 tokens — Payment feature  
+</span><span id="__span-73-7"><a id="__codelineno-73-7" name="__codelineno-73-7" href="#__codelineno-73-7"></a>│       └── story-003-notify.md   # ~350 tokens — Notifications
+</span></code></pre></div>
+<p>Programmer Agent nhận <code>story-001-auth.md</code> thay vì <code>prd.md</code> → giảm 95% input tokens.</p>
+<p><strong>Cách implement trong BMAD:</strong></p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a><span class="gh"># Trong CLAUDE.md / AGENTS.md</span>
+</span><span id="__span-74-2"><a id="__codelineno-74-2" name="__codelineno-74-2" href="#__codelineno-74-2"></a>
+</span><span id="__span-74-3"><a id="__codelineno-74-3" name="__codelineno-74-3" href="#__codelineno-74-3"></a><span class="gu">## Context Loading Rules</span>
+</span><span id="__span-74-4"><a id="__codelineno-74-4" name="__codelineno-74-4" href="#__codelineno-74-4"></a>Khi nhận task từ Orchestrator:
+</span><span id="__span-74-5"><a id="__codelineno-74-5" name="__codelineno-74-5" href="#__codelineno-74-5"></a><span class="k">1.</span> Đọc CHỈ story file được chỉ định: docs/stories/[story-id].md
+</span><span id="__span-74-6"><a id="__codelineno-74-6" name="__codelineno-74-6" href="#__codelineno-74-6"></a><span class="k">2.</span> KHÔNG đọc prd.md hay các tài liệu tổng quan
+</span><span id="__span-74-7"><a id="__codelineno-74-7" name="__codelineno-74-7" href="#__codelineno-74-7"></a><span class="k">3.</span> Nếu cần cross-reference, hỏi Orchestrator — không tự load thêm files
+</span></code></pre></div>
+<p><strong>Nguồn:</strong> BMAD Method documentation, sử dụng <code>bmad-shard-doc</code> skill (<code>npx @kayvan/markdown-tree-parser explode</code>).</p>
+<hr />
+<h4 id="practice-2-claudemd-lean-context-file-phai-nhe"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#practice-2-claudemd-lean-context-file-phai-nhe">Practice #2: CLAUDE.md Lean — Context File Phải Nhẹ</a></h4>
+<p>CLAUDE.md được load vào <strong>mọi session</strong> → đây là "thuế token" bạn trả mỗi ngày.</p>
+<p><strong>Trước khi tối ưu (1,800 tokens):</strong>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a><span class="gh"># Project Setup</span>
+</span><span id="__span-75-2"><a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a>Đây là dự án library management system sử dụng FastAPI, PostgreSQL,
+</span><span id="__span-75-3"><a id="__codelineno-75-3" name="__codelineno-75-3" href="#__codelineno-75-3"></a>Redis, Docker, Nginx... [200 dòng mô tả stack]
+</span><span id="__span-75-4"><a id="__codelineno-75-4" name="__codelineno-75-4" href="#__codelineno-75-4"></a>
+</span><span id="__span-75-5"><a id="__codelineno-75-5" name="__codelineno-75-5" href="#__codelineno-75-5"></a><span class="gh"># Coding Standards  </span>
+</span><span id="__span-75-6"><a id="__codelineno-75-6" name="__codelineno-75-6" href="#__codelineno-75-6"></a>Luôn dùng type hints, viết docstring theo Google style, max line length 88...
+</span><span id="__span-75-7"><a id="__codelineno-75-7" name="__codelineno-75-7" href="#__codelineno-75-7"></a>[300 dòng standards]
+</span><span id="__span-75-8"><a id="__codelineno-75-8" name="__codelineno-75-8" href="#__codelineno-75-8"></a>
+</span><span id="__span-75-9"><a id="__codelineno-75-9" name="__codelineno-75-9" href="#__codelineno-75-9"></a><span class="gh"># Architecture Overview</span>
+</span><span id="__span-75-10"><a id="__codelineno-75-10" name="__codelineno-75-10" href="#__codelineno-75-10"></a>Hệ thống gồm 3 layers: Presentation, Business Logic, Data Access...
+</span><span id="__span-75-11"><a id="__codelineno-75-11" name="__codelineno-75-11" href="#__codelineno-75-11"></a>[500 dòng architecture]
+</span></code></pre></div></p>
+<p><strong>Sau khi tối ưu (&lt; 400 tokens):</strong>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a><span class="gh"># Quick Reference — [Project Name]</span>
+</span><span id="__span-76-2"><a id="__codelineno-76-2" name="__codelineno-76-2" href="#__codelineno-76-2"></a>
+</span><span id="__span-76-3"><a id="__codelineno-76-3" name="__codelineno-76-3" href="#__codelineno-76-3"></a><span class="gu">## Stack: FastAPI + PostgreSQL + Redis + Docker</span>
+</span><span id="__span-76-4"><a id="__codelineno-76-4" name="__codelineno-76-4" href="#__codelineno-76-4"></a><span class="gu">## Standards: → docs/standards.md (đọc khi cần)</span>
+</span><span id="__span-76-5"><a id="__codelineno-76-5" name="__codelineno-76-5" href="#__codelineno-76-5"></a><span class="gu">## Architecture: → docs/architecture.md (đọc khi cần)</span>
+</span><span id="__span-76-6"><a id="__codelineno-76-6" name="__codelineno-76-6" href="#__codelineno-76-6"></a>
+</span><span id="__span-76-7"><a id="__codelineno-76-7" name="__codelineno-76-7" href="#__codelineno-76-7"></a><span class="gu">## CRITICAL Rules (bắt buộc nhớ)</span>
+</span><span id="__span-76-8"><a id="__codelineno-76-8" name="__codelineno-76-8" href="#__codelineno-76-8"></a><span class="k">-</span><span class="w"> </span>Luôn dùng Pydantic models cho request/response
+</span><span id="__span-76-9"><a id="__codelineno-76-9" name="__codelineno-76-9" href="#__codelineno-76-9"></a><span class="k">-</span><span class="w"> </span>Async endpoints cho DB calls
+</span><span id="__span-76-10"><a id="__codelineno-76-10" name="__codelineno-76-10" href="#__codelineno-76-10"></a><span class="k">-</span><span class="w"> </span>Never hardcode secrets — dùng env vars
+</span><span id="__span-76-11"><a id="__codelineno-76-11" name="__codelineno-76-11" href="#__codelineno-76-11"></a>
+</span><span id="__span-76-12"><a id="__codelineno-76-12" name="__codelineno-76-12" href="#__codelineno-76-12"></a><span class="gu">## Current Focus</span>
+</span><span id="__span-76-13"><a id="__codelineno-76-13" name="__codelineno-76-13" href="#__codelineno-76-13"></a>Story file: docs/stories/[current-story].md
+</span></code></pre></div></p>
+<p><strong>Nguyên tắc Progressive Disclosure:</strong> CLAUDE.md chỉ chứa "how to find" thông tin, không chứa toàn bộ thông tin.</p>
+<p><strong>Nguồn:</strong> Anthropic Claude Code Best Practices, 2025.</p>
+<hr />
+<h4 id="practice-3-session-hygiene-ve-sinh-session"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#practice-3-session-hygiene-ve-sinh-session">Practice #3: Session Hygiene — Vệ Sinh Session</a></h4>
+<p>Cộng đồng Claude Code users thống nhất rule quan trọng này:</p>
+<blockquote>
+<p><strong>"Start fresh every 15–20 messages."</strong> — Claude Code Community</p>
+</blockquote>
+<p><strong>Khi nào dùng <code>/compact</code>:</strong>
+- Đã hoàn thành một phase, chuẩn bị sang phase tiếp theo
+- Thấy agent bắt đầu quên instruction hoặc repeat lỗi cũ
+- Context indicator &gt; 60% full</p>
+<p><strong>Khi nào dùng <code>/clear</code> và start fresh:</strong>
+- Chuyển sang task hoàn toàn khác
+- Sau khi fix bug xong, muốn implement feature mới
+- Agent hallucinate liên tục dù đã retry</p>
+<p><strong>Checkpoint trước khi compact — không để mất context quan trọng:</strong></p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a><span class="gh"># Tạo file checkpoint trước /compact</span>
+</span><span id="__span-77-2"><a id="__codelineno-77-2" name="__codelineno-77-2" href="#__codelineno-77-2"></a>
+</span><span id="__span-77-3"><a id="__codelineno-77-3" name="__codelineno-77-3" href="#__codelineno-77-3"></a><span class="gu">## Session State — [timestamp]</span>
+</span><span id="__span-77-4"><a id="__codelineno-77-4" name="__codelineno-77-4" href="#__codelineno-77-4"></a><span class="gu">### Đã hoàn thành</span>
+</span><span id="__span-77-5"><a id="__codelineno-77-5" name="__codelineno-77-5" href="#__codelineno-77-5"></a><span class="k">- [x]</span> Story 001: Auth module — PASSED review
+</span><span id="__span-77-6"><a id="__codelineno-77-6" name="__codelineno-77-6" href="#__codelineno-77-6"></a><span class="k">- [x]</span> Story 002: Payment — PASSED review
+</span><span id="__span-77-7"><a id="__codelineno-77-7" name="__codelineno-77-7" href="#__codelineno-77-7"></a>
+</span><span id="__span-77-8"><a id="__codelineno-77-8" name="__codelineno-77-8" href="#__codelineno-77-8"></a><span class="gu">### Đang làm</span>
+</span><span id="__span-77-9"><a id="__codelineno-77-9" name="__codelineno-77-9" href="#__codelineno-77-9"></a><span class="k">- [ ]</span> Story 003: Notifications — 60% done, đang implement webhook
+</span><span id="__span-77-10"><a id="__codelineno-77-10" name="__codelineno-77-10" href="#__codelineno-77-10"></a>
+</span><span id="__span-77-11"><a id="__codelineno-77-11" name="__codelineno-77-11" href="#__codelineno-77-11"></a><span class="gu">### Decisions đã được approve</span>
+</span><span id="__span-77-12"><a id="__codelineno-77-12" name="__codelineno-77-12" href="#__codelineno-77-12"></a><span class="k">-</span><span class="w"> </span>Dùng Celery cho async tasks (confirmed by Architect)
+</span><span id="__span-77-13"><a id="__codelineno-77-13" name="__codelineno-77-13" href="#__codelineno-77-13"></a><span class="k">-</span><span class="w"> </span>Rate limit: 100 req/min per user
+</span><span id="__span-77-14"><a id="__codelineno-77-14" name="__codelineno-77-14" href="#__codelineno-77-14"></a>
+</span><span id="__span-77-15"><a id="__codelineno-77-15" name="__codelineno-77-15" href="#__codelineno-77-15"></a><span class="gu">### Files đã modify</span>
+</span><span id="__span-77-16"><a id="__codelineno-77-16" name="__codelineno-77-16" href="#__codelineno-77-16"></a><span class="k">-</span><span class="w"> </span>src/auth/router.py, src/auth/service.py
+</span><span id="__span-77-17"><a id="__codelineno-77-17" name="__codelineno-77-17" href="#__codelineno-77-17"></a><span class="k">-</span><span class="w"> </span>src/payment/processor.py
+</span></code></pre></div>
+<p>Sau đó <code>/compact</code> an toàn — không mất context quan trọng.</p>
+<hr />
+<h4 id="practice-4-minimum-viable-context-chi-gui-nhung-gi-can-thiet"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#practice-4-minimum-viable-context-chi-gui-nhung-gi-can-thiet">Practice #4: Minimum Viable Context — Chỉ Gửi Những Gì Cần Thiết</a></h4>
+<p>Đây là nguyên tắc quan trọng nhất từ MindStudio.ai và production teams:</p>
+<p><strong>Context Budget cho mỗi agent trong BMAD pipeline:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Agent</th>
+<th style="text-align: left;">Context Cần Thiết</th>
+<th style="text-align: left;">Token Budget</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Requirements Agent</td>
+<td style="text-align: left;">User request raw</td>
+<td style="text-align: left;">~300 tokens</td>
+</tr>
+<tr>
+<td style="text-align: left;">Architect Agent</td>
+<td style="text-align: left;">requirements.md</td>
+<td style="text-align: left;">~2,000 tokens</td>
+</tr>
+<tr>
+<td style="text-align: left;">SE Agent</td>
+<td style="text-align: left;">basic-design.md</td>
+<td style="text-align: left;">~2,500 tokens</td>
+</tr>
+<tr>
+<td style="text-align: left;">Programmer Agent</td>
+<td style="text-align: left;">detailed-design.md của story hiện tại</td>
+<td style="text-align: left;">~2,000 tokens</td>
+</tr>
+<tr>
+<td style="text-align: left;">QA Agent</td>
+<td style="text-align: left;">source code + requirements summary</td>
+<td style="text-align: left;">~4,000 tokens</td>
+</tr>
+<tr>
+<td style="text-align: left;">Review Agent</td>
+<td style="text-align: left;">Output hiện tại + input phase trước</td>
+<td style="text-align: left;">~5,000 tokens</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Template cho Orchestrator:</strong></p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a><span class="gh"># Orchestrator Context Budgeting Protocol</span>
+</span><span id="__span-78-2"><a id="__codelineno-78-2" name="__codelineno-78-2" href="#__codelineno-78-2"></a>
+</span><span id="__span-78-3"><a id="__codelineno-78-3" name="__codelineno-78-3" href="#__codelineno-78-3"></a>Khi delegate task cho Agent [X]:
+</span><span id="__span-78-4"><a id="__codelineno-78-4" name="__codelineno-78-4" href="#__codelineno-78-4"></a><span class="k">1.</span> Xác định CHÍNH XÁC input cần thiết cho phase này
+</span><span id="__span-78-5"><a id="__codelineno-78-5" name="__codelineno-78-5" href="#__codelineno-78-5"></a><span class="k">2.</span> KHÔNG load history từ phase trước (đã có trong checkpoint)
+</span><span id="__span-78-6"><a id="__codelineno-78-6" name="__codelineno-78-6" href="#__codelineno-78-6"></a><span class="k">3.</span> KHÔNG load toàn bộ PRD (chỉ load story file tương ứng)
+</span><span id="__span-78-7"><a id="__codelineno-78-7" name="__codelineno-78-7" href="#__codelineno-78-7"></a><span class="k">4.</span> Nếu Agent cần reference, gửi SUMMARY (&lt; 300 tokens), không gửi full doc
+</span><span id="__span-78-8"><a id="__codelineno-78-8" name="__codelineno-78-8" href="#__codelineno-78-8"></a>
+</span><span id="__span-78-9"><a id="__codelineno-78-9" name="__codelineno-78-9" href="#__codelineno-78-9"></a>Ví dụ delegate đúng cách (Orchestrator prompt gửi cho sub-agent):
+</span><span id="__span-78-10"><a id="__codelineno-78-10" name="__codelineno-78-10" href="#__codelineno-78-10"></a>&quot;Nhiệm vụ của Programmer Agent: Implement story-003. 
+</span><span id="__span-78-11"><a id="__codelineno-78-11" name="__codelineno-78-11" href="#__codelineno-78-11"></a>Context: docs/stories/story-003-notify.md
+</span><span id="__span-78-12"><a id="__codelineno-78-12" name="__codelineno-78-12" href="#__codelineno-78-12"></a>Tech stack: FastAPI + Celery (xem docs/tech-stack.md nếu cần)&quot;
+</span><span id="__span-78-13"><a id="__codelineno-78-13" name="__codelineno-78-13" href="#__codelineno-78-13"></a><span class="ge">*(Lưu ý: Không dùng cú pháp @mention nếu công cụ CLI của bạn không hỗ trợ, hãy viết instructions rõ ràng trong prompt).*</span>
+</span></code></pre></div>
+<hr />
+<h4 id="practice-5-retry-context-compression-nen-loi-khi-retry"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#practice-5-retry-context-compression-nen-loi-khi-retry">Practice #5: Retry Context Compression — Nén Lỗi Khi Retry</a></h4>
+<p>Một trong những nguồn lãng phí token ít được chú ý nhất: <strong>retry với full history</strong>.</p>
+<p><strong>Anti-pattern (tốn token):</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-79-1"><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>Retry lần 2: [toàn bộ conversation 8,000 tokens] + &quot;Làm lại đi&quot;
+</span></code></pre></div></p>
+<p><strong>Best practice:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-80-1"><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>Retry lần 2: 
+</span><span id="__span-80-2"><a id="__codelineno-80-2" name="__codelineno-80-2" href="#__codelineno-80-2"></a>&quot;Lỗi cụ thể: Function create_order() thiếu transaction rollback khi payment fail.
+</span><span id="__span-80-3"><a id="__codelineno-80-3" name="__codelineno-80-3" href="#__codelineno-80-3"></a>Fix: Wrap trong try-except, gọi db.rollback() trong except block.
+</span><span id="__span-80-4"><a id="__codelineno-80-4" name="__codelineno-80-4" href="#__codelineno-80-4"></a>Context: docs/stories/story-002.md (dòng 45-67)&quot;
+</span></code></pre></div></p>
+<p>Tiết kiệm 7,000+ tokens mỗi retry. Với pipeline có 3 retries/phase, 5 phases → tiết kiệm tới 105,000 tokens/pipeline!</p>
+<p><strong>Template retry message:</strong></p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-81-1"><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a><span class="gu">## Retry Context Template (&lt; 200 tokens)</span>
+</span><span id="__span-81-2"><a id="__codelineno-81-2" name="__codelineno-81-2" href="#__codelineno-81-2"></a>
+</span><span id="__span-81-3"><a id="__codelineno-81-3" name="__codelineno-81-3" href="#__codelineno-81-3"></a>RETRY [N/3] — Phase: [tên phase]
+</span><span id="__span-81-4"><a id="__codelineno-81-4" name="__codelineno-81-4" href="#__codelineno-81-4"></a>LỖI: [Mô tả lỗi cụ thể trong 1-2 câu]
+</span><span id="__span-81-5"><a id="__codelineno-81-5" name="__codelineno-81-5" href="#__codelineno-81-5"></a>SỬA: [Hướng dẫn sửa cụ thể]
+</span><span id="__span-81-6"><a id="__codelineno-81-6" name="__codelineno-81-6" href="#__codelineno-81-6"></a>THAM KHẢO: [File/section cụ thể nếu cần]
+</span><span id="__span-81-7"><a id="__codelineno-81-7" name="__codelineno-81-7" href="#__codelineno-81-7"></a>KHÔNG THAY ĐỔI: [Phần nào không được đụng vào]
+</span></code></pre></div>
+<hr />
+<h4 id="practice-6-prompt-caching-ky-thuat-nang-cao"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#practice-6-prompt-caching-ky-thuat-nang-cao">Practice #6: Prompt Caching — Kỹ Thuật Nâng Cao</a></h4>
+<p>Nếu bạn dùng Anthropic API trực tiếp, <strong>Prompt Caching</strong> là game-changer:</p>
+<ul>
+<li><strong>Cache write:</strong> +25% chi phí so với input thông thường</li>
+<li><strong>Cache read:</strong> Chỉ 10% chi phí input thông thường → <strong>tiết kiệm 90%</strong></li>
+</ul>
+<p><strong>Cách implement:</strong></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-82-1"><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span><span id="__span-82-2"><a id="__codelineno-82-2" name="__codelineno-82-2" href="#__codelineno-82-2"></a>    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;claude-3-5-sonnet-latest&quot;</span><span class="p">,</span>
+</span><span id="__span-82-3"><a id="__codelineno-82-3" name="__codelineno-82-3" href="#__codelineno-82-3"></a>    <span class="n">system</span><span class="o">=</span><span class="p">[</span>
+</span><span id="__span-82-4"><a id="__codelineno-82-4" name="__codelineno-82-4" href="#__codelineno-82-4"></a>        <span class="p">{</span>
+</span><span id="__span-82-5"><a id="__codelineno-82-5" name="__codelineno-82-5" href="#__codelineno-82-5"></a>            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+</span><span id="__span-82-6"><a id="__codelineno-82-6" name="__codelineno-82-6" href="#__codelineno-82-6"></a>            <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">BMAD_SYSTEM_PROMPT</span><span class="p">,</span>  <span class="c1"># System prompt cố định</span>
+</span><span id="__span-82-7"><a id="__codelineno-82-7" name="__codelineno-82-7" href="#__codelineno-82-7"></a>            <span class="s2">&quot;cache_control&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ephemeral&quot;</span><span class="p">}</span>  <span class="c1"># Cache phần này</span>
+</span><span id="__span-82-8"><a id="__codelineno-82-8" name="__codelineno-82-8" href="#__codelineno-82-8"></a>        <span class="p">}</span>
+</span><span id="__span-82-9"><a id="__codelineno-82-9" name="__codelineno-82-9" href="#__codelineno-82-9"></a>    <span class="p">],</span>
+</span><span id="__span-82-10"><a id="__codelineno-82-10" name="__codelineno-82-10" href="#__codelineno-82-10"></a>    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+</span><span id="__span-82-11"><a id="__codelineno-82-11" name="__codelineno-82-11" href="#__codelineno-82-11"></a>        <span class="p">{</span>
+</span><span id="__span-82-12"><a id="__codelineno-82-12" name="__codelineno-82-12" href="#__codelineno-82-12"></a>            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> 
+</span><span id="__span-82-13"><a id="__codelineno-82-13" name="__codelineno-82-13" href="#__codelineno-82-13"></a>            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="__span-82-14"><a id="__codelineno-82-14" name="__codelineno-82-14" href="#__codelineno-82-14"></a>                <span class="p">{</span>
+</span><span id="__span-82-15"><a id="__codelineno-82-15" name="__codelineno-82-15" href="#__codelineno-82-15"></a>                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+</span><span id="__span-82-16"><a id="__codelineno-82-16" name="__codelineno-82-16" href="#__codelineno-82-16"></a>                    <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">ARCHITECTURE_DOCS</span><span class="p">,</span>  <span class="c1"># Tài liệu reference lớn</span>
+</span><span id="__span-82-17"><a id="__codelineno-82-17" name="__codelineno-82-17" href="#__codelineno-82-17"></a>                    <span class="s2">&quot;cache_control&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ephemeral&quot;</span><span class="p">}</span>
+</span><span id="__span-82-18"><a id="__codelineno-82-18" name="__codelineno-82-18" href="#__codelineno-82-18"></a>                <span class="p">},</span>
+</span><span id="__span-82-19"><a id="__codelineno-82-19" name="__codelineno-82-19" href="#__codelineno-82-19"></a>                <span class="p">{</span>
+</span><span id="__span-82-20"><a id="__codelineno-82-20" name="__codelineno-82-20" href="#__codelineno-82-20"></a>                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+</span><span id="__span-82-21"><a id="__codelineno-82-21" name="__codelineno-82-21" href="#__codelineno-82-21"></a>                    <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">current_task</span>  <span class="c1"># Task hiện tại — không cache</span>
+</span><span id="__span-82-22"><a id="__codelineno-82-22" name="__codelineno-82-22" href="#__codelineno-82-22"></a>                <span class="p">}</span>
+</span><span id="__span-82-23"><a id="__codelineno-82-23" name="__codelineno-82-23" href="#__codelineno-82-23"></a>            <span class="p">]</span>
+</span><span id="__span-82-24"><a id="__codelineno-82-24" name="__codelineno-82-24" href="#__codelineno-82-24"></a>        <span class="p">}</span>
+</span><span id="__span-82-25"><a id="__codelineno-82-25" name="__codelineno-82-25" href="#__codelineno-82-25"></a>    <span class="p">]</span>
+</span><span id="__span-82-26"><a id="__codelineno-82-26" name="__codelineno-82-26" href="#__codelineno-82-26"></a><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Lưu ý quan trọng:</strong>
+- Cache chỉ hoạt động khi content ≥ 1,024 tokens (Claude 3.5+)
+- Cache bị invalidate nếu content thay đổi dù 1 ký tự
+- Đặt static content (system prompt, reference docs) ở <strong>đầu prompt</strong> để maximize cache hit</p>
+<p><strong>Nguồn:</strong> Anthropic Official Documentation — Prompt Caching.</p>
+<hr />
+<h4 id="practice-7-tiered-model-strategy-dung-ung-model-cho-ung-task"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#practice-7-tiered-model-strategy-dung-ung-model-cho-ung-task">Practice #7: Tiered Model Strategy — Dùng Đúng Model Cho Đúng Task</a></h4>
+<p>Không phải task nào cũng cần flagship model. Orchestrator phải quyết định:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-83-1"><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a><span class="gu">## BMAD Model Routing Rules</span>
+</span><span id="__span-83-2"><a id="__codelineno-83-2" name="__codelineno-83-2" href="#__codelineno-83-2"></a>
+</span><span id="__span-83-3"><a id="__codelineno-83-3" name="__codelineno-83-3" href="#__codelineno-83-3"></a><span class="gu">### Tier 1 — Flagship (Claude Opus / GPT-4o)</span>
+</span><span id="__span-83-4"><a id="__codelineno-83-4" name="__codelineno-83-4" href="#__codelineno-83-4"></a>Dùng cho: Detailed Design, Implementation, Final Review
+</span><span id="__span-83-5"><a id="__codelineno-83-5" name="__codelineno-83-5" href="#__codelineno-83-5"></a>Lý do: Cần deep reasoning, code quality cao
+</span><span id="__span-83-6"><a id="__codelineno-83-6" name="__codelineno-83-6" href="#__codelineno-83-6"></a>
+</span><span id="__span-83-7"><a id="__codelineno-83-7" name="__codelineno-83-7" href="#__codelineno-83-7"></a><span class="gu">### Tier 2 — Standard (Claude Sonnet)  </span>
+</span><span id="__span-83-8"><a id="__codelineno-83-8" name="__codelineno-83-8" href="#__codelineno-83-8"></a>Dùng cho: Requirements Analysis, Basic Design, QA Testing
+</span><span id="__span-83-9"><a id="__codelineno-83-9" name="__codelineno-83-9" href="#__codelineno-83-9"></a>Lý do: Cần chất lượng tốt nhưng không cần reasoning cực sâu
+</span><span id="__span-83-10"><a id="__codelineno-83-10" name="__codelineno-83-10" href="#__codelineno-83-10"></a>
+</span><span id="__span-83-11"><a id="__codelineno-83-11" name="__codelineno-83-11" href="#__codelineno-83-11"></a><span class="gu">### Tier 3 — Fast (Claude Haiku / GPT-4o-mini)</span>
+</span><span id="__span-83-12"><a id="__codelineno-83-12" name="__codelineno-83-12" href="#__codelineno-83-12"></a>Dùng cho: Format validation, Error classification, Log summarization
+</span><span id="__span-83-13"><a id="__codelineno-83-13" name="__codelineno-83-13" href="#__codelineno-83-13"></a>Lý do: Tasks có cấu trúc rõ ràng, không cần reasoning
+</span><span id="__span-83-14"><a id="__codelineno-83-14" name="__codelineno-83-14" href="#__codelineno-83-14"></a>
+</span><span id="__span-83-15"><a id="__codelineno-83-15" name="__codelineno-83-15" href="#__codelineno-83-15"></a><span class="gu">### Retry Strategy</span>
+</span><span id="__span-83-16"><a id="__codelineno-83-16" name="__codelineno-83-16" href="#__codelineno-83-16"></a><span class="k">-</span><span class="w"> </span>Retry 1-2: Dùng cùng tier
+</span><span id="__span-83-17"><a id="__codelineno-83-17" name="__codelineno-83-17" href="#__codelineno-83-17"></a><span class="k">-</span><span class="w"> </span>Retry 3 (cuối): Nâng lên Tier 1 — tận dụng reasoning tốt nhất
+</span></code></pre></div>
+<p><strong>Ước tính tiết kiệm:</strong> Nếu 40% tasks có thể route sang Tier 3 (Haiku) thay vì Sonnet → tiết kiệm ~80% chi phí cho những tasks đó.</p>
+<hr />
+<h4 id="practice-8-claudeignore-ngan-agent-oc-files-khong-can-thiet"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#practice-8-claudeignore-ngan-agent-oc-files-khong-can-thiet">Practice #8: .claudeignore — Ngăn Agent Đọc Files Không Cần Thiết</a></h4>
+<p>Tương tự <code>.gitignore</code>, file <code>.claudeignore</code> ngăn Claude tự động đọc:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-84-1"><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a># .claudeignore
+</span><span id="__span-84-2"><a id="__codelineno-84-2" name="__codelineno-84-2" href="#__codelineno-84-2"></a>
+</span><span id="__span-84-3"><a id="__codelineno-84-3" name="__codelineno-84-3" href="#__codelineno-84-3"></a># Dependencies (không bao giờ cần đọc)
+</span><span id="__span-84-4"><a id="__codelineno-84-4" name="__codelineno-84-4" href="#__codelineno-84-4"></a>node_modules/
+</span><span id="__span-84-5"><a id="__codelineno-84-5" name="__codelineno-84-5" href="#__codelineno-84-5"></a>.venv/
+</span><span id="__span-84-6"><a id="__codelineno-84-6" name="__codelineno-84-6" href="#__codelineno-84-6"></a>vendor/
+</span><span id="__span-84-7"><a id="__codelineno-84-7" name="__codelineno-84-7" href="#__codelineno-84-7"></a>
+</span><span id="__span-84-8"><a id="__codelineno-84-8" name="__codelineno-84-8" href="#__codelineno-84-8"></a># Build artifacts
+</span><span id="__span-84-9"><a id="__codelineno-84-9" name="__codelineno-84-9" href="#__codelineno-84-9"></a>dist/
+</span><span id="__span-84-10"><a id="__codelineno-84-10" name="__codelineno-84-10" href="#__codelineno-84-10"></a>build/
+</span><span id="__span-84-11"><a id="__codelineno-84-11" name="__codelineno-84-11" href="#__codelineno-84-11"></a>*.pyc
+</span><span id="__span-84-12"><a id="__codelineno-84-12" name="__codelineno-84-12" href="#__codelineno-84-12"></a>__pycache__/
+</span><span id="__span-84-13"><a id="__codelineno-84-13" name="__codelineno-84-13" href="#__codelineno-84-13"></a>
+</span><span id="__span-84-14"><a id="__codelineno-84-14" name="__codelineno-84-14" href="#__codelineno-84-14"></a># Logs cũ (chỉ đọc log mới nhất khi cần)
+</span><span id="__span-84-15"><a id="__codelineno-84-15" name="__codelineno-84-15" href="#__codelineno-84-15"></a>logs/archive/
+</span><span id="__span-84-16"><a id="__codelineno-84-16" name="__codelineno-84-16" href="#__codelineno-84-16"></a>*.log.bak
+</span><span id="__span-84-17"><a id="__codelineno-84-17" name="__codelineno-84-17" href="#__codelineno-84-17"></a>
+</span><span id="__span-84-18"><a id="__codelineno-84-18" name="__codelineno-84-18" href="#__codelineno-84-18"></a># Large data files
+</span><span id="__span-84-19"><a id="__codelineno-84-19" name="__codelineno-84-19" href="#__codelineno-84-19"></a>data/raw/
+</span><span id="__span-84-20"><a id="__codelineno-84-20" name="__codelineno-84-20" href="#__codelineno-84-20"></a>*.csv
+</span><span id="__span-84-21"><a id="__codelineno-84-21" name="__codelineno-84-21" href="#__codelineno-84-21"></a>*.parquet
+</span><span id="__span-84-22"><a id="__codelineno-84-22" name="__codelineno-84-22" href="#__codelineno-84-22"></a>
+</span><span id="__span-84-23"><a id="__codelineno-84-23" name="__codelineno-84-23" href="#__codelineno-84-23"></a># Media files
+</span><span id="__span-84-24"><a id="__codelineno-84-24" name="__codelineno-84-24" href="#__codelineno-84-24"></a>*.png
+</span><span id="__span-84-25"><a id="__codelineno-84-25" name="__codelineno-84-25" href="#__codelineno-84-25"></a>*.jpg
+</span><span id="__span-84-26"><a id="__codelineno-84-26" name="__codelineno-84-26" href="#__codelineno-84-26"></a>*.mp4
+</span></code></pre></div>
+<p><strong>Nguồn:</strong> Claude Code official documentation, GitHub community best practices.</p>
+<hr />
+<h3 id="phan-4-anti-patterns-pho-bien-can-tranh"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#phan-4-anti-patterns-pho-bien-can-tranh">Phần 4: Anti-Patterns Phổ Biến Cần Tránh</a></h3>
+<h4 id="anti-pattern-1-god-context-gui-moi-thu-cho-chac"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#anti-pattern-1-god-context-gui-moi-thu-cho-chac">Anti-Pattern #1: God Context — Gửi Mọi Thứ "Cho Chắc"</a></h4>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-85-1"><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a>❌ SAI:
+</span><span id="__span-85-2"><a id="__codelineno-85-2" name="__codelineno-85-2" href="#__codelineno-85-2"></a>&quot;Đây là toàn bộ PRD (8,000 tokens), Architecture doc (5,000 tokens),
+</span><span id="__span-85-3"><a id="__codelineno-85-3" name="__codelineno-85-3" href="#__codelineno-85-3"></a>Meeting notes (3,000 tokens), và Previous sprint review (2,000 tokens).
+</span><span id="__span-85-4"><a id="__codelineno-85-4" name="__codelineno-85-4" href="#__codelineno-85-4"></a>Hãy implement login feature.&quot;
+</span><span id="__span-85-5"><a id="__codelineno-85-5" name="__codelineno-85-5" href="#__codelineno-85-5"></a>
+</span><span id="__span-85-6"><a id="__codelineno-85-6" name="__codelineno-85-6" href="#__codelineno-85-6"></a>✅ ĐÚNG:
+</span><span id="__span-85-7"><a id="__codelineno-85-7" name="__codelineno-85-7" href="#__codelineno-85-7"></a>&quot;Implement login feature. Context: docs/stories/story-001-auth.md&quot;
+</span></code></pre></div>
+<h4 id="anti-pattern-2-monolithic-claudemd"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#anti-pattern-2-monolithic-claudemd">Anti-Pattern #2: Monolithic CLAUDE.md</a></h4>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-86-1"><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a>❌ SAI: CLAUDE.md dài 3,000+ tokens với mọi thứ về project
+</span><span id="__span-86-2"><a id="__codelineno-86-2" name="__codelineno-86-2" href="#__codelineno-86-2"></a>
+</span><span id="__span-86-3"><a id="__codelineno-86-3" name="__codelineno-86-3" href="#__codelineno-86-3"></a>✅ ĐÚNG: CLAUDE.md &lt; 500 tokens, reference đến docs/ cho chi tiết
+</span></code></pre></div>
+<h4 id="anti-pattern-3-retry-khong-co-inh-huong"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#anti-pattern-3-retry-khong-co-inh-huong">Anti-Pattern #3: Retry Không Có Định Hướng</a></h4>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-87-1"><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a>❌ SAI: [Toàn bộ history] + &quot;Thử lại nhé&quot;
+</span><span id="__span-87-2"><a id="__codelineno-87-2" name="__codelineno-87-2" href="#__codelineno-87-2"></a>
+</span><span id="__span-87-3"><a id="__codelineno-87-3" name="__codelineno-87-3" href="#__codelineno-87-3"></a>✅ ĐÚNG: &quot;Lỗi cụ thể: [X]. Sửa bằng cách [Y]. Không thay đổi [Z].&quot;
+</span></code></pre></div>
+<h4 id="anti-pattern-4-khong-shard-tai-lieu-lon"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#anti-pattern-4-khong-shard-tai-lieu-lon">Anti-Pattern #4: Không Shard Tài Liệu Lớn</a></h4>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-88-1"><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a>❌ SAI: Một file prd.md duy nhất 15,000 tokens
+</span><span id="__span-88-2"><a id="__codelineno-88-2" name="__codelineno-88-2" href="#__codelineno-88-2"></a>
+</span><span id="__span-88-3"><a id="__codelineno-88-3" name="__codelineno-88-3" href="#__codelineno-88-3"></a>✅ ĐÚNG: Shard thành story files ~500 tokens mỗi file
+</span></code></pre></div>
+<h4 id="anti-pattern-5-ignore-session-health"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#anti-pattern-5-ignore-session-health">Anti-Pattern #5: Ignore Session Health</a></h4>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-89-1"><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>❌ SAI: Tiếp tục session 50+ turns dù agent bắt đầu hallucinate
+</span><span id="__span-89-2"><a id="__codelineno-89-2" name="__codelineno-89-2" href="#__codelineno-89-2"></a>
+</span><span id="__span-89-3"><a id="__codelineno-89-3" name="__codelineno-89-3" href="#__codelineno-89-3"></a>✅ ĐÚNG: /compact mỗi 15-20 turns, /clear khi chuyển context lớn
+</span></code></pre></div>
+<hr />
+<h3 id="phan-5-action-plan-lam-ngay-hom-nay"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#phan-5-action-plan-lam-ngay-hom-nay">Phần 5: Action Plan — Làm Ngay Hôm Nay</a></h3>
+<h4 id="buoc-1-audit-30-phut"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#buoc-1-audit-30-phut">Bước 1: Audit (30 phút)</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-90-1"><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a><span class="c1"># 1. Kiểm tra kích thước CLAUDE.md</span>
+</span><span id="__span-90-2"><a id="__codelineno-90-2" name="__codelineno-90-2" href="#__codelineno-90-2"></a>wc<span class="w"> </span>-w<span class="w"> </span>CLAUDE.md<span class="w">  </span><span class="c1"># Mục tiêu: &lt; 400 words ≈ 500 tokens</span>
+</span><span id="__span-90-3"><a id="__codelineno-90-3" name="__codelineno-90-3" href="#__codelineno-90-3"></a>
+</span><span id="__span-90-4"><a id="__codelineno-90-4" name="__codelineno-90-4" href="#__codelineno-90-4"></a><span class="c1"># 2. Kiểm tra file lớn nhất trong docs/</span>
+</span><span id="__span-90-5"><a id="__codelineno-90-5" name="__codelineno-90-5" href="#__codelineno-90-5"></a>find<span class="w"> </span>docs/<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.md&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>wc<span class="w"> </span>-w<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-rn<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-10
+</span><span id="__span-90-6"><a id="__codelineno-90-6" name="__codelineno-90-6" href="#__codelineno-90-6"></a>
+</span><span id="__span-90-7"><a id="__codelineno-90-7" name="__codelineno-90-7" href="#__codelineno-90-7"></a><span class="c1"># 3. Xem logs token nếu có</span>
+</span><span id="__span-90-8"><a id="__codelineno-90-8" name="__codelineno-90-8" href="#__codelineno-90-8"></a>cat<span class="w"> </span>logs/token-audit.log<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-k4<span class="w"> </span>-rn<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-20
+</span></code></pre></div>
+<h4 id="buoc-2-slim-down-claudemd-1-tieng"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#buoc-2-slim-down-claudemd-1-tieng">Bước 2: Slim Down CLAUDE.md (1 tiếng)</a></h4>
+<p>Giữ lại: Critical rules, current focus, how to find more info
+Xóa: Full tech stack, detailed standards, architecture overview</p>
+<h4 id="buoc-3-shard-tai-lieu-lon-2-4-tieng"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#buoc-3-shard-tai-lieu-lon-2-4-tieng">Bước 3: Shard Tài Liệu Lớn (2-4 tiếng)</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-91-1"><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a><span class="c1"># Tạo cấu trúc story files</span>
+</span><span id="__span-91-2"><a id="__codelineno-91-2" name="__codelineno-91-2" href="#__codelineno-91-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>docs/specs/stories
+</span><span id="__span-91-3"><a id="__codelineno-91-3" name="__codelineno-91-3" href="#__codelineno-91-3"></a>
+</span><span id="__span-91-4"><a id="__codelineno-91-4" name="__codelineno-91-4" href="#__codelineno-91-4"></a><span class="c1"># Manual shard theo epic/feature, mỗi file ~500 tokens</span>
+</span><span id="__span-91-5"><a id="__codelineno-91-5" name="__codelineno-91-5" href="#__codelineno-91-5"></a><span class="c1"># Hoặc dùng bmad-shard-doc tool nếu có</span>
+</span></code></pre></div>
+<h4 id="buoc-4-tao-checkpoint-template-30-phut"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#buoc-4-tao-checkpoint-template-30-phut">Bước 4: Tạo Checkpoint Template (30 phút)</a></h4>
+<p>Tạo <code>templates/session-checkpoint.md</code> và dùng trước mỗi <code>/compact</code>.</p>
+<h4 id="buoc-5-implement-token-logging-1-2-tieng"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#buoc-5-implement-token-logging-1-2-tieng">Bước 5: Implement Token Logging (1-2 tiếng)</a></h4>
+<p>Log token usage cho mọi API call, review weekly để tìm optimization opportunities.</p>
+<hr />
+<h3 id="ket-luan"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#ket-luan">Kết Luận</a></h3>
+<p>Vấn đề "tốn quá nhiều token" trong BMAD pipelines không phải là lỗi của framework — đây là hệ quả tự nhiên của việc áp dụng multi-agent systems mà không có <strong>Token Economics mindset</strong>.</p>
+<p><strong>Tóm tắt 8 best practices:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">#</th>
+<th style="text-align: left;">Practice</th>
+<th style="text-align: left;">Tiết kiệm ước tính</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Document Sharding</td>
+<td style="text-align: left;">60-80% input tokens/agent</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Lean CLAUDE.md</td>
+<td style="text-align: left;">5-15% mỗi session</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Session Hygiene (/compact)</td>
+<td style="text-align: left;">20-40% cuối sessions</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Minimum Viable Context</td>
+<td style="text-align: left;">50-70% per phase</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Retry Context Compression</td>
+<td style="text-align: left;">80-90% per retry</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Prompt Caching (API)</td>
+<td style="text-align: left;">70-90% on static content</td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Tiered Model Strategy</td>
+<td style="text-align: left;">50-80% cost reduction</td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">.claudeignore</td>
+<td style="text-align: left;">10-30% (tùy project)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Takeaway cốt lõi:</strong> Hãy nghĩ về context window như ba lô đi leo núi — mỗi token bạn mang theo đều tốn năng lượng. Hãy chỉ mang những gì thực sự cần thiết cho chặng đường trước mắt.</p>
+</blockquote>
+<hr />
+<h3 id="tham-khao"><a class="toclink" href="../../2026/05/09/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn-gi%E1%BA%A3i-quy%E1%BA%BFt-b%C3%A0i-to%C3%A1n-t%E1%BB%91n-qu%C3%A1-nhi%E1%BB%81u-token-trong-sdlc/#tham-khao">Tham Khảo</a></h3>
+<ul>
+<li><a href="https://bmad-method.org">BMAD Method Official Documentation</a> — Context Sharding, Story Files</li>
+<li><a href="https://docs.anthropic.com/claude/docs/claude-code-best-practices">Anthropic Claude Code Best Practices</a> — CLAUDE.md, /compact, .claudeignore</li>
+<li><a href="https://docs.anthropic.com/claude/docs/prompt-caching">Anthropic Prompt Caching</a> — API-level caching</li>
+<li><a href="https://mindstudio.ai/blog/reduce-token-usage">MindStudio.ai — Reduce Token Usage</a> — Tool output filtering, selective injection</li>
+<li><a href="https://thenewstack.io">The New Stack — Context Efficiency</a> — Architecture patterns cho agentic workflows</li>
+<li>Bài liên quan:</li>
+<li><a href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/">Agent Orchestrator Best Practices</a></li>
+<li><a href="../../2026/05/07/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn--customize-%C4%91%C3%A0o-t%E1%BA%A1o-team-v%C3%A0-qu%E1%BA%A3n-l%C3%BD-d%E1%BB%B1-%C3%A1n-l%E1%BB%9Bn/">BMAD Method Thực Chiến</a></li>
+<li><a href="../../2026/05/08/multi-agent-system--khi-ai-kh%C3%B4ng-c%C3%B2n-%C4%91%C6%A1n-th%C6%B0%C6%A1ng-%C4%91%E1%BB%99c-m%C3%A3/">Multi-Agent System — Kiến Trúc</a></li>
+</ul>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://avatars.githubusercontent.com/tranvanhoan" alt="Hoàn Trần">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-05-08 00:00:00+00:00">08/05/2026</time></li>
+        
+          <li class="md-meta__item">
+            Trong
+            
+              <a href="../agent/" class="md-meta__link">Agent</a>, 
+              <a href="./" class="md-meta__link">Best Practices</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              13 phút đọc
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="agent-orchestrator-deep-dive-best-practices-ieu-phoi-multi-agent-system-chuan-ipa-nhat-ban"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/">Agent Orchestrator Deep Dive: Best Practices Điều Phối Multi-Agent System Chuẩn IPA Nhật Bản</a></h2>
+<h3 id="mo-au"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#mo-au">Mở đầu</a></h3>
+<p>Trong các bài viết trước, chúng ta đã xây dựng <a href="../../2026/05/08/th%E1%BB%B1c-chi%E1%BA%BFn-multi-agent-system-mas-x%C3%A2y-d%E1%BB%B1ng-%C4%91%E1%BB%99i-d%E1%BB%B1-%C3%A1n-ph%E1%BA%A7n-m%E1%BB%81m-%E1%BA%A3o-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/">hệ thống MAS bằng code</a> và <a href="../../2026/05/08/multi-agent-system-b%E1%BA%B1ng-markdown--kh%C3%B4ng-c%E1%BA%A7n-vi%E1%BA%BFt-m%E1%BB%99t-d%C3%B2ng-code-framework/">MAS bằng Markdown</a>. Tuy nhiên, cả hai bài đều tập trung vào <strong>pipeline tổng thể</strong> mà chưa đi sâu vào thành phần quan trọng nhất: <strong>Agent Orchestrator — bộ não điều phối</strong>.</p>
+<p>Orchestrator không đơn giản là "gọi Agent A xong gọi Agent B". Trong thực tế production, nó phải giải quyết hàng loạt vấn đề phức tạp: <strong>quản lý context window</strong>, <strong>routing thông minh</strong>, <strong>xử lý lỗi phân tầng</strong>, <strong>tối ưu token</strong>, và <strong>đảm bảo traceability</strong> theo tiêu chuẩn IPA (<em>共通フレーム2013</em>).</p>
+<p>Bài viết này là <strong>nghiên cứu chuyên sâu</strong> dành cho những ai muốn:</p>
+<ul>
+<li>Hiểu rõ <strong>vai trò và trách nhiệm</strong> thực sự của Orchestrator trong MAS</li>
+<li>Nắm vững <strong>7 Best Practice Patterns</strong> để thiết kế Orchestrator đáng tin cậy</li>
+<li>Áp dụng vào quy trình <strong>Waterfall chuẩn IPA Nhật Bản</strong> (V-Model)</li>
+<li>Triển khai thực tế bằng <strong>Markdown Skills</strong> trên VSCode, Claude Code, Copilot</li>
+<li>Tránh <strong>Anti-patterns</strong> phổ biến khiến MAS thất bại</li>
+</ul>
+<hr />
+<h3 id="1-orchestrator-la-gi-va-khong-phai-la-gi"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#1-orchestrator-la-gi-va-khong-phai-la-gi">1. Orchestrator Là Gì — Và Không Phải Là Gì</a></h3>
+<h4 id="11-inh-nghia-chinh-xac"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#11-inh-nghia-chinh-xac">1.1 Định nghĩa chính xác</a></h4>
+<p><strong>Agent Orchestrator</strong> (人工知能オーケストレーター) là agent trung tâm chịu trách nhiệm <strong>điều phối toàn bộ luồng công việc</strong> trong Multi-Agent System. Nó đóng vai trò như <strong>Project Manager cấp cao</strong> — không tự tay code, không tự tay thiết kế, mà tập trung vào:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Trách nhiệm</th>
+<th style="text-align: left;">Mô tả</th>
+<th style="text-align: left;">Tương đương PM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Task Decomposition</strong></td>
+<td style="text-align: left;">Phân rã yêu cầu thành sub-tasks</td>
+<td style="text-align: left;">Tạo WBS (Work Breakdown Structure)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Routing &amp; Delegation</strong></td>
+<td style="text-align: left;">Chọn đúng Agent cho đúng task</td>
+<td style="text-align: left;">Phân công nhân sự</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>State Management</strong></td>
+<td style="text-align: left;">Duy trì trạng thái chung của dự án</td>
+<td style="text-align: left;">Quản lý project status</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Quality Gate</strong></td>
+<td style="text-align: left;">Kiểm tra output trước khi chuyển phase</td>
+<td style="text-align: left;">Review meeting</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Error Handling</strong></td>
+<td style="text-align: left;">Xử lý lỗi, retry, escalation</td>
+<td style="text-align: left;">Risk management</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Context Engineering</strong></td>
+<td style="text-align: left;">Tối ưu thông tin truyền cho mỗi Agent</td>
+<td style="text-align: left;">Chuẩn bị tài liệu brief</td>
+</tr>
+</tbody>
+</table>
+<h4 id="12-orchestrator-khong-phai-la"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#12-orchestrator-khong-phai-la">1.2 Orchestrator KHÔNG PHẢI là</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">Hiểu sai phổ biến</p>
+<ul>
+<li>❌ <strong>Không phải Super Agent</strong> — Orchestrator KHÔNG nên tự làm task. Nếu nó vừa điều phối vừa code, context window sẽ bị quá tải và chất lượng giảm.</li>
+<li>❌ <strong>Không phải Message Broker</strong> — Không chỉ đơn thuần chuyển tin nhắn giữa các Agent. Nó phải <strong>hiểu nội dung</strong>, đánh giá chất lượng, và quyết định routing.</li>
+<li>❌ <strong>Không phải Static Router</strong> — Không phải if-else cứng nhắc. Orchestrator cần khả năng <strong>đánh giá ngữ cảnh</strong> để ra quyết định linh hoạt.</li>
+</ul>
+</div>
+<h4 id="13-vi-tri-trong-kien-truc-mas"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#13-vi-tri-trong-kien-truc-mas">1.3 Vị trí trong kiến trúc MAS</a></h4>
+<pre class="mermaid"><code>graph TD
+    User[Nguoi dung] --&gt;|Yeu cau| ORCH[Agent Orchestrator]
+
+    subgraph "Orchestrator Responsibilities"
+        TD[Task Decomposition]
+        RT[Routing Engine]
+        SM[State Manager]
+        QG[Quality Gate]
+        EH[Error Handler]
+        CE[Context Engineer]
+    end
+
+    ORCH --&gt; TD
+    ORCH --&gt; RT
+    ORCH --&gt; SM
+    ORCH --&gt; QG
+    ORCH --&gt; EH
+    ORCH --&gt; CE
+
+    subgraph "Specialized Workers"
+        A1[Requirements Agent]
+        A2[Architect Agent]
+        A3[SE Agent]
+        A4[Programmer Agent]
+        A5[QA Agent]
+        A6[Reviewer Agent]
+    end
+
+    RT --&gt;|Delegate| A1
+    RT --&gt;|Delegate| A2
+    RT --&gt;|Delegate| A3
+    RT --&gt;|Delegate| A4
+    RT --&gt;|Delegate| A5
+    QG --&gt;|Review| A6
+
+    A1 --&gt;|Output| SM
+    A2 --&gt;|Output| SM
+    A3 --&gt;|Output| SM
+    A4 --&gt;|Output| SM
+    A5 --&gt;|Output| SM
+    A6 --&gt;|Review Result| QG
+
+    ORCH --&gt;|Ket qua| User</code></pre>
+<hr />
+<h3 id="2-mapping-orchestrator-voi-quy-trinh-ipa-nhat-ban"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#2-mapping-orchestrator-voi-quy-trinh-ipa-nhat-ban">2. Mapping Orchestrator Với Quy Trình IPA Nhật Bản</a></h3>
+<h4 id="21-2013-common-frame-va-v-model"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#21-2013-common-frame-va-v-model">2.1 共通フレーム2013 (Common Frame) và V-Model</a></h4>
+<p>Tiêu chuẩn IPA không chỉ định nghĩa "phải làm gì" (<em>What</em>) mà còn nhấn mạnh <strong>traceability</strong> — khả năng truy vết từ yêu cầu đến kiểm thử. Đây là điểm V-Model vượt trội so với Waterfall đơn thuần:</p>
+<pre class="mermaid"><code>graph LR
+    subgraph "Development"
+        RD[Requirements]
+        BD[Basic Design]
+        DD[Detailed Design]
+        IM[Implementation]
+    end
+
+    subgraph "Testing"
+        UT[Unit Test]
+        IT_T[Integration Test]
+        ST[System Test]
+        AT[Acceptance Test]
+    end
+
+    RD -.-&gt;|Validation| AT
+    BD -.-&gt;|Verification| ST
+    DD -.-&gt;|Verification| IT_T
+    IM --&gt;|Verification| UT
+
+    RD --&gt; BD --&gt; DD --&gt; IM
+    UT --&gt; IT_T --&gt; ST --&gt; AT</code></pre>
+<blockquote>
+<p><strong>Điểm mấu chốt IPA:</strong> Mỗi phase bên trái (設計) phải có <strong>phase kiểm tra tương ứng</strong> bên phải (テスト). Orchestrator phải đảm bảo traceability này — không chỉ chạy tuần tự mà còn <strong>map requirement → test case</strong>.</p>
+</blockquote>
+<h4 id="22-vai-tro-orchestrator-trong-tung-phase-ipa"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#22-vai-tro-orchestrator-trong-tung-phase-ipa">2.2 Vai trò Orchestrator trong từng phase IPA</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Phase IPA</th>
+<th style="text-align: left;">Orchestrator làm gì</th>
+<th style="text-align: left;">Input cần chuẩn bị</th>
+<th style="text-align: left;">Output cần validate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">要件定義</td>
+<td style="text-align: left;">Nhận raw request → clean → delegate cho Requirements Agent</td>
+<td style="text-align: left;">User request, business context</td>
+<td style="text-align: left;">SRS với FR/NFR có ID</td>
+</tr>
+<tr>
+<td style="text-align: left;">基本設計</td>
+<td style="text-align: left;">Verify SRS đã PASS → delegate cho Architect Agent</td>
+<td style="text-align: left;">SRS (đã freeze)</td>
+<td style="text-align: left;">Architecture doc, ERD, API spec</td>
+</tr>
+<tr>
+<td style="text-align: left;">詳細設計</td>
+<td style="text-align: left;">Verify Basic Design → delegate cho SE Agent</td>
+<td style="text-align: left;">Basic Design (đã freeze)</td>
+<td style="text-align: left;">Class diagram, pseudocode</td>
+</tr>
+<tr>
+<td style="text-align: left;">製造</td>
+<td style="text-align: left;">Verify Detailed Design → delegate cho Programmer Agent</td>
+<td style="text-align: left;">Detailed Design (đã freeze)</td>
+<td style="text-align: left;">Source code</td>
+</tr>
+<tr>
+<td style="text-align: left;">テスト</td>
+<td style="text-align: left;">Map FR-IDs với test cases → delegate cho QA Agent</td>
+<td style="text-align: left;">Source code + SRS</td>
+<td style="text-align: left;">Test report với traceability matrix</td>
+</tr>
+</tbody>
+</table>
+<h4 id="23-verification-vs-validation-trong-orchestrator"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#23-verification-vs-validation-trong-orchestrator">2.3 検証 (Verification) vs 妥当性確認 (Validation) trong Orchestrator</a></h4>
+<p>Đây là khái niệm <strong>cực kỳ quan trọng</strong> trong IPA mà nhiều hệ thống MAS bỏ qua:</p>
+<ul>
+<li>
+<p><strong>検証 (Verification):</strong> "Are we building the product RIGHT?" — Output có đúng spec không?</p>
+<ul>
+<li>Orchestrator gọi Reviewer Agent so sánh output với input của <strong>phase trước đó</strong></li>
+<li>VD: Code có khớp Detailed Design không?</li>
+</ul>
+</li>
+<li>
+<p><strong>妥当性確認 (Validation):</strong> "Are we building the RIGHT product?" — Output có đáp ứng nhu cầu user không?</p>
+<ul>
+<li>Orchestrator gọi Reviewer Agent so sánh output với <strong>Requirements gốc</strong></li>
+<li>VD: Test cases có cover hết FR trong SRS không?</li>
+</ul>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Best Practice #0: Dual Review</p>
+<p>Orchestrator nên chạy <strong>cả hai loại review</strong> tại mỗi Quality Gate:</p>
+<ol>
+<li><strong>Verification Review:</strong> So sánh output với phase N-1 (input trực tiếp)</li>
+<li><strong>Validation Review:</strong> So sánh output với Requirements gốc (Phase 1)</li>
+</ol>
+<p>Điều này đảm bảo không chỉ "làm đúng" mà còn "làm đúng thứ cần làm".</p>
+</div>
+<hr />
+<h3 id="3-bay-best-practice-patterns-cho-agent-orchestrator"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#3-bay-best-practice-patterns-cho-agent-orchestrator">3. Bảy Best Practice Patterns Cho Agent Orchestrator</a></h3>
+<h4 id="pattern-1-context-budgeting-ngan-sach-token"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#pattern-1-context-budgeting-ngan-sach-token">Pattern #1: Context Budgeting — Ngân Sách Token</a></h4>
+<p><strong>Vấn đề:</strong> Khi pipeline dài (5+ phases), context window tích lũy sẽ vượt quá giới hạn. Gửi toàn bộ SRS + Basic Design + Detailed Design + Source Code cho QA Agent là thảm họa token.</p>
+<p><strong>Giải pháp:</strong> Orchestrator phải đóng vai <strong>Context Engineer</strong> — chỉ truyền thông tin <strong>tối thiểu cần thiết</strong> cho mỗi Agent.</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="gh"># Orchestrator Context Budgeting Rules</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="gu">## Nguyên tắc: Minimum Viable Context (MVC)</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>
+</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>Khi delegate task cho bất kỳ Agent nào, PHẢI tuân thủ:
+</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>
+</span><span id="__span-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="gu">### 1. Chỉ truyền input của phase hiện tại</span>
+</span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="k">-</span><span class="w"> </span>Requirements Agent: CHỈ nhận user request
+</span><span id="__span-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="k">-</span><span class="w"> </span>Basic Design Agent: CHỈ nhận requirements.md (KHÔNG nhận user request gốc)
+</span><span id="__span-34-10"><a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a><span class="k">-</span><span class="w"> </span>Detailed Design Agent: CHỈ nhận basic-design.md
+</span><span id="__span-34-11"><a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a><span class="k">-</span><span class="w"> </span>Programmer Agent: CHỈ nhận detailed-design.md
+</span><span id="__span-34-12"><a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a><span class="k">-</span><span class="w"> </span>QA Agent: CHỈ nhận source code + requirements.md (cho traceability)
+</span><span id="__span-34-13"><a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a>
+</span><span id="__span-34-14"><a id="__codelineno-34-14" name="__codelineno-34-14" href="#__codelineno-34-14"></a><span class="gu">### 2. Nén error logs</span>
+</span><span id="__span-34-15"><a id="__codelineno-34-15" name="__codelineno-34-15" href="#__codelineno-34-15"></a><span class="k">-</span><span class="w"> </span>Khi retry, CHỈ gửi error log của lần retry gần nhất
+</span><span id="__span-34-16"><a id="__codelineno-34-16" name="__codelineno-34-16" href="#__codelineno-34-16"></a><span class="k">-</span><span class="w"> </span>KHÔNG gửi toàn bộ lịch sử error
+</span><span id="__span-34-17"><a id="__codelineno-34-17" name="__codelineno-34-17" href="#__codelineno-34-17"></a><span class="k">-</span><span class="w"> </span>Format: &quot;Lỗi lần N: [mô tả ngắn gọn]. Hãy sửa cụ thể điểm này.&quot;
+</span><span id="__span-34-18"><a id="__codelineno-34-18" name="__codelineno-34-18" href="#__codelineno-34-18"></a>
+</span><span id="__span-34-19"><a id="__codelineno-34-19" name="__codelineno-34-19" href="#__codelineno-34-19"></a><span class="gu">### 3. Summarize khi cần cross-reference</span>
+</span><span id="__span-34-20"><a id="__codelineno-34-20" name="__codelineno-34-20" href="#__codelineno-34-20"></a><span class="k">-</span><span class="w"> </span>Nếu Agent cần tham khảo phase khác, gửi BẢN TÓM TẮT (&lt; 500 tokens)
+</span><span id="__span-34-21"><a id="__codelineno-34-21" name="__codelineno-34-21" href="#__codelineno-34-21"></a><span class="k">-</span><span class="w"> </span>KHÔNG gửi nguyên bản tài liệu đầy đủ
+</span></code></pre></div>
+<p><strong>Token budget mẫu cho pipeline 5 phases:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Phase</th>
+<th style="text-align: left;">Context gửi cho Agent</th>
+<th style="text-align: left;">~Token estimate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Requirements</td>
+<td style="text-align: left;">User request (~200 tokens)</td>
+<td style="text-align: left;">~200</td>
+</tr>
+<tr>
+<td style="text-align: left;">Basic Design</td>
+<td style="text-align: left;">requirements.md (~2K tokens)</td>
+<td style="text-align: left;">~2,000</td>
+</tr>
+<tr>
+<td style="text-align: left;">Detailed Design</td>
+<td style="text-align: left;">basic-design.md (~3K tokens)</td>
+<td style="text-align: left;">~3,000</td>
+</tr>
+<tr>
+<td style="text-align: left;">Implementation</td>
+<td style="text-align: left;">detailed-design.md (~4K tokens)</td>
+<td style="text-align: left;">~4,000</td>
+</tr>
+<tr>
+<td style="text-align: left;">Testing</td>
+<td style="text-align: left;">source code (~5K) + requirements summary (~500)</td>
+<td style="text-align: left;">~5,500</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Review (mỗi phase)</strong></td>
+<td style="text-align: left;">Output hiện tại + input phase trước</td>
+<td style="text-align: left;">~4,000-8,000</td>
+</tr>
+</tbody>
+</table>
+<h4 id="pattern-2-tiered-model-strategy-phan-tang-model"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#pattern-2-tiered-model-strategy-phan-tang-model">Pattern #2: Tiered Model Strategy — Phân Tầng Model</a></h4>
+<p><strong>Vấn đề:</strong> Gọi model flagship (GPT-4o, Claude Opus) cho mọi thao tác rất tốn kém. Reviewer kiểm tra format không cần model mạnh bằng Agent sinh code.</p>
+<p><strong>Giải pháp:</strong> Orchestrator quyết định <strong>model nào cho task nào</strong>.</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="gh"># Orchestrator Model Tiering Strategy</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="gu">## Tier 1: Flagship Model (Claude Opus / GPT-4o)</span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>Dùng cho các task đòi hỏi reasoning phức tạp:
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="k">-</span><span class="w"> </span>Detailed Design Agent (pseudocode, error handling logic)
+</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="k">-</span><span class="w"> </span>Programmer Agent (sinh source code)
+</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="k">-</span><span class="w"> </span>Review lần cuối (final review trước khi chuyển phase)
+</span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>
+</span><span id="__span-35-9"><a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="gu">## Tier 2: Standard Model (Claude Sonnet / GPT-4o-mini)</span>
+</span><span id="__span-35-10"><a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a>Dùng cho các task có cấu trúc rõ ràng:
+</span><span id="__span-35-11"><a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a><span class="k">-</span><span class="w"> </span>Requirements Agent (phân tích và liệt kê)
+</span><span id="__span-35-12"><a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a><span class="k">-</span><span class="w"> </span>Basic Design Agent (architecture patterns đã biết)
+</span><span id="__span-35-13"><a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a><span class="k">-</span><span class="w"> </span>QA Agent (viết test cases theo template)
+</span><span id="__span-35-14"><a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a>
+</span><span id="__span-35-15"><a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a><span class="gu">## Tier 3: Fast Model (Claude Haiku / GPT-4o-mini)</span>
+</span><span id="__span-35-16"><a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a>Dùng cho các task đơn giản, lặp lại:
+</span><span id="__span-35-17"><a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a><span class="k">-</span><span class="w"> </span>Format validation review (kiểm tra cấu trúc output)
+</span><span id="__span-35-18"><a id="__codelineno-35-18" name="__codelineno-35-18" href="#__codelineno-35-18"></a><span class="k">-</span><span class="w"> </span>Retry error classification (phân loại lỗi: transient vs structural)
+</span><span id="__span-35-19"><a id="__codelineno-35-19" name="__codelineno-35-19" href="#__codelineno-35-19"></a><span class="k">-</span><span class="w"> </span>Log summarization (tóm tắt error logs)
+</span><span id="__span-35-20"><a id="__codelineno-35-20" name="__codelineno-35-20" href="#__codelineno-35-20"></a>
+</span><span id="__span-35-21"><a id="__codelineno-35-21" name="__codelineno-35-21" href="#__codelineno-35-21"></a><span class="gu">## Quy tắc routing</span>
+</span><span id="__span-35-22"><a id="__codelineno-35-22" name="__codelineno-35-22" href="#__codelineno-35-22"></a><span class="k">-</span><span class="w"> </span>Retry lần 1-2: Dùng cùng tier với lần đầu
+</span><span id="__span-35-23"><a id="__codelineno-35-23" name="__codelineno-35-23" href="#__codelineno-35-23"></a><span class="k">-</span><span class="w"> </span>Retry lần 3 (cuối): Nâng lên Tier 1 để tận dụng reasoning tốt nhất
+</span></code></pre></div>
+<h4 id="pattern-3-structured-handoff-protocol-giao-thuc-ban-giao"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#pattern-3-structured-handoff-protocol-giao-thuc-ban-giao">Pattern #3: Structured Handoff Protocol — Giao Thức Bàn Giao</a></h4>
+<p><strong>Vấn đề:</strong> Agent A sinh output tự do, Agent B không hiểu format → pipeline crash.</p>
+<p><strong>Giải pháp:</strong> Orchestrator enforce <strong>Structured Handoff</strong> — mỗi Agent phải output theo schema cố định.</p>
+<p><div class="language-markdown highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="gh"># Orchestrator Handoff Protocol</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="gu">## Mỗi Agent PHẢI trả về output theo cấu trúc sau:</span>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="gu">### Header (BẮT BUỘC)</span>
+</span></code></pre></div>
+PHASE: [tên phase]
+STATUS: [COMPLETED / PARTIAL / ERROR]
+AGENT: [tên agent]
+TIMESTAMP: [ISO 8601]
+<div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>### Body (Nội dung chính)
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>Tài liệu/code theo format đã quy định cho phase đó.
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>### Footer — Traceability Matrix (BẮT BUỘC)
+</span></code></pre></div>
+TRACEABILITY:
+- FR-001 → [addressed in section X / function Y]
+- FR-002 → [addressed in section Z]
+- NFR-001 → [addressed in architecture decision A]
+<div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>### Self-Assessment (Tùy chọn nhưng khuyến khích)
+</span></code></pre></div>
+SELF_CHECK:
+- Completeness: [YES/NO] - Đã cover hết input requirements?
+- Consistency: [YES/NO] - Có mâu thuẫn nội bộ?
+- Confidence: [HIGH/MEDIUM/LOW] - Mức tự tin về chất lượng?
+<div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>
+</span></code></pre></div></p>
+<h4 id="pattern-4-graduated-error-handling-xu-ly-loi-phan-tang"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#pattern-4-graduated-error-handling-xu-ly-loi-phan-tang">Pattern #4: Graduated Error Handling — Xử Lý Lỗi Phân Tầng</a></h4>
+<p><strong>Vấn đề:</strong> Không phải mọi lỗi đều giống nhau. Lỗi format có thể tự sửa ngay, lỗi logic cần phân tích sâu, lỗi requirements cần hỏi user.</p>
+<p><strong>Giải pháp:</strong> Phân loại lỗi thành 3 tầng và xử lý khác nhau.</p>
+<pre class="mermaid"><code>graph TD
+    ERR[Loi duoc phat hien] --&gt; CLS{Phan loai loi}
+
+    CLS --&gt;|Tier 1: Format| T1[Auto-fix ngay]
+    CLS --&gt;|Tier 2: Logic| T2[Retry voi error context]
+    CLS --&gt;|Tier 3: Requirements| T3[Escalate cho User]
+
+    T1 --&gt;|Fix thanh cong| PASS[Continue Pipeline]
+    T1 --&gt;|Fix that bai| T2
+
+    T2 --&gt;|Retry 1/3| RETRY1[Agent sua lai]
+    RETRY1 --&gt;|PASS| PASS
+    RETRY1 --&gt;|FAIL| RETRY2[Retry 2/3 - Them hints]
+    RETRY2 --&gt;|PASS| PASS
+    RETRY2 --&gt;|FAIL| RETRY3[Retry 3/3 - Upgrade model]
+    RETRY3 --&gt;|PASS| PASS
+    RETRY3 --&gt;|FAIL| T3
+
+    T3 --&gt;|User respond| RESUME[Resume Pipeline]
+    T3 --&gt;|User cancel| STOP[Stop Pipeline]</code></pre>
+<p><strong>Chi tiết từng tier:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tier</th>
+<th style="text-align: left;">Loại lỗi</th>
+<th style="text-align: left;">Ví dụ</th>
+<th style="text-align: left;">Xử lý</th>
+<th style="text-align: left;">Max retry</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Tier 1</strong></td>
+<td style="text-align: left;">Format/Syntax</td>
+<td style="text-align: left;">Output thiếu header, JSON malformed, thiếu traceability section</td>
+<td style="text-align: left;">Orchestrator tự fix bằng fast model, không cần gọi lại Agent</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tier 2</strong></td>
+<td style="text-align: left;">Logic/Consistency</td>
+<td style="text-align: left;">Code không match design, test case thiếu edge case, design thiếu API endpoint</td>
+<td style="text-align: left;">Gửi error context cho Agent gốc, yêu cầu sửa cụ thể</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tier 3</strong></td>
+<td style="text-align: left;">Requirements/Ambiguity</td>
+<td style="text-align: left;">Yêu cầu mâu thuẫn, thiếu thông tin business logic, edge case chưa xác định</td>
+<td style="text-align: left;">Dừng pipeline, tạo báo cáo cho user, chờ clarification</td>
+<td style="text-align: left;">0 (escalate ngay)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="pattern-5-checkpoint-resume-luu-trang-thai"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#pattern-5-checkpoint-resume-luu-trang-thai">Pattern #5: Checkpoint &amp; Resume — Lưu Trạng Thái</a></h4>
+<p><strong>Vấn đề:</strong> Pipeline 5 phases mất nhiều thời gian. Nếu fail ở phase 4, phải chạy lại từ đầu rất lãng phí.</p>
+<p><strong>Giải pháp:</strong> Orchestrator lưu checkpoint sau mỗi phase PASS, cho phép resume từ bất kỳ phase nào.</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="gh"># Orchestrator Checkpoint System</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="gu">## Cấu trúc checkpoint</span>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>Sau mỗi phase PASS review, tạo file checkpoint:
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a>
+</span><span id="__span-40-6"><a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a>Đường dẫn: <span class="sb">`logs/checkpoints/phase-{N}-{timestamp}.json`</span>
+</span><span id="__span-40-7"><a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a>
+</span><span id="__span-40-8"><a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a>Nội dung:
+</span><span id="__span-40-9"><a id="__codelineno-40-9" name="__codelineno-40-9" href="#__codelineno-40-9"></a>```json
+</span><span id="__span-40-10"><a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a>{
+</span><span id="__span-40-11"><a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a>  &quot;phase&quot;: &quot;basic_design&quot;,
+</span><span id="__span-40-12"><a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a>  &quot;phase_number&quot;: 2,
+</span><span id="__span-40-13"><a id="__codelineno-40-13" name="__codelineno-40-13" href="#__codelineno-40-13"></a>  &quot;status&quot;: &quot;PASSED&quot;,
+</span><span id="__span-40-14"><a id="__codelineno-40-14" name="__codelineno-40-14" href="#__codelineno-40-14"></a>  &quot;timestamp&quot;: &quot;2026-05-08T15:30:00+09:00&quot;,
+</span><span id="__span-40-15"><a id="__codelineno-40-15" name="__codelineno-40-15" href="#__codelineno-40-15"></a>  &quot;artifacts&quot;: {
+</span><span id="__span-40-16"><a id="__codelineno-40-16" name="__codelineno-40-16" href="#__codelineno-40-16"></a>    &quot;requirements&quot;: &quot;docs/specs/requirements.md&quot;,
+</span><span id="__span-40-17"><a id="__codelineno-40-17" name="__codelineno-40-17" href="#__codelineno-40-17"></a>    &quot;basic_design&quot;: &quot;docs/specs/basic-design.md&quot;
+</span><span id="__span-40-18"><a id="__codelineno-40-18" name="__codelineno-40-18" href="#__codelineno-40-18"></a>  },
+</span><span id="__span-40-19"><a id="__codelineno-40-19" name="__codelineno-40-19" href="#__codelineno-40-19"></a>  &quot;retry_history&quot;: [
+</span><span id="__span-40-20"><a id="__codelineno-40-20" name="__codelineno-40-20" href="#__codelineno-40-20"></a>    {&quot;phase&quot;: &quot;requirements&quot;, &quot;retries&quot;: 1, &quot;final_status&quot;: &quot;PASS&quot;},
+</span><span id="__span-40-21"><a id="__codelineno-40-21" name="__codelineno-40-21" href="#__codelineno-40-21"></a>    {&quot;phase&quot;: &quot;basic_design&quot;, &quot;retries&quot;: 0, &quot;final_status&quot;: &quot;PASS&quot;}
+</span><span id="__span-40-22"><a id="__codelineno-40-22" name="__codelineno-40-22" href="#__codelineno-40-22"></a>  ],
+</span><span id="__span-40-23"><a id="__codelineno-40-23" name="__codelineno-40-23" href="#__codelineno-40-23"></a>  &quot;next_phase&quot;: &quot;detailed_design&quot;,
+</span><span id="__span-40-24"><a id="__codelineno-40-24" name="__codelineno-40-24" href="#__codelineno-40-24"></a>  &quot;resume_command&quot;: &quot;Hãy resume pipeline từ Phase 3: Detailed Design. Đọc checkpoint tại logs/checkpoints/phase-2-*.json&quot;
+</span><span id="__span-40-25"><a id="__codelineno-40-25" name="__codelineno-40-25" href="#__codelineno-40-25"></a>}
+</span></code></pre></div>
+<h3 id="quy-tac-resume"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#quy-tac-resume">Quy tắc Resume</a></h3>
+<ol>
+<li>Đọc checkpoint mới nhất</li>
+<li>Verify tất cả artifact files còn tồn tại</li>
+<li>Bắt đầu từ <code>next_phase</code> trong checkpoint</li>
+<li>KHÔNG chạy lại các phase đã PASS
+<div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>### Pattern #6: Observability Logging — Ghi Log Có Cấu Trúc
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>**Vấn đề:** Khi pipeline fail, không biết fail ở đâu, vì sao, mất bao lâu.
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>
+</span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>**Giải pháp:** Orchestrator ghi **structured log** ở 3 cấp độ.
+</span><span id="__span-41-6"><a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>
+</span><span id="__span-41-7"><a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a>```markdown
+</span><span id="__span-41-8"><a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a># Orchestrator Logging Protocol
+</span><span id="__span-41-9"><a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a>
+</span><span id="__span-41-10"><a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a>## Level 1: Pipeline Log (logs/pipeline.log)
+</span><span id="__span-41-11"><a id="__codelineno-41-11" name="__codelineno-41-11" href="#__codelineno-41-11"></a>Ghi mỗi khi chuyển phase hoặc có sự kiện quan trọng.
+</span><span id="__span-41-12"><a id="__codelineno-41-12" name="__codelineno-41-12" href="#__codelineno-41-12"></a>Format:
+</span></code></pre></div>
+[2026-05-08T15:30:00+09:00] [PHASE_START] basic_design
+[2026-05-08T15:31:22+09:00] [AGENT_COMPLETE] basic_design_agent → status=COMPLETED
+[2026-05-08T15:31:23+09:00] [REVIEW_START] basic_design → reviewer_agent
+[2026-05-08T15:32:10+09:00] [REVIEW_RESULT] basic_design → PASS
+[2026-05-08T15:32:11+09:00] [PHASE_END] basic_design → duration=131s
+[2026-05-08T15:32:12+09:00] [CHECKPOINT] phase-2 saved
+[2026-05-08T15:32:13+09:00] [PHASE_START] detailed_design
+<div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>## Level 2: Error Log (logs/errors.log)
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>Chỉ ghi khi có lỗi. Bao gồm root cause analysis.
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>Format:
+</span></code></pre></div>
+[2026-05-08T16:00:00+09:00] [ERROR] phase=coding retry=2/3
+  tier: 2 (Logic/Consistency)
+  description: Function create_book() thiếu validation cho ISBN format
+  source: reviewer_agent
+  action: Retry với error context
+  context_sent: "Hàm create_book thiếu ISBN validation. Thêm regex check."
+<div class="language-text highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>## Level 3: Audit Trail (logs/audit.log)
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>Ghi toàn bộ decisions của Orchestrator — quan trọng cho compliance IPA.
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>Format:
+</span></code></pre></div>
+[2026-05-08T15:30:00+09:00] [DECISION] Route to basic_design_agent
+  reason: Phase 1 PASSED, artifacts verified
+  input_hash: sha256:abc123...
+  model_used: claude-sonnet-4</li>
+</ol>
+<p>[2026-05-08T16:00:00+09:00] [DECISION] Retry coding phase
+  reason: Review FAIL, error tier=2, retry_count=1 &lt; max=3
+  model_upgrade: false (tier 2, keep current model)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>
+</span></code></pre></div></p>
+<h4 id="pattern-7-traceability-matrix-enforcement-ma-tran-truy-vet"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#pattern-7-traceability-matrix-enforcement-ma-tran-truy-vet">Pattern #7: Traceability Matrix Enforcement — Ma Trận Truy Vết</a></h4>
+<p><strong>Vấn đề:</strong> Đây là yêu cầu <strong>bắt buộc</strong> trong IPA. Mỗi requirement phải được trace qua design → code → test. Nhiều hệ thống MAS bỏ qua điều này.</p>
+<p><strong>Giải pháp:</strong> Orchestrator duy trì và cập nhật <strong>Traceability Matrix</strong> xuyên suốt pipeline.</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="gh"># Orchestrator Traceability Matrix</span>
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="gu">## File: docs/specs/traceability-matrix.md</span>
+</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>
+</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>Orchestrator TỰ ĐỘNG cập nhật file này sau mỗi phase.
+</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>
+</span><span id="__span-45-7"><a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a>| Requirement ID | Requirements | Basic Design | Detailed Design | Source Code | Test Case | Status |
+</span><span id="__span-45-8"><a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a>|:---|:---|:---|:---|:---|:---|:---|
+</span><span id="__span-45-9"><a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a>| FR-001 | ✅ Defined | ✅ API: POST /books | ✅ BookService.create_book() | ✅ src/services/book.py:L15 | ✅ TC-001, TC-002 | COVERED |
+</span><span id="__span-45-10"><a id="__codelineno-45-10" name="__codelineno-45-10" href="#__codelineno-45-10"></a>| FR-002 | ✅ Defined | ✅ API: GET /books?q= | ✅ BookService.search_books() | ✅ src/services/book.py:L45 | ✅ TC-003 | COVERED |
+</span><span id="__span-45-11"><a id="__codelineno-45-11" name="__codelineno-45-11" href="#__codelineno-45-11"></a>| FR-003 | ✅ Defined | ✅ API: POST /borrows | ✅ BorrowService.borrow_book() | ✅ src/services/borrow.py:L10 | ❌ MISSING | GAP |
+</span><span id="__span-45-12"><a id="__codelineno-45-12" name="__codelineno-45-12" href="#__codelineno-45-12"></a>| NFR-001 | ✅ Defined | ✅ Redis cache layer | ✅ CacheMiddleware | ⚠️ PARTIAL | ❌ MISSING | AT RISK |
+</span><span id="__span-45-13"><a id="__codelineno-45-13" name="__codelineno-45-13" href="#__codelineno-45-13"></a>
+</span><span id="__span-45-14"><a id="__codelineno-45-14" name="__codelineno-45-14" href="#__codelineno-45-14"></a><span class="gu">## Quy tắc enforcement</span>
+</span><span id="__span-45-15"><a id="__codelineno-45-15" name="__codelineno-45-15" href="#__codelineno-45-15"></a><span class="k">1.</span> Sau Phase 1: Tạo matrix với cột Requirements
+</span><span id="__span-45-16"><a id="__codelineno-45-16" name="__codelineno-45-16" href="#__codelineno-45-16"></a><span class="k">2.</span> Sau Phase 2: Điền cột Basic Design, check mapping
+</span><span id="__span-45-17"><a id="__codelineno-45-17" name="__codelineno-45-17" href="#__codelineno-45-17"></a><span class="k">3.</span> Sau Phase 3: Điền cột Detailed Design
+</span><span id="__span-45-18"><a id="__codelineno-45-18" name="__codelineno-45-18" href="#__codelineno-45-18"></a><span class="k">4.</span> Sau Phase 4: Điền cột Source Code (file + line number)
+</span><span id="__span-45-19"><a id="__codelineno-45-19" name="__codelineno-45-19" href="#__codelineno-45-19"></a><span class="k">5.</span> Sau Phase 5: Điền cột Test Case, đánh status
+</span><span id="__span-45-20"><a id="__codelineno-45-20" name="__codelineno-45-20" href="#__codelineno-45-20"></a>
+</span><span id="__span-45-21"><a id="__codelineno-45-21" name="__codelineno-45-21" href="#__codelineno-45-21"></a><span class="gu">## Quality Gate bổ sung</span>
+</span><span id="__span-45-22"><a id="__codelineno-45-22" name="__codelineno-45-22" href="#__codelineno-45-22"></a><span class="k">-</span><span class="w"> </span>Nếu bất kỳ FR nào có status = &quot;GAP&quot; → Pipeline KHÔNG được kết thúc
+</span><span id="__span-45-23"><a id="__codelineno-45-23" name="__codelineno-45-23" href="#__codelineno-45-23"></a><span class="k">-</span><span class="w"> </span>Orchestrator PHẢI tạo task bổ sung cho Agent tương ứng để fill gap
+</span></code></pre></div>
+<hr />
+<h3 id="4-trien-khai-orchestrator-bang-markdown-skills"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#4-trien-khai-orchestrator-bang-markdown-skills">4. Triển Khai Orchestrator Bằng Markdown Skills</a></h3>
+<h4 id="41-cau-truc-thu-muc-chuan"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#41-cau-truc-thu-muc-chuan">4.1 Cấu trúc thư mục chuẩn</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>my-project/
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>├── AGENTS.md                              # Orchestrator chính
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>├── CLAUDE.md -&gt; AGENTS.md                 # Symlink cho Claude Code
+</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>├── .github/copilot-instructions.md -&gt; AGENTS.md
+</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>├── .gemini/skills/
+</span><span id="__span-46-6"><a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a>│   ├── 00-orchestrator-core.md            # Logic routing &amp; state
+</span><span id="__span-46-7"><a id="__codelineno-46-7" name="__codelineno-46-7" href="#__codelineno-46-7"></a>│   ├── 01-requirements.md                 # Requirements Agent
+</span><span id="__span-46-8"><a id="__codelineno-46-8" name="__codelineno-46-8" href="#__codelineno-46-8"></a>│   ├── 02-basic-design.md                 # Architect Agent
+</span><span id="__span-46-9"><a id="__codelineno-46-9" name="__codelineno-46-9" href="#__codelineno-46-9"></a>│   ├── 03-detailed-design.md              # SE Agent
+</span><span id="__span-46-10"><a id="__codelineno-46-10" name="__codelineno-46-10" href="#__codelineno-46-10"></a>│   ├── 04-implementation.md               # Programmer Agent
+</span><span id="__span-46-11"><a id="__codelineno-46-11" name="__codelineno-46-11" href="#__codelineno-46-11"></a>│   ├── 05-testing.md                      # QA Agent
+</span><span id="__span-46-12"><a id="__codelineno-46-12" name="__codelineno-46-12" href="#__codelineno-46-12"></a>│   ├── 06-review-verification.md          # Verification Reviewer
+</span><span id="__span-46-13"><a id="__codelineno-46-13" name="__codelineno-46-13" href="#__codelineno-46-13"></a>│   ├── 07-review-validation.md            # Validation Reviewer
+</span><span id="__span-46-14"><a id="__codelineno-46-14" name="__codelineno-46-14" href="#__codelineno-46-14"></a>│   └── 08-error-classifier.md             # Error Tier Classifier
+</span><span id="__span-46-15"><a id="__codelineno-46-15" name="__codelineno-46-15" href="#__codelineno-46-15"></a>├── docs/specs/
+</span><span id="__span-46-16"><a id="__codelineno-46-16" name="__codelineno-46-16" href="#__codelineno-46-16"></a>│   └── traceability-matrix.md             # Ma trận truy vết
+</span><span id="__span-46-17"><a id="__codelineno-46-17" name="__codelineno-46-17" href="#__codelineno-46-17"></a>├── logs/
+</span><span id="__span-46-18"><a id="__codelineno-46-18" name="__codelineno-46-18" href="#__codelineno-46-18"></a>│   ├── pipeline.log
+</span><span id="__span-46-19"><a id="__codelineno-46-19" name="__codelineno-46-19" href="#__codelineno-46-19"></a>│   ├── errors.log
+</span><span id="__span-46-20"><a id="__codelineno-46-20" name="__codelineno-46-20" href="#__codelineno-46-20"></a>│   ├── audit.log
+</span><span id="__span-46-21"><a id="__codelineno-46-21" name="__codelineno-46-21" href="#__codelineno-46-21"></a>│   └── checkpoints/
+</span><span id="__span-46-22"><a id="__codelineno-46-22" name="__codelineno-46-22" href="#__codelineno-46-22"></a>└── src/                                   # Source code output
+</span></code></pre></div>
+<h4 id="42-orchestrator-core-skill"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#42-orchestrator-core-skill">4.2 Orchestrator Core Skill</a></h4>
+<p>Tạo file <code>.gemini/skills/00-orchestrator-core.md</code> — bộ não điều phối:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>---
+</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>name: orchestrator-core
+</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>description: |
+</span><span id="__span-47-4"><a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>  MUST BE USED as the primary orchestration logic for the entire
+</span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>  software development pipeline. Governs task routing,
+</span><span id="__span-47-6"><a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a><span class="gu">  state management, quality gates, and error handling.</span>
+</span><span id="__span-47-7"><a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a><span class="gu">---</span>
+</span><span id="__span-47-8"><a id="__codelineno-47-8" name="__codelineno-47-8" href="#__codelineno-47-8"></a>
+</span><span id="__span-47-9"><a id="__codelineno-47-9" name="__codelineno-47-9" href="#__codelineno-47-9"></a><span class="gh"># Orchestrator Core — Điều Phối Pipeline IPA Waterfall</span>
+</span><span id="__span-47-10"><a id="__codelineno-47-10" name="__codelineno-47-10" href="#__codelineno-47-10"></a>
+</span><span id="__span-47-11"><a id="__codelineno-47-11" name="__codelineno-47-11" href="#__codelineno-47-11"></a><span class="gu">## Vai trò</span>
+</span><span id="__span-47-12"><a id="__codelineno-47-12" name="__codelineno-47-12" href="#__codelineno-47-12"></a>Bạn là Project Manager / Orchestrator. Bạn KHÔNG tự làm task.
+</span><span id="__span-47-13"><a id="__codelineno-47-13" name="__codelineno-47-13" href="#__codelineno-47-13"></a>Bạn CHỈ điều phối, routing, và quản lý quality gates.
+</span><span id="__span-47-14"><a id="__codelineno-47-14" name="__codelineno-47-14" href="#__codelineno-47-14"></a>
+</span><span id="__span-47-15"><a id="__codelineno-47-15" name="__codelineno-47-15" href="#__codelineno-47-15"></a><span class="gu">## Quy trình cho MỖI phase</span>
+</span><span id="__span-47-16"><a id="__codelineno-47-16" name="__codelineno-47-16" href="#__codelineno-47-16"></a><span class="k">1.</span> Pre-check: Verify input file tồn tại, phase trước đã PASS
+</span><span id="__span-47-17"><a id="__codelineno-47-17" name="__codelineno-47-17" href="#__codelineno-47-17"></a><span class="k">2.</span> Context Budgeting: CHỈ đọc input file hiện tại, không load history
+</span><span id="__span-47-18"><a id="__codelineno-47-18" name="__codelineno-47-18" href="#__codelineno-47-18"></a><span class="k">3.</span> Delegate: Gọi Agent skill tương ứng
+</span><span id="__span-47-19"><a id="__codelineno-47-19" name="__codelineno-47-19" href="#__codelineno-47-19"></a><span class="k">4.</span> Dual Review: Verification + Validation
+</span><span id="__span-47-20"><a id="__codelineno-47-20" name="__codelineno-47-20" href="#__codelineno-47-20"></a><span class="k">5.</span> Error Handling: Tier 1 auto-fix | Tier 2 retry max 3 | Tier 3 escalate
+</span><span id="__span-47-21"><a id="__codelineno-47-21" name="__codelineno-47-21" href="#__codelineno-47-21"></a><span class="k">6.</span> Checkpoint: Lưu state + cập nhật traceability matrix + ghi log
+</span><span id="__span-47-22"><a id="__codelineno-47-22" name="__codelineno-47-22" href="#__codelineno-47-22"></a>
+</span><span id="__span-47-23"><a id="__codelineno-47-23" name="__codelineno-47-23" href="#__codelineno-47-23"></a><span class="gu">## RULES — KHÔNG ĐƯỢC VI PHẠM</span>
+</span><span id="__span-47-24"><a id="__codelineno-47-24" name="__codelineno-47-24" href="#__codelineno-47-24"></a><span class="k">1.</span> KHÔNG BAO GIỜ nhảy cóc phase
+</span><span id="__span-47-25"><a id="__codelineno-47-25" name="__codelineno-47-25" href="#__codelineno-47-25"></a><span class="k">2.</span> KHÔNG BAO GIỜ tự làm task thay Agent
+</span><span id="__span-47-26"><a id="__codelineno-47-26" name="__codelineno-47-26" href="#__codelineno-47-26"></a><span class="k">3.</span> KHÔNG BAO GIỜ bỏ qua review
+</span><span id="__span-47-27"><a id="__codelineno-47-27" name="__codelineno-47-27" href="#__codelineno-47-27"></a><span class="k">4.</span> LUÔN LUÔN ghi log và cập nhật traceability matrix
+</span></code></pre></div>
+<h4 id="43-error-classifier-skill"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#43-error-classifier-skill">4.3 Error Classifier Skill</a></h4>
+<p>Tạo <code>.gemini/skills/08-error-classifier.md</code>:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>---
+</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>name: error-classifier
+</span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>description: |
+</span><span id="__span-48-4"><a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>  Use PROACTIVELY when a review returns FAIL. Classifies errors
+</span><span id="__span-48-5"><a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a><span class="gu">  into tiers to determine handling strategy.</span>
+</span><span id="__span-48-6"><a id="__codelineno-48-6" name="__codelineno-48-6" href="#__codelineno-48-6"></a><span class="gu">---</span>
+</span><span id="__span-48-7"><a id="__codelineno-48-7" name="__codelineno-48-7" href="#__codelineno-48-7"></a>
+</span><span id="__span-48-8"><a id="__codelineno-48-8" name="__codelineno-48-8" href="#__codelineno-48-8"></a><span class="gh"># Error Classifier — Phân Loại Lỗi</span>
+</span><span id="__span-48-9"><a id="__codelineno-48-9" name="__codelineno-48-9" href="#__codelineno-48-9"></a>
+</span><span id="__span-48-10"><a id="__codelineno-48-10" name="__codelineno-48-10" href="#__codelineno-48-10"></a><span class="gu">### Tier 1: Format/Syntax → Auto-fix, không gọi lại Agent</span>
+</span><span id="__span-48-11"><a id="__codelineno-48-11" name="__codelineno-48-11" href="#__codelineno-48-11"></a><span class="gu">### Tier 2: Logic/Consistency → Retry max 3 với error context cụ thể</span>
+</span><span id="__span-48-12"><a id="__codelineno-48-12" name="__codelineno-48-12" href="#__codelineno-48-12"></a><span class="gu">### Tier 3: Requirements/Ambiguity → DỪNG pipeline, báo user</span>
+</span></code></pre></div>
+<h4 id="44-verification-review-skill"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#44-verification-review-skill">4.4 Verification Review Skill</a></h4>
+<p>Tạo <code>.gemini/skills/06-review-verification.md</code>:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>---
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>name: review-verification
+</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>description: |
+</span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a>  MUST BE USED after every phase. Performs Verification:
+</span><span id="__span-49-5"><a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a><span class="gu">  &quot;Are we building the product RIGHT?&quot;</span>
+</span><span id="__span-49-6"><a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a><span class="gu">---</span>
+</span><span id="__span-49-7"><a id="__codelineno-49-7" name="__codelineno-49-7" href="#__codelineno-49-7"></a>
+</span><span id="__span-49-8"><a id="__codelineno-49-8" name="__codelineno-49-8" href="#__codelineno-49-8"></a><span class="gh"># Verification Review (検証レビュー)</span>
+</span><span id="__span-49-9"><a id="__codelineno-49-9" name="__codelineno-49-9" href="#__codelineno-49-9"></a>
+</span><span id="__span-49-10"><a id="__codelineno-49-10" name="__codelineno-49-10" href="#__codelineno-49-10"></a><span class="gu">## Checklist</span>
+</span><span id="__span-49-11"><a id="__codelineno-49-11" name="__codelineno-49-11" href="#__codelineno-49-11"></a><span class="k">- [ ]</span> Mọi item trong input đều address trong output?
+</span><span id="__span-49-12"><a id="__codelineno-49-12" name="__codelineno-49-12" href="#__codelineno-49-12"></a><span class="k">- [ ]</span> Không mâu thuẫn giữa output và input?
+</span><span id="__span-49-13"><a id="__codelineno-49-13" name="__codelineno-49-13" href="#__codelineno-49-13"></a><span class="k">- [ ]</span> Không placeholder/TODO?
+</span><span id="__span-49-14"><a id="__codelineno-49-14" name="__codelineno-49-14" href="#__codelineno-49-14"></a><span class="k">- [ ]</span> Format đúng handoff protocol?
+</span><span id="__span-49-15"><a id="__codelineno-49-15" name="__codelineno-49-15" href="#__codelineno-49-15"></a><span class="k">- [ ]</span> Traceability section đầy đủ?
+</span></code></pre></div>
+<hr />
+<h3 id="5-anti-patterns-nhung-sai-lam-can-tranh"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#5-anti-patterns-nhung-sai-lam-can-tranh">5. Anti-Patterns — Những Sai Lầm Cần Tránh</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Anti-Pattern</th>
+<th style="text-align: left;">Mô tả</th>
+<th style="text-align: left;">Hậu quả</th>
+<th style="text-align: left;">Pattern giải quyết</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>God Orchestrator</strong></td>
+<td style="text-align: left;">Orchestrator vừa điều phối vừa tự làm task</td>
+<td style="text-align: left;">Context overload, chất lượng giảm</td>
+<td style="text-align: left;">Tách biệt Orchestrator vs Workers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Context Flooding</strong></td>
+<td style="text-align: left;">Gửi toàn bộ tài liệu mọi phase cho mỗi Agent</td>
+<td style="text-align: left;">Token waste, "lost in the middle"</td>
+<td style="text-align: left;">Pattern #1: Context Budgeting</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Blind Retry</strong></td>
+<td style="text-align: left;">Retry không kèm error context cụ thể</td>
+<td style="text-align: left;">Agent lặp lại cùng lỗi</td>
+<td style="text-align: left;">Pattern #4: Graduated Error Handling</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Review Vacuum</strong></td>
+<td style="text-align: left;">Chỉ Verification, bỏ qua Validation</td>
+<td style="text-align: left;">Requirement drift, acceptance fail</td>
+<td style="text-align: left;">Best Practice #0: Dual Review</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Stateless Pipeline</strong></td>
+<td style="text-align: left;">Không checkpoint, crash = chạy lại từ đầu</td>
+<td style="text-align: left;">Token lãng phí, không audit trail</td>
+<td style="text-align: left;">Pattern #5 + #6</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Monolithic Prompt</strong></td>
+<td style="text-align: left;">Nhét tất cả vào 1 file AGENTS.md</td>
+<td style="text-align: left;">AI confused, khó maintain</td>
+<td style="text-align: left;">Tách skill files riêng biệt</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Anti-Pattern nguy hiểm nhất: God Orchestrator</p>
+<p>File AGENTS.md dài 2000+ dòng với instruction cho mọi vai trò → AI "quên" review vì context đã quá dài → Output nửa cuối pipeline kém rõ rệt so với nửa đầu.</p>
+</div>
+<hr />
+<h3 id="6-advanced-patterns"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#6-advanced-patterns">6. Advanced Patterns</a></h3>
+<h4 id="61-parallel-review-voi-sub-agents"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#61-parallel-review-voi-sub-agents">6.1 Parallel Review với Sub-agents</a></h4>
+<p>Trong Claude Code, chạy Verification và Validation review <strong>song song</strong> bằng Task tool để spawn sub-agents → giảm latency review 50%.</p>
+<h4 id="62-progressive-complexity"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#62-progressive-complexity">6.2 Progressive Complexity</a></h4>
+<p>Chia dự án lớn thành waves:</p>
+<ol>
+<li><strong>Wave 1 — Core MVP:</strong> 3-5 FR quan trọng nhất, full pipeline</li>
+<li><strong>Wave 2 — Expansion:</strong> Thêm FR, chạy từ Phase 2 trở đi</li>
+<li><strong>Wave 3 — Edge Cases:</strong> Bổ sung NFR, chạy từ Phase 3-4</li>
+</ol>
+<h4 id="63-multi-model-config"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#63-multi-model-config">6.3 Multi-Model Config</a></h4>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="nt">tiers</span><span class="p">:</span>
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="w">  </span><span class="nt">tier1_flagship</span><span class="p">:</span>
+</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="w">    </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;claude-opus&quot;</span>
+</span><span id="__span-50-4"><a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a><span class="w">    </span><span class="nt">use_for</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">detailed-design</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">implementation</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">final-retry</span><span class="p p-Indicator">]</span>
+</span><span id="__span-50-5"><a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a><span class="w">  </span><span class="nt">tier2_standard</span><span class="p">:</span>
+</span><span id="__span-50-6"><a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a><span class="w">    </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;claude-sonnet&quot;</span>
+</span><span id="__span-50-7"><a id="__codelineno-50-7" name="__codelineno-50-7" href="#__codelineno-50-7"></a><span class="w">    </span><span class="nt">use_for</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">requirements</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">basic-design</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">testing</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">review</span><span class="p p-Indicator">]</span>
+</span><span id="__span-50-8"><a id="__codelineno-50-8" name="__codelineno-50-8" href="#__codelineno-50-8"></a><span class="w">  </span><span class="nt">tier3_fast</span><span class="p">:</span>
+</span><span id="__span-50-9"><a id="__codelineno-50-9" name="__codelineno-50-9" href="#__codelineno-50-9"></a><span class="w">    </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;claude-haiku&quot;</span>
+</span><span id="__span-50-10"><a id="__codelineno-50-10" name="__codelineno-50-10" href="#__codelineno-50-10"></a><span class="w">    </span><span class="nt">use_for</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">format-validation</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">error-classification</span><span class="p p-Indicator">]</span>
+</span><span id="__span-50-11"><a id="__codelineno-50-11" name="__codelineno-50-11" href="#__codelineno-50-11"></a><span class="nt">retry_policy</span><span class="p">:</span>
+</span><span id="__span-50-12"><a id="__codelineno-50-12" name="__codelineno-50-12" href="#__codelineno-50-12"></a><span class="w">  </span><span class="nt">max_retries</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+</span><span id="__span-50-13"><a id="__codelineno-50-13" name="__codelineno-50-13" href="#__codelineno-50-13"></a><span class="w">  </span><span class="nt">model_upgrade_on_retry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+</span></code></pre></div>
+<hr />
+<h3 id="7-so-o-tong-the"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#7-so-o-tong-the">7. Sơ Đồ Tổng Thể</a></h3>
+<pre class="mermaid"><code>graph TD
+    START[User Request] --&gt; ORCH[Orchestrator]
+    ORCH --&gt; PRE{Pre-check}
+    PRE --&gt;|Chua PASS| BLOCK[Blocked]
+    PRE --&gt;|OK| BUDGET[Context Budget]
+    BUDGET --&gt; DELEGATE[Delegate to Agent]
+    DELEGATE --&gt; AGENT[Specialized Agent]
+    AGENT --&gt; OUTPUT[Output]
+    OUTPUT --&gt; REVIEW[Dual Review]
+    REVIEW --&gt;|PASS| SAVE[Checkpoint + Trace + Log]
+    SAVE --&gt; NEXT{Con phase?}
+    NEXT --&gt;|YES| ORCH
+    NEXT --&gt;|NO| DONE[Complete]
+    REVIEW --&gt;|FAIL| CLS[Classify Error]
+    CLS --&gt;|Tier 1| FIX[Auto-fix]
+    FIX --&gt; REVIEW
+    CLS --&gt;|Tier 2| RTY{Retry count?}
+    RTY --&gt;|Under 3| DELEGATE
+    RTY --&gt;|3 or more| ESC[Escalate]
+    CLS --&gt;|Tier 3| ESC
+    ESC --&gt; WAIT[Cho User]
+    WAIT --&gt;|Clarify| ORCH
+    WAIT --&gt;|Cancel| STOP[Stop]</code></pre>
+<hr />
+<h3 id="ket-luan"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#ket-luan">Kết luận</a></h3>
+<p>Agent Orchestrator là thành phần quan trọng nhất trong MAS. Bài nghiên cứu này đã cover:</p>
+<ol>
+<li><strong>Định nghĩa</strong> vai trò Orchestrator — điều phối, KHÔNG tự làm task</li>
+<li><strong>Mapping IPA</strong> — 共通フレーム2013, V-Model, 検証 vs 妥当性確認</li>
+<li><strong>7 Best Practices:</strong> Context Budgeting, Tiered Model, Structured Handoff, Graduated Error Handling, Checkpoint &amp; Resume, Observability Logging, Traceability Matrix</li>
+<li><strong>Triển khai</strong> bằng Markdown Skills trên VSCode</li>
+<li><strong>6 Anti-patterns</strong> cần tránh</li>
+<li><strong>Advanced patterns:</strong> Parallel review, Progressive complexity, Multi-model config</li>
+</ol>
+<blockquote>
+<p><strong>Takeaway:</strong> Orchestrator tốt = Project Manager tốt. Trong thị trường Nhật Bản, nơi quy trình và tài liệu được coi trọng hàng đầu, Orchestrator có kỷ luật là yếu tố quyết định giữa MAS "chạy được" và MAS "tin tưởng được".</p>
+</blockquote>
+<h3 id="tham-khao"><a class="toclink" href="../../2026/05/08/agent-orchestrator-deep-dive-best-practices-%C4%91i%E1%BB%81u-ph%E1%BB%91i-multi-agent-system-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/#tham-khao">Tham khảo</a></h3>
+<ul>
+<li><a href="https://www.ipa.go.jp/">IPA — 共通フレーム2013</a> — Tiêu chuẩn phát triển phần mềm Nhật Bản</li>
+<li><a href="https://langchain-ai.github.io/langgraph/">LangGraph Documentation</a> — Graph-based orchestration</li>
+<li><a href="https://docs.anthropic.com/">Anthropic — Context Engineering</a></li>
+<li><a href="https://agentskills.io/">Agent Skills Open Spec</a> — Chuẩn mở cho SKILL.md</li>
+<li><a href="https://modelcontextprotocol.io/">Model Context Protocol (MCP)</a></li>
+<li>Bài liên quan:<ul>
+<li><a href="../../2026/05/08/th%E1%BB%B1c-chi%E1%BA%BFn-multi-agent-system-mas-x%C3%A2y-d%E1%BB%B1ng-%C4%91%E1%BB%99i-d%E1%BB%B1-%C3%A1n-ph%E1%BA%A7n-m%E1%BB%81m-%E1%BA%A3o-chu%E1%BA%A9n-ipa-nh%E1%BA%ADt-b%E1%BA%A3n/">Thực Chiến MAS: Waterfall Chuẩn IPA</a></li>
+<li><a href="../../2026/05/08/multi-agent-system-b%E1%BA%B1ng-markdown--kh%C3%B4ng-c%E1%BA%A7n-vi%E1%BA%BFt-m%E1%BB%99t-d%C3%B2ng-code-framework/">MAS Bằng Markdown — Không Cần Code</a></li>
+<li><a href="../../2026/05/08/multi-agent-system--khi-ai-kh%C3%B4ng-c%C3%B2n-%C4%91%C6%A1n-th%C6%B0%C6%A1ng-%C4%91%E1%BB%99c-m%C3%A3/">MAS — Kiến Trúc và Ứng Dụng</a></li>
+</ul>
+</li>
+</ul>
+    
+    
+  </div>
+</article>
+      
+      
+        
+          
+
+
+
+<nav class="md-pagination">
+  
+</nav>
+        
+      
+    </div>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Trở lại mục lục
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0110\u00e3 sao ch\u00e9p", "clipboard.copy": "Sao ch\u00e9p v\u00e0o b\u1ed9 nh\u1edb t\u1ea1m", "search.result.more.one": "1 t\u1eeb kh\u00e1c trong trang", "search.result.more.other": "# t\u1eeb kh\u00e1c trong trang", "search.result.none": "Kh\u00f4ng t\u00ecm th\u1ea5y t\u00e0i li\u1ec7u li\u00ean quan", "search.result.one": "1 t\u00e0i li\u1ec7u li\u00ean quan", "search.result.other": "# t\u00e0i li\u1ec7u li\u00ean quan", "search.result.placeholder": "Nh\u1eadp \u0111\u1ec3 b\u1eaft \u0111\u1ea7u t\u00ecm ki\u1ebfm", "search.result.term.missing": "Kh\u00f4ng", "select.version": "Ch\u1ecdn phi\u00ean b\u1ea3n"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

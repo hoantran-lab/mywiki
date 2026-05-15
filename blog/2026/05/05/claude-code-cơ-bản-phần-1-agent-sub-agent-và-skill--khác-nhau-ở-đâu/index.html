@@ -1,0 +1,1355 @@
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Phân biệt rõ ràng 3 khái niệm Agent, Sub-agent và Skill trong Claude Code — từ định nghĩa, cách tạo, đến khi nào dùng cái nào. Bài viết Phần 1 trong series Claude Code cơ bản.">
+      
+      
+        <meta name="author" content="tranvanhoan">
+      
+      
+        <link rel="canonical" href="https://tranvanhoan.github.io/MyWiki/blog/2026/05/05/claude-code-c%C6%A1-b%E1%BA%A3n-ph%E1%BA%A7n-1-agent-sub-agent-v%C3%A0-skill--kh%C3%A1c-nhau-%E1%BB%9F-%C4%91%C3%A2u/">
+      
+      
+        <link rel="prev" href="../claude-code-c%C6%A1-b%E1%BA%A3n-ph%E1%BA%A7n-2-hooks-mcp-v%C3%A0-plugins--m%E1%BB%9F-r%E1%BB%99ng-s%E1%BB%A9c-m%E1%BA%A1nh-cho-agent/">
+      
+      
+        <link rel="next" href="../../06/creative-intelligence-suite-cis--gi%E1%BA%A3i-quy%E1%BA%BFt-v%E1%BA%A5n-%C4%91%E1%BB%81-v%C3%A0-s%C3%A1ng-t%E1%BA%A1o-c%C3%B3-c%E1%BA%A5u-tr%C3%BAc-c%C3%B9ng-ai-agent/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Claude Code Cơ bản (Phần 1): Agent, Sub-agent và Skill — Khác nhau ở đâu? - AI Wiki - My Knowledge Base</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#claude-code-co-ban-phan-1-agent-sub-agent-va-skill-khac-nhau-o-au" class="md-skip">
+          Bỏ qua
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Đầu trang">
+    <a href="../../../../.." title="AI Wiki - My Knowledge Base" class="md-header__button md-logo" aria-label="AI Wiki - My Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Wiki - My Knowledge Base
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Claude Code Cơ bản (Phần 1): Agent, Sub-agent và Skill — Khác nhau ở đâu?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Tìm kiếm" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Tìm kiếm">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Chia sẻ" aria-label="Chia sẻ" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Xoá" aria-label="Xoá" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tranvanhoan/MyWiki" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tranvanhoan/MyWiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Trang chủ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../roadmap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Chủ đề (Tags)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Về tác giả
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Thanh điều hướng" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="AI Wiki - My Knowledge Base" class="md-nav__button md-logo" aria-label="AI Wiki - My Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Wiki - My Knowledge Base
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tranvanhoan/MyWiki" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tranvanhoan/MyWiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trang chủ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chủ đề (Tags)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Về tác giả
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Mục lục">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Mục lục
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mo-au" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mở đầu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-agent-ong-chu-ieu-phoi-moi-thu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Agent — "Ông chủ" điều phối mọi thứ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Agent — &#34;Ông chủ&#34; điều phối mọi thứ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#khai-niem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Khái niệm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ac-iem-chinh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Đặc điểm chính
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-sub-agent-nhan-vien-chuyen-trach-uoc-giao-viec-cu-the" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Sub-agent — "Nhân viên chuyên trách" được giao việc cụ thể
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Sub-agent — &#34;Nhân viên chuyên trách&#34; được giao việc cụ thể">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#khai-niem_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Khái niệm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sub-agent-co-san-built-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sub-agent có sẵn (Built-in)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-tao-sub-agent-tuy-chinh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cách tạo Sub-agent tùy chỉnh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tai-sao-can-sub-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tại sao cần Sub-agent?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-skill-so-tay-huong-dan-e-claude-oc-khi-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Skill — "Sổ tay hướng dẫn" để Claude đọc khi cần
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Skill — &#34;Sổ tay hướng dẫn&#34; để Claude đọc khi cần">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#khai-niem_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Khái niệm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cau-truc-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cấu trúc Skill
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-tao-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cách tạo Skill
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill-co-the-chua-dynamic-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skill có thể chứa Dynamic Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-kich-hoat-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ai kích hoạt Skill?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-bang-so-sanh-agent-vs-sub-agent-vs-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Bảng so sánh: Agent vs Sub-agent vs Skill
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-vi-du-thuc-te-khi-nao-dung-cai-nao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Ví dụ thực tế: Khi nào dùng cái nào?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Ví dụ thực tế: Khi nào dùng cái nào?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tinh-huong-1-review-code-toi-vua-viet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tình huống 1: "Review code tôi vừa viết"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tinh-huong-2-deploy-len-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tình huống 2: "Deploy lên production"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tinh-huong-3-kham-pha-codebase-moi-tim-hieu-cau-truc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tình huống 3: "Khám phá codebase mới, tìm hiểu cấu trúc"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tinh-huong-4-viet-bai-blog-theo-chuan-cua-toi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tình huống 4: "Viết bài blog theo chuẩn của tôi"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tinh-huong-5-tim-va-sua-bug-phuc-tap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tình huống 5: "Tìm và sửa bug phức tạp"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ket-luan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kết luận
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tham-khao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tham khảo
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Quay lại
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/tranvanhoan" alt="Hoàn Trần">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Hoàn Trần
+                        
+                      </strong>
+                      <br>
+                      Người viết và tìm tòi về AI
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-05-05 00:00:00+00:00" class="md-ellipsis">05/05/2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            Trong
+                            
+                              <a href="../../../../category/agent/">Agent</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              7 phút đọc
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:agent" class="md-tag">agent</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:ai-tools" class="md-tag">ai-tools</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:claude-code" class="md-tag">claude-code</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:skill" class="md-tag">skill</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:sub-agent" class="md-tag">sub-agent</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<h1 id="claude-code-co-ban-phan-1-agent-sub-agent-va-skill-khac-nhau-o-au">Claude Code Cơ bản (Phần 1): Agent, Sub-agent và Skill — Khác nhau ở đâu?<a class="headerlink" href="#claude-code-co-ban-phan-1-agent-sub-agent-va-skill-khac-nhau-o-au" title="Permanent link">&para;</a></h1>
+<h2 id="mo-au">Mở đầu<a class="headerlink" href="#mo-au" title="Permanent link">&para;</a></h2>
+<p>Nếu bạn mới bắt đầu dùng Claude Code, có lẽ bạn đã gặp ba khái niệm liên tục xuất hiện: <strong>Agent</strong>, <strong>Sub-agent</strong>, và <strong>Skill</strong>. Chúng nghe có vẻ giống nhau — đều liên quan đến "AI làm việc thay bạn" — nhưng thực tế chúng phục vụ những mục đích rất khác nhau.</p>
+<p>Hiểu sai ba khái niệm này = lãng phí token, context window bị "ô nhiễm", và kết quả kém. Hiểu đúng = bạn xây được hệ thống AI agent mạnh mẽ, tiết kiệm, và dễ bảo trì.</p>
+<p><strong>Nội dung chính:</strong></p>
+<ul>
+<li>Agent là gì và hoạt động ra sao</li>
+<li>Sub-agent: tại sao cần tách riêng và cách tạo</li>
+<li>Skill: kiến thức tái sử dụng, không phải agent</li>
+<li>Bảng so sánh ba khái niệm</li>
+<li>Ví dụ thực tế: khi nào dùng cái nào</li>
+</ul>
+<hr />
+<h2 id="1-agent-ong-chu-ieu-phoi-moi-thu">1. Agent — "Ông chủ" điều phối mọi thứ<a class="headerlink" href="#1-agent-ong-chu-ieu-phoi-moi-thu" title="Permanent link">&para;</a></h2>
+<h3 id="khai-niem">Khái niệm<a class="headerlink" href="#khai-niem" title="Permanent link">&para;</a></h3>
+<p>Trong Claude Code, <strong>Agent</strong> (hay còn gọi là agent chính — main agent) là phiên Claude Code mà bạn tương tác trực tiếp. Khi bạn mở terminal gõ <code>claude</code> hoặc mở Claude Code trong VS Code, bạn đang nói chuyện với agent chính.</p>
+<p>Agent chính hoạt động theo vòng lặp liên tục:</p>
+<pre class="mermaid"><code>flowchart LR
+    A["📝 Nhận yêu cầu"] --&gt; B["🧠 Lập kế hoạch"]
+    B --&gt; C["🔧 Gọi tool&lt;br/&gt;(đọc file, chạy lệnh...)"]
+    C --&gt; D["👁️ Quan sát kết quả"]
+    D --&gt; E["🔄 Lặp lại hoặc trả lời"]
+    E --&gt; A</code></pre>
+<p>Agent chính có quyền truy cập đầy đủ các công cụ (tools): đọc/ghi file, chạy terminal commands, tìm kiếm code, và quan trọng nhất — nó có thể <strong>sinh ra sub-agent</strong> để ủy thác công việc.</p>
+<h3 id="ac-iem-chinh">Đặc điểm chính<a class="headerlink" href="#ac-iem-chinh" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Thuộc tính</th>
+<th>Mô tả</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Context window</strong></td>
+<td>Có giới hạn — càng làm nhiều, context càng đầy</td>
+</tr>
+<tr>
+<td><strong>Tools</strong></td>
+<td>Truy cập đầy đủ (đọc, ghi, terminal, web search...)</td>
+</tr>
+<tr>
+<td><strong>Vai trò</strong></td>
+<td>Điều phối, ra quyết định, tương tác với user</td>
+</tr>
+<tr>
+<td><strong>Vòng đời</strong></td>
+<td>Tồn tại suốt phiên làm việc</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Vấn đề Context Rot</p>
+<p>Khi bạn yêu cầu agent chính làm quá nhiều việc trong một phiên — đọc hàng chục file, chạy tests, review code — context window bị lấp đầy bởi "nhiễu" (noise). Model bắt đầu "quên" thông tin quan trọng ban đầu, dẫn đến kết quả kém dần. Đây gọi là <strong>Context Rot</strong>, và đó là lý do sub-agent ra đời.</p>
+</div>
+<hr />
+<h2 id="2-sub-agent-nhan-vien-chuyen-trach-uoc-giao-viec-cu-the">2. Sub-agent — "Nhân viên chuyên trách" được giao việc cụ thể<a class="headerlink" href="#2-sub-agent-nhan-vien-chuyen-trach-uoc-giao-viec-cu-the" title="Permanent link">&para;</a></h2>
+<h3 id="khai-niem_1">Khái niệm<a class="headerlink" href="#khai-niem_1" title="Permanent link">&para;</a></h3>
+<p><strong>Sub-agent</strong> là một instance Claude riêng biệt, được agent chính sinh ra để thực hiện một nhiệm vụ cụ thể. Sub-agent có <strong>context window riêng</strong>, chạy độc lập, và chỉ trả về kết quả cuối cùng cho agent chính.</p>
+<p>Hãy hình dung: Agent chính là <strong>quản lý dự án</strong>, còn sub-agent là <strong>nhân viên chuyên trách</strong> được giao một task rõ ràng. Nhân viên làm xong → báo cáo kết quả → quản lý tiếp tục điều phối. Quản lý không cần biết chi tiết nhân viên đã đọc bao nhiêu file hay chạy bao nhiêu lệnh.</p>
+<pre class="mermaid"><code>flowchart TD
+    M["🧑‍💼 Agent chính&lt;br/&gt;(Main Agent)"] --&gt;|"Giao việc"| S1["🔍 Sub-agent Explore&lt;br/&gt;(Haiku - nhanh, rẻ)"]
+    M --&gt;|"Giao việc"| S2["📝 Sub-agent Review&lt;br/&gt;(Sonnet - cân bằng)"]
+    M --&gt;|"Giao việc"| S3["🏗️ Sub-agent General&lt;br/&gt;(Inherit model)"]
+    S1 --&gt;|"Trả kết quả tóm tắt"| M
+    S2 --&gt;|"Trả kết quả tóm tắt"| M
+    S3 --&gt;|"Trả kết quả tóm tắt"| M</code></pre>
+<h3 id="sub-agent-co-san-built-in">Sub-agent có sẵn (Built-in)<a class="headerlink" href="#sub-agent-co-san-built-in" title="Permanent link">&para;</a></h3>
+<p>Claude Code đi kèm 3 sub-agent mặc định, theo tài liệu chính thức của Anthropic:</p>
+<table>
+<thead>
+<tr>
+<th>Sub-agent</th>
+<th>Model</th>
+<th>Tools</th>
+<th>Mục đích</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Explore</strong></td>
+<td>Haiku (nhanh, rẻ)</td>
+<td>Chỉ đọc (Read-only)</td>
+<td>Tìm file, khám phá codebase</td>
+</tr>
+<tr>
+<td><strong>Plan</strong></td>
+<td>Inherit (giống main)</td>
+<td>Chỉ đọc</td>
+<td>Nghiên cứu để lập kế hoạch</td>
+</tr>
+<tr>
+<td><strong>General-purpose</strong></td>
+<td>Inherit</td>
+<td>Tất cả tools</td>
+<td>Nghiên cứu phức tạp, sửa code</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cach-tao-sub-agent-tuy-chinh">Cách tạo Sub-agent tùy chỉnh<a class="headerlink" href="#cach-tao-sub-agent-tuy-chinh" title="Permanent link">&para;</a></h3>
+<p>Có 2 cách tạo sub-agent:</p>
+<p><strong>Cách 1: Dùng lệnh <code>/agents</code> (khuyến khích cho người mới)</strong></p>
+<p>Gõ <code>/agents</code> trong phiên Claude Code → chọn tạo mới → mô tả nhiệm vụ → Claude tự tạo file cho bạn.</p>
+<p><strong>Cách 2: Tạo file Markdown thủ công</strong></p>
+<p>Tạo file <code>.md</code> trong thư mục <code>.claude/agents/</code> (project-level) hoặc <code>~/.claude/agents/</code> (user-level):</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>---
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>name: code-reviewer
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>description: Reviews code for quality and best practices.
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  Use proactively after code changes.
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>tools: Read, Glob, Grep
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gu">model: sonnet</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="gu">---</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>You are a senior code reviewer. When invoked, analyze
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>the code and provide specific, actionable feedback on
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>quality, security, and best practices.
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Mẹo quan trọng: Description quyết định tất cả</p>
+<p>Claude sử dụng <code>description</code> để quyết định <strong>khi nào</strong> gọi sub-agent. Nếu description mơ hồ, Claude sẽ không biết khi nào cần dùng sub-agent đó. Hãy viết rõ ràng: <em>"Dùng khi nào?"</em> và <em>"Để làm gì?"</em>.</p>
+</div>
+<h3 id="tai-sao-can-sub-agent">Tại sao cần Sub-agent?<a class="headerlink" href="#tai-sao-can-sub-agent" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Giữ context window sạch</strong>: Sub-agent đọc 50 file → chỉ trả về 10 dòng tóm tắt cho main agent. Main agent không bị "ô nhiễm" context.</li>
+<li><strong>Tiết kiệm chi phí</strong>: Dùng model Haiku (rẻ, nhanh) cho sub-agent khám phá codebase, Sonnet cho main agent.</li>
+<li><strong>Chuyên biệt hóa</strong>: Mỗi sub-agent có system prompt riêng, phù hợp với vai trò (reviewer, debugger, tester...).</li>
+</ol>
+<hr />
+<h2 id="3-skill-so-tay-huong-dan-e-claude-oc-khi-can">3. Skill — "Sổ tay hướng dẫn" để Claude đọc khi cần<a class="headerlink" href="#3-skill-so-tay-huong-dan-e-claude-oc-khi-can" title="Permanent link">&para;</a></h2>
+<h3 id="khai-niem_2">Khái niệm<a class="headerlink" href="#khai-niem_2" title="Permanent link">&para;</a></h3>
+<p><strong>Skill</strong> hoàn toàn khác với Agent và Sub-agent. Skill <strong>không phải</strong> là một instance Claude chạy riêng — nó là một <strong>file Markdown chứa hướng dẫn</strong> mà Claude đọc khi cần thực hiện một nhiệm vụ cụ thể.</p>
+<p>Nếu sub-agent là <em>"nhân viên"</em>, thì skill là <em>"sổ tay nghiệp vụ"</em> mà nhân viên mở ra đọc khi làm việc.</p>
+<h3 id="cau-truc-skill">Cấu trúc Skill<a class="headerlink" href="#cau-truc-skill" title="Permanent link">&para;</a></h3>
+<p>Mỗi skill là một thư mục chứa file <code>SKILL.md</code> bắt buộc:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>.claude/skills/
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── deploy/
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│   └── SKILL.md          # Hướng dẫn deploy
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── write-tests/
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│   ├── SKILL.md          # Hướng dẫn viết test
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│   ├── template.md       # Template test file
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│   └── examples/
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│       └── sample.md     # Ví dụ test đúng chuẩn
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>└── code-review/
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    └── SKILL.md          # Tiêu chuẩn review code
+</span></code></pre></div>
+<h3 id="cach-tao-skill">Cách tạo Skill<a class="headerlink" href="#cach-tao-skill" title="Permanent link">&para;</a></h3>
+<p>Tạo thư mục và file <code>SKILL.md</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>.claude/skills/deploy
+</span></code></pre></div>
+<p>Nội dung <code>SKILL.md</code>:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>---
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>description: Deploy the application to production.
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="gu">  Use when the user asks to deploy, ship, or release.</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="gu">---</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="gu">## Deploy steps</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">1.</span> Run the test suite: <span class="sb">`npm test`</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">2.</span> Build the application: <span class="sb">`npm run build`</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="k">3.</span> Push to production: <span class="sb">`npm run deploy`</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="gu">## Rules</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="k">-</span><span class="w"> </span>NEVER deploy if tests fail
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="k">-</span><span class="w"> </span>Always create a git tag after successful deploy
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="k">-</span><span class="w"> </span>Notify the team on Slack after deploy
+</span></code></pre></div>
+<h3 id="skill-co-the-chua-dynamic-context">Skill có thể chứa Dynamic Context<a class="headerlink" href="#skill-co-the-chua-dynamic-context" title="Permanent link">&para;</a></h3>
+<p>Một tính năng mạnh của skill là <strong>inject dynamic context</strong> — chèn output của lệnh shell vào hướng dẫn:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>---
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="gu">description: Summarizes uncommitted changes.</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="gu">---</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="gu">## Current changes</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>!<span class="sb">`git diff HEAD`</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="gu">## Instructions</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>Summarize the changes above in bullet points
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>and list any risks you notice.
+</span></code></pre></div>
+<p>Ở đây <code>!</code>git diff HEAD<code>` sẽ được thay thế bằng output thật của</code>git diff` mỗi khi skill được kích hoạt. Claude đọc được diff thật, không phải template tĩnh.</p>
+<h3 id="ai-kich-hoat-skill">Ai kích hoạt Skill?<a class="headerlink" href="#ai-kich-hoat-skill" title="Permanent link">&para;</a></h3>
+<p>Có 2 kiểu:</p>
+<table>
+<thead>
+<tr>
+<th>Kiểu</th>
+<th>Cách kích hoạt</th>
+<th>Config</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>User gọi</strong></td>
+<td>Gõ <code>/skill-name</code> trong chat</td>
+<td>Mặc định</td>
+</tr>
+<tr>
+<td><strong>Claude tự gọi</strong></td>
+<td>Claude đọc <code>description</code>, tự quyết định khi nào cần</td>
+<td>Mặc định (trừ khi set <code>disable-model-invocation: true</code>)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Lưu ý quan trọng</p>
+<p>Nếu set <code>disable-model-invocation: true</code>, chỉ user mới có thể kích hoạt skill bằng slash command <code>/</code>. Claude sẽ không tự gọi skill đó. Hữu ích cho các skill nhạy cảm như deploy production.</p>
+</div>
+<hr />
+<h2 id="4-bang-so-sanh-agent-vs-sub-agent-vs-skill">4. Bảng so sánh: Agent vs Sub-agent vs Skill<a class="headerlink" href="#4-bang-so-sanh-agent-vs-sub-agent-vs-skill" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>Agent (Main)</th>
+<th>Sub-agent</th>
+<th>Skill</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bản chất</strong></td>
+<td>Instance Claude đang chạy</td>
+<td>Instance Claude riêng biệt</td>
+<td>File Markdown hướng dẫn</td>
+</tr>
+<tr>
+<td><strong>Context window</strong></td>
+<td>Chung (dễ bị đầy)</td>
+<td>Riêng (cách ly)</td>
+<td>Không có — dùng chung context của agent/sub-agent</td>
+</tr>
+<tr>
+<td><strong>Có thể chạy code?</strong></td>
+<td>✅ Có</td>
+<td>✅ Có</td>
+<td>❌ Không — chỉ là hướng dẫn</td>
+</tr>
+<tr>
+<td><strong>Tạo ở đâu?</strong></td>
+<td>Tự động khi mở Claude Code</td>
+<td><code>.claude/agents/</code> hoặc <code>~/.claude/agents/</code></td>
+<td><code>.claude/skills/&lt;name&gt;/SKILL.md</code></td>
+</tr>
+<tr>
+<td><strong>Chi phí token</strong></td>
+<td>Cao (session dài)</td>
+<td>Có thể thấp (dùng Haiku)</td>
+<td>Rất thấp (chỉ thêm text vào context)</td>
+</tr>
+<tr>
+<td><strong>Khi nào dùng?</strong></td>
+<td>Luôn luôn (mặc định)</td>
+<td>Task cần cách ly context</td>
+<td>Task cần hướng dẫn/quy trình chuẩn</td>
+</tr>
+<tr>
+<td><strong>Ai gọi?</strong></td>
+<td>User trực tiếp</td>
+<td>Agent chính gọi</td>
+<td>User (<code>/name</code>) hoặc Claude tự gọi</td>
+</tr>
+<tr>
+<td><strong>Ví dụ</strong></td>
+<td>Phiên làm việc chính</td>
+<td>Code Reviewer, Debugger</td>
+<td>Deploy guide, Test template</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-vi-du-thuc-te-khi-nao-dung-cai-nao">5. Ví dụ thực tế: Khi nào dùng cái nào?<a class="headerlink" href="#5-vi-du-thuc-te-khi-nao-dung-cai-nao" title="Permanent link">&para;</a></h2>
+<h3 id="tinh-huong-1-review-code-toi-vua-viet">Tình huống 1: "Review code tôi vừa viết"<a class="headerlink" href="#tinh-huong-1-review-code-toi-vua-viet" title="Permanent link">&para;</a></h3>
+<p><strong>Dùng: Sub-agent</strong> ✅</p>
+<p>Tạo sub-agent <code>code-reviewer</code> với tools Read-only. Agent chính giao task: <em>"Review file X, Y, Z"</em>. Sub-agent đọc hết các file (có thể hàng ngàn dòng), phân tích, rồi trả về báo cáo ngắn gọn. Main agent giữ context sạch.</p>
+<h3 id="tinh-huong-2-deploy-len-production">Tình huống 2: "Deploy lên production"<a class="headerlink" href="#tinh-huong-2-deploy-len-production" title="Permanent link">&para;</a></h3>
+<p><strong>Dùng: Skill</strong> ✅</p>
+<p>Deploy cần tuân theo quy trình cố định (chạy test → build → push → tag → notify). Viết thành skill <code>deploy</code> với <code>disable-model-invocation: true</code> để chỉ user mới trigger được. Không cần sub-agent vì deploy chạy tuần tự trong main agent.</p>
+<h3 id="tinh-huong-3-kham-pha-codebase-moi-tim-hieu-cau-truc">Tình huống 3: "Khám phá codebase mới, tìm hiểu cấu trúc"<a class="headerlink" href="#tinh-huong-3-kham-pha-codebase-moi-tim-hieu-cau-truc" title="Permanent link">&para;</a></h3>
+<p><strong>Dùng: Sub-agent Explore (built-in)</strong> ✅</p>
+<p>Sub-agent Explore dùng model Haiku (nhanh, rẻ), chỉ đọc file — phù hợp để lướt qua hàng chục thư mục mà không làm ô nhiễm context chính.</p>
+<h3 id="tinh-huong-4-viet-bai-blog-theo-chuan-cua-toi">Tình huống 4: "Viết bài blog theo chuẩn của tôi"<a class="headerlink" href="#tinh-huong-4-viet-bai-blog-theo-chuan-cua-toi" title="Permanent link">&para;</a></h3>
+<p><strong>Dùng: Skill</strong> ✅</p>
+<p>Tạo skill <code>write-blog-post</code> chứa: template bài viết, quy tắc format, frontmatter chuẩn, checklist kiểm chứng. Khi Claude viết bài, nó đọc skill để biết phải tuân theo format nào.</p>
+<h3 id="tinh-huong-5-tim-va-sua-bug-phuc-tap">Tình huống 5: "Tìm và sửa bug phức tạp"<a class="headerlink" href="#tinh-huong-5-tim-va-sua-bug-phuc-tap" title="Permanent link">&para;</a></h3>
+<p><strong>Dùng: Sub-agent + Skill kết hợp</strong> ✅</p>
+<ol>
+<li>Sub-agent <code>debugger</code> được sinh ra để phân tích stack trace, đọc logs, tìm root cause</li>
+<li>Sub-agent tham chiếu skill <code>debugging-conventions</code> để biết coding standards cần tuân thủ khi fix bug</li>
+<li>Trả kết quả cho main agent → main agent áp dụng fix</li>
+</ol>
+<blockquote>
+<p><strong>Ví dụ thực tế</strong>: Anthropic hỗ trợ preload skills vào sub-agent bằng field <code>skills</code> trong frontmatter. Nghĩa là sub-agent <code>debugger</code> có thể tự động đọc skill <code>debugging-conventions</code> mỗi khi được gọi.</p>
+</blockquote>
+<hr />
+<h2 id="ket-luan">Kết luận<a class="headerlink" href="#ket-luan" title="Permanent link">&para;</a></h2>
+<p>Ba khái niệm Agent, Sub-agent, và Skill trong Claude Code phục vụ ba tầng khác nhau:</p>
+<ol>
+<li><strong>Agent</strong> = Bộ não chính, điều phối mọi thứ</li>
+<li><strong>Sub-agent</strong> = Nhân viên chuyên trách, cách ly context, tiết kiệm chi phí</li>
+<li><strong>Skill</strong> = Sổ tay nghiệp vụ, kiến thức tái sử dụng</li>
+</ol>
+<p>Quy tắc ngón tay cái:</p>
+<ul>
+<li>Cần <strong>cách ly context</strong> hoặc <strong>dùng model khác</strong> → Sub-agent</li>
+<li>Cần <strong>hướng dẫn chuẩn</strong> hoặc <strong>quy trình lặp lại</strong> → Skill</li>
+<li>Cả hai đều phục vụ agent chính để nó làm việc hiệu quả hơn</li>
+</ul>
+<p>Trong <strong>Phần 2</strong>, chúng ta sẽ đi sâu vào <strong>Agent Teams</strong> — cách nhiều agent phối hợp với nhau như một team engineering thực thụ, và <strong>MCP (Model Context Protocol)</strong> — giao thức kết nối agent với thế giới bên ngoài.</p>
+<hr />
+<h2 id="tham-khao">Tham khảo<a class="headerlink" href="#tham-khao" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.anthropic.com/en/docs/claude-code/overview">Claude Code Overview — Anthropic Documentation</a> — Tài liệu tổng quan chính thức từ Anthropic.</li>
+<li><a href="https://docs.anthropic.com/en/docs/claude-code/sub-agents">Create Custom Subagents — Anthropic Documentation</a> — Hướng dẫn chi tiết tạo và cấu hình sub-agent.</li>
+<li><a href="https://docs.anthropic.com/en/docs/claude-code/skills">Extend Claude with Skills — Anthropic Documentation</a> — Tài liệu chính thức về skill system.</li>
+<li><a href="https://docs.anthropic.com/en/docs/claude-code/memory">Store Instructions and Memories — Anthropic Documentation</a> — Hướng dẫn sử dụng CLAUDE.md và auto memory.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Trở lại mục lục
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0110\u00e3 sao ch\u00e9p", "clipboard.copy": "Sao ch\u00e9p v\u00e0o b\u1ed9 nh\u1edb t\u1ea1m", "search.result.more.one": "1 t\u1eeb kh\u00e1c trong trang", "search.result.more.other": "# t\u1eeb kh\u00e1c trong trang", "search.result.none": "Kh\u00f4ng t\u00ecm th\u1ea5y t\u00e0i li\u1ec7u li\u00ean quan", "search.result.one": "1 t\u00e0i li\u1ec7u li\u00ean quan", "search.result.other": "# t\u00e0i li\u1ec7u li\u00ean quan", "search.result.placeholder": "Nh\u1eadp \u0111\u1ec3 b\u1eaft \u0111\u1ea7u t\u00ecm ki\u1ebfm", "search.result.term.missing": "Kh\u00f4ng", "select.version": "Ch\u1ecdn phi\u00ean b\u1ea3n"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

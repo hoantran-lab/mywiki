@@ -1,0 +1,1014 @@
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Khám phá BMad Builder — công cụ mạnh mẽ trong hệ sinh thái BMad giúp bạn tự tạo ra các AI Agent có trí nhớ dài hạn (Memory Agents), tự động hóa (Autonomous) và đóng gói thành module để chia sẻ.">
+      
+      
+        <meta name="author" content="tranvanhoan">
+      
+      
+        <link rel="canonical" href="https://tranvanhoan.github.io/MyWiki/blog/2026/05/06/bmad-builder--c%C3%B4ng-c%E1%BB%A5-%C4%91%C3%BAc-ai-agent-c%C3%B3-tr%C3%AD-nh%E1%BB%9B-v%C3%A0-c%C3%A1-t%C3%ADnh-ri%C3%AAng/">
+      
+      
+        <link rel="prev" href="../gi%E1%BA%A3i-m%C3%A3-t%C6%B0-duy-ph%C3%A2n-k%E1%BB%B3-c%C3%A1c-k%E1%BB%B9-thu%E1%BA%ADt-brainstorming-%C4%91%E1%BB%99t-ph%C3%A1-t%E1%BB%AB-bmad/">
+      
+      
+        <link rel="next" href="../../07/superpowers--khi-ai-agent-%C4%91%C6%B0%E1%BB%A3c-l%C3%AAn-level-b%E1%BA%B1ng-k%E1%BB%B7-lu%E1%BA%ADt-k%E1%BB%B9-thu%E1%BA%ADt/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>BMad Builder — Công cụ "Đúc" AI Agent Có Trí Nhớ Và Cá Tính Riêng - AI Wiki - My Knowledge Base</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bmad-builder-cong-cu-uc-ai-agent-co-tri-nho-va-ca-tinh-rieng" class="md-skip">
+          Bỏ qua
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Đầu trang">
+    <a href="../../../../.." title="AI Wiki - My Knowledge Base" class="md-header__button md-logo" aria-label="AI Wiki - My Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Wiki - My Knowledge Base
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BMad Builder — Công cụ "Đúc" AI Agent Có Trí Nhớ Và Cá Tính Riêng
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Tìm kiếm" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Tìm kiếm">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Chia sẻ" aria-label="Chia sẻ" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Xoá" aria-label="Xoá" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tranvanhoan/MyWiki" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tranvanhoan/MyWiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Trang chủ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../roadmap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Chủ đề (Tags)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Về tác giả
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Thanh điều hướng" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="AI Wiki - My Knowledge Base" class="md-nav__button md-logo" aria-label="AI Wiki - My Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Wiki - My Knowledge Base
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tranvanhoan/MyWiki" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tranvanhoan/MyWiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trang chủ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chủ đề (Tags)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Về tác giả
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Mục lục">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Mục lục
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mo-au-loi-nguyen-mat-tri-nho-cua-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mở đầu: Lời nguyền "mất trí nhớ" của AI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-bmad-builder-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. BMad Builder là gì?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-iem-khac-biet-workflow-vs-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Điểm khác biệt: Workflow vs. Agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ba-cap-o-agent-trong-bmad-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ba cấp độ Agent trong BMad Builder
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Ba cấp độ Agent trong BMad Builder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cap-o-1-stateless-agents-chuyen-gia-vo-hinh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cấp độ 1: Stateless Agents (Chuyên gia vô hình)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cap-o-2-memory-agents-nguoi-ong-hanh-co-tri-nho" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cấp độ 2: Memory Agents (Người đồng hành có trí nhớ)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cap-o-3-autonomous-agents-nhan-vien-man-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cấp độ 3: Autonomous Agents (Nhân viên mẫn cán)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-modules-ong-goi-va-phan-phoi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Modules: Đóng gói và Phân phối
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-quy-trinh-4-buoc-tao-agent-bang-bmad-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Quy trình 4 bước tạo Agent bằng BMad Builder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-case-study-xay-dung-blog-writing-partner-memory-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Case Study: Xây dựng "Blog Writing Partner" (Memory Agent)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ket-luan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kết luận
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tham-khao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tham khảo
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Quay lại
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/tranvanhoan" alt="Hoàn Trần">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Hoàn Trần
+                        
+                      </strong>
+                      <br>
+                      Người viết và tìm tòi về AI
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-05-06 00:00:00+00:00" class="md-ellipsis">06/05/2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            Trong
+                            
+                              <a href="../../../../category/agent/">Agent</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              7 phút đọc
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:ai-agent" class="md-tag">ai-agent</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:ai-memory" class="md-tag">ai-memory</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:autonomous-agent" class="md-tag">autonomous-agent</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:bmad-builder" class="md-tag">bmad-builder</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:bmad-method" class="md-tag">bmad-method</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<h1 id="bmad-builder-cong-cu-uc-ai-agent-co-tri-nho-va-ca-tinh-rieng">BMad Builder — Công cụ "Đúc" AI Agent Có Trí Nhớ Và Cá Tính Riêng<a class="headerlink" href="#bmad-builder-cong-cu-uc-ai-agent-co-tri-nho-va-ca-tinh-rieng" title="Permanent link">&para;</a></h1>
+<h2 id="mo-au-loi-nguyen-mat-tri-nho-cua-ai">Mở đầu: Lời nguyền "mất trí nhớ" của AI<a class="headerlink" href="#mo-au-loi-nguyen-mat-tri-nho-cua-ai" title="Permanent link">&para;</a></h2>
+<p>Hãy nhớ lại lần gần nhất bạn dùng Claude, ChatGPT hay Cursor để làm việc. Bạn mất 30 phút để giải thích cho AI hiểu văn phong viết blog của bạn, dự án bạn đang làm, và các quy tắc coding bạn muốn tuân thủ. AI làm rất tốt. Nhưng ngày hôm sau, bạn mở một đoạn chat mới, và... AI lại trở thành một "tờ giấy trắng". Bạn lại phải copy/paste đống context đó một lần nữa.</p>
+<p>Làm việc với AI hiện nay giống như làm việc với một người cực kỳ thông minh nhưng lại mắc chứng <strong>mất trí nhớ ngắn hạn (amnesia)</strong>. </p>
+<p>Đó chính là lý do <strong>BMad Builder</strong> ra đời. Nếu BMad Method cung cấp cho bạn một quy trình có sẵn, thì <strong>BMad Builder</strong> cung cấp cho bạn "xưởng đúc" để tự tạo ra các AI Agent <strong>có trí nhớ dài hạn, có cá tính riêng, và thậm chí biết tự động làm việc khi bạn đang ngủ</strong>.</p>
+<p><strong>Nội dung bài viết:</strong></p>
+<ul>
+<li>BMad Builder là gì và sự khác biệt cốt lõi</li>
+<li>Phân biệt Workflow và Agent</li>
+<li>3 Cấp độ Agent: Stateless, Memory, Autonomous</li>
+<li>Cơ chế trí nhớ (Memory) hoạt động ra sao?</li>
+<li>Đóng gói và phân phối với Modules</li>
+<li>Quy trình 4 bước build một Agent</li>
+<li>Ví dụ thực tế: Tạo "Writing Partner" có trí nhớ</li>
+</ul>
+<hr />
+<h2 id="1-bmad-builder-la-gi">1. BMad Builder là gì?<a class="headerlink" href="#1-bmad-builder-la-gi" title="Permanent link">&para;</a></h2>
+<p>BMad Builder là một module cốt lõi trong hệ sinh thái BMad Method. Khẩu hiệu của nó là: <em>"Build More, Architect Dreams"</em> (Xây dựng nhiều hơn, Kiến tạo giấc mơ).</p>
+<p>Nó là một bộ công cụ (builder wizards) giúp bạn chuyển hóa các ý tưởng thành các "kỹ năng" (skills) hoặc "tác nhân" (agents) cài đặt trực tiếp vào hệ thống Claude Code hoặc các AI IDE khác. BMad Builder cho phép bạn tạo ra:</p>
+<ol>
+<li><strong>Personal AI Companions</strong>: Những trợ lý AI có khả năng đồng hành, nhớ các sở thích và thói quen của bạn theo thời gian.</li>
+<li><strong>Domain Experts</strong>: Chuyên gia trong một lĩnh vực cực hẹp (luật sư, bác sĩ nội trú, chuyên gia sáng tạo).</li>
+<li><strong>Workflow Automations</strong>: Những quy trình tự động hóa thay vì phải gõ lệnh thủ công.</li>
+<li><strong>Custom Modules</strong>: Gói tất cả những thứ trên lại thành một "Plugin" để chia sẻ cho team hoặc bán trên marketplace.</li>
+</ol>
+<hr />
+<h2 id="2-iem-khac-biet-workflow-vs-agent">2. Điểm khác biệt: Workflow vs. Agent<a class="headerlink" href="#2-iem-khac-biet-workflow-vs-agent" title="Permanent link">&para;</a></h2>
+<p>Trước khi đi sâu, chúng ta cần phân biệt rõ hai khái niệm mà BMad Builder hỗ trợ tạo ra:</p>
+<ul>
+<li><strong>Workflow (Luồng công việc)</strong>: Là một quy trình cứng. Nó giống như một kịch bản từng bước (Step 1 làm gì, Step 2 làm gì). Nó không có tính cách, chỉ là công cụ thực thi. <em>Ví dụ: Workflow tự động tạo file <code>README.md</code> từ source code.</em></li>
+<li><strong>Agent (Tác nhân AI)</strong>: Là một "nhân sự" thực thụ. Nó là sự kết hợp của <strong>Persona</strong> (Tính cách/Vai trò) + <strong>Capabilities</strong> (Năng lực/Tools) + <strong>Memory</strong> (Trí nhớ, tùy chọn). Agent có thể trò chuyện với bạn, tự quyết định dùng tool nào, và rút kinh nghiệm cho lần sau.</li>
+</ul>
+<p>Nếu bạn không chắc nên tạo cái gì, lời khuyên từ BMad là: <em>Hãy bắt đầu với Workflow. Khi nào thấy cần nó tự chủ và cá nhân hóa hơn, hãy nâng cấp nó thành Agent.</em></p>
+<hr />
+<h2 id="3-ba-cap-o-agent-trong-bmad-builder">3. Ba cấp độ Agent trong BMad Builder<a class="headerlink" href="#3-ba-cap-o-agent-trong-bmad-builder" title="Permanent link">&para;</a></h2>
+<p>Điều làm nên sức mạnh của BMad Builder là nó chia Agent thành 3 cấp độ tiến hóa rõ rệt:</p>
+<h3 id="cap-o-1-stateless-agents-chuyen-gia-vo-hinh">Cấp độ 1: Stateless Agents (Chuyên gia vô hình)<a class="headerlink" href="#cap-o-1-stateless-agents-chuyen-gia-vo-hinh" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Đặc điểm</strong>: Không có trí nhớ. Mỗi lần khởi động lại là một phiên hoàn toàn độc lập. Mọi hướng dẫn đều nằm chung trong một file <code>SKILL.md</code>.</li>
+<li><strong>Khi nào dùng</strong>: Khi context của phiên làm việc cũ không ảnh hưởng gì đến phiên hiện tại.</li>
+<li><strong>Ví dụ</strong>: Agent chuyên dịch thuật tài liệu JSON, Agent review lỗi bảo mật của hàm hiện tại. Bạn không cần Agent nhớ hôm qua nó đã dịch file nào, bạn chỉ cần nó dịch chuẩn file hôm nay.</li>
+</ul>
+<h3 id="cap-o-2-memory-agents-nguoi-ong-hanh-co-tri-nho">Cấp độ 2: Memory Agents (Người đồng hành có trí nhớ)<a class="headerlink" href="#cap-o-2-memory-agents-nguoi-ong-hanh-co-tri-nho" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Đặc điểm</strong>: Đây là nơi phép màu xuất hiện. Agent có một <strong>"Sanctum" (Thánh địa trí nhớ)</strong> — một thư mục riêng biệt trên máy của bạn (thường ở <code>_bmad/memory/&lt;agent-name&gt;/</code>).</li>
+<li><strong>Cách hoạt động</strong>: <ul>
+<li>Lần đầu kích hoạt, Agent sẽ trải qua quá trình <strong>"First Breath" (Hơi thở đầu tiên)</strong>. Nó sẽ phỏng vấn bạn để biết bạn là ai, mục tiêu của bạn là gì, và nó cần thích nghi thế nào.</li>
+<li>Trong các lần sau, dù bạn mở chat mới, Agent vẫn sẽ đọc các file trong Sanctum để "nhập hồn" trở lại đúng con người cũ. Nếu nó không nhớ điều gì, nó sẽ thú nhận và lục lại trí nhớ.</li>
+</ul>
+</li>
+<li><strong>Khả năng tiến hóa</strong>: Memory agents có thể "Học" (Learned capabilities). BMad hỗ trợ người dùng dạy Agent những prompt mới, và nó sẽ tự lưu vào repertoire (danh sách kỹ năng) của nó.</li>
+<li><strong>Ví dụ</strong>: Một Agent <em>Writing Coach</em>. Lần đầu nó hỏi bạn thích văn phong nào (nghiêm túc, hài hước, dùng nhiều icon). Sau đó, nó tự lưu vào memory. Các bài viết sau, bạn không cần nhắc lại, nó tự động review theo đúng gu của bạn.</li>
+</ul>
+<h3 id="cap-o-3-autonomous-agents-nhan-vien-man-can">Cấp độ 3: Autonomous Agents (Nhân viên mẫn cán)<a class="headerlink" href="#cap-o-3-autonomous-agents-nhan-vien-man-can" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Đặc điểm</strong>: Có tất cả mọi thứ của Memory Agent, nhưng được trang bị thêm file <strong>PULSE</strong>. </li>
+<li><strong>Cách hoạt động</strong>: PULSE định nghĩa những việc Agent làm <em>khi không có ai giám sát</em>. Autonomous Agent có thể được đánh thức bằng cronjob hoặc background task. Khi có người, nó chat; khi không có người (headless), nó tự làm việc rồi thoát.</li>
+<li><strong>Ví dụ</strong>: Agent <em>Project Maintainer</em>. Mỗi sáng lúc 2h, nó tự động thức dậy, đọc qua git commit, dọn dẹp các memory rác, summarize tiến độ dự án, và để lại một file báo cáo tóm tắt cho bạn đọc lúc 8h sáng.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Sự riêng tư của Memory (Trí nhớ)</p>
+<p>Một thiết kế cực hay của BMad: Trí nhớ của Agent được lưu ở cấp độ <strong>Project</strong> (ví dụ <code>_bmad/memory/</code>), không lưu trong thư mục lõi của Agent. Nhờ vậy, cùng một Agent "Code Reviewer" nhưng ở Project A nó sẽ học theo chuẩn code của Project A, sang Project B nó lại học theo chuẩn của Project B. Dữ liệu hoàn toàn local và thuộc về dự án.</p>
+</div>
+<hr />
+<h2 id="4-modules-ong-goi-va-phan-phoi">4. Modules: Đóng gói và Phân phối<a class="headerlink" href="#4-modules-ong-goi-va-phan-phoi" title="Permanent link">&para;</a></h2>
+<p>Agent hay Workflow dù hay đến mấy cũng vô nghĩa nếu không thể cài đặt hoặc chia sẻ. BMad giải quyết vấn đề này qua <strong>Modules</strong>.</p>
+<p>Module thực chất là một Plugin (giống <code>.claude-plugin/</code>). Một Module có thể chứa:
+- Một Agent duy nhất (Standalone module).
+- Nhiều Agent kết hợp làm việc cùng nhau (Multi-skill modules).</p>
+<p>Điểm ăn tiền của BMad Module là <strong>khả năng tích hợp hệ thống Help (<code>bmad-help</code>)</strong>. Khi bạn cài một module, nó sẽ đăng ký các tính năng của nó vào file <code>config.yaml</code> và <code>module-help.csv</code>. Từ đó, user chỉ cần gõ <code>bmad-help</code> là AI IDE (như Claude Code) sẽ hướng dẫn họ nên dùng Agent nào của bạn trong hoàn cảnh nào.</p>
+<hr />
+<h2 id="5-quy-trinh-4-buoc-tao-agent-bang-bmad-builder">5. Quy trình 4 bước tạo Agent bằng BMad Builder<a class="headerlink" href="#5-quy-trinh-4-buoc-tao-agent-bang-bmad-builder" title="Permanent link">&para;</a></h2>
+<p>Việc tạo ra các Agent này không yêu cầu bạn phải code Python phức tạp. Bạn dùng chính AI để đẻ ra AI thông qua các wizard của BMad Builder. Quy trình chuẩn như sau:</p>
+<ol>
+<li><strong>Step 1: Ideate (Lên ý tưởng - Tùy chọn)</strong></li>
+<li>Chạy lệnh: <code>bmad-module-builder</code> -&gt; chọn <em>Ideate Module (IM)</em>.</li>
+<li>
+<p>Builder sẽ đóng vai facilitator, hỏi bạn các câu hỏi để chốt persona, chức năng, và loại agent cần thiết. Kết quả là một bản Plan.</p>
+</li>
+<li>
+<p><strong>Step 2: Build Skills (Xây dựng kỹ năng)</strong></p>
+</li>
+<li>Gọi <em>Agent Builder</em> hoặc <em>Workflow Builder</em>. Bạn cung cấp bản Plan ở bước 1.</li>
+<li>
+<p>Builder sẽ tự động tạo cấu trúc thư mục, file <code>SKILL.md</code>, các file script cần thiết. Nếu là Memory Agent, nó sẽ setup sẵn thư mục Sanctum và kịch bản First Breath.</p>
+</li>
+<li>
+<p><strong>Step 3: Scaffold the Module (Đóng gói)</strong></p>
+</li>
+<li>Chạy lệnh <em>Create Module (CM)</em>.</li>
+<li>
+<p>Builder tự động sinh file <code>marketplace.json</code>, file setup để cài đặt, và các file đăng ký vào <code>bmad-help</code>.</p>
+</li>
+<li>
+<p><strong>Step 4: Validate (Kiểm định)</strong></p>
+</li>
+<li>Chạy lệnh <em>Validate Module (VM)</em>. Builder sẽ kiểm tra xem agent có bị lỗi cấu trúc, thiếu context, hay xung đột với các module khác không.</li>
+</ol>
+<hr />
+<h2 id="6-case-study-xay-dung-blog-writing-partner-memory-agent">6. Case Study: Xây dựng "Blog Writing Partner" (Memory Agent)<a class="headerlink" href="#6-case-study-xay-dung-blog-writing-partner-memory-agent" title="Permanent link">&para;</a></h2>
+<p>Hãy thử hình dung cách chúng ta dùng BMad Builder tạo ra một người bạn đồng hành viết Blog (Memory Agent):</p>
+<ol>
+<li><strong>Thiết kế Persona</strong>: Tên là "Leo", một biên tập viên nghiêm khắc nhưng tận tâm.</li>
+<li><strong>Khởi tạo (First Breath)</strong>: </li>
+<li>Khi tôi gọi Leo lần đầu, Leo tự động tạo thư mục <code>_bmad/memory/leo/</code>.</li>
+<li>Leo hỏi: <em>"Chào Hoàn, tôi cần biết blog của bạn viết về chủ đề gì, đối tượng người đọc là ai, và bạn ghét những từ sáo rỗng nào của AI (như 'hòa mình vào', 'thế giới kỹ thuật số')?"</em></li>
+<li>Tôi trả lời. Leo lưu tất cả vào <code>_bmad/memory/leo/owner-understanding.md</code>.</li>
+<li><strong>Quá trình sử dụng</strong>:</li>
+<li>Tuần sau, tôi viết một đoạn draft lủng củng và gọi: <em>"Leo, review giúp."</em></li>
+<li>Dù là phiên làm việc mới, Leo tự động đọc file <code>owner-understanding.md</code>. Nó trả lời: <em>"Bài này ổn, nhưng bạn lại lỡ dùng từ 'bức tranh toàn cảnh' rồi — hôm trước bạn bảo rất ghét từ này. Tôi đã sửa lại giúp bạn theo phong cách ngắn gọn quen thuộc."</em></li>
+<li><strong>Tiến hóa</strong>:</li>
+<li>Tôi gõ lệnh: <em>"Leo, hãy học rule mới: luôn chèn một bảng so sánh vào giữa bài."</em></li>
+<li>Leo ghi nhận điều này vào file <code>learned-capabilities.md</code> trong Sanctum của nó. Lần sau, nó tự động áp dụng.</li>
+</ol>
+<h2 id="ket-luan">Kết luận<a class="headerlink" href="#ket-luan" title="Permanent link">&para;</a></h2>
+<p><strong>BMad Builder</strong> đã đẩy ranh giới của AI coding assistant đi xa hơn rất nhiều. Nó biến các cuộc trò chuyện rời rạc, "não cá vàng" thành những sự cộng tác có tính liên tục, tích lũy kiến thức (Memory) và thậm chí là tự chủ (Autonomous).</p>
+<p>Với cấu trúc Module dễ chia sẻ, BMad Builder không chỉ là công cụ cho cá nhân mà còn mở ra cơ hội xây dựng các <strong>AI Marketplace</strong> chuyên biệt trong tương lai, nơi bạn có thể tải về một Agent "Chuyên gia MLOps", một Agent "Kế toán thuế",... và chúng sẽ tự học để phù hợp riêng với dự án của bạn.</p>
+<hr />
+<h2 id="tham-khao">Tham khảo<a class="headerlink" href="#tham-khao" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://bmad-builder-docs.bmad-method.org/">BMad Builder Documentation</a> — Tài liệu chính thức.</li>
+<li><a href="https://bmad-builder-docs.bmad-method.org/explanation/what-are-bmad-agents/">What Are BMad Agents?</a> — Phân loại Stateless, Memory, Autonomous.</li>
+<li><a href="https://bmad-builder-docs.bmad-method.org/explanation/what-are-modules/">Understanding Modules</a> — Cách đóng gói và chia sẻ agent.</li>
+<li><a href="https://bmad-builder-docs.bmad-method.org/tutorials/build-your-first-module/">Build Your First Module Tutorial</a> — Hướng dẫn step-by-step.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Trở lại mục lục
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0110\u00e3 sao ch\u00e9p", "clipboard.copy": "Sao ch\u00e9p v\u00e0o b\u1ed9 nh\u1edb t\u1ea1m", "search.result.more.one": "1 t\u1eeb kh\u00e1c trong trang", "search.result.more.other": "# t\u1eeb kh\u00e1c trong trang", "search.result.none": "Kh\u00f4ng t\u00ecm th\u1ea5y t\u00e0i li\u1ec7u li\u00ean quan", "search.result.one": "1 t\u00e0i li\u1ec7u li\u00ean quan", "search.result.other": "# t\u00e0i li\u1ec7u li\u00ean quan", "search.result.placeholder": "Nh\u1eadp \u0111\u1ec3 b\u1eaft \u0111\u1ea7u t\u00ecm ki\u1ebfm", "search.result.term.missing": "Kh\u00f4ng", "select.version": "Ch\u1ecdn phi\u00ean b\u1ea3n"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

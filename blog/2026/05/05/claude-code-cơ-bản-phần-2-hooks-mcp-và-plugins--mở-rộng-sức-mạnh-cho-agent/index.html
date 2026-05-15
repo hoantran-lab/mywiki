@@ -1,0 +1,1426 @@
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Tìm hiểu Hooks, MCP và Plugins trong Claude Code — ba cơ chế mở rộng sức mạnh cho AI agent. Từ tự động hóa workflow, kết nối công cụ bên ngoài, đến đóng gói và chia sẻ giải pháp.">
+      
+      
+        <meta name="author" content="tranvanhoan">
+      
+      
+        <link rel="canonical" href="https://tranvanhoan.github.io/MyWiki/blog/2026/05/05/claude-code-c%C6%A1-b%E1%BA%A3n-ph%E1%BA%A7n-2-hooks-mcp-v%C3%A0-plugins--m%E1%BB%9F-r%E1%BB%99ng-s%E1%BB%A9c-m%E1%BA%A1nh-cho-agent/">
+      
+      
+        <link rel="prev" href="../x%C3%A2y-d%E1%BB%B1ng-second-brain-hi%E1%BB%87u-qu%E1%BA%A3-v%E1%BB%9Bi-ai--kh%C3%B4ng-ch%E1%BB%89-l%C3%A0-m%E1%BB%9F-obsidian-r%E1%BB%93i-ghi-ch%C3%BA/">
+      
+      
+        <link rel="next" href="../claude-code-c%C6%A1-b%E1%BA%A3n-ph%E1%BA%A7n-1-agent-sub-agent-v%C3%A0-skill--kh%C3%A1c-nhau-%E1%BB%9F-%C4%91%C3%A2u/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Claude Code Cơ bản (Phần 2): Hooks, MCP và Plugins — Mở rộng sức mạnh cho Agent - AI Wiki - My Knowledge Base</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#claude-code-co-ban-phan-2-hooks-mcp-va-plugins-mo-rong-suc-manh-cho-agent" class="md-skip">
+          Bỏ qua
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Đầu trang">
+    <a href="../../../../.." title="AI Wiki - My Knowledge Base" class="md-header__button md-logo" aria-label="AI Wiki - My Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Wiki - My Knowledge Base
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Claude Code Cơ bản (Phần 2): Hooks, MCP và Plugins — Mở rộng sức mạnh cho Agent
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Tìm kiếm" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Tìm kiếm">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Chia sẻ" aria-label="Chia sẻ" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Xoá" aria-label="Xoá" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tranvanhoan/MyWiki" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tranvanhoan/MyWiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Trang chủ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../roadmap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Chủ đề (Tags)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Về tác giả
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Thanh điều hướng" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="AI Wiki - My Knowledge Base" class="md-nav__button md-logo" aria-label="AI Wiki - My Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Wiki - My Knowledge Base
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tranvanhoan/MyWiki" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tranvanhoan/MyWiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trang chủ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chủ đề (Tags)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Về tác giả
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Mục lục">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Mục lục
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mo-au" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mở đầu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-hooks-tu-ong-hoa-phan-ung-theo-su-kien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Hooks — Tự động hóa phản ứng theo sự kiện
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Hooks — Tự động hóa phản ứng theo sự kiện">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#khai-niem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Khái niệm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cac-su-kien-quan-trong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Các sự kiện quan trọng
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-tao-hook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cách tạo Hook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ung-dung-thuc-te" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ứng dụng thực tế
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-mcp-ket-noi-agent-voi-the-gioi-ben-ngoai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. MCP — Kết nối Agent với thế giới bên ngoài
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. MCP — Kết nối Agent với thế giới bên ngoài">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#khai-niem_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Khái niệm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-hoat-ong-nhu-the-nao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP hoạt động như thế nào?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-cai-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cách cài MCP server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quan-ly-mcp-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quản lý MCP servers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-scopes-pham-vi-cai-at" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP Scopes — Phạm vi cài đặt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ung-dung-thuc-te_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ứng dụng thực tế
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-plugins-ong-goi-tat-ca-thanh-mot-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Plugins — Đóng gói tất cả thành một package
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Plugins — Đóng gói tất cả thành một package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#khai-niem_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Khái niệm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cau-truc-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cấu trúc Plugin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cach-tao-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cách tạo Plugin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugin-vs-standalone-khi-nao-dung-cai-nao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plugin vs Standalone: Khi nào dùng cái nào?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-bang-tong-hop-hooks-vs-mcp-vs-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Bảng tổng hợp: Hooks vs MCP vs Plugins
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-kich-ban-thuc-te-xay-dung-workflow-devops-hoan-chinh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Kịch bản thực tế: Xây dựng workflow DevOps hoàn chỉnh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ket-luan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kết luận
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tham-khao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tham khảo
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Quay lại
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/tranvanhoan" alt="Hoàn Trần">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Hoàn Trần
+                        
+                      </strong>
+                      <br>
+                      Người viết và tìm tòi về AI
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-05-05 00:00:00+00:00" class="md-ellipsis">05/05/2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            Trong
+                            
+                              <a href="../../../../category/agent/">Agent</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              8 phút đọc
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:ai-tools" class="md-tag">ai-tools</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:claude-code" class="md-tag">claude-code</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:hooks" class="md-tag">hooks</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:mcp" class="md-tag">mcp</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:plugins" class="md-tag">plugins</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<h1 id="claude-code-co-ban-phan-2-hooks-mcp-va-plugins-mo-rong-suc-manh-cho-agent">Claude Code Cơ bản (Phần 2): Hooks, MCP và Plugins — Mở rộng sức mạnh cho Agent<a class="headerlink" href="#claude-code-co-ban-phan-2-hooks-mcp-va-plugins-mo-rong-suc-manh-cho-agent" title="Permanent link">&para;</a></h1>
+<h2 id="mo-au">Mở đầu<a class="headerlink" href="#mo-au" title="Permanent link">&para;</a></h2>
+<p>Ở <a href="../claude-code-c%C6%A1-b%E1%BA%A3n-ph%E1%BA%A7n-1-agent-sub-agent-v%C3%A0-skill--kh%C3%A1c-nhau-%E1%BB%9F-%C4%91%C3%A2u/">Phần 1</a>, chúng ta đã phân biệt Agent, Sub-agent, và Skill — ba thành phần cốt lõi để Claude Code hoạt động. Nhưng một agent thực sự mạnh mẽ không chỉ biết đọc/ghi file — nó cần:</p>
+<ul>
+<li><strong>Tự động phản ứng</strong> khi có sự kiện xảy ra (→ Hooks)</li>
+<li><strong>Kết nối với thế giới bên ngoài</strong>: database, GitHub, Sentry, Slack... (→ MCP)</li>
+<li><strong>Đóng gói và chia sẻ</strong> toàn bộ giải pháp cho team (→ Plugins)</li>
+</ul>
+<p>Bài viết này sẽ giải thích đầy đủ ba khái niệm trên, cách xây dựng từng cái, và ứng dụng thực tế.</p>
+<p><strong>Nội dung chính:</strong></p>
+<ul>
+<li>Hooks: phản ứng tự động với sự kiện trong Claude Code</li>
+<li>MCP: giao thức kết nối agent với công cụ bên ngoài</li>
+<li>Plugins: đóng gói skills + agents + hooks + MCP thành một package</li>
+<li>Bảng so sánh và ví dụ thực tế</li>
+</ul>
+<hr />
+<h2 id="1-hooks-tu-ong-hoa-phan-ung-theo-su-kien">1. Hooks — Tự động hóa phản ứng theo sự kiện<a class="headerlink" href="#1-hooks-tu-ong-hoa-phan-ung-theo-su-kien" title="Permanent link">&para;</a></h2>
+<h3 id="khai-niem">Khái niệm<a class="headerlink" href="#khai-niem" title="Permanent link">&para;</a></h3>
+<p><strong>Hooks</strong> là các đoạn mã (shell script, HTTP request, hoặc prompt) được kích hoạt tự động khi một <strong>sự kiện</strong> (event) xảy ra trong Claude Code. Hãy hiểu hooks giống như <strong>webhook trong lập trình web</strong> — bạn đăng ký sự kiện, khi sự kiện xảy ra, code của bạn tự động chạy.</p>
+<pre class="mermaid"><code>flowchart LR
+    E["⚡ Sự kiện xảy ra&lt;br/&gt;(PreToolUse, Stop,&lt;br/&gt;SessionStart...)"] --&gt; M["🎯 Matcher kiểm tra&lt;br/&gt;(Tool nào? Pattern gì?)"]
+    M --&gt; H["🔧 Hook handler chạy&lt;br/&gt;(Script, HTTP, Prompt)"]
+    H --&gt; R["📋 Kết quả&lt;br/&gt;(Cho phép, chặn,&lt;br/&gt;thêm context...)"]</code></pre>
+<h3 id="cac-su-kien-quan-trong">Các sự kiện quan trọng<a class="headerlink" href="#cac-su-kien-quan-trong" title="Permanent link">&para;</a></h3>
+<p>Claude Code cung cấp nhiều hook events, theo tài liệu chính thức từ Anthropic. Dưới đây là những event thường dùng nhất:</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Khi nào kích hoạt</th>
+<th>Ví dụ ứng dụng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SessionStart</code></td>
+<td>Claude Code bắt đầu phiên mới</td>
+<td>Setup môi trường, load config</td>
+</tr>
+<tr>
+<td><code>UserPromptSubmit</code></td>
+<td>User gửi prompt</td>
+<td>Validate input, thêm context</td>
+</tr>
+<tr>
+<td><code>PreToolUse</code></td>
+<td><strong>Trước khi</strong> Claude dùng tool</td>
+<td>Chặn lệnh nguy hiểm (<code>rm -rf</code>)</td>
+</tr>
+<tr>
+<td><code>PostToolUse</code></td>
+<td><strong>Sau khi</strong> tool chạy xong</td>
+<td>Ghi log, notify team</td>
+</tr>
+<tr>
+<td><code>Stop</code></td>
+<td>Claude hoàn thành task</td>
+<td>Kiểm tra chất lượng output</td>
+</tr>
+<tr>
+<td><code>SubagentStart</code></td>
+<td>Sub-agent được sinh ra</td>
+<td>Monitor, audit</td>
+</tr>
+<tr>
+<td><code>SessionEnd</code></td>
+<td>Phiên kết thúc</td>
+<td>Cleanup, tổng kết</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cach-tao-hook">Cách tạo Hook<a class="headerlink" href="#cach-tao-hook" title="Permanent link">&para;</a></h3>
+<p>Hooks được cấu hình trong <code>settings.json</code> (project hoặc user level). Dưới đây là ví dụ tạo hook <strong>chặn lệnh <code>rm -rf</code></strong>:</p>
+<p><strong>Bước 1: Tạo script</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># File: .claude/hooks/block-rm.sh</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">COMMAND</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.tool_input.command&#39;</span><span class="k">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">if</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$COMMAND</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s1">&#39;rm -rf&#39;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span>jq<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;{</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="s1">    hookSpecificOutput: {</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="s1">      hookEventName: &quot;PreToolUse&quot;,</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="s1">      permissionDecision: &quot;deny&quot;,</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="s1">      permissionDecisionReason: &quot;Lệnh rm -rf bị chặn bởi hook&quot;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="s1">    }</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="s1">  }&#39;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">else</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span><span class="w">  </span><span class="c1"># Cho phép</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="k">fi</span>
+</span></code></pre></div>
+<p><strong>Bước 2: Cấu hình trong settings.json</strong></p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;hooks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;PreToolUse&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="p">{</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="nt">&quot;matcher&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bash&quot;</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="nt">&quot;hooks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">          </span><span class="p">{</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;command&quot;</span><span class="p">,</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">            </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.claude/hooks/block-rm.sh&quot;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">          </span><span class="p">}</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="p">]</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Khi Claude cố chạy <code>rm -rf /tmp/build</code>, hook sẽ:</p>
+<ol>
+<li>Event <code>PreToolUse</code> kích hoạt</li>
+<li>Matcher kiểm tra: đây là tool <code>Bash</code> → match</li>
+<li>Script <code>block-rm.sh</code> chạy, phát hiện <code>rm -rf</code></li>
+<li>Trả về <code>permissionDecision: "deny"</code> → Claude bị chặn</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">3 loại Hook handler</p>
+<ul>
+<li><strong>Command</strong>: Chạy shell script — linh hoạt nhất, dùng cho logic phức tạp</li>
+<li><strong>HTTP</strong>: Gửi request đến URL — tích hợp với hệ thống bên ngoài (Slack, webhook...)</li>
+<li><strong>Prompt</strong>: Dùng Claude model để đánh giá — phù hợp cho các kiểm tra phức tạp cần AI suy luận</li>
+</ul>
+</div>
+<h3 id="ung-dung-thuc-te">Ứng dụng thực tế<a class="headerlink" href="#ung-dung-thuc-te" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Bảo mật</strong>: Chặn mọi lệnh <code>rm -rf</code>, <code>DROP TABLE</code>, hoặc truy cập file nhạy cảm</li>
+<li><strong>Logging</strong>: Ghi lại mọi lệnh Claude chạy vào audit log</li>
+<li><strong>Quality gate</strong>: Khi Claude hoàn thành task (<code>Stop</code> event), hook tự động kiểm tra tests có pass không</li>
+<li><strong>Notification</strong>: Sau khi Claude sửa file (<code>PostToolUse</code>), gửi thông báo Slack cho team</li>
+</ol>
+<hr />
+<h2 id="2-mcp-ket-noi-agent-voi-the-gioi-ben-ngoai">2. MCP — Kết nối Agent với thế giới bên ngoài<a class="headerlink" href="#2-mcp-ket-noi-agent-voi-the-gioi-ben-ngoai" title="Permanent link">&para;</a></h2>
+<h3 id="khai-niem_1">Khái niệm<a class="headerlink" href="#khai-niem_1" title="Permanent link">&para;</a></h3>
+<p><strong>MCP (Model Context Protocol)</strong> là giao thức chuẩn (open standard) do Anthropic phát triển, cho phép Claude Code kết nối với các công cụ và dữ liệu bên ngoài. MCP biến Claude từ một agent chỉ biết đọc/ghi file thành một agent có thể <strong>tương tác với cả hệ sinh thái phần mềm</strong> của bạn.</p>
+<pre class="mermaid"><code>flowchart TD
+    CC["🤖 Claude Code"] --&gt; MCP["📡 MCP Protocol"]
+    MCP --&gt; G["🐙 GitHub&lt;br/&gt;(Review PR, tạo issue)"]
+    MCP --&gt; S["🔍 Sentry&lt;br/&gt;(Monitor errors)"]
+    MCP --&gt; D["🗃️ PostgreSQL&lt;br/&gt;(Query database)"]
+    MCP --&gt; SL["💬 Slack&lt;br/&gt;(Gửi thông báo)"]
+    MCP --&gt; N["📝 Notion&lt;br/&gt;(Đọc/ghi docs)"]
+    MCP --&gt; C["🔧 Custom Server&lt;br/&gt;(API nội bộ của bạn)"]</code></pre>
+<h3 id="mcp-hoat-ong-nhu-the-nao">MCP hoạt động như thế nào?<a class="headerlink" href="#mcp-hoat-ong-nhu-the-nao" title="Permanent link">&para;</a></h3>
+<p>MCP theo mô hình <strong>Client — Server</strong>:</p>
+<ul>
+<li><strong>Client</strong>: Claude Code (tự động đóng vai client)</li>
+<li><strong>Server</strong>: Các MCP server cung cấp "tools" mà Claude có thể gọi</li>
+<li><strong>Protocol</strong>: Giao tiếp qua stdio (local), SSE, hoặc HTTP</li>
+</ul>
+<p>Khi bạn cài một MCP server (ví dụ: GitHub), Claude Code sẽ nhận được danh sách các tools mới (ví dụ: <code>create_issue</code>, <code>review_pr</code>, <code>list_repos</code>). Claude tự quyết định khi nào gọi tool nào, giống như nó dùng các tools built-in (Read, Write, Bash...).</p>
+<h3 id="cach-cai-mcp-server">Cách cài MCP server<a class="headerlink" href="#cach-cai-mcp-server" title="Permanent link">&para;</a></h3>
+<p>Có 3 cách, theo tài liệu Anthropic:</p>
+<p><strong>Cách 1: Remote HTTP server (phổ biến nhất)</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Kết nối với Sentry để monitor errors</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>sentry<span class="w"> </span>https://mcp.sentry.dev/mcp
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Kết nối với Notion</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>notion<span class="w"> </span>https://mcp.notion.com/mcp
+</span></code></pre></div>
+<p><strong>Cách 2: Remote SSE server</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>sse<span class="w"> </span>asana<span class="w"> </span>https://mcp.asana.com/sse
+</span></code></pre></div>
+<p><strong>Cách 3: Local stdio server</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Kết nối PostgreSQL database</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>stdio<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>--env<span class="w"> </span><span class="nv">DATABASE_URL</span><span class="o">=</span>postgresql://localhost/mydb<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span>postgres<span class="w"> </span>--<span class="w"> </span>npx<span class="w"> </span>-y<span class="w"> </span>@modelcontextprotocol/server-postgres
+</span></code></pre></div>
+<h3 id="quan-ly-mcp-servers">Quản lý MCP servers<a class="headerlink" href="#quan-ly-mcp-servers" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Xem danh sách servers đã cài</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>claude<span class="w"> </span>mcp<span class="w"> </span>list
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Xem chi tiết 1 server</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>claude<span class="w"> </span>mcp<span class="w"> </span>get<span class="w"> </span>github
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Xoá server</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>claude<span class="w"> </span>mcp<span class="w"> </span>remove<span class="w"> </span>github
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># Trong Claude Code: kiểm tra trạng thái</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>/mcp
+</span></code></pre></div>
+<h3 id="mcp-scopes-pham-vi-cai-at">MCP Scopes — Phạm vi cài đặt<a class="headerlink" href="#mcp-scopes-pham-vi-cai-at" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Scope</th>
+<th>Lưu ở đâu</th>
+<th>Ai thấy</th>
+<th>Cách cài</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Local</strong> (mặc định)</td>
+<td><code>~/.claude.json</code></td>
+<td>Chỉ bạn, trong project hiện tại</td>
+<td><code>--scope local</code></td>
+</tr>
+<tr>
+<td><strong>Project</strong></td>
+<td><code>.mcp.json</code> (commit vào Git)</td>
+<td>Cả team, trong project này</td>
+<td><code>--scope project</code></td>
+</tr>
+<tr>
+<td><strong>User</strong></td>
+<td><code>~/.claude.json</code></td>
+<td>Chỉ bạn, trong mọi project</td>
+<td><code>--scope user</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">MCP Server Marketplace</p>
+<p>Anthropic duy trì một kho MCP servers tại <a href="https://github.com/modelcontextprotocol/servers">github.com/modelcontextprotocol/servers</a>. Tại thời điểm viết bài, đã có hàng trăm server cho các dịch vụ phổ biến như GitHub, Sentry, Slack, Notion, PostgreSQL, Google Drive, và nhiều hơn nữa.</p>
+</div>
+<h3 id="ung-dung-thuc-te_1">Ứng dụng thực tế<a class="headerlink" href="#ung-dung-thuc-te_1" title="Permanent link">&para;</a></h3>
+<p><strong>Ví dụ 1: Debug production error</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Bạn: &quot;Check Sentry xem có error nào mới trong 24h không, nếu có thì tìm root cause trong code&quot;
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Claude: 
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>1. Gọi MCP tool `sentry.list_issues` → tìm 3 errors mới
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>2. Đọc stack trace qua `sentry.get_issue_details`
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>3. Dùng built-in Read tool đọc file code liên quan
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>4. Phân tích root cause → đề xuất fix
+</span></code></pre></div></p>
+<p><strong>Ví dụ 2: Review PR tự động</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Bạn: &quot;Review PR #456 trên GitHub, nếu OK thì approve&quot;
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Claude:
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>1. Gọi `github.get_pull_request` → đọc diff
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>2. Phân tích code changes
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>3. Gọi `github.create_review` → approve hoặc request changes
+</span></code></pre></div></p>
+<p><strong>Ví dụ 3: Query database rồi viết report</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Bạn: &quot;Query database tìm 10 users active nhất tháng này, viết report&quot;
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Claude:
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>1. Gọi `postgres.query` → SELECT top 10 users
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>2. Phân tích dữ liệu
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>3. Viết report Markdown
+</span></code></pre></div></p>
+<hr />
+<h2 id="3-plugins-ong-goi-tat-ca-thanh-mot-package">3. Plugins — Đóng gói tất cả thành một package<a class="headerlink" href="#3-plugins-ong-goi-tat-ca-thanh-mot-package" title="Permanent link">&para;</a></h2>
+<h3 id="khai-niem_2">Khái niệm<a class="headerlink" href="#khai-niem_2" title="Permanent link">&para;</a></h3>
+<p><strong>Plugin</strong> là cách đóng gói tất cả các thành phần — skills, agents, hooks, MCP servers — thành một <strong>package hoàn chỉnh</strong> có thể cài đặt, chia sẻ, và quản lý phiên bản.</p>
+<p>Nếu Skill là "sổ tay", Agent là "nhân viên", Hook là "chuông báo", MCP là "đường dây nóng" — thì <strong>Plugin là "bộ kit" chứa tất cả</strong> những thứ đó, đóng hộp sẵn để ai cũng cài được.</p>
+<h3 id="cau-truc-plugin">Cấu trúc Plugin<a class="headerlink" href="#cau-truc-plugin" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>my-plugin/
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>├── .claude-plugin/
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>│   └── plugin.json          # Manifest: tên, mô tả, phiên bản
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>├── skills/
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>│   ├── code-review/
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>│   │   └── SKILL.md          # Skill review code
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>│   └── deploy/
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>│       └── SKILL.md          # Skill deploy
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>├── agents/
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>│   └── security-reviewer.md  # Sub-agent chuyên security
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>├── hooks/
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>│   └── hooks.json            # Hook configurations
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>├── .mcp.json                 # MCP server configs
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>├── monitors/
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>│   └── monitors.json         # Background monitors
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>├── settings.json             # Default settings
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>└── README.md                 # Documentation
+</span></code></pre></div>
+<h3 id="cach-tao-plugin">Cách tạo Plugin<a class="headerlink" href="#cach-tao-plugin" title="Permanent link">&para;</a></h3>
+<p><strong>Bước 1: Tạo thư mục và manifest</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>my-plugin/.claude-plugin
+</span></code></pre></div>
+<p>Tạo file <code>my-plugin/.claude-plugin/plugin.json</code>:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my-plugin&quot;</span><span class="p">,</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plugin tổng hợp tools cho team dev&quot;</span><span class="p">,</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Your Name&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>Bước 2: Thêm Skills, Agents, Hooks...</strong></p>
+<p>Tạo các thư mục <code>skills/</code>, <code>agents/</code>, <code>hooks/</code> như cấu trúc trên.</p>
+<p><strong>Bước 3: Test local</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>claude<span class="w"> </span>--plugin-dir<span class="w"> </span>./my-plugin
+</span></code></pre></div>
+<p>Thử gọi skill: <code>/my-plugin:code-review</code></p>
+<p><strong>Bước 4: Chia sẻ</strong></p>
+<p>Push lên Git → team cài qua marketplace hoặc <code>--plugin-dir</code>.</p>
+<h3 id="plugin-vs-standalone-khi-nao-dung-cai-nao">Plugin vs Standalone: Khi nào dùng cái nào?<a class="headerlink" href="#plugin-vs-standalone-khi-nao-dung-cai-nao" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>Standalone (<code>.claude/</code>)</th>
+<th>Plugin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Đối tượng</strong></td>
+<td>Cá nhân hoặc 1 project</td>
+<td>Team, nhiều project</td>
+</tr>
+<tr>
+<td><strong>Chia sẻ</strong></td>
+<td>Copy-paste thủ công</td>
+<td>Cài qua marketplace/Git</td>
+</tr>
+<tr>
+<td><strong>Namespace</strong></td>
+<td><code>/deploy</code></td>
+<td><code>/my-plugin:deploy</code></td>
+</tr>
+<tr>
+<td><strong>Quản lý phiên bản</strong></td>
+<td>Không</td>
+<td>Có (semver)</td>
+</tr>
+<tr>
+<td><strong>Khi nào dùng</strong></td>
+<td>Đang thử nghiệm</td>
+<td>Đã ổn định, cần chia sẻ</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Lộ trình đề xuất</p>
+<p>Bắt đầu với standalone (<code>.claude/</code>) → Khi ổn định → <a href="https://docs.anthropic.com/en/docs/claude-code/plugins#convert-existing-configurations-to-plugins">Convert sang plugin</a> → Chia sẻ cho team.</p>
+</div>
+<hr />
+<h2 id="4-bang-tong-hop-hooks-vs-mcp-vs-plugins">4. Bảng tổng hợp: Hooks vs MCP vs Plugins<a class="headerlink" href="#4-bang-tong-hop-hooks-vs-mcp-vs-plugins" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>Hooks</th>
+<th>MCP</th>
+<th>Plugins</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bản chất</strong></td>
+<td>Code chạy khi có sự kiện</td>
+<td>Giao thức kết nối dịch vụ</td>
+<td>Package đóng gói</td>
+</tr>
+<tr>
+<td><strong>Mục đích</strong></td>
+<td>Tự động hóa, kiểm soát</td>
+<td>Mở rộng khả năng truy cập</td>
+<td>Đóng gói và chia sẻ</td>
+</tr>
+<tr>
+<td><strong>Cấu hình ở đâu</strong></td>
+<td><code>settings.json</code></td>
+<td><code>.mcp.json</code> hoặc CLI</td>
+<td><code>.claude-plugin/plugin.json</code></td>
+</tr>
+<tr>
+<td><strong>Ví dụ</strong></td>
+<td>Chặn <code>rm -rf</code></td>
+<td>Kết nối Sentry, GitHub</td>
+<td>Plugin "DevOps toolkit"</td>
+</tr>
+<tr>
+<td><strong>Cần code?</strong></td>
+<td>Có (shell script/HTTP)</td>
+<td>Không (cài MCP server có sẵn)</td>
+<td>Tuỳ (gộp các thành phần)</td>
+</tr>
+<tr>
+<td><strong>Chia sẻ team</strong></td>
+<td>Qua <code>settings.json</code></td>
+<td>Qua <code>.mcp.json</code> (scope: project)</td>
+<td>Qua marketplace/Git</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-kich-ban-thuc-te-xay-dung-workflow-devops-hoan-chinh">5. Kịch bản thực tế: Xây dựng workflow DevOps hoàn chỉnh<a class="headerlink" href="#5-kich-ban-thuc-te-xay-dung-workflow-devops-hoan-chinh" title="Permanent link">&para;</a></h2>
+<p>Hãy kết hợp cả 3 để xây một workflow thực tế:</p>
+<pre class="mermaid"><code>flowchart TD
+    U["👤 Developer"] --&gt;|"Fix bug #123"| CC["🤖 Claude Code"]
+    CC --&gt;|"MCP: Đọc issue"| GH["🐙 GitHub"]
+    CC --&gt;|"Hook: PreToolUse&lt;br/&gt;Chặn lệnh nguy hiểm"| SEC["🛡️ Security Check"]
+    CC --&gt;|"Skill: /deploy"| DEP["🚀 Deploy"]
+    CC --&gt;|"MCP: Query DB"| DB["🗃️ Database"]
+    DEP --&gt;|"Hook: PostToolUse&lt;br/&gt;Notify Slack"| SL["💬 Slack"]
+    CC --&gt;|"Đóng gói thành Plugin"| PKG["📦 devops-plugin"]</code></pre>
+<ol>
+<li><strong>MCP</strong> kết nối GitHub → Claude đọc issue #123, hiểu bug cần fix</li>
+<li><strong>Hook</strong> (<code>PreToolUse</code>) → chặn nếu Claude cố xoá file quan trọng</li>
+<li>Claude fix bug, chạy tests</li>
+<li><strong>Skill</strong> <code>/deploy</code> → hướng dẫn Claude deploy theo quy trình chuẩn</li>
+<li><strong>Hook</strong> (<code>PostToolUse</code>) → sau khi deploy xong, gửi thông báo Slack</li>
+<li>Đóng gói tất cả thành <strong>Plugin</strong> <code>devops-plugin</code> → team cài 1 lần, dùng mãi</li>
+</ol>
+<hr />
+<h2 id="ket-luan">Kết luận<a class="headerlink" href="#ket-luan" title="Permanent link">&para;</a></h2>
+<p>Hooks, MCP, và Plugins là ba cơ chế mở rộng Claude Code, mỗi cái giải quyết một vấn đề khác nhau:</p>
+<ol>
+<li><strong>Hooks</strong> = Tự động phản ứng → <em>"Khi X xảy ra, tự động làm Y"</em></li>
+<li><strong>MCP</strong> = Kết nối bên ngoài → <em>"Claude có thể nói chuyện với GitHub, Sentry, Database..."</em></li>
+<li><strong>Plugins</strong> = Đóng gói chia sẻ → <em>"Gộp tất cả lại, cài 1 lần cho cả team"</em></li>
+</ol>
+<p>Kết hợp 3 cơ chế này với Agents, Sub-agents, và Skills từ Phần 1, bạn có đủ "vũ khí" để xây dựng hệ thống AI agent mạnh mẽ, an toàn, và dễ bảo trì.</p>
+<hr />
+<h2 id="tham-khao">Tham khảo<a class="headerlink" href="#tham-khao" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.anthropic.com/en/docs/claude-code/hooks">Hooks Reference — Anthropic Documentation</a> — Tài liệu tham chiếu đầy đủ về hook events, cấu hình, và ví dụ.</li>
+<li><a href="https://docs.anthropic.com/en/docs/claude-code/hooks-guide">Automate with Hooks — Anthropic Documentation</a> — Hướng dẫn thực hành xây dựng hooks.</li>
+<li><a href="https://docs.anthropic.com/en/docs/claude-code/mcp">Connect Claude Code to Tools via MCP — Anthropic Documentation</a> — Hướng dẫn cài đặt và sử dụng MCP servers.</li>
+<li><a href="https://modelcontextprotocol.io/introduction">Model Context Protocol — Official Website</a> — Trang chính thức của MCP protocol.</li>
+<li><a href="https://docs.anthropic.com/en/docs/claude-code/plugins">Create Plugins — Anthropic Documentation</a> — Hướng dẫn tạo và chia sẻ plugins.</li>
+<li><a href="https://github.com/modelcontextprotocol/servers">MCP Servers Repository — GitHub</a> — Kho MCP servers mã nguồn mở.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Trở lại mục lục
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0110\u00e3 sao ch\u00e9p", "clipboard.copy": "Sao ch\u00e9p v\u00e0o b\u1ed9 nh\u1edb t\u1ea1m", "search.result.more.one": "1 t\u1eeb kh\u00e1c trong trang", "search.result.more.other": "# t\u1eeb kh\u00e1c trong trang", "search.result.none": "Kh\u00f4ng t\u00ecm th\u1ea5y t\u00e0i li\u1ec7u li\u00ean quan", "search.result.one": "1 t\u00e0i li\u1ec7u li\u00ean quan", "search.result.other": "# t\u00e0i li\u1ec7u li\u00ean quan", "search.result.placeholder": "Nh\u1eadp \u0111\u1ec3 b\u1eaft \u0111\u1ea7u t\u00ecm ki\u1ebfm", "search.result.term.missing": "Kh\u00f4ng", "select.version": "Ch\u1ecdn phi\u00ean b\u1ea3n"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

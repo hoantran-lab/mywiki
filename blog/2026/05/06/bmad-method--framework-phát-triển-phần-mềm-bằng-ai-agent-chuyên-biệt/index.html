@@ -1,0 +1,1884 @@
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Tổng quan BMad Method — framework phát triển phần mềm với AI agent chuyên biệt. Ưu nhược điểm, quy trình 4 phase, hướng dẫn cài đặt và demo thực hành xây dựng một ứng dụng nhỏ trong ~1 tiếng.">
+      
+      
+        <meta name="author" content="tranvanhoan">
+      
+      
+        <link rel="canonical" href="https://tranvanhoan.github.io/MyWiki/blog/2026/05/06/bmad-method--framework-ph%C3%A1t-tri%E1%BB%83n-ph%E1%BA%A7n-m%E1%BB%81m-b%E1%BA%B1ng-ai-agent-chuy%C3%AAn-bi%E1%BB%87t/">
+      
+      
+        <link rel="prev" href="../creative-intelligence-suite-cis--gi%E1%BA%A3i-quy%E1%BA%BFt-v%E1%BA%A5n-%C4%91%E1%BB%81-v%C3%A0-s%C3%A1ng-t%E1%BA%A1o-c%C3%B3-c%E1%BA%A5u-tr%C3%BAc-c%C3%B9ng-ai-agent/">
+      
+      
+        <link rel="next" href="../gi%E1%BA%A3i-m%C3%A3-t%C6%B0-duy-ph%C3%A2n-k%E1%BB%B3-c%C3%A1c-k%E1%BB%B9-thu%E1%BA%ADt-brainstorming-%C4%91%E1%BB%99t-ph%C3%A1-t%E1%BB%AB-bmad/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>BMad Method — Framework Phát triển Phần mềm Bằng AI Agent Chuyên biệt - AI Wiki - My Knowledge Base</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bmad-method-framework-phat-trien-phan-mem-bang-ai-agent-chuyen-biet" class="md-skip">
+          Bỏ qua
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Đầu trang">
+    <a href="../../../../.." title="AI Wiki - My Knowledge Base" class="md-header__button md-logo" aria-label="AI Wiki - My Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Wiki - My Knowledge Base
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BMad Method — Framework Phát triển Phần mềm Bằng AI Agent Chuyên biệt
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Tìm kiếm" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Tìm kiếm">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Chia sẻ" aria-label="Chia sẻ" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Xoá" aria-label="Xoá" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tranvanhoan/MyWiki" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tranvanhoan/MyWiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Trang chủ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../roadmap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Chủ đề (Tags)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Về tác giả
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Thanh điều hướng" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="AI Wiki - My Knowledge Base" class="md-nav__button md-logo" aria-label="AI Wiki - My Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Wiki - My Knowledge Base
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tranvanhoan/MyWiki" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tranvanhoan/MyWiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trang chủ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chủ đề (Tags)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Về tác giả
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Mục lục">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Mục lục
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mo-au-tai-sao-can-mot-phuong-phap-khi-a-co-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mở đầu: Tại sao cần một "phương pháp" khi đã có AI?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-bmad-method-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. BMad Method là gì?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. BMad Method là gì?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inh-nghia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Định nghĩa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triet-ly-cot-loi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Triết lý cốt lõi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bmad-hoat-ong-voi-cong-cu-nao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BMad hoạt động với công cụ nào?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-oi-ngu-6-ai-agent-chuyen-biet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Đội ngũ 6 AI Agent chuyên biệt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Đội ngũ 6 AI Agent chuyên biệt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tai-sao-dung-named-agent-thay-vi-prompt-thong-thuong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tại sao dùng Named Agent thay vì prompt thông thường?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-quy-trinh-4-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Quy trình 4 Phase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Quy trình 4 Phase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-analysis-tuy-chon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Analysis (Tùy chọn)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-planning-bat-buoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Planning (Bắt buộc)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-solutioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Solutioning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-flow-uong-tat-cho-du-an-nho" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Flow — Đường tắt cho dự án nhỏ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-uu-iem-va-nhuoc-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Ưu điểm và Nhược điểm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Ưu điểm và Nhược điểm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uu-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Ưu điểm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nhuoc-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ Nhược điểm
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ap-dung-ngoai-phat-trien-phan-mem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Áp dụng ngoài phát triển phần mềm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-huong-dan-cai-at-bmad-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Hướng dẫn cài đặt BMad Method
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Hướng dẫn cài đặt BMad Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yeu-cau-he-thong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yêu cầu hệ thống
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-1-tao-thu-muc-du-an" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 1: Tạo thư mục dự án
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-2-cai-at-bmad-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 2: Cài đặt BMad Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-3-kiem-tra-cau-truc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 3: Kiểm tra cấu trúc
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-4-bat-au-voi-bmad-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 4: Bắt đầu với bmad-help
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-demo-thuc-hanh-xay-dung-task-manager-cli-1-tieng" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Demo thực hành: Xây dựng Task Manager CLI (~1 tiếng)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Demo thực hành: Xây dựng Task Manager CLI (~1 tiếng)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timeline-tong-quan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeline tổng quan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-1-setup-5-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 1: Setup (5 phút)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-2-phase-1-brainstorming-10-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 2: Phase 1 — Brainstorming (10 phút)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-3-phase-2-tao-prd-15-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 3: Phase 2 — Tạo PRD (15 phút)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-4-phase-3a-architecture-10-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 4: Phase 3a — Architecture (10 phút)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-5-phase-3b-epics-stories-10-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 5: Phase 3b — Epics &amp; Stories (10 phút)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-6-phase-4-implementation-15-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 6: Phase 4 — Implementation (15 phút)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bước 6: Phase 4 — Implementation (15 phút)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sprint-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dev-story-focus-vao-story-11-12-cho-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dev Story (focus vào Story 1.1 + 1.2 cho demo)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-7-wrap-up-retrospective-5-phut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 7: Wrap-up — Retrospective (5 phút)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ket-qua-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kết quả demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-quick-reference-cac-lenh-bmad-thuong-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Quick Reference — Các lệnh BMad thường dùng
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ket-luan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kết luận
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tham-khao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tham khảo
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Quay lại
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/tranvanhoan" alt="Hoàn Trần">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Hoàn Trần
+                        
+                      </strong>
+                      <br>
+                      Người viết và tìm tòi về AI
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-05-06 00:00:00+00:00" class="md-ellipsis">06/05/2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            Trong
+                            
+                              <a href="../../../../category/agent/">Agent</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              11 phút đọc
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:ai-agent" class="md-tag">ai-agent</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:ai-driven-development" class="md-tag">ai-driven-development</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:bmad-method" class="md-tag">bmad-method</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:context-engineering" class="md-tag">context-engineering</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:software-development" class="md-tag">software-development</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<h1 id="bmad-method-framework-phat-trien-phan-mem-bang-ai-agent-chuyen-biet">BMad Method — Framework Phát triển Phần mềm Bằng AI Agent Chuyên biệt<a class="headerlink" href="#bmad-method-framework-phat-trien-phan-mem-bang-ai-agent-chuyen-biet" title="Permanent link">&para;</a></h1>
+<h2 id="mo-au-tai-sao-can-mot-phuong-phap-khi-a-co-ai">Mở đầu: Tại sao cần một "phương pháp" khi đã có AI?<a class="headerlink" href="#mo-au-tai-sao-can-mot-phuong-phap-khi-a-co-ai" title="Permanent link">&para;</a></h2>
+<p>Bạn có thể mở Claude Code, Cursor hay GitHub Copilot và bắt đầu code ngay. Nhưng khi dự án lớn hơn vài trăm dòng, bạn sẽ gặp một vấn đề quen thuộc: <strong>AI không nhớ bạn muốn gì, code ra thiếu nhất quán, và mỗi lần mở chat mới là một lần bắt đầu lại từ đầu.</strong></p>
+<p>Nguyên nhân gốc rễ: AI hoạt động tốt khi có <strong>context rõ ràng và có cấu trúc</strong>. Không có context → AI đoán mò → kết quả kém.</p>
+<p><strong>BMad Method</strong> (Build More Architect Dreams) ra đời để giải quyết đúng vấn đề này. Đây là một <strong>framework phát triển phần mềm dựa trên AI agent</strong>, cung cấp quy trình có cấu trúc từ ý tưởng → lập kế hoạch → kiến trúc → triển khai, với các AI agent chuyên biệt hỗ trợ từng giai đoạn.</p>
+<p><strong>Nội dung bài viết:</strong></p>
+<ul>
+<li>BMad Method là gì — tổng quan và triết lý</li>
+<li>6 AI Agent chuyên biệt trong BMad</li>
+<li>Quy trình 4 Phase chi tiết</li>
+<li>Ưu và nhược điểm</li>
+<li>Áp dụng vào các lĩnh vực ngoài phần mềm</li>
+<li>Hướng dẫn cài đặt step-by-step</li>
+<li><strong>Demo thực hành ~1 tiếng</strong>: Xây dựng ứng dụng Task Manager CLI</li>
+</ul>
+<hr />
+<h2 id="1-bmad-method-la-gi">1. BMad Method là gì?<a class="headerlink" href="#1-bmad-method-la-gi" title="Permanent link">&para;</a></h2>
+<h3 id="inh-nghia">Định nghĩa<a class="headerlink" href="#inh-nghia" title="Permanent link">&para;</a></h3>
+<p>BMad Method là một <strong>module trong hệ sinh thái BMad</strong> (BMad Ecosystem), hoạt động như một framework phát triển phần mềm theo hướng AI-driven. Nó cung cấp:</p>
+<ul>
+<li><strong>AI Agent chuyên biệt</strong> — mỗi agent có tên, tính cách, và chuyên môn riêng</li>
+<li><strong>Workflow có hướng dẫn</strong> — quy trình từng bước, không cần nhớ</li>
+<li><strong>Context engineering</strong> — mỗi document tạo ra là context cho phase tiếp theo</li>
+<li><strong>Skill system</strong> — các lệnh <code>bmad-*</code> để kích hoạt workflow cụ thể</li>
+</ul>
+<h3 id="triet-ly-cot-loi">Triết lý cốt lõi<a class="headerlink" href="#triet-ly-cot-loi" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>"AI agents hoạt động tốt nhất khi có context rõ ràng, có cấu trúc. BMad xây dựng context đó một cách tuần tự qua 4 phase — mỗi phase tạo ra tài liệu cung cấp thông tin cho phase sau."</em></p>
+</blockquote>
+<p>Nói đơn giản: <strong>Thay vì ném một ý tưởng mơ hồ cho AI và hy vọng nó hiểu</strong>, BMad buộc bạn (với sự hỗ trợ của AI) đi qua từng bước: phân tích → lập kế hoạch → thiết kế kiến trúc → triển khai. Mỗi bước tạo ra một tài liệu chuẩn, và tài liệu đó trở thành "bản đồ" cho AI ở bước tiếp theo.</p>
+<h3 id="bmad-hoat-ong-voi-cong-cu-nao">BMad hoạt động với công cụ nào?<a class="headerlink" href="#bmad-hoat-ong-voi-cong-cu-nao" title="Permanent link">&para;</a></h3>
+<p>BMad tương thích với bất kỳ AI coding assistant nào hỗ trợ custom system prompt hoặc project context:</p>
+<table>
+<thead>
+<tr>
+<th>Công cụ</th>
+<th>Ghi chú</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Claude Code</strong></td>
+<td>Khuyến nghị — tương thích tốt nhất</td>
+</tr>
+<tr>
+<td><strong>Github Copilot</strong></td>
+<td>Tương thích tốt</td>
+</tr>
+<tr>
+<td><strong>Cursor</strong></td>
+<td>AI-first code editor</td>
+</tr>
+<tr>
+<td><strong>Codex CLI</strong></td>
+<td>OpenAI terminal agent</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-oi-ngu-6-ai-agent-chuyen-biet">2. Đội ngũ 6 AI Agent chuyên biệt<a class="headerlink" href="#2-oi-ngu-6-ai-agent-chuyen-biet" title="Permanent link">&para;</a></h2>
+<p>Điểm đặc biệt nhất của BMad là hệ thống <strong>Named Agents</strong> — 6 agent AI có tên, tính cách, và vai trò cụ thể. Bạn không cần nhớ lệnh — chỉ cần nói chuyện với đúng "người":</p>
+<pre class="mermaid"><code>flowchart LR
+    A["🔍 Mary&lt;br/&gt;Analyst"] --&gt; B["📋 James&lt;br/&gt;PM"]
+    B --&gt; C["🎨 Sarah&lt;br/&gt;UX Designer"]
+    B --&gt; D["🏗️ Oliver&lt;br/&gt;Architect"]
+    D --&gt; E["💻 Amelia&lt;br/&gt;Developer"]
+    E --&gt; F["🔎 Thomas&lt;br/&gt;QA"]</code></pre>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Tên</th>
+<th>Vai trò</th>
+<th>Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔍 Analyst</td>
+<td><strong>Mary</strong></td>
+<td>Brainstorming, nghiên cứu, phân tích</td>
+<td>Phase 1</td>
+</tr>
+<tr>
+<td>📋 PM</td>
+<td><strong>James</strong></td>
+<td>Viết PRD, tạo Epic &amp; Story</td>
+<td>Phase 2</td>
+</tr>
+<tr>
+<td>🎨 UX Designer</td>
+<td><strong>Sarah</strong></td>
+<td>Thiết kế UX/UI</td>
+<td>Phase 2</td>
+</tr>
+<tr>
+<td>🏗️ Architect</td>
+<td><strong>Oliver</strong></td>
+<td>Thiết kế kiến trúc kỹ thuật</td>
+<td>Phase 3</td>
+</tr>
+<tr>
+<td>💻 Developer</td>
+<td><strong>Amelia</strong></td>
+<td>Sprint planning, code, code review</td>
+<td>Phase 4</td>
+</tr>
+<tr>
+<td>🔎 QA</td>
+<td><strong>Thomas</strong></td>
+<td>Kiểm thử, đảm bảo chất lượng</td>
+<td>Phase 4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tai-sao-dung-named-agent-thay-vi-prompt-thong-thuong">Tại sao dùng Named Agent thay vì prompt thông thường?<a class="headerlink" href="#tai-sao-dung-named-agent-thay-vi-prompt-thong-thuong" title="Permanent link">&para;</a></h3>
+<p><strong>So với blank prompt</strong>: Bạn không cần prompt engineering — agent đã biết vai trò, có khả năng discoverable (xem menu), và <code>bmad-help</code> luôn sẵn sàng hướng dẫn.</p>
+<p><strong>So với menu-driven</strong>: Bạn không cần nhớ code hay navigate menu. Chỉ cần nói: <em>"Hey Mary, let's brainstorm"</em> → Mary tự kích hoạt và bắt đầu brainstorm.</p>
+<p><strong>Có thể tùy chỉnh</strong>: Mỗi agent có file <code>customize.toml</code> cho team override và <code>.user.toml</code> cho cá nhân. Brand recognition được giữ nguyên (tên không đổi), nhưng hành vi có thể tùy chỉnh hoàn toàn.</p>
+<hr />
+<h2 id="3-quy-trinh-4-phase">3. Quy trình 4 Phase<a class="headerlink" href="#3-quy-trinh-4-phase" title="Permanent link">&para;</a></h2>
+<p>Đây là trái tim của BMad Method — một pipeline tuần tự, mỗi phase tạo context cho phase sau:</p>
+<pre class="mermaid"><code>flowchart TD
+    P1["🔍 Phase 1: Analysis&lt;br/&gt;(Tùy chọn)&lt;br/&gt;Brainstorm, Research,&lt;br/&gt;Product Brief, PRFAQ"]
+    P2["📋 Phase 2: Planning&lt;br/&gt;(Bắt buộc)&lt;br/&gt;PRD, UX Design"]
+    P3["🏗️ Phase 3: Solutioning&lt;br/&gt;Architecture,&lt;br/&gt;Epics &amp; Stories"]
+    P4["💻 Phase 4: Implementation&lt;br/&gt;Sprint Planning,&lt;br/&gt;Dev Story, Code Review"]
+
+    P1 --&gt; P2
+    P2 --&gt; P3
+    P3 --&gt; P4
+
+    QF["⚡ Quick Flow&lt;br/&gt;Dự án nhỏ, đã rõ ràng&lt;br/&gt;bmad-quick-dev"]
+    QF -.-&gt;|"Bỏ qua Phase 1-3"| P4</code></pre>
+<h3 id="phase-1-analysis-tuy-chon">Phase 1: Analysis (Tùy chọn)<a class="headerlink" href="#phase-1-analysis-tuy-chon" title="Permanent link">&para;</a></h3>
+<p>Khám phá không gian vấn đề trước khi cam kết lập kế hoạch. Có 4 công cụ:</p>
+<table>
+<thead>
+<tr>
+<th>Công cụ</th>
+<th>Skill</th>
+<th>Khi nào dùng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Brainstorming</strong></td>
+<td><code>bmad-brainstorming</code></td>
+<td>Có ý tưởng mơ hồ, muốn khám phá</td>
+</tr>
+<tr>
+<td><strong>Research</strong></td>
+<td><code>bmad-market-research</code>, <code>bmad-domain-research</code>, <code>bmad-technical-research</code></td>
+<td>Cần nghiên cứu thị trường, domain, kỹ thuật</td>
+</tr>
+<tr>
+<td><strong>Product Brief</strong></td>
+<td><code>bmad-product-brief</code></td>
+<td>Đã rõ concept, muốn tóm tắt executive</td>
+</tr>
+<tr>
+<td><strong>PRFAQ</strong></td>
+<td><code>bmad-prfaq</code></td>
+<td>Muốn stress-test ý tưởng kiểu Amazon Working Backwards</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Product Brief vs PRFAQ</p>
+<p>Cả hai đều tạo input cho PRD. <strong>Product Brief</strong> = collaborative discovery (nhẹ nhàng). <strong>PRFAQ</strong> = gauntlet (thử thách gay gắt). Chọn dựa trên mức độ challenge bạn muốn.</p>
+</div>
+<h3 id="phase-2-planning-bat-buoc">Phase 2: Planning (Bắt buộc)<a class="headerlink" href="#phase-2-planning-bat-buoc" title="Permanent link">&para;</a></h3>
+<p>Xác định <strong>xây gì</strong> và <strong>cho ai</strong>.</p>
+<ol>
+<li>Gọi PM agent → chạy <code>bmad-create-prd</code> → tạo <strong>PRD.md</strong></li>
+<li>(Tùy chọn) Gọi UX Designer → chạy <code>bmad-create-ux-design</code> → tạo <strong>ux-spec.md</strong></li>
+</ol>
+<h3 id="phase-3-solutioning">Phase 3: Solutioning<a class="headerlink" href="#phase-3-solutioning" title="Permanent link">&para;</a></h3>
+<p>Xác định <strong>xây như thế nào</strong> và chia nhỏ công việc.</p>
+<ol>
+<li>Gọi Architect → <code>bmad-create-architecture</code> → tạo <strong>architecture.md</strong></li>
+<li>Gọi PM → <code>bmad-create-epics-and-stories</code> → tạo <strong>epics &amp; stories</strong></li>
+<li>(Khuyến nghị) <code>bmad-check-implementation-readiness</code> → kiểm tra tính sẵn sàng</li>
+</ol>
+<h3 id="phase-4-implementation">Phase 4: Implementation<a class="headerlink" href="#phase-4-implementation" title="Permanent link">&para;</a></h3>
+<p>Xây dựng, từng story một.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bmad-sprint-planning → sprint-status.yaml
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    ↓
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>bmad-create-story → story-[slug].md  (lặp lại cho mỗi story)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    ↓
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>bmad-dev-story → code changes
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    ↓
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>bmad-code-review → review findings
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    ↓
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>bmad-retrospective → lessons learned (sau mỗi epic)
+</span></code></pre></div>
+<h3 id="quick-flow-uong-tat-cho-du-an-nho">Quick Flow — Đường tắt cho dự án nhỏ<a class="headerlink" href="#quick-flow-uong-tat-cho-du-an-nho" title="Permanent link">&para;</a></h3>
+<p>Dự án nhỏ, đã rõ ràng, dưới ~5 stories? Dùng <code>bmad-quick-dev</code> — bỏ qua Phase 1-3, đi thẳng vào code với spec tối thiểu.</p>
+<hr />
+<h2 id="4-uu-iem-va-nhuoc-iem">4. Ưu điểm và Nhược điểm<a class="headerlink" href="#4-uu-iem-va-nhuoc-iem" title="Permanent link">&para;</a></h2>
+<h3 id="uu-iem">✅ Ưu điểm<a class="headerlink" href="#uu-iem" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Ưu điểm</th>
+<th>Giải thích</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Context Engineering xuất sắc</strong></td>
+<td>Mỗi document là context cho phase sau — AI luôn biết đang xây gì và tại sao</td>
+</tr>
+<tr>
+<td><strong>Agent chuyên biệt</strong></td>
+<td>Mỗi agent có expertise riêng, giảm "hallucination" so với general-purpose prompt</td>
+</tr>
+<tr>
+<td><strong>Quy trình rõ ràng</strong></td>
+<td>Không cần nhớ — <code>bmad-help</code> luôn chỉ đường bước tiếp theo</td>
+</tr>
+<tr>
+<td><strong>Linh hoạt</strong></td>
+<td>3 track (Quick Flow / Method / Enterprise), tùy chỉnh agent, mở rộng bằng BMad Builder</td>
+</tr>
+<tr>
+<td><strong>IDE-agnostic</strong></td>
+<td>Hoạt động với Claude Code, Cursor, Codex CLI</td>
+</tr>
+<tr>
+<td><strong>Adversarial Review</strong></td>
+<td>Có cơ chế review "phản biện" — agent reviewer thách thức output để tìm lỗ hổng</td>
+</tr>
+<tr>
+<td><strong>Miễn phí, mã nguồn mở</strong></td>
+<td>GitHub public, community Discord active</td>
+</tr>
+</tbody>
+</table>
+<h3 id="nhuoc-iem">❌ Nhược điểm<a class="headerlink" href="#nhuoc-iem" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Nhược điểm</th>
+<th>Giải thích</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Learning curve ban đầu</strong></td>
+<td>Nhiều agent, nhiều skill, nhiều phase — cần thời gian làm quen</td>
+</tr>
+<tr>
+<td><strong>Overhead cho dự án nhỏ</strong></td>
+<td>Full BMad Method cho app 50 dòng code = overkill (dùng Quick Flow thay thế)</td>
+</tr>
+<tr>
+<td><strong>Phụ thuộc vào LLM quality</strong></td>
+<td>Output chỉ tốt khi model đủ mạnh — model yếu = document chất lượng kém</td>
+</tr>
+<tr>
+<td><strong>Tốn token</strong></td>
+<td>Mỗi phase là nhiều conversation, mỗi conversation tốn token</td>
+</tr>
+<tr>
+<td><strong>Chưa hỗ trợ team collaboration tốt</strong></td>
+<td>Chủ yếu thiết kế cho individual developer hoặc small team</td>
+</tr>
+<tr>
+<td><strong>Ecosystem còn non trẻ</strong></td>
+<td>V6 mới ra, community module còn ít</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-ap-dung-ngoai-phat-trien-phan-mem">5. Áp dụng ngoài phát triển phần mềm<a class="headerlink" href="#5-ap-dung-ngoai-phat-trien-phan-mem" title="Permanent link">&para;</a></h2>
+<p>Dù BMad được thiết kế cho software development, triết lý <strong>"phân tích → lập kế hoạch → thiết kế giải pháp → triển khai"</strong> có thể áp dụng rộng hơn:</p>
+<table>
+<thead>
+<tr>
+<th>Lĩnh vực</th>
+<th>Cách áp dụng tư duy BMad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Content Creation</strong></td>
+<td>Analysis (nghiên cứu topic) → Planning (outline/brief) → Solutioning (cấu trúc bài) → Implementation (viết &amp; edit)</td>
+</tr>
+<tr>
+<td><strong>Marketing Campaign</strong></td>
+<td>Market Research → Campaign Brief (PRD) → Channel Architecture → Sprint triển khai</td>
+</tr>
+<tr>
+<td><strong>Product Design</strong></td>
+<td>User Research → PRD → UX Architecture → Design Sprints</td>
+</tr>
+<tr>
+<td><strong>Data Science</strong></td>
+<td>Domain Research → Problem Definition → Solution Architecture → Sprint phân tích</td>
+</tr>
+<tr>
+<td><strong>Game Development</strong></td>
+<td>BMad có module riêng: <strong>Game Dev Studio</strong> — mở rộng quy trình cho game dev</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">BMad Ecosystem mở rộng</p>
+<p>Ngoài BMad Method cho phần mềm, hệ sinh thái BMad còn có:</p>
+<ul>
+<li><strong>BMad Builder</strong> — tạo module/agent tùy chỉnh</li>
+<li><strong>Creative Intelligence Suite</strong> — cho creative work</li>
+<li><strong>Game Dev Studio</strong> — cho phát triển game</li>
+<li><strong>Test Architect (TEA)</strong> — cho enterprise testing</li>
+</ul>
+</div>
+<hr />
+<h2 id="6-huong-dan-cai-at-bmad-method">6. Hướng dẫn cài đặt BMad Method<a class="headerlink" href="#6-huong-dan-cai-at-bmad-method" title="Permanent link">&para;</a></h2>
+<h3 id="yeu-cau-he-thong">Yêu cầu hệ thống<a class="headerlink" href="#yeu-cau-he-thong" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Node.js 20+</strong> — bắt buộc cho installer</li>
+<li><strong>Git</strong> — khuyến nghị cho version control</li>
+<li><strong>AI IDE</strong> — Claude Code (khuyến nghị), Cursor, hoặc tương tự</li>
+</ul>
+<h3 id="buoc-1-tao-thu-muc-du-an">Bước 1: Tạo thư mục dự án<a class="headerlink" href="#buoc-1-tao-thu-muc-du-an" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mkdir<span class="w"> </span>my-bmad-project
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>my-bmad-project
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>git<span class="w"> </span>init
+</span></code></pre></div>
+<h3 id="buoc-2-cai-at-bmad-method">Bước 2: Cài đặt BMad Method<a class="headerlink" href="#buoc-2-cai-at-bmad-method" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npx<span class="w"> </span>bmad-method<span class="w"> </span>install
+</span></code></pre></div>
+<p>Installer sẽ hỏi 5 câu:</p>
+<ol>
+<li><strong>Thư mục cài đặt</strong> — mặc định là thư mục hiện tại</li>
+<li><strong>Modules</strong> — chọn <strong>BMad Method</strong> (bmm)</li>
+<li><strong>Phiên bản</strong> — Yes để dùng stable mới nhất</li>
+<li><strong>AI tool</strong> — chọn <code>claude-code</code>, <code>cursor</code>, hoặc tool bạn dùng</li>
+<li><strong>Config</strong> — tên, ngôn ngữ, thư mục output</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Cài đặt nhanh không tương tác</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>npx<span class="w"> </span>bmad-method<span class="w"> </span>install<span class="w"> </span>--yes<span class="w"> </span>--modules<span class="w"> </span>bmm<span class="w"> </span>--tools<span class="w"> </span>claude-code
+</span></code></pre></div>
+</div>
+<h3 id="buoc-3-kiem-tra-cau-truc">Bước 3: Kiểm tra cấu trúc<a class="headerlink" href="#buoc-3-kiem-tra-cau-truc" title="Permanent link">&para;</a></h3>
+<p>Sau cài đặt, bạn sẽ thấy 2 thư mục mới:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>my-bmad-project/
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>├── _bmad/              # Agents, workflows, tasks, config
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>│   ├── config.toml
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>│   ├── config.user.toml
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>│   └── ...
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>├── _bmad-output/       # Nơi lưu artifacts (PRD, architecture, stories...)
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>│   ├── planning-artifacts/
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>│   └── implementation-artifacts/
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>└── .claude/            # Skills cho Claude Code
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    └── skills/
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        └── bmad-*/
+</span></code></pre></div>
+<h3 id="buoc-4-bat-au-voi-bmad-help">Bước 4: Bắt đầu với bmad-help<a class="headerlink" href="#buoc-4-bat-au-voi-bmad-help" title="Permanent link">&para;</a></h3>
+<p>Mở Claude Code trong thư mục project và gõ:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>bmad-help
+</span></code></pre></div>
+<p>BMad-Help sẽ kiểm tra project, phát hiện những gì đã hoàn thành, và <strong>hướng dẫn chính xác bước tiếp theo</strong>.</p>
+<hr />
+<h2 id="7-demo-thuc-hanh-xay-dung-task-manager-cli-1-tieng">7. Demo thực hành: Xây dựng Task Manager CLI (~1 tiếng)<a class="headerlink" href="#7-demo-thuc-hanh-xay-dung-task-manager-cli-1-tieng" title="Permanent link">&para;</a></h2>
+<p>Dưới đây là kịch bản demo từng bước, sử dụng <strong>BMad Method track</strong> (không phải Quick Flow) để trải nghiệm đầy đủ quy trình. Dự án: một <strong>CLI Task Manager</strong> đơn giản bằng Node.js.</p>
+<h3 id="timeline-tong-quan">Timeline tổng quan<a class="headerlink" href="#timeline-tong-quan" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Thời gian</th>
+<th>Giai đoạn</th>
+<th>Việc cần làm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0:00 – 0:05</td>
+<td>Setup</td>
+<td>Cài đặt BMad, init project</td>
+</tr>
+<tr>
+<td>0:05 – 0:15</td>
+<td>Phase 1</td>
+<td>Brainstorming ý tưởng</td>
+</tr>
+<tr>
+<td>0:15 – 0:30</td>
+<td>Phase 2</td>
+<td>Tạo PRD</td>
+</tr>
+<tr>
+<td>0:30 – 0:40</td>
+<td>Phase 3a</td>
+<td>Tạo Architecture</td>
+</tr>
+<tr>
+<td>0:40 – 0:50</td>
+<td>Phase 3b</td>
+<td>Tạo Epics &amp; Stories</td>
+</tr>
+<tr>
+<td>0:50 – 1:05</td>
+<td>Phase 4</td>
+<td>Sprint Planning → Dev Story → Code Review</td>
+</tr>
+<tr>
+<td>1:05 – 1:10</td>
+<td>Wrap-up</td>
+<td>Retrospective, tổng kết</td>
+</tr>
+</tbody>
+</table>
+<h3 id="buoc-1-setup-5-phut">Bước 1: Setup (5 phút)<a class="headerlink" href="#buoc-1-setup-5-phut" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Tạo project</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>mkdir<span class="w"> </span>task-manager-cli
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">cd</span><span class="w"> </span>task-manager-cli
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>git<span class="w"> </span>init
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>npm<span class="w"> </span>init<span class="w"> </span>-y
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Cài BMad</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>npx<span class="w"> </span>bmad-method<span class="w"> </span>install<span class="w"> </span>--yes<span class="w"> </span>--modules<span class="w"> </span>bmm<span class="w"> </span>--tools<span class="w"> </span>claude-code
+</span></code></pre></div>
+<p>Mở Claude Code:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>claude
+</span></code></pre></div>
+<p>Gõ ngay:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>bmad-help
+</span></code></pre></div>
+<p>BMad-Help sẽ nhận diện đây là project mới và gợi ý bắt đầu từ Phase 1 (Analysis) hoặc Phase 2 (Planning).</p>
+<h3 id="buoc-2-phase-1-brainstorming-10-phut">Bước 2: Phase 1 — Brainstorming (10 phút)<a class="headerlink" href="#buoc-2-phase-1-brainstorming-10-phut" title="Permanent link">&para;</a></h3>
+<p>Mở chat <strong>mới</strong> trong Claude Code, gõ:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>bmad-brainstorming
+</span></code></pre></div>
+<p>Mary (Analyst agent) sẽ chào bạn và bắt đầu session brainstorming. Mô tả ý tưởng:</p>
+<blockquote>
+<p><em>"Tôi muốn xây dựng một CLI task manager đơn giản bằng Node.js. Người dùng có thể thêm, xem, hoàn thành, và xóa task. Dữ liệu lưu trong file JSON local. Có thể lọc task theo trạng thái."</em></p>
+</blockquote>
+<p>Mary sẽ dẫn dắt bạn qua các câu hỏi để làm rõ ý tưởng. Cuối session, Mary tạo file <code>brainstorming-report.md</code> trong <code>_bmad-output/</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Luôn mở chat mới cho mỗi workflow</p>
+<p>Đây là quy tắc quan trọng nhất trong BMad. Mỗi workflow cần fresh context để tránh context pollution.</p>
+</div>
+<h3 id="buoc-3-phase-2-tao-prd-15-phut">Bước 3: Phase 2 — Tạo PRD (15 phút)<a class="headerlink" href="#buoc-3-phase-2-tao-prd-15-phut" title="Permanent link">&para;</a></h3>
+<p>Mở chat <strong>mới</strong>, gõ:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>bmad-create-prd
+</span></code></pre></div>
+<p>James (PM agent) sẽ kích hoạt. James đọc brainstorming report từ Phase 1, sau đó hỏi bạn để làm rõ requirements:</p>
+<ul>
+<li>Target users là ai?</li>
+<li>Các features cốt lõi?</li>
+<li>Out of scope?</li>
+<li>Success metrics?</li>
+</ul>
+<p>Cuối cùng James tạo <strong>PRD.md</strong> — tài liệu requirements hoàn chỉnh với:</p>
+<ul>
+<li>Problem statement</li>
+<li>User personas</li>
+<li>Feature list với priority (Must have / Should have / Nice to have)</li>
+<li>Success criteria</li>
+<li>Constraints &amp; assumptions</li>
+</ul>
+<h3 id="buoc-4-phase-3a-architecture-10-phut">Bước 4: Phase 3a — Architecture (10 phút)<a class="headerlink" href="#buoc-4-phase-3a-architecture-10-phut" title="Permanent link">&para;</a></h3>
+<p>Mở chat <strong>mới</strong>, gõ:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>bmad-create-architecture
+</span></code></pre></div>
+<p>Oliver (Architect agent) đọc PRD.md và tạo architecture document:</p>
+<ul>
+<li><strong>Tech stack</strong>: Node.js, Commander.js (CLI framework), JSON file storage</li>
+<li><strong>Cấu trúc thư mục</strong>: <code>src/</code>, <code>data/</code>, <code>tests/</code></li>
+<li><strong>Data model</strong>: Task schema (id, title, status, createdAt, completedAt)</li>
+<li><strong>Module design</strong>: CLI parser → Task Service → Storage Layer</li>
+<li><strong>Error handling strategy</strong></li>
+</ul>
+<p>Output: <strong>architecture.md</strong></p>
+<h3 id="buoc-5-phase-3b-epics-stories-10-phut">Bước 5: Phase 3b — Epics &amp; Stories (10 phút)<a class="headerlink" href="#buoc-5-phase-3b-epics-stories-10-phut" title="Permanent link">&para;</a></h3>
+<p>Mở chat <strong>mới</strong>, gõ:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>bmad-create-epics-and-stories
+</span></code></pre></div>
+<p>James (PM) đọc cả PRD và Architecture để tạo epics và stories phù hợp về mặt kỹ thuật. Ví dụ output:</p>
+<p><strong>Epic 1: Core Task Management</strong></p>
+<ul>
+<li>Story 1.1: Setup project structure và storage layer</li>
+<li>Story 1.2: Implement "add task" command</li>
+<li>Story 1.3: Implement "list tasks" command với filtering</li>
+<li>Story 1.4: Implement "complete task" command</li>
+<li>Story 1.5: Implement "delete task" command</li>
+</ul>
+<p><strong>Epic 2: UX Polish</strong></p>
+<ul>
+<li>Story 2.1: Add colorized output</li>
+<li>Story 2.2: Add input validation và error messages</li>
+</ul>
+<p>Sau đó chạy (khuyến nghị):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>bmad-check-implementation-readiness
+</span></code></pre></div>
+<p>Oliver kiểm tra tính nhất quán giữa PRD, Architecture, và Stories.</p>
+<h3 id="buoc-6-phase-4-implementation-15-phut">Bước 6: Phase 4 — Implementation (15 phút)<a class="headerlink" href="#buoc-6-phase-4-implementation-15-phut" title="Permanent link">&para;</a></h3>
+<h4 id="sprint-planning">Sprint Planning<a class="headerlink" href="#sprint-planning" title="Permanent link">&para;</a></h4>
+<p>Mở chat <strong>mới</strong>, gõ:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>bmad-sprint-planning
+</span></code></pre></div>
+<p>Amelia (Developer agent) tạo <code>sprint-status.yaml</code> để tracking.</p>
+<h4 id="dev-story-focus-vao-story-11-12-cho-demo">Dev Story (focus vào Story 1.1 + 1.2 cho demo)<a class="headerlink" href="#dev-story-focus-vao-story-11-12-cho-demo" title="Permanent link">&para;</a></h4>
+<p>Mở chat <strong>mới</strong>, gõ:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>bmad-create-story
+</span></code></pre></div>
+<p>Chọn Story 1.1. Amelia tạo file story chi tiết với acceptance criteria, technical notes, và test requirements.</p>
+<p>Mở chat <strong>mới</strong> nữa, gõ:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>bmad-dev-story
+</span></code></pre></div>
+<p>Amelia đọc story file và <strong>bắt đầu code</strong>. Với Story 1.1, Amelia sẽ:</p>
+<ol>
+<li>Tạo cấu trúc thư mục <code>src/</code></li>
+<li>Implement <code>StorageService</code> — đọc/ghi file JSON</li>
+<li>Implement <code>TaskService</code> — CRUD operations</li>
+<li>Setup <code>Commander.js</code> CLI entry point</li>
+<li>Viết tests cơ bản</li>
+</ol>
+<h4 id="code-review">Code Review<a class="headerlink" href="#code-review" title="Permanent link">&para;</a></h4>
+<p>Mở chat <strong>mới</strong>, gõ:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>bmad-code-review
+</span></code></pre></div>
+<p>Agent review code vừa viết, kiểm tra:</p>
+<ul>
+<li>Code quality và conventions</li>
+<li>Test coverage</li>
+<li>Consistency với architecture document</li>
+<li>Edge cases</li>
+</ul>
+<h3 id="buoc-7-wrap-up-retrospective-5-phut">Bước 7: Wrap-up — Retrospective (5 phút)<a class="headerlink" href="#buoc-7-wrap-up-retrospective-5-phut" title="Permanent link">&para;</a></h3>
+<p>Sau khi hoàn thành epic, gõ:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>bmad-retrospective
+</span></code></pre></div>
+<p>Agent tổng hợp:</p>
+<ul>
+<li>Lessons learned</li>
+<li>Cải thiện cho sprint sau</li>
+<li>Đánh giá chất lượng output</li>
+</ul>
+<h3 id="ket-qua-demo">Kết quả demo<a class="headerlink" href="#ket-qua-demo" title="Permanent link">&para;</a></h3>
+<p>Sau ~1 tiếng, bạn có:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>task-manager-cli/
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>├── _bmad/                          # BMad config
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>├── _bmad-output/
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>│   ├── planning-artifacts/
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>│   │   ├── brainstorming-report.md  # Từ Phase 1
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>│   │   ├── PRD.md                   # Từ Phase 2
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>│   │   ├── architecture.md          # Từ Phase 3
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>│   │   └── epics/                   # Stories
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>│   └── implementation-artifacts/
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>│       └── sprint-status.yaml
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>├── src/
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>│   ├── index.js                     # CLI entry point
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>│   ├── services/
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>│   │   ├── task-service.js
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>│   │   └── storage-service.js
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>│   └── models/
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>│       └── task.js
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>├── data/
+</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>│   └── tasks.json
+</span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>├── tests/
+</span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>│   └── task-service.test.js
+</span><span id="__span-19-22"><a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>└── package.json
+</span></code></pre></div>
+<p>Chạy thử:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>node<span class="w"> </span>src/index.js<span class="w"> </span>add<span class="w"> </span><span class="s2">&quot;Học BMad Method&quot;</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>node<span class="w"> </span>src/index.js<span class="w"> </span>list
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>node<span class="w"> </span>src/index.js<span class="w"> </span><span class="nb">complete</span><span class="w"> </span><span class="m">1</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>node<span class="w"> </span>src/index.js<span class="w"> </span>list<span class="w"> </span>--status<span class="w"> </span><span class="k">done</span>
+</span></code></pre></div>
+<hr />
+<h2 id="8-quick-reference-cac-lenh-bmad-thuong-dung">8. Quick Reference — Các lệnh BMad thường dùng<a class="headerlink" href="#8-quick-reference-cac-lenh-bmad-thuong-dung" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Lệnh</th>
+<th>Mục đích</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bmad-help</code></td>
+<td>Hướng dẫn bước tiếp theo</td>
+</tr>
+<tr>
+<td><code>bmad-brainstorming</code></td>
+<td>Brainstorm ý tưởng (Phase 1)</td>
+</tr>
+<tr>
+<td><code>bmad-product-brief</code></td>
+<td>Tạo product brief (Phase 1)</td>
+</tr>
+<tr>
+<td><code>bmad-create-prd</code></td>
+<td>Tạo PRD (Phase 2)</td>
+</tr>
+<tr>
+<td><code>bmad-create-architecture</code></td>
+<td>Tạo architecture (Phase 3)</td>
+</tr>
+<tr>
+<td><code>bmad-create-epics-and-stories</code></td>
+<td>Tạo epics &amp; stories (Phase 3)</td>
+</tr>
+<tr>
+<td><code>bmad-check-implementation-readiness</code></td>
+<td>Kiểm tra sẵn sàng (Phase 3)</td>
+</tr>
+<tr>
+<td><code>bmad-sprint-planning</code></td>
+<td>Lập kế hoạch sprint (Phase 4)</td>
+</tr>
+<tr>
+<td><code>bmad-create-story</code></td>
+<td>Tạo story chi tiết (Phase 4)</td>
+</tr>
+<tr>
+<td><code>bmad-dev-story</code></td>
+<td>Code theo story (Phase 4)</td>
+</tr>
+<tr>
+<td><code>bmad-code-review</code></td>
+<td>Review code (Phase 4)</td>
+</tr>
+<tr>
+<td><code>bmad-quick-dev</code></td>
+<td>Quick Flow — bỏ qua Phase 1-3</td>
+</tr>
+<tr>
+<td><code>bmad-correct-course</code></td>
+<td>Thay đổi scope giữa chừng</td>
+</tr>
+<tr>
+<td><code>bmad-retrospective</code></td>
+<td>Tổng kết sau epic</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ket-luan">Kết luận<a class="headerlink" href="#ket-luan" title="Permanent link">&para;</a></h2>
+<p>BMad Method không chỉ là một bộ prompt hay một collection of agents — nó là một <strong>hệ thống context engineering hoàn chỉnh</strong> cho phát triển phần mềm với AI.</p>
+<p><strong>3 điểm cốt lõi cần nhớ:</strong></p>
+<ol>
+<li><strong>Context là vua</strong> — Mỗi phase tạo document là context cho phase sau. Không có context → AI đoán mò.</li>
+<li><strong>Agent chuyên biệt &gt; General prompt</strong> — Mary biết cách brainstorm, Oliver biết cách thiết kế architecture, Amelia biết cách code. Chuyên môn hóa = chất lượng cao hơn.</li>
+<li><strong>Quy trình linh hoạt</strong> — Dự án nhỏ dùng Quick Flow, dự án lớn dùng full 4 phase. Không one-size-fits-all.</li>
+</ol>
+<p>BMad đang ở V6 và phát triển rất nhanh. Nếu bạn đang dùng AI coding assistant hàng ngày, đây là framework đáng thử nghiệm để nâng cấp quy trình làm việc của mình.</p>
+<hr />
+<h2 id="tham-khao">Tham khảo<a class="headerlink" href="#tham-khao" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.bmad-method.org/">BMad Method — Official Documentation</a> — Tài liệu chính thức đầy đủ.</li>
+<li><a href="https://github.com/bmad-code-org/BMAD-METHOD">BMad Method — GitHub Repository</a> — Mã nguồn mở.</li>
+<li><a href="https://docs.bmad-method.org/tutorials/getting-started/">Getting Started Tutorial</a> — Hướng dẫn bắt đầu nhanh.</li>
+<li><a href="https://docs.bmad-method.org/reference/workflow-map/">Workflow Map</a> — Bản đồ workflow trực quan.</li>
+<li><a href="https://docs.bmad-method.org/explanation/named-agents/">Named Agents Explained</a> — Giải thích hệ thống agent.</li>
+<li><a href="https://www.youtube.com/@BMadCode">BMad YouTube Channel</a> — Video tutorials và walkthroughs.</li>
+<li><a href="https://discord.gg/gk8jAdXWmj">BMad Discord Community</a> — Cộng đồng hỗ trợ.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Trở lại mục lục
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0110\u00e3 sao ch\u00e9p", "clipboard.copy": "Sao ch\u00e9p v\u00e0o b\u1ed9 nh\u1edb t\u1ea1m", "search.result.more.one": "1 t\u1eeb kh\u00e1c trong trang", "search.result.more.other": "# t\u1eeb kh\u00e1c trong trang", "search.result.none": "Kh\u00f4ng t\u00ecm th\u1ea5y t\u00e0i li\u1ec7u li\u00ean quan", "search.result.one": "1 t\u00e0i li\u1ec7u li\u00ean quan", "search.result.other": "# t\u00e0i li\u1ec7u li\u00ean quan", "search.result.placeholder": "Nh\u1eadp \u0111\u1ec3 b\u1eaft \u0111\u1ea7u t\u00ecm ki\u1ebfm", "search.result.term.missing": "Kh\u00f4ng", "select.version": "Ch\u1ecdn phi\u00ean b\u1ea3n"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

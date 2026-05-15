@@ -1,0 +1,1891 @@
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hướng dẫn thực chiến áp dụng BMad Method vào dự án Greenfield/Brownfield — customize agent & skill, đào tạo team, phân công vai trò cho team lớn hàng chục người.">
+      
+      
+        <meta name="author" content="tranvanhoan">
+      
+      
+        <link rel="canonical" href="https://tranvanhoan.github.io/MyWiki/blog/2026/05/07/bmad-method-th%E1%BB%B1c-chi%E1%BA%BFn--customize-%C4%91%C3%A0o-t%E1%BA%A1o-team-v%C3%A0-qu%E1%BA%A3n-l%C3%BD-d%E1%BB%B1-%C3%A1n-l%E1%BB%9Bn/">
+      
+      
+        <link rel="prev" href="../t%E1%BA%A1m-bi%E1%BB%87t-vibe-coding---ch%C3%A0o-%C4%91%C3%B3n-k%E1%BB%B7-nguy%C3%AAn-spec-driven-development-v%E1%BB%9Bi-github-spec-kit/">
+      
+      
+        <link rel="next" href="../epic-feature-user-story--hi%E1%BB%83u-%C4%91%C3%BAng-%C4%91%E1%BB%83-l%C3%A0m-%C4%91%C3%BAng-trong-agile--bmad-method/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>BMad Method Thực Chiến — Customize, Đào Tạo Team, và Quản Lý Dự Án Lớn - AI Wiki - My Knowledge Base</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bmad-method-thuc-chien-customize-ao-tao-team-va-quan-ly-du-an-lon" class="md-skip">
+          Bỏ qua
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Đầu trang">
+    <a href="../../../../.." title="AI Wiki - My Knowledge Base" class="md-header__button md-logo" aria-label="AI Wiki - My Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Wiki - My Knowledge Base
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BMad Method Thực Chiến — Customize, Đào Tạo Team, và Quản Lý Dự Án Lớn
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Tìm kiếm" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Tìm kiếm">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Chia sẻ" aria-label="Chia sẻ" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Xoá" aria-label="Xoá" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tranvanhoan/MyWiki" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tranvanhoan/MyWiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Trang chủ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../roadmap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Chủ đề (Tags)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Về tác giả
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Thanh điều hướng" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="AI Wiki - My Knowledge Base" class="md-nav__button md-logo" aria-label="AI Wiki - My Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Wiki - My Knowledge Base
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tranvanhoan/MyWiki" title="Xem mã nguồn" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tranvanhoan/MyWiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trang chủ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chủ đề (Tags)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Về tác giả
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Mục lục">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Mục lục
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mo-au-khi-bmad-gap-thuc-te-du-an" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mở đầu: Khi BMad gặp thực tế dự án
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-quy-trinh-ao-tao-team-tu-zero-en-productive-trong-1-tuan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Quy trình đào tạo team — Từ zero đến productive trong 1 tuần
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Quy trình đào tạo team — Từ zero đến productive trong 1 tuần">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-lo-trinh-onboarding-5-ngay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Lộ trình onboarding 5 ngày
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-tai-lieu-noi-bo-can-chuan-bi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Tài liệu nội bộ cần chuẩn bị
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-customize-agent-skill-ba-tang-override-khong-so-mat-khi-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Customize Agent &amp; Skill — Ba tầng override không sợ mất khi update
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Customize Agent &amp; Skill — Ba tầng override không sợ mất khi update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-he-thong-three-layer-override" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Hệ thống Three-Layer Override
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-vi-du-thuc-te-customize-cho-du-an-healthcare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Ví dụ thực tế: Customize cho dự án Healthcare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-customize-menu-thembot-step-theo-yeu-cau-khach-hang" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Customize menu — Thêm/bớt step theo yêu cầu khách hàng
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-swap-output-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Swap output template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-team-lon-10-30-nguoi-ai-dung-gi-khi-nao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Team lớn (10-30+ người) — Ai dùng gì, khi nào
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Team lớn (10-30+ người) — Ai dùng gì, khi nào">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-ma-tran-phan-cong-agent-theo-vai-tro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Ma trận phân công Agent theo vai trò
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-mo-hinh-feature-team-voi-bmad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Mô hình Feature Team với BMad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-workflow-cho-team-lon-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Workflow cho team lớn — Step by step
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-tranh-xung-ot-khong-e-team-pha-nat-san-pham-cua-nhau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Tránh xung đột — Không để team phá nát sản phẩm của nhau
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Tránh xung đột — Không để team phá nát sản phẩm của nhau">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-van-e-cot-loi-codebase-thay-oi-lien-tuc-team-khong-kip-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Vấn đề cốt lõi: Codebase thay đổi liên tục, team không kịp update
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-xung-ot-pho-bien-va-cach-phong-tranh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Xung đột phổ biến và cách phòng tránh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-nam-lop-phong-thu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Năm lớp phòng thủ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 Năm lớp phòng thủ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lop-1-document-sharding-codeowners-phong-ngua" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lớp 1 — Document Sharding + CODEOWNERS (Phòng ngừa)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lop-2-trunk-based-development-feature-flags-cach-ly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lớp 2 — Trunk-Based Development + Feature Flags (Cách ly)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lop-3-cicd-voi-affected-build-detection-tu-ong-phat-hien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lớp 3 — CI/CD với Affected Build Detection (Tự động phát hiện)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lop-4-communication-rituals-ong-bo-con-nguoi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lớp 4 — Communication Rituals (Đồng bộ con người)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lop-5-inner-source-model-tu-giai-quyet-dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lớp 5 — Inner Source Model (Tự giải quyết dependency)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-quy-trinh-hang-ngay-cho-dev-trong-team-lon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Quy trình hàng ngày cho dev trong team lớn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-config-tap-trung-cho-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Config tập trung cho team
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-greenfield-vs-brownfield-iem-khac-biet-khi-ap-dung-cho-team-lon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Greenfield vs Brownfield — Điểm khác biệt khi áp dụng cho team lớn
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Greenfield vs Brownfield — Điểm khác biệt khi áp dụng cho team lớn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-greenfield-tu-do-nhung-can-ky-luat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Greenfield: Tự do nhưng cần kỷ luật
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-brownfield-hieu-truoc-sua-sau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Brownfield: Hiểu trước, sửa sau
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-checklist-trien-khai-bmad-cho-du-an-thuc-te" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Checklist triển khai BMad cho dự án thực tế
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Checklist triển khai BMad cho dự án thực tế">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#truoc-khi-bat-au" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trước khi bắt đầu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trong-sprint-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trong Sprint 0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moi-sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mỗi Sprint
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ket-luan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kết luận
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tham-khao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tham khảo
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Quay lại
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/tranvanhoan" alt="Hoàn Trần">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Hoàn Trần
+                        
+                      </strong>
+                      <br>
+                      Người viết và tìm tòi về AI
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-05-07 00:00:00+00:00" class="md-ellipsis">07/05/2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            Trong
+                            
+                              <a href="../../../../category/agent/">Agent</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              17 phút đọc
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:ai-driven-development" class="md-tag">ai-driven-development</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:bmad-method" class="md-tag">bmad-method</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:customization" class="md-tag">customization</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:project-management" class="md-tag">project-management</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../../../../tags/#tag:team-collaboration" class="md-tag">team-collaboration</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<h1 id="bmad-method-thuc-chien-customize-ao-tao-team-va-quan-ly-du-an-lon">BMad Method Thực Chiến — Customize, Đào Tạo Team, và Quản Lý Dự Án Lớn<a class="headerlink" href="#bmad-method-thuc-chien-customize-ao-tao-team-va-quan-ly-du-an-lon" title="Permanent link">&para;</a></h1>
+<h2 id="mo-au-khi-bmad-gap-thuc-te-du-an">Mở đầu: Khi BMad gặp thực tế dự án<a class="headerlink" href="#mo-au-khi-bmad-gap-thuc-te-du-an" title="Permanent link">&para;</a></h2>
+<p>Bạn đã đọc về BMad Method, biết nó có 6 agent, 4 phase, và nghe rất hay trên lý thuyết. Nhưng rồi thực tế ập đến:</p>
+<ul>
+<li>Khách hàng yêu cầu PRD phải theo template riêng của họ, có thêm mục "Regulatory Review"</li>
+<li>Team có 15 người — 3 backend, 4 frontend, 2 QA, 1 DevOps, 2 BA, 1 PM, 1 Tech Lead, 1 Scrum Master</li>
+<li>Dự án brownfield với 200K dòng code legacy Django, không có documentation</li>
+<li>Sprint review phải export sang Confluence, task phải sync với Jira</li>
+</ul>
+<p><strong>BMad Method được thiết kế để handle tất cả những tình huống này</strong> — nhưng bạn cần biết cách customize nó. Bài viết này là hướng dẫn thực chiến.</p>
+<p><strong>Nội dung chính:</strong></p>
+<ul>
+<li>Quy trình đào tạo/onboard team từ zero đến productive</li>
+<li>Customize agent và skill bằng hệ thống Three-Layer Override</li>
+<li>Phân công vai trò cho team lớn — ai dùng agent nào, khi nào</li>
+<li>Chiến lược tránh xung đột khi nhiều người cùng làm</li>
+</ul>
+<hr />
+<h2 id="1-quy-trinh-ao-tao-team-tu-zero-en-productive-trong-1-tuan">1. Quy trình đào tạo team — Từ zero đến productive trong 1 tuần<a class="headerlink" href="#1-quy-trinh-ao-tao-team-tu-zero-en-productive-trong-1-tuan" title="Permanent link">&para;</a></h2>
+<h3 id="11-lo-trinh-onboarding-5-ngay">1.1 Lộ trình onboarding 5 ngày<a class="headerlink" href="#11-lo-trinh-onboarding-5-ngay" title="Permanent link">&para;</a></h3>
+<p>Đừng ném cả team vào BMad cùng lúc. Hãy <strong>onboard theo lớp</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Ngày</th>
+<th>Đối tượng</th>
+<th>Nội dung</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ngày 1</strong></td>
+<td>Tech Lead + PM</td>
+<td>Cài đặt BMad, chạy <code>bmad-help</code>, hiểu 4 Phase</td>
+<td>BMad đã cài, config xong</td>
+</tr>
+<tr>
+<td><strong>Ngày 2</strong></td>
+<td>Tech Lead + PM</td>
+<td>Chạy thử full workflow trên mini project</td>
+<td>PRD + Architecture + 1 Story hoàn chỉnh</td>
+</tr>
+<tr>
+<td><strong>Ngày 3</strong></td>
+<td>Tech Lead</td>
+<td>Customize agent theo yêu cầu dự án</td>
+<td>File <code>.toml</code> override đã commit</td>
+</tr>
+<tr>
+<td><strong>Ngày 4</strong></td>
+<td>BA + Scrum Master</td>
+<td>Học Phase 1-3: Analysis → Planning → Solutioning</td>
+<td>BA biết dùng Mary, James; SM biết sprint planning</td>
+</tr>
+<tr>
+<td><strong>Ngày 5</strong></td>
+<td>Dev Team + QA</td>
+<td>Học Phase 4: <code>bmad-dev-story</code>, <code>bmad-code-review</code></td>
+<td>Mỗi dev hoàn thành 1 story thử nghiệm</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Nguyên tắc vàng: Đào tạo theo vai trò, không đào tạo toàn bộ</p>
+<p>Developer <strong>không cần biết</strong> cách tạo PRD. BA <strong>không cần biết</strong> cách chạy <code>bmad-dev-story</code>. Mỗi người chỉ cần thành thạo agent và skill liên quan đến vai trò của mình.</p>
+</div>
+<h3 id="12-tai-lieu-noi-bo-can-chuan-bi">1.2 Tài liệu nội bộ cần chuẩn bị<a class="headerlink" href="#12-tai-lieu-noi-bo-can-chuan-bi" title="Permanent link">&para;</a></h3>
+<p>Trước khi onboard, Tech Lead nên chuẩn bị:</p>
+<ol>
+<li><strong>Quick Reference Card</strong> — 1 trang A4 liệt kê các lệnh BMad theo vai trò</li>
+<li><strong>Project Context File</strong> — <code>project-context.md</code> mô tả tech stack, conventions, và quy tắc riêng của dự án</li>
+<li><strong>Customized Agent Config</strong> — các file <code>.toml</code> override đã được thiết lập</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Ví dụ Quick Reference Card cho Developer</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>=== DEVELOPER DAILY COMMANDS ===
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>bmad-help              → Không biết làm gì tiếp? Hỏi đây
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>bmad-dev-story         → Nhận story và bắt đầu code
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>bmad-code-review       → Review code sau khi hoàn thành
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>bmad-quick-dev         → Fix bug nhanh, không cần full process
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>=== QUY TẮC ===
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>- Luôn mở chat MỚI cho mỗi workflow
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>- KHÔNG sửa file trong _bmad/ trực tiếp
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>- Code xong → commit → mở chat mới → bmad-code-review
+</span></code></pre></div>
+</div>
+<hr />
+<h2 id="2-customize-agent-skill-ba-tang-override-khong-so-mat-khi-update">2. Customize Agent &amp; Skill — Ba tầng override không sợ mất khi update<a class="headerlink" href="#2-customize-agent-skill-ba-tang-override-khong-so-mat-khi-update" title="Permanent link">&para;</a></h2>
+<h3 id="21-he-thong-three-layer-override">2.1 Hệ thống Three-Layer Override<a class="headerlink" href="#21-he-thong-three-layer-override" title="Permanent link">&para;</a></h3>
+<p>BMad dùng hệ thống <strong>3 tầng override</strong> dựa trên file TOML. Nguyên tắc: <strong>không bao giờ sửa file gốc</strong> — chỉ tạo file override trong <code>_bmad/custom/</code>:</p>
+<pre class="mermaid"><code>flowchart TD
+    P1["🔒 Layer 3: Defaults\n(skill's customize.toml)\nKhông bao giờ sửa"]
+    P2["👥 Layer 2: Team Override\n(_bmad/custom/{skill}.toml)\nCommit vào Git"]
+    P3["👤 Layer 1: Personal Override\n(_bmad/custom/{skill}.user.toml)\nGit-ignored"]
+
+    P1 --&gt;|"Bị override bởi"| P2
+    P2 --&gt;|"Bị override bởi"| P3
+
+    style P1 fill:#95a5a6,color:#fff
+    style P2 fill:#3498db,color:#fff
+    style P3 fill:#e74c3c,color:#fff</code></pre>
+<p><strong>Quy tắc quan trọng:</strong> File override phải <strong>sparse</strong> — chỉ chứa field bạn muốn thay đổi. <strong>Không copy toàn bộ</strong> <code>customize.toml</code> vào override — nếu làm vậy, bạn sẽ bị lock vào version cũ khi BMad update.</p>
+<h3 id="22-vi-du-thuc-te-customize-cho-du-an-healthcare">2.2 Ví dụ thực tế: Customize cho dự án Healthcare<a class="headerlink" href="#22-vi-du-thuc-te-customize-cho-du-an-healthcare" title="Permanent link">&para;</a></h3>
+<p><strong>Bối cảnh:</strong> Dự án xây hệ thống quản lý bệnh án (EHR) cho bệnh viện. Khách hàng yêu cầu:</p>
+<ul>
+<li>Mọi PRD phải có mục "HIPAA Compliance Review"</li>
+<li>Tech stack bắt buộc: AWS only, không Azure/GCP</li>
+<li>Output phải bằng tiếng Anh</li>
+<li>Code review phải kiểm tra security vulnerabilities</li>
+</ul>
+<p><strong>Bước 1 — Customize PM Agent (James):</strong></p>
+<p>Tạo file <code>_bmad/custom/bmad-agent-pm.toml</code>:</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[agent]</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">icon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;🏥&quot;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Drives product discovery for a regulated healthcare domain.&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">communication_style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Precise, regulatory-aware, asks compliance questions early.&quot;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">persistent_facts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="s2">&quot;Our org is AWS-only -- do not propose GCP or Azure.&quot;</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="s2">&quot;All PRDs require HIPAA compliance review section.&quot;</span><span class="p">,</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="s2">&quot;Target users are clinicians, not patients.&quot;</span><span class="p">,</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="s2">&quot;file:{project-root}/docs/compliance/hipaa-overview.md&quot;</span><span class="p">,</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">]</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">principles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="s2">&quot;Ship nothing that can&#39;t pass an FDA audit.&quot;</span><span class="p">,</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="s2">&quot;Patient data privacy is non-negotiable.&quot;</span><span class="p">,</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="p">]</span>
+</span></code></pre></div>
+<p><strong>Bước 2 — Customize PRD Workflow:</strong></p>
+<p>Tạo file <code>_bmad/custom/bmad-product-brief.toml</code>:</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[workflow]</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">persistent_facts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="s2">&quot;Every brief must include &#39;Owner&#39;, &#39;Target Release&#39;, and &#39;HIPAA Review Status&#39; fields.&quot;</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="s2">&quot;file:{project-root}/docs/compliance/prd-checklist.md&quot;</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">]</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">brief_template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;{project-root}/docs/enterprise/brief-template.md&quot;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">on_complete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="s2">After finalizing the brief:</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="s2">1. Publish to Confluence space &#39;PRODUCT&#39; under &#39;Product Briefs&#39;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="s2">2. Ask user if they want to create a Jira epic for this brief</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="s2">&quot;&quot;&quot;</span>
+</span></code></pre></div>
+<p><strong>Bước 3 — Customize Dev Agent (Amelia):</strong></p>
+<p>Tạo file <code>_bmad/custom/bmad-agent-dev.toml</code>:</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[agent]</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">persistent_facts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="s2">&quot;Always use context7 MCP tool for library docs before relying on training data.&quot;</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="s2">&quot;Every PR must include security review checklist.&quot;</span><span class="p">,</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="s2">&quot;All patient data fields must be encrypted at rest and in transit.&quot;</span><span class="p">,</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="s2">&quot;Use parameterized queries only -- no string concatenation for SQL.&quot;</span><span class="p">,</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">]</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">activation_steps_append</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="s2">&quot;Read {project-root}/docs/security/coding-guidelines.md if it exists.&quot;</span><span class="p">,</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">]</span>
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Đừng quên: Reinforce trong CLAUDE.md</p>
+<p>Các quy tắc quan trọng nhất nên được lặp lại trong file <code>CLAUDE.md</code> (hoặc <code>AGENTS.md</code> cho Cursor) ở root project. Vì <code>CLAUDE.md</code> được load <strong>mọi session</strong>, kể cả khi không chạy BMad skill:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&lt;!-- SECURITY RULES --&gt;
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>&lt;!-- All patient data must be encrypted. No string concatenation for SQL. --&gt;
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>&lt;!-- Use context7 MCP tool for library docs before training-data knowledge. --&gt;
+</span></code></pre></div>
+</div>
+<h3 id="23-customize-menu-thembot-step-theo-yeu-cau-khach-hang">2.3 Customize menu — Thêm/bớt step theo yêu cầu khách hàng<a class="headerlink" href="#23-customize-menu-thembot-step-theo-yeu-cau-khach-hang" title="Permanent link">&para;</a></h3>
+<p>Khách hàng muốn thêm bước "Compliance Pre-check" vào menu của PM agent? Thêm vào file override:</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Thêm menu item mới cho PM agent</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">[[agent.menu]]</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;CC&quot;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Run compliance pre-check against HIPAA requirements&quot;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">prompt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="s2">Read {project-root}/docs/compliance/hipaa-checklist.md</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="s2">and scan all documents in {planning_artifacts} against it.</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="s2">Report any gaps and cite the relevant regulatory section.</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="s2">&quot;&quot;&quot;</span>
+</span></code></pre></div>
+<p>Muốn <strong>thay thế</strong> menu item có sẵn? Override bằng cùng <code>code</code>:</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Override menu item &quot;CE&quot; (Create Epics) với custom skill</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">[[agent.menu]]</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;CE&quot;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Create Epics using our delivery framework&quot;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">skill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;custom-create-epics&quot;</span>
+</span></code></pre></div>
+<h3 id="24-swap-output-template">2.4 Swap output template<a class="headerlink" href="#24-swap-output-template" title="Permanent link">&para;</a></h3>
+<p>Khách hàng có template PRD riêng? Chỉ cần trỏ workflow vào template mới:</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[workflow]</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">brief_template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;{project-root}/docs/enterprise/client-prd-template.md&quot;</span>
+</span></code></pre></div>
+<p>Đặt template trong <code>{project-root}/docs/</code> hoặc <code>{project-root}/_bmad/custom/templates/</code> để version control cùng project.</p>
+<hr />
+<h2 id="3-team-lon-10-30-nguoi-ai-dung-gi-khi-nao">3. Team lớn (10-30+ người) — Ai dùng gì, khi nào<a class="headerlink" href="#3-team-lon-10-30-nguoi-ai-dung-gi-khi-nao" title="Permanent link">&para;</a></h2>
+<h3 id="31-ma-tran-phan-cong-agent-theo-vai-tro">3.1 Ma trận phân công Agent theo vai trò<a class="headerlink" href="#31-ma-tran-phan-cong-agent-theo-vai-tro" title="Permanent link">&para;</a></h3>
+<p>Với team lớn, <strong>không phải ai cũng dùng mọi agent</strong>. Đây là ma trận phân công:</p>
+<table>
+<thead>
+<tr>
+<th>Vai trò thực tế</th>
+<th>BMad Agent sử dụng</th>
+<th>BMad Skills chính</th>
+<th>Tần suất</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Product Owner / BA</strong></td>
+<td>Mary (Analyst), James (PM)</td>
+<td><code>bmad-brainstorming</code>, <code>bmad-create-prd</code>, <code>bmad-create-epics-and-stories</code></td>
+<td>Đầu sprint / khi có feature mới</td>
+</tr>
+<tr>
+<td><strong>Tech Lead / Architect</strong></td>
+<td>Oliver (Architect)</td>
+<td><code>bmad-create-architecture</code>, <code>bmad-check-implementation-readiness</code></td>
+<td>Đầu project / khi thay đổi architecture</td>
+</tr>
+<tr>
+<td><strong>Scrum Master</strong></td>
+<td>James (PM)</td>
+<td><code>bmad-sprint-planning</code>, <code>bmad-retrospective</code></td>
+<td>Mỗi sprint</td>
+</tr>
+<tr>
+<td><strong>Senior Developer</strong></td>
+<td>Amelia (Developer)</td>
+<td><code>bmad-create-story</code>, <code>bmad-dev-story</code>, <code>bmad-code-review</code></td>
+<td>Hàng ngày</td>
+</tr>
+<tr>
+<td><strong>Junior Developer</strong></td>
+<td>Amelia (Developer)</td>
+<td><code>bmad-dev-story</code>, <code>bmad-quick-dev</code></td>
+<td>Hàng ngày</td>
+</tr>
+<tr>
+<td><strong>QA Engineer</strong></td>
+<td>Thomas (QA)</td>
+<td><code>bmad-code-review</code>, custom QA skills</td>
+<td>Sau mỗi story</td>
+</tr>
+<tr>
+<td><strong>UX Designer</strong></td>
+<td>Sarah (UX Designer)</td>
+<td><code>bmad-create-ux-design</code></td>
+<td>Phase 2</td>
+</tr>
+<tr>
+<td><strong>DevOps</strong></td>
+<td>Amelia (Developer)</td>
+<td><code>bmad-dev-story</code> (cho infra stories)</td>
+<td>Khi có infra task</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-mo-hinh-feature-team-voi-bmad">3.2 Mô hình Feature Team với BMad<a class="headerlink" href="#32-mo-hinh-feature-team-voi-bmad" title="Permanent link">&para;</a></h3>
+<p>Với team 15+ người, chia thành <strong>Feature Teams</strong> — mỗi team sở hữu end-to-end một nhóm Epic:</p>
+<pre class="mermaid"><code>flowchart TD
+    subgraph Planning["🎯 Planning Layer (Shared)"]
+        PO["Product Owner\n+ Mary, James"]
+        TL["Tech Lead\n+ Oliver"]
+        SM["Scrum Master\n+ James"]
+    end
+
+    subgraph Team1["⚡ Feature Team A: User Management"]
+        D1["2 Devs + Amelia"]
+        Q1["1 QA + Thomas"]
+    end
+
+    subgraph Team2["⚡ Feature Team B: Payment System"]
+        D2["2 Devs + Amelia"]
+        Q2["1 QA + Thomas"]
+    end
+
+    subgraph Team3["⚡ Feature Team C: Reporting"]
+        D3["2 Devs + Amelia"]
+        Q3["1 QA + Thomas"]
+    end
+
+    PO --&gt; |"PRD, Epics"| SM
+    TL --&gt; |"Architecture"| SM
+    SM --&gt; |"Sprint Stories"| Team1
+    SM --&gt; |"Sprint Stories"| Team2
+    SM --&gt; |"Sprint Stories"| Team3</code></pre>
+<p><strong>Nguyên tắc phân chia:</strong></p>
+<ul>
+<li><strong>Planning Layer (3-4 người):</strong> PO, Tech Lead, SM — dùng Phase 1-3, tạo PRD, Architecture, Epics</li>
+<li><strong>Feature Teams (3-4 người/team):</strong> Dev + QA — dùng Phase 4, nhận story và code</li>
+<li><strong>Shared artifacts:</strong> PRD.md, architecture.md, epics-and-stories.md là <strong>single source of truth</strong> — mọi team đều đọc cùng một bộ</li>
+</ul>
+<h3 id="33-workflow-cho-team-lon-step-by-step">3.3 Workflow cho team lớn — Step by step<a class="headerlink" href="#33-workflow-cho-team-lon-step-by-step" title="Permanent link">&para;</a></h3>
+<p><strong>Tuần 0 (Sprint 0):</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>PO + Tech Lead + SM:
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>1. bmad-brainstorming          → brainstorming-report.md
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>2. bmad-create-prd             → PRD.md
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>3. bmad-create-architecture    → architecture.md
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>4. bmad-create-epics-and-stories → epics/
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>5. bmad-check-implementation-readiness → Kiểm tra nhất quán
+</span></code></pre></div>
+<p><strong>Mỗi Sprint:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>SM:
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>1. bmad-sprint-planning → Chọn stories cho sprint, gán cho Feature Teams
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Feature Team (mỗi dev làm độc lập):
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>2. bmad-create-story    → Tạo story chi tiết (nếu chưa có)
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>3. bmad-dev-story       → Code theo story
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>4. bmad-code-review     → Review code
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>QA:
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>5. Review + test theo acceptance criteria
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>SM (cuối sprint):
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>6. bmad-retrospective   → Lessons learned
+</span></code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Ví dụ thực tế: Team 18 người xây E-commerce Platform</p>
+<p><strong>Planning Layer:</strong></p>
+<ul>
+<li><strong>PO (Minh):</strong> Dùng Mary brainstorm features → James tạo PRD với 5 Epic</li>
+<li><strong>Tech Lead (Hùng):</strong> Dùng Oliver thiết kế microservices architecture (API Gateway + 4 services)</li>
+<li><strong>SM (Lan):</strong> Dùng James tạo sprint plan, phân stories cho 3 Feature Teams</li>
+</ul>
+<p><strong>Feature Team A — Catalog Service (5 người):</strong></p>
+<ul>
+<li>2 Backend devs: Mỗi người nhận 1-2 stories/sprint, dùng <code>bmad-dev-story</code></li>
+<li>1 Frontend dev: Stories liên quan đến UI catalog</li>
+<li>1 QA: Review code + viết test</li>
+<li><strong>Scope rõ ràng:</strong> Chỉ touch code trong <code>services/catalog/</code> và <code>frontend/catalog/</code></li>
+</ul>
+<p><strong>Feature Team B — Order Service (5 người):</strong> Tương tự, scope <code>services/order/</code></p>
+<p><strong>Feature Team C — Payment + Auth (5 người):</strong> Scope <code>services/payment/</code> và <code>services/auth/</code></p>
+</div>
+<hr />
+<h2 id="4-tranh-xung-ot-khong-e-team-pha-nat-san-pham-cua-nhau">4. Tránh xung đột — Không để team phá nát sản phẩm của nhau<a class="headerlink" href="#4-tranh-xung-ot-khong-e-team-pha-nat-san-pham-cua-nhau" title="Permanent link">&para;</a></h2>
+<h3 id="41-van-e-cot-loi-codebase-thay-oi-lien-tuc-team-khong-kip-update">4.1 Vấn đề cốt lõi: Codebase thay đổi liên tục, team không kịp update<a class="headerlink" href="#41-van-e-cot-loi-codebase-thay-oi-lien-tuc-team-khong-kip-update" title="Permanent link">&para;</a></h3>
+<p>Khi 15-20 người cùng push code vào 1 repo mỗi ngày, bạn sẽ gặp <strong>bài toán đồng bộ</strong> (synchronization problem):</p>
+<ul>
+<li>Dev A merge xong Story 1.1 → thay đổi API response format</li>
+<li>Dev B đang code Story 2.1 dựa trên API format cũ → <strong>code của B bị break mà B không biết</strong></li>
+<li>QA test trên branch cũ → kết quả test không còn đúng với main</li>
+<li>SM nhìn <code>sprint-status.yaml</code> nhưng không phản ánh đúng thực tế</li>
+</ul>
+<p>Đây không phải vấn đề của riêng BMad — mọi team lớn đều gặp. Nhưng BMad + best practices dưới đây giải quyết triệt để.</p>
+<h3 id="42-xung-ot-pho-bien-va-cach-phong-tranh">4.2 Xung đột phổ biến và cách phòng tránh<a class="headerlink" href="#42-xung-ot-pho-bien-va-cach-phong-tranh" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Loại xung đột</th>
+<th>Nguyên nhân</th>
+<th>Giải pháp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Merge conflict</strong></td>
+<td>2 dev sửa cùng file</td>
+<td>Chia story theo module + trunk-based dev + CODEOWNERS</td>
+</tr>
+<tr>
+<td><strong>API breaking change</strong></td>
+<td>Team A đổi API mà Team B đang dùng</td>
+<td>Contract-first dev + feature flags</td>
+</tr>
+<tr>
+<td><strong>Architecture drift</strong></td>
+<td>Dev code lệch architecture</td>
+<td><code>bmad-check-implementation-readiness</code> + <code>bmad-code-review</code></td>
+</tr>
+<tr>
+<td><strong>Scope creep</strong></td>
+<td>Dev thêm feature ngoài story</td>
+<td>Story file có acceptance criteria rõ — Amelia chỉ code đúng scope</td>
+</tr>
+<tr>
+<td><strong>Convention mismatch</strong></td>
+<td>Mỗi dev code khác style</td>
+<td><code>project-context.md</code> + <code>persistent_facts</code> + automated linting</td>
+</tr>
+<tr>
+<td><strong>Stale context</strong></td>
+<td>Dev dùng BMad agent với context cũ</td>
+<td>Pull main trước mỗi <code>bmad-dev-story</code> + fresh chat mỗi workflow</td>
+</tr>
+<tr>
+<td><strong>Dependency blocking</strong></td>
+<td>Team A chờ Team B xong API</td>
+<td>Inner Source model — Team A tự contribute vào module của Team B</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-nam-lop-phong-thu">4.3 Năm lớp phòng thủ<a class="headerlink" href="#43-nam-lop-phong-thu" title="Permanent link">&para;</a></h3>
+<h4 id="lop-1-document-sharding-codeowners-phong-ngua">Lớp 1 — Document Sharding + CODEOWNERS (Phòng ngừa)<a class="headerlink" href="#lop-1-document-sharding-codeowners-phong-ngua" title="Permanent link">&para;</a></h4>
+<p>BMad chia PRD và architecture thành các <strong>story file nhỏ, độc lập</strong>. Mỗi story chứa đủ context để dev có thể làm <strong>mà không cần hỏi team khác</strong>.</p>
+<p>Kết hợp với file <code>CODEOWNERS</code> để <strong>enforce ranh giới ownership</strong> ở cấp Git:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>_bmad-output/
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>├── planning-artifacts/
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>│   ├── PRD.md                    ← PO + Tech Lead maintain
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>│   ├── architecture.md           ← Tech Lead maintain
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>│   └── epics/
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>│       ├── index.md              ← Mục lục liên kết đến từng epic
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>│       ├── epic-1-catalog.md     ← Team A&#39;s scope
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>│       ├── epic-2-order.md       ← Team B&#39;s scope
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>│       └── epic-3-payment.md     ← Team C&#39;s scope
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>└── implementation-artifacts/
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    ├── sprint-status.yaml        ← SM maintain
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    └── stories/
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>        ├── story-1.1.md          ← Gán cho Dev A1
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>        ├── story-1.2.md          ← Gán cho Dev A2
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>        └── story-2.1.md          ← Gán cho Dev B1
+</span></code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Nhưng khoan — <code>bmad-create-epics-and-stories</code> chỉ tạo ra 1 file duy nhất?</p>
+<p><strong>Đúng.</strong> Mặc định, BMad tạo 1 file <code>epics-and-stories.md</code> chứa toàn bộ epics và stories. Để có cấu trúc nhiều file như trên, bạn cần thực hiện thêm bước <strong>chia nhỏ (sharding)</strong>. Có 3 cách:</p>
+</div>
+<p><strong>Cách 1 — Customize workflow bằng TOML (Recommended cho team lớn):</strong></p>
+<p>Tạo file <code>_bmad/custom/bmad-create-epics-and-stories.toml</code> để agent <strong>tự động tạo nhiều file</strong> thay vì 1 file:</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">[workflow]</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">persistent_facts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="s2">&quot;Output each epic as a separate file under {planning_artifacts}/epics/ directory.&quot;</span><span class="p">,</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="s2">&quot;File naming convention: epic-{number}-{slug}.md (e.g., epic-1-user-management.md).&quot;</span><span class="p">,</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="s2">&quot;Each epic file must contain: epic description, all stories with acceptance criteria, and technical notes.&quot;</span><span class="p">,</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="s2">&quot;Create an index.md file listing all epics with brief descriptions and links.&quot;</span><span class="p">,</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="s2">&quot;Do NOT create a single monolithic epics-and-stories.md file.&quot;</span><span class="p">,</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="p">]</span>
+</span></code></pre></div>
+<p>Sau khi commit file TOML này vào Git, mọi thành viên trong team chạy <code>bmad-create-epics-and-stories</code> sẽ <strong>tự động tạo nhiều file riêng biệt</strong> — không cần nhắc lại mỗi lần.</p>
+<p><strong>Cách 2 — Dùng <code>bmad-create-story</code> ở Phase 4 (mỗi story 1 file):</strong></p>
+<p>Trong workflow thực tế, việc tách story thành file riêng thường xảy ra ở <strong>Phase 4</strong> — khi dev hoặc SM chạy <code>bmad-create-story</code> cho từng story cụ thể. Lệnh này tạo 1 file story chi tiết chứa:</p>
+<ul>
+<li>Acceptance criteria đầy đủ</li>
+<li>Technical context từ architecture doc</li>
+<li>API contracts liên quan</li>
+<li>Notes cho dev</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a># SM hoặc Senior Dev chạy cho từng story
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>bmad-create-story
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>→ Agent hỏi: &quot;Which story?&quot;
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>→ User: &quot;Story 1.1 - Implement product search API&quot;
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>→ Output: stories/story-1.1.md (file riêng, đủ context để dev code độc lập)
+</span></code></pre></div>
+<p><strong>Cách 3 — Prompt trực tiếp khi chạy workflow:</strong></p>
+<p>Nếu chưa setup TOML override, bạn có thể nói trực tiếp với agent khi chạy <code>bmad-create-epics-and-stories</code>:</p>
+<blockquote>
+<p><em>"Hãy tạo mỗi epic thành một file riêng trong thư mục <code>epics/</code>. Tạo thêm file <code>index.md</code> làm mục lục."</em></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Workflow khuyến nghị cho team lớn</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Phase 3 (Planning Layer):
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>  bmad-create-epics-and-stories
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    → Override bằng TOML → tạo epics/epic-1.md, epic-2.md...
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    → Hoặc: tạo 1 file → prompt agent chia nhỏ
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>Phase 4 (Feature Teams):
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>  bmad-create-story (chạy cho từng story cần implement)
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    → Output: stories/story-X.Y.md (1 file/story, chứa đủ context)
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>  bmad-dev-story
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>    → Agent đọc story-X.Y.md → code theo đúng scope
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>    → Dev KHÔNG CẦN đọc toàn bộ epics file gốc
+</span></code></pre></div>
+<p>Kết quả: mỗi dev chỉ cần đọc <strong>1 file story</strong> của mình — không bị overwhelm bởi toàn bộ backlog.</p>
+</div>
+<p>File <code>CODEOWNERS</code> ở root repo:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a># Planning artifacts — chỉ Planning Layer được sửa
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>_bmad-output/planning-artifacts/    @po-team @tech-lead
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a># Code ownership theo Feature Team
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>services/catalog/                   @team-a
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>services/order/                     @team-b
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>services/payment/                   @team-c
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>frontend/catalog/                   @team-a
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>frontend/order/                     @team-b
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a># Shared code — cần approval từ Tech Lead
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>libs/shared/                        @tech-lead
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>infrastructure/                     @devops-team
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a># BMad config — chỉ Tech Lead sửa
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>_bmad/custom/                       @tech-lead
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">CODEOWNERS hoạt động như thế nào?</p>
+<p>Khi Dev từ Team B tạo PR sửa file trong <code>services/catalog/</code> (thuộc Team A), GitHub <strong>tự động yêu cầu approval từ @team-a</strong>. Điều này ngăn chặn việc team khác vô tình phá code của nhau mà không ai review.</p>
+</div>
+<h4 id="lop-2-trunk-based-development-feature-flags-cach-ly">Lớp 2 — Trunk-Based Development + Feature Flags (Cách ly)<a class="headerlink" href="#lop-2-trunk-based-development-feature-flags-cach-ly" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>gitGraph
+    commit id: "main"
+    branch feature/catalog-search
+    commit id: "Story 1.1"
+    commit id: "Story 1.2"
+    checkout main
+    branch feature/order-checkout
+    commit id: "Story 2.1"
+    checkout main
+    merge feature/catalog-search id: "PR + CI"
+    merge feature/order-checkout id: "PR + CI"
+    commit id: "Feature flag ON"</code></pre>
+<p><strong>Quy tắc trunk-based development:</strong></p>
+<ul>
+<li>Mỗi story = 1 feature branch <strong>ngắn</strong> (tối đa 1-2 ngày)</li>
+<li>Merge vào main qua PR + <code>bmad-code-review</code> + CI pass</li>
+<li><strong>Không giữ branch quá 2 ngày</strong> — nếu story quá lớn, chia nhỏ tiếp</li>
+<li>Mỗi dev <strong>pull main vào branch ít nhất 1 lần/ngày</strong> để phát hiện conflict sớm</li>
+</ul>
+<p><strong>Feature Flags cho code chưa hoàn thiện:</strong></p>
+<p>Khi feature cần nhiều stories mới hoàn chỉnh, dùng <strong>feature flag</strong> để merge code chưa xong vào main mà không ảnh hưởng production:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">// Ví dụ: Feature &quot;Guest Checkout&quot; cần 3 stories, mới xong 1</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">featureFlags</span><span class="p">.</span><span class="nx">isEnabled</span><span class="p">(</span><span class="s1">&#39;guest-checkout&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nx">renderGuestCheckoutForm</span><span class="p">();</span><span class="w">  </span><span class="c1">// Story 1.1 — đã xong</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="nx">renderLoginPrompt</span><span class="p">();</span><span class="w">        </span><span class="c1">// Code cũ — vẫn hoạt động</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Lợi ích của feature flags trong team lớn</p>
+<ul>
+<li><strong>Team A merge code chưa hoàn thiện</strong> mà không break production</li>
+<li><strong>Team B vẫn thấy code mới nhất</strong> khi pull main → không bị "surprise" khi merge</li>
+<li><strong>QA test được cả 2 trạng thái</strong> (flag on/off)</li>
+<li><strong>Rollback tức thì</strong> nếu có bug — chỉ cần tắt flag, không cần revert code</li>
+</ul>
+</div>
+<h4 id="lop-3-cicd-voi-affected-build-detection-tu-ong-phat-hien">Lớp 3 — CI/CD với Affected Build Detection (Tự động phát hiện)<a class="headerlink" href="#lop-3-cicd-voi-affected-build-detection-tu-ong-phat-hien" title="Permanent link">&para;</a></h4>
+<p>Trong repo lớn, chạy <strong>toàn bộ test</strong> cho mỗi PR là quá chậm. Dùng <strong>affected build detection</strong> — chỉ test những module bị ảnh hưởng:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>PR sửa services/catalog/api.py
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>  → CI detect: affected modules = [catalog, frontend-catalog]
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>  → Chỉ chạy test cho 2 module này (2 phút thay vì 20 phút)
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>  → Nếu sửa libs/shared/ → chạy test TOÀN BỘ module (vì shared code)
+</span></code></pre></div>
+<p>Cấu hình trong CI pipeline:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># .github/workflows/ci.yml</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect affected modules</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="no"># Dùng tool như Nx, Turborepo, hoặc script tự viết</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="no">AFFECTED=$(scripts/detect-affected.sh ${{ github.event.pull_request.base.sha }})</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="no">echo &quot;affected=$AFFECTED&quot; &gt;&gt; $GITHUB_OUTPUT</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run affected tests</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">npm test -- --projects ${{ steps.detect.outputs.affected }}</span>
+</span></code></pre></div>
+<h4 id="lop-4-communication-rituals-ong-bo-con-nguoi">Lớp 4 — Communication Rituals (Đồng bộ con người)<a class="headerlink" href="#lop-4-communication-rituals-ong-bo-con-nguoi" title="Permanent link">&para;</a></h4>
+<p>Tool và automation không thể thay thế hoàn toàn <strong>giao tiếp giữa người với người</strong>. Ba nghi thức quan trọng:</p>
+<p><strong>a) Scrum of Scrums (15 phút, 2-3 lần/tuần):</strong></p>
+<p>Đại diện mỗi Feature Team (thường là SM hoặc Tech Lead) họp nhanh:</p>
+<ul>
+<li>"Team A đang sửa API catalog — response format thay đổi từ v1 sang v2"</li>
+<li>"Team B cần endpoint <code>/orders/guest</code> — Team C có thể ưu tiên không?"</li>
+<li>"Shared library <code>libs/auth</code> sẽ được refactor tuần sau — freeze các thay đổi vào lib này"</li>
+</ul>
+<p><strong>b) System Demo (30 phút, cuối mỗi sprint):</strong></p>
+<p>Mỗi team demo phần mình → tất cả thấy <strong>sản phẩm tổng thể</strong> hoạt động ra sao → phát hiện integration issues sớm.</p>
+<p><strong>c) Communities of Practice (1 tiếng, 2 tuần/lần):</strong></p>
+<p>Nhóm theo chuyên môn (frontend guild, backend guild, QA guild) — chia sẻ kiến thức, thống nhất coding standards, và đánh giá technical debt.</p>
+<div class="admonition example">
+<p class="admonition-title">Ví dụ Scrum of Scrums phát hiện xung đột sớm</p>
+<p><strong>Tình huống:</strong> Team A (Catalog) đang refactor database schema cho bảng <code>products</code>. Team B (Order) có query JOIN với bảng <code>products</code>.</p>
+<p><strong>Không có Scrum of Scrums:</strong> Team A merge refactor → query của Team B bị break → mất 2 ngày debug.</p>
+<p><strong>Có Scrum of Scrums:</strong> Đại diện Team A thông báo "Tuần này sẽ refactor bảng products, cột <code>price</code> đổi thành <code>base_price</code>." → Team B biết trước → điều chỉnh query <strong>trước khi</strong> Team A merge.</p>
+</div>
+<h4 id="lop-5-inner-source-model-tu-giai-quyet-dependency">Lớp 5 — Inner Source Model (Tự giải quyết dependency)<a class="headerlink" href="#lop-5-inner-source-model-tu-giai-quyet-dependency" title="Permanent link">&para;</a></h4>
+<p>Khi Team A cần feature trong module của Team B nhưng Team B chưa kịp làm, thay vì <strong>chờ</strong> (blocking) hoặc <strong>tự ý sửa</strong> (chaos), dùng mô hình <strong>Inner Source</strong>:</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant A as Team A (Guest)
+    participant B as Team B (Host/Owner)
+
+    A-&gt;&gt;A: Cần thêm endpoint trong service/order/
+    A-&gt;&gt;B: Thông báo: "Mình cần endpoint GET /orders/guest"
+    B-&gt;&gt;A: OK, đây là coding guidelines cho module order
+    A-&gt;&gt;A: Code endpoint theo guidelines của Team B
+    A-&gt;&gt;B: Tạo PR vào services/order/
+    B-&gt;&gt;B: Review PR (Trusted Committer)
+    B-&gt;&gt;A: Approve + Merge
+    Note over A,B: Team A không bị block,&lt;br/&gt;Team B giữ quyền kiểm soát chất lượng</code></pre>
+<p><strong>Quy tắc Inner Source:</strong></p>
+<ul>
+<li><strong>Guest</strong> (team cần feature): Code theo convention của <strong>Host</strong>, không phải convention riêng</li>
+<li><strong>Host</strong> (team sở hữu module): Review và approve — có quyền yêu cầu sửa đổi</li>
+<li><strong>CODEOWNERS</strong> enforce: PR vào module của team khác <strong>bắt buộc</strong> phải có approval từ team sở hữu</li>
+</ul>
+<h3 id="44-quy-trinh-hang-ngay-cho-dev-trong-team-lon">4.4 Quy trình hàng ngày cho dev trong team lớn<a class="headerlink" href="#44-quy-trinh-hang-ngay-cho-dev-trong-team-lon" title="Permanent link">&para;</a></h3>
+<p>Để đảm bảo mọi người luôn làm việc trên context mới nhất:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>=== MỖI SÁNG (trước khi code) ===
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>1. git pull origin main          ← Lấy code mới nhất
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>2. git rebase main               ← Rebase branch của mình (nếu có)
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>3. Mở chat MỚI trong AI IDE     ← Fresh context cho BMad agent
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>4. bmad-dev-story                ← Agent đọc story + codebase MỚI NHẤT
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>=== SAU KHI CODE XONG ===
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>5. git pull origin main          ← Lấy code mới nhất (lần nữa!)
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>6. Resolve conflicts (nếu có)
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>7. Chạy test local
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>8. Mở chat MỚI → bmad-code-review
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>9. Tạo PR → CI/CD chạy → Chờ review
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>=== QUAN TRỌNG ===
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>- KHÔNG code quá 2 ngày mà không merge
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>- KHÔNG giữ branch dài mà không rebase từ main
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>- NẾU thấy conflict lớn → báo SM ngay trong daily standup
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Sai lầm phổ biến nhất: Dùng BMad agent với context cũ</p>
+<p>BMad agent đọc codebase <strong>tại thời điểm bạn gọi nó</strong>. Nếu bạn không <code>git pull</code> trước khi gọi <code>bmad-dev-story</code>, agent sẽ code dựa trên version cũ → conflict khi merge.</p>
+<p><strong>Luôn pull main + mở chat mới trước mỗi workflow.</strong></p>
+</div>
+<h3 id="45-config-tap-trung-cho-team">4.5 Config tập trung cho team<a class="headerlink" href="#45-config-tap-trung-cho-team" title="Permanent link">&para;</a></h3>
+<p>Dùng <code>_bmad/custom/config.toml</code> để <strong>pin cấu hình chung cho toàn team</strong>:</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">[modules.bmm]</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">planning_artifacts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;{project-root}/shared/planning&quot;</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="n">implementation_artifacts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;{project-root}/shared/implementation&quot;</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="k">[core]</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="n">document_output_language</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;English&quot;</span>
+</span></code></pre></div>
+<p>Cá nhân customize trong <code>_bmad/config.user.toml</code> (git-ignored):</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">user_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Nguyen Van A&quot;</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">communication_language</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Vietnamese&quot;</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="n">user_skill_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;senior&quot;</span>
+</span></code></pre></div>
+<hr />
+<h2 id="5-greenfield-vs-brownfield-iem-khac-biet-khi-ap-dung-cho-team-lon">5. Greenfield vs Brownfield — Điểm khác biệt khi áp dụng cho team lớn<a class="headerlink" href="#5-greenfield-vs-brownfield-iem-khac-biet-khi-ap-dung-cho-team-lon" title="Permanent link">&para;</a></h2>
+<h3 id="51-greenfield-tu-do-nhung-can-ky-luat">5.1 Greenfield: Tự do nhưng cần kỷ luật<a class="headerlink" href="#51-greenfield-tu-do-nhung-can-ky-luat" title="Permanent link">&para;</a></h3>
+<p><strong>Ưu điểm:</strong> Không legacy code → architecture sạch → chia module rõ ràng → ít xung đột.</p>
+<p><strong>Rủi ro:</strong> Over-engineering, scope creep, mỗi người hiểu requirement khác nhau.</p>
+<p><strong>Chiến lược cho team lớn:</strong></p>
+<ol>
+<li><strong>Sprint 0 bắt buộc:</strong> PO + Tech Lead + SM dùng full Phase 1-3 tạo PRD + Architecture trước khi bất kỳ dev nào viết code</li>
+<li><strong>Architecture-first:</strong> Oliver (Architect) thiết kế module boundaries rõ ràng → mỗi Feature Team sở hữu 1 module</li>
+<li><strong>Contract-first development:</strong> Định nghĩa API contracts giữa các module trước khi code → team có thể làm song song</li>
+</ol>
+<h3 id="52-brownfield-hieu-truoc-sua-sau">5.2 Brownfield: Hiểu trước, sửa sau<a class="headerlink" href="#52-brownfield-hieu-truoc-sua-sau" title="Permanent link">&para;</a></h3>
+<p><strong>Thách thức thêm:</strong> Legacy code, undocumented business logic, technical debt, fear of regression.</p>
+<p><strong>Bước bắt buộc trước khi bắt đầu:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Bước 1: Tạo project context từ codebase hiện tại</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>bmad-generate-project-context
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="c1"># Bước 2: Document toàn bộ project (nếu chưa có docs)</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>bmad-document-project
+</span></code></pre></div>
+<p><strong>Chiến lược Strangler Fig cho team lớn:</strong></p>
+<p>Thay vì rewrite toàn bộ, <strong>bọc</strong> hệ thống cũ bằng lớp mới:</p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph Legacy["🏚️ Legacy System"]
+        L1["Module A\n(giữ nguyên)"]
+        L2["Module B\n(giữ nguyên)"]
+    end
+
+    subgraph New["🏗️ New System"]
+        N1["Module C\n(mới, Team A)"]
+        N2["Module D\n(mới, Team B)"]
+        API["API Gateway\n(Team C)"]
+    end
+
+    API --&gt; L1
+    API --&gt; L2
+    API --&gt; N1
+    API --&gt; N2</code></pre>
+<div class="admonition example">
+<p class="admonition-title">Ví dụ: Modernize hệ thống ERP 5 năm tuổi (team 20 người)</p>
+<p><strong>Bối cảnh:</strong> Hệ thống ERP viết bằng Java Spring Boot monolith, 300K LoC, không có test.</p>
+<p><strong>Phase 0 — Discovery (1 tuần):</strong></p>
+<ul>
+<li>Tech Lead chạy <code>bmad-generate-project-context</code> → phát hiện 47 entity, 12 REST controllers, 0 unit tests</li>
+<li><code>bmad-document-project</code> → tạo architecture doc và business logic map</li>
+</ul>
+<p><strong>Phase 1 — Plan (1 tuần):</strong></p>
+<ul>
+<li>PO + BA dùng James tạo PRD cho "Extract Inventory Service" (module đầu tiên tách ra)</li>
+<li>Tech Lead dùng Oliver thiết kế architecture: microservice mới + API adapter cho monolith</li>
+</ul>
+<p><strong>Implementation — Chia team:</strong></p>
+<ul>
+<li><strong>Team A (5 người):</strong> Xây Inventory microservice mới (Greenfield approach — dùng full BMad workflow)</li>
+<li><strong>Team B (3 người):</strong> Tạo API adapter trong monolith cũ (Brownfield — dùng <code>bmad-quick-dev</code> cho từng change nhỏ)</li>
+<li><strong>Team C (2 người):</strong> Integration testing giữa old và new</li>
+</ul>
+<p><strong>Quy tắc vàng:</strong> Team A <strong>không touch</strong> monolith code. Team B <strong>không touch</strong> microservice code. API contract là ranh giới không ai được vượt qua mà không có PR review.</p>
+</div>
+<hr />
+<h2 id="6-checklist-trien-khai-bmad-cho-du-an-thuc-te">6. Checklist triển khai BMad cho dự án thực tế<a class="headerlink" href="#6-checklist-trien-khai-bmad-cho-du-an-thuc-te" title="Permanent link">&para;</a></h2>
+<h3 id="truoc-khi-bat-au">Trước khi bắt đầu<a class="headerlink" href="#truoc-khi-bat-au" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Cài BMad và chạy <code>bmad-help</code> thành công</li>
+<li>[ ] Tạo <code>project-context.md</code> (brownfield) hoặc chạy Phase 1 (greenfield)</li>
+<li>[ ] Customize agent theo yêu cầu dự án (file <code>.toml</code> trong <code>_bmad/custom/</code>)</li>
+<li>[ ] Chuẩn bị Quick Reference Card cho từng vai trò</li>
+<li>[ ] Setup CI/CD pipeline với automated testing</li>
+</ul>
+<h3 id="trong-sprint-0">Trong Sprint 0<a class="headerlink" href="#trong-sprint-0" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] PO + Tech Lead hoàn thành PRD và Architecture</li>
+<li>[ ] SM tạo Epics &amp; Stories, phân cho Feature Teams</li>
+<li>[ ] Mỗi dev chạy thử 1 story để làm quen workflow</li>
+<li>[ ] QA review process đã được tích hợp</li>
+</ul>
+<h3 id="moi-sprint">Mỗi Sprint<a class="headerlink" href="#moi-sprint" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] SM chạy <code>bmad-sprint-planning</code> đầu sprint</li>
+<li>[ ] Mỗi dev dùng <code>bmad-dev-story</code> → <code>bmad-code-review</code></li>
+<li>[ ] PR review bắt buộc trước merge</li>
+<li>[ ] SM chạy <code>bmad-retrospective</code> cuối sprint</li>
+<li>[ ] Cập nhật <code>project-context.md</code> nếu có thay đổi architecture</li>
+</ul>
+<hr />
+<h2 id="ket-luan">Kết luận<a class="headerlink" href="#ket-luan" title="Permanent link">&para;</a></h2>
+<p>Ba bài học thực chiến:</p>
+<ol>
+<li>
+<p><strong>Customize trước, code sau.</strong> Dành 1-2 ngày để Tech Lead setup đúng <code>persistent_facts</code>, template, và convention cho agent. Khoản đầu tư này tiết kiệm hàng tuần debug và refactor sau này.</p>
+</li>
+<li>
+<p><strong>Phân vai trò rõ ràng = giảm xung đột.</strong> Không phải ai cũng cần dùng mọi agent. PO dùng Mary + James, Dev dùng Amelia, QA dùng Thomas. Mỗi người thành thạo 2-3 skills là đủ.</p>
+</li>
+<li>
+<p><strong>Document là ranh giới.</strong> Trong team lớn, PRD, Architecture, và Story files không chỉ là tài liệu — chúng là <strong>hàng rào</strong> ngăn team phá nát sản phẩm của nhau. BMad enforce điều này bằng cách buộc mọi agent đọc và tuân thủ cùng một bộ artifacts.</p>
+</li>
+</ol>
+<hr />
+<h2 id="tham-khao">Tham khảo<a class="headerlink" href="#tham-khao" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.bmad-method.org/how-to/customize-bmad/">BMad Method — How to Customize</a> — Hướng dẫn chi tiết hệ thống Three-Layer Override.</li>
+<li><a href="https://docs.bmad-method.org/how-to/expand-bmad-for-your-org/">BMad Method — Expand for Your Organization</a> — 5 recipes mở rộng BMad cho enterprise.</li>
+<li><a href="https://docs.bmad-method.org/how-to/established-projects/">BMad Method — Established Projects</a> — Workflow cho dự án brownfield.</li>
+<li><a href="https://docs.bmad-method.org/explanation/preventing-agent-conflicts/">BMad Method — Preventing Agent Conflicts</a> — Cơ chế phòng tránh xung đột giữa các agent.</li>
+<li><a href="https://docs.bmad-method.org/how-to/shard-large-documents/">BMad Method — Document Sharding Guide</a> — Chia nhỏ document cho team lớn.</li>
+<li><a href="https://github.com/bmad-code-org/BMAD-METHOD">BMad Method — GitHub Repository</a> — Mã nguồn mở, MIT License.</li>
+<li><a href="https://trunkbaseddevelopment.com/">Trunk-Based Development</a> — Branching strategy cho team lớn.</li>
+<li><a href="https://www.jamesshore.com/v2/books/aoad2/collective-code-ownership">James Shore — Collective Code Ownership</a> — Mô hình code ownership trong Agile.</li>
+<li><a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">GitHub — About CODEOWNERS</a> — Thiết lập code ownership boundaries trên GitHub.</li>
+<li><a href="https://innersourcecommons.org/">InnerSource Commons</a> — Framework Inner Source cho collaboration xuyên team.</li>
+<li><a href="https://www.flagsmith.com/blog/feature-flag-best-practices">Flagsmith — Feature Flags Best Practices</a> — Hướng dẫn dùng feature flags an toàn.</li>
+<li><a href="https://www.atlassian.com/agile/scrum/scrum-of-scrums">Atlassian — Scrum of Scrums</a> — Coordination ritual cho multi-team Agile.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Trở lại mục lục
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0110\u00e3 sao ch\u00e9p", "clipboard.copy": "Sao ch\u00e9p v\u00e0o b\u1ed9 nh\u1edb t\u1ea1m", "search.result.more.one": "1 t\u1eeb kh\u00e1c trong trang", "search.result.more.other": "# t\u1eeb kh\u00e1c trong trang", "search.result.none": "Kh\u00f4ng t\u00ecm th\u1ea5y t\u00e0i li\u1ec7u li\u00ean quan", "search.result.one": "1 t\u00e0i li\u1ec7u li\u00ean quan", "search.result.other": "# t\u00e0i li\u1ec7u li\u00ean quan", "search.result.placeholder": "Nh\u1eadp \u0111\u1ec3 b\u1eaft \u0111\u1ea7u t\u00ecm ki\u1ebfm", "search.result.term.missing": "Kh\u00f4ng", "select.version": "Ch\u1ecdn phi\u00ean b\u1ea3n"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
