@@ -1,0 +1,220 @@
+====================================================================
+DANH SÁCH 20 PROMPT CHUẨN ĐỂ VIẾT BLOG CHO 20 CHỦ ĐỀ AI AGENTS
+====================================================================
+Lưu ý: Chỉ cần copy prompt này, dán vào Claude/ChatGPT/Gemini và chạy.
+
+---
+
+[PROMPT 18] - Cursor AI vs Claude Code vs GitHub Copilot
+Bạn là một Technical Writer am hiểu sâu sắc về các công cụ AI hỗ trợ lập trình.
+Hãy viết một bài blog chuyên sâu với tiêu đề: "Cursor AI vs Claude Code vs GitHub Copilot: Đâu là 'Coding Agent' tốt nhất cho Developer Việt Nam?".
+Bài viết cần tập trung vào:
+- So sánh chi tiết 3 công cụ trên các tiêu chí: tốc độ, độ chính xác, hỗ trợ tiếng Việt, tích hợp workflow, và chi phí.
+- Phân tích ưu nhược điểm của từng công cụ khi áp dụng vào các môi trường: startup, enterprise, và outsourcing.
+- Đưa ra khuyến nghị cụ thể (bộ tiêu chí lựa chọn) cho Developer, Tech Lead, và Architect.
+Vui lòng sử dụng Markdown, bao gồm các bảng so sánh rõ ràng, có Alert box cho các lưu ý quan trọng. Giọng văn chuyên nghiệp, đi thẳng vào vấn đề.
+
+---
+
+[PROMPT 19] - Test-Driven Development với AI Agent
+Bạn là một Senior QA/Developer có nhiều năm kinh nghiệm với Test-Driven Development (TDD) và AI automation.
+Hãy viết một bài blog với tiêu đề: "Test-Driven Development với AI Agent: Viết Test trước, để Agent tự code".
+Nội dung bài viết:
+- Giải thích tư duy TDD kết hợp với AI Agent (workflow Red-Green-Refactor).
+- Hướng dẫn step-by-step cách viết test case trước và dùng Claude Code / Copilot Workspace để sinh code thỏa mãn test.
+- Cung cấp ít nhất 1 ví dụ code thực tế (có thể dùng Jest, PyTest, hoặc JUnit).
+Yêu cầu: Viết theo định dạng Markdown, phân chia tiêu đề rõ ràng, sử dụng code block cho các ví dụ, giọng văn hướng dẫn (tutorial-style) dễ hiểu.
+
+---
+
+[PROMPT 20] - AI Agent cho Code Review
+Bạn là một DevOps Engineer và Tech Lead dày dặn kinh nghiệm.
+Hãy viết bài blog với tiêu đề: "AI Agent cho Code Review: Tự động hóa quy trình review Pull Request với GitHub Actions + AI".
+Nội dung chính:
+- Giới thiệu cách dùng AI Agent (CodeRabbit, Ellipsis, hoặc Claude API) để tự động review code.
+- Hướng dẫn thiết lập pipeline trên GitHub Actions.
+- Phân tích cách cấu hình rules để AI phát hiện bug logic, security issue và tự động comment lên PR.
+Yêu cầu: Có sơ đồ luồng làm việc (dùng Mermaid diagram), code block cho file YAML cấu hình GitHub Actions, và Alert nhấn mạnh bảo mật token.
+
+---
+
+[PROMPT 21] - Thiết kế Hệ thống với AI
+Bạn là một Software Architect chuyên ứng dụng AI vào quá trình thiết kế hệ thống.
+Hãy viết một bài blog: "Thiết kế Hệ thống với AI: Dùng Agent để tạo Architecture Diagram, ERD và API Spec từ mô tả yêu cầu".
+Yêu cầu nội dung:
+- Cách dùng AI Agent (Eraser.io AI, Mermaid AI, Claude) để tự sinh System Architecture, ERD, và OpenAPI Spec từ tiếng Việt.
+- Cách kết hợp với phương pháp BMAD để chuẩn hóa đầu ra.
+- Cung cấp 1 prompt mẫu để độc giả copy dùng ngay.
+Sử dụng Mermaid diagram để minh họa một kiến trúc mẫu và các block code cho API Spec.
+
+---
+
+[PROMPT 22] - Playwright + AI Agent
+Bạn là một QA Automation Expert.
+Hãy viết bài blog: "Playwright + AI Agent: Tự động sinh và chạy End-to-End Test từ User Story".
+Bài viết cần đề cập:
+- Workflow kết hợp Playwright với AI Agent.
+- Cách dùng LLM (Claude/GPT-4o) phân tích User Story/Acceptance Criteria để tự tạo test cases và sinh Playwright script.
+- Tích hợp vào CI/CD pipeline.
+Cần có mã nguồn mẫu Playwright (JavaScript/TypeScript), hướng dẫn cài đặt, và lưu ý về tính ổn định (flaky tests).
+
+---
+
+[PROMPT 23] - AI Agent cho Exploratory Testing
+Bạn là một Test Lead am hiểu sâu về Exploratory Testing.
+Hãy viết bài blog: "AI Agent cho Exploratory Testing: Chiến lược dùng LLM để tìm Bug mà Automation bỏ sót".
+Nội dung:
+- Phân tích giới hạn của automation test truyền thống.
+- Kỹ thuật dùng AI sinh test idea, mô phỏng hành vi người dùng bất thường, và phân tích log.
+- Demo/ví dụ cách dùng Functionize hoặc Mabl.
+Giọng văn phân tích sâu sắc, chia sẻ kinh nghiệm thực chiến.
+
+---
+
+[PROMPT 24] - Workflow cho BrSE và QA Offshore
+Bạn là một Bridge SE (BrSE) kỳ cựu trong các dự án Việt-Nhật.
+Hãy viết bài blog: "Viết Test Case bằng Tiếng Việt, AI dịch và sinh Automation Script: Workflow cho BrSE và QA Offshore".
+Yêu cầu nội dung:
+- Giải quyết rào cản ngôn ngữ trong dự án Việt-Nhật.
+- Workflow dùng AI dịch test case Việt -> Nhật và tự sinh script (Selenium/Playwright).
+- Cung cấp prompt mẫu để BrSE sử dụng ngay trong công việc.
+Sử dụng Markdown, có bảng so sánh quy trình cũ và quy trình mới có AI.
+
+---
+
+[PROMPT 25] - AI Agent cho Sprint Planning
+Bạn là một Scrum Master/Agile Coach hiện đại.
+Hãy viết bài blog: "AI Agent cho Sprint Planning: Tự động phân tích Backlog, Estimate Story Point và Assign Task".
+Nội dung bao gồm:
+- Cách xây dựng/ứng dụng AI Agent đọc Jira/Linear backlog.
+- Cơ chế AI gợi ý Story Point dựa trên dữ liệu lịch sử và năng lực team.
+- Hướng dẫn tích hợp qua MCP connector với Claude.
+Viết theo phong cách hướng dẫn thực hành, có hình ảnh hoặc code/JSON minh họa API payload.
+
+---
+
+[PROMPT 26] - Meeting Intelligence với AI
+Bạn là một Project Manager chuyên tối ưu hóa quy trình làm việc.
+Hãy viết bài blog: "Meeting Intelligence với AI: Tự động ghi chép, tóm tắt và tạo Action Item từ cuộc họp dự án".
+Nội dung:
+- So sánh các công cụ: Otter.ai, Fireflies, Whisper + Claude.
+- Workflow tự động hóa: Ghi âm -> Phiên âm -> Tóm tắt -> Gán Action Item -> Gửi Slack/Notion.
+- Cung cấp System Prompt chuẩn để tóm tắt meeting hiệu quả.
+Bài viết cần dễ hiểu, thiết thực, tập trung vào việc tiết kiệm thời gian.
+
+---
+
+[PROMPT 27] - Risk Management với AI Agent
+Bạn là một Delivery Manager am hiểu dữ liệu và tự động hóa.
+Hãy viết bài blog: "Risk Management với AI Agent: Phát hiện sớm rủi ro dự án từ dữ liệu Jira, Git và Slack".
+Yêu cầu:
+- Cách thiết lập AI Agent theo dõi "tín hiệu rủi ro" (bug tăng, commit giảm, sentiment Slack tiêu cực).
+- Hướng dẫn cài đặt luồng cảnh báo với n8n hoặc Make.
+- Sử dụng Mermaid flowchart để mô tả luồng thu thập dữ liệu và cảnh báo.
+
+---
+
+[PROMPT 28] - BrSE 2.0: AI Agent Dịch thuật & Spec
+Bạn là một Senior BrSE chuyên nghiệp hóa bằng AI.
+Hãy viết bài blog: "BrSE 2.0: Dùng AI Agent để dịch thuật, làm rõ yêu cầu và viết Specification cho dự án Nhật".
+Nội dung:
+- Cách xây dựng bộ tool AI cá nhân cho BrSE.
+- Dịch tài liệu với context chuyên ngành, phát hiện điểm mơ hồ trong requirement.
+- Sinh draft Functional Specification theo chuẩn Nhật.
+- Cung cấp Custom System Prompt tiếng Nhật - Việt chuẩn.
+
+---
+
+[PROMPT 29] - Knowledge Base cho BrSE với AI
+Bạn là một chuyên gia quản trị tri thức (Knowledge Management).
+Hãy viết bài blog: "Xây dựng Knowledge Base cho BrSE với AI: Lưu trữ, tìm kiếm và tái sử dụng kiến thức dự án".
+Nội dung tập trung:
+- Xây dựng Second Brain chuyên ngành với RAG (Retrieval-Augmented Generation).
+- Đánh giá công cụ: Obsidian + Local AI vs NotebookLM.
+- Hướng dẫn cách index tài liệu (spec, email, meeting notes) để AI trả lời nhanh chóng.
+
+---
+
+[PROMPT 30] - Onboarding Dự án Mới với AI Agent
+Bạn là một Tech Lead chuyên tiếp nhận các dự án Legacy/Brownfield.
+Hãy viết bài blog: "Onboarding Dự án Mới trong 1 Ngày với AI Agent: BrSE/Dev nắm bắt toàn bộ codebase và spec".
+Nội dung:
+- Chiến lược dùng AI phân tích toàn bộ codebase và sinh sơ đồ kiến trúc.
+- Cách dùng AI để tóm tắt spec và tạo danh sách câu hỏi Q&A với khách hàng.
+- Workflow thực tế khi nhảy vào dự án mới.
+Yêu cầu: Viết theo cấu trúc "Vấn đề -> Giải pháp -> Thực thi", kèm prompt mẫu.
+
+---
+
+[PROMPT 31] - AI Agent cho IT Sales
+Bạn là một IT Presales / Business Development Manager.
+Hãy viết bài blog: "AI Agent cho IT Sales: Tự động nghiên cứu khách hàng, tạo Proposal và cá nhân hóa Email tiếp cận".
+Bài viết cần có:
+- Workflow thu thập insight (LinkedIn, Crunchbase).
+- Dùng AI (Clay, Apollo AI, n8n) tạo draft proposal sơ bộ và email lạnh (cold email) cá nhân hóa.
+- Cung cấp prompt sinh email chốt sales hiệu quả.
+
+---
+
+[PROMPT 32] - Estimate Dự án với AI
+Bạn là một Presales Architect.
+Hãy viết bài blog: "Estimate Dự án với AI: Từ Requirement mơ hồ đến Báo giá chính xác trong 30 phút".
+Nội dung:
+- Cách dùng AI phân rã requirement thành WBS (Work Breakdown Structure).
+- Estimate effort dựa trên dữ liệu lịch sử và tính toán risk buffer.
+- Đưa ra một ví dụ WBS thực tế sinh bởi AI (định dạng Markdown table).
+
+---
+
+[PROMPT 33] - Phân tích Đối thủ Cạnh tranh
+Bạn là một Product Marketing Manager trong ngành IT.
+Hãy viết bài blog: "Dùng AI để Phân tích Đối thủ Cạnh tranh: Chiến lược Competitive Intelligence cho IT Company".
+Nội dung:
+- Hệ thống crawl và phân tích data đối thủ (website, job posting, GitHub).
+- Cách tạo báo cáo điểm mạnh/yếu định kỳ.
+- Phù hợp cho C-level và BD định vị dịch vụ.
+
+---
+
+[PROMPT 34] - AIOps: Giám sát & Phản ứng Sự cố
+Bạn là một SRE / Platform Engineer.
+Hãy viết bài blog: "AIOps: Dùng AI Agent để Tự động Giám sát, Phân tích Log và Phản ứng Sự cố Hạ tầng".
+Yêu cầu nội dung:
+- Giới thiệu khái niệm AIOps.
+- Cách agent phân tích log, phát hiện anomaly và thực thi remediation (có human-in-the-loop).
+- Giới thiệu Datadog AI / Grafana AI plugin.
+
+---
+
+[PROMPT 35] - Infrastructure as Code với AI
+Bạn là một Cloud Engineer đam mê tự động hóa.
+Hãy viết bài blog: "Infrastructure as Code với AI: Tự động sinh Terraform, Kubernetes YAML từ mô tả kiến trúc".
+Nội dung:
+- Cách dùng AI sinh IaC từ prompt ngôn ngữ tự nhiên.
+- Ví dụ sinh Terraform module cho EKS + RDS.
+- Kết hợp Checkov AI để review bảo mật.
+Cung cấp code block Terraform mẫu sinh ra bởi AI.
+
+---
+
+[PROMPT 36] - CI/CD Pipeline Thông minh
+Bạn là một DevOps Engineer.
+Hãy viết bài blog: "CI/CD Pipeline Thông minh với AI: Tự động Optimize Build Time, Detect Flaky Test và Security Scan".
+Nội dung:
+- Nâng cấp GitHub Actions / GitLab CI bằng AI Agent.
+- Phát hiện flaky test, AI-powered SAST/DAST (Snyk AI).
+- Tự động generate Release Notes.
+Viết theo định dạng hướng dẫn thực hành.
+
+---
+
+[PROMPT 37] - Digital Twin cho Team IT
+Bạn là một CTO có tầm nhìn xa.
+Hãy viết bài blog: "Xây dựng 'Digital Twin' cho Team IT: Mỗi thành viên có một AI Agent phản ánh chuyên môn của mình".
+Nội dung:
+- Khái niệm Digital Twin của Developer/BrSE.
+- Cách train agent dựa trên coding style, review pattern của từng cá nhân.
+- Thảo luận góc nhìn tương lai, lợi ích (preservation of knowledge) và rủi ro đạo đức.
+Văn phong truyền cảm hứng, khơi gợi tư duy sâu sắc.
+
+====================================================================

@@ -56,6 +56,8 @@ plugins:
         - BMAD
         - Best Practices
         - Microsoft 365
+        - AI Tools
+        - Developer Tools
   - gen-files:
       scripts:
         - scripts/generate_roadmap.py
