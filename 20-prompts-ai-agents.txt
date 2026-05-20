@@ -5,7 +5,7 @@ Lưu ý: Chỉ cần copy prompt này, dán vào Claude/ChatGPT/Gemini và chạ
 
 ---
 
-[PROMPT 18] - Cursor AI vs Claude Code vs GitHub Copilot
+DonePROMPT 18] - Cursor AI vs Claude Code vs GitHub Copilot
 Bạn là một Technical Writer am hiểu sâu sắc về các công cụ AI hỗ trợ lập trình.
 Hãy viết một bài blog chuyên sâu với tiêu đề: "Cursor AI vs Claude Code vs GitHub Copilot: Đâu là 'Coding Agent' tốt nhất cho Developer Việt Nam?".
 Bài viết cần tập trung vào:
@@ -16,7 +16,7 @@ Vui lòng sử dụng Markdown, bao gồm các bảng so sánh rõ ràng, có Al
 
 ---
 
-[PROMPT 19] - Test-Driven Development với AI Agent
+Done[PROMPT 19] - Test-Driven Development với AI Agent
 Bạn là một Senior QA/Developer có nhiều năm kinh nghiệm với Test-Driven Development (TDD) và AI automation.
 Hãy viết một bài blog với tiêu đề: "Test-Driven Development với AI Agent: Viết Test trước, để Agent tự code".
 Nội dung bài viết:
@@ -27,10 +27,11 @@ Yêu cầu: Viết theo định dạng Markdown, phân chia tiêu đề rõ ràn
 
 ---
 
-[PROMPT 20] - AI Agent cho Code Review
+Done[PROMPT 20] - AI Agent cho Code Review
 Bạn là một DevOps Engineer và Tech Lead dày dặn kinh nghiệm.
 Hãy viết bài blog với tiêu đề: "AI Agent cho Code Review: Tự động hóa quy trình review Pull Request với GitHub Actions + AI".
 Nội dung chính:
+- Bối cảnh và lý do tại sao cần AI Agent cho Review Code.
 - Giới thiệu cách dùng AI Agent (CodeRabbit, Ellipsis, hoặc Claude API) để tự động review code.
 - Hướng dẫn thiết lập pipeline trên GitHub Actions.
 - Phân tích cách cấu hình rules để AI phát hiện bug logic, security issue và tự động comment lên PR.
@@ -38,7 +39,7 @@ Yêu cầu: Có sơ đồ luồng làm việc (dùng Mermaid diagram), code bloc
 
 ---
 
-[PROMPT 21] - Thiết kế Hệ thống với AI
+Done [PROMPT 21] - Thiết kế Hệ thống với AI
 Bạn là một Software Architect chuyên ứng dụng AI vào quá trình thiết kế hệ thống.
 Hãy viết một bài blog: "Thiết kế Hệ thống với AI: Dùng Agent để tạo Architecture Diagram, ERD và API Spec từ mô tả yêu cầu".
 Yêu cầu nội dung:
@@ -49,7 +50,7 @@ Sử dụng Mermaid diagram để minh họa một kiến trúc mẫu và các b
 
 ---
 
-[PROMPT 22] - Playwright + AI Agent
+Done [PROMPT 22] - Playwright + AI Agent
 Bạn là một QA Automation Expert.
 Hãy viết bài blog: "Playwright + AI Agent: Tự động sinh và chạy End-to-End Test từ User Story".
 Bài viết cần đề cập:
