@@ -61,7 +61,7 @@ Cần có mã nguồn mẫu Playwright (JavaScript/TypeScript), hướng dẫn c
 
 ---
 
-[PROMPT 23] - AI Agent cho Exploratory Testing
+Done [PROMPT 23] - AI Agent cho Exploratory Testing
 Bạn là một Test Lead am hiểu sâu về Exploratory Testing.
 Hãy viết bài blog: "AI Agent cho Exploratory Testing: Chiến lược dùng LLM để tìm Bug mà Automation bỏ sót".
 Nội dung:
@@ -72,7 +72,7 @@ Giọng văn phân tích sâu sắc, chia sẻ kinh nghiệm thực chiến.
 
 ---
 
-[PROMPT 24] - Workflow cho BrSE và QA Offshore
+Done [PROMPT 24] - Workflow cho BrSE và QA Offshore
 Bạn là một Bridge SE (BrSE) kỳ cựu trong các dự án Việt-Nhật.
 Hãy viết bài blog: "Viết Test Case bằng Tiếng Việt, AI dịch và sinh Automation Script: Workflow cho BrSE và QA Offshore".
 Yêu cầu nội dung:
